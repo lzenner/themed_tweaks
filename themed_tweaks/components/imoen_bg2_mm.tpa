@@ -1,0 +1,38 @@
+///////////////////////////////////////////////////////////////////////////
+// Optional component that gives Imoen her ability to cast magic missile //
+// Wand in SoD and Innate in BG2                                         //
+///////////////////////////////////////////////////////////////////////////
+
+DEFINE_ACTION_FUNCTION imoen_bg2_mm BEGIN
+	
+	// An innate spell for Imoen so she'll have something to cast at Irenicus
+	COPY ~%mod_root%/objects/#LSPIN01.spl~ ~override~
+
+	// A potion for Imoen so she'll be refreshed after Chateau Irenicus
+	// Modified version of igi's Potion of Refreshment (iiItemMod)
+	COPY ~%mod_root%/objects/#LPot01.bam~ ~override~
+	COPY ~%mod_root%/objects/#LPot01.itm~ ~override~
+    	SAY NAME2 @1002 // ~Potion of Revitalization~
+    	SAY DESC  @1003
+
+	// Give Imoen her innate ability and a refresh spells potion
+	LAF INSERT_SCRIPT_BLOCK
+		INT_VAR 
+			insert_above = 1
+			only_once = 1
+		STR_VAR 
+			script = AR0602
+			match = ~Global("BG1Pantaloons","GLOBAL",0)~
+			insert = ~%mod_root%/scripts/ar0602_imoen_magic.baf~
+	END
+
+	// Modify cutscene to have Imoen take the potions of revitalization
+	EXTEND_TOP ~TELE0700.BCS~ ~%mod_root%/scripts/potion_tele0700.baf~ USING ~%tra_loc%/%s/dialogues.tra~
+
+    ACTION_IF GAME_IS ~eet~ BEGIN
+		// Imoen's dialogue file is different here
+		// Once EET End is installed, it won't make a difference
+		// But for testing without it, this is very helpful
+		OUTER_SPRINT ~IMOEN_JOINED~ ~IMOEN2J~
+    END
+END

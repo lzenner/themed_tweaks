@@ -1,0 +1,28 @@
+// Let Eltan know you're reserving the option to not take Corwin with you into town
+@800	= ~Of course.~
+@801	= ~I'll think about it.~
+@802	= ~I'm afraid I work alone.  I'll be fine.~
+
+// During initial duke meeting turn down offer of escort
+@803	= ~That isn't necessary.  Just tell me where they are...I'm assuming taverns will be involved.~
+
+// Tell Corwin to come or go
+@804	= ~Lead on.~
+@805	= ~You can stay here.  I'm heading out alone.~
+@806	= ~I don't think that's such a good idea.~
+@807	= ~Your concerns are noted.  Stay here nonetheless.~
+@808	= ~Honestly, Captain Corwin, the only thing that matters here is that I do think it's a good idea.~
+
+// Ask Corwin out for a drink
+@809	= ~Corwin, would you like to join me for a glass of wine before turning in for the night?~
+@810	= ~What brought this on?~
+@811	= ~I thought it would be a good idea if we got to know one another a bit better.~
+@812	= ~Ok.  I'll meet you at the Three Old Kegs.~
+
+// Just so happen to run into Corwin when she's needed - how handy
+@813	= ~Fancy meeting you here, <CHARNAME>.~
+@814	= ~Perfect timing, Captain Corwin!~
+@815	= ~How so?~
+@816	= ~Thank you, Captain Corwin.~
+@817	= ~No problem, Corwin.  Stick around for a while.  Meet me downstairs for a drink.~
+@818	= ~Ok, I'll meet you downstairs.~

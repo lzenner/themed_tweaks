@@ -1,0 +1,16 @@
+///////////////////////////////////////////////////////
+// Optional snarky comments thrown in here and there //
+///////////////////////////////////////////////////////
+
+DEFINE_ACTION_FUNCTION snark BEGIN
+	// Set stock strings used in dialogues to variables
+	ACTION_IF (GAME_IS ~eet~) THEN BEGIN
+		OUTER_SET minsc_kick_butt = 204101
+	END ELSE BEGIN
+		OUTER_SET minsc_kick_butt = 4107
+	END
+
+	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/snark.d~ USING ~%tra_loc%/%s/snark.tra~
+	EXTEND_TOP ~BD0120.BCS~ ~%mod_root%/scripts/snark.baf~ // Sets the global to allow snarky comments
+	EXTEND_TOP ~BD0103.BCS~ ~%mod_root%/scripts/snark.baf~ // In case they skip Korlasz
+END

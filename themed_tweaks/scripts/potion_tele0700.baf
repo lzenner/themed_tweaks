@@ -1,0 +1,62 @@
+///////////////////////////////////////////////////////////////
+// Imoen grabs the potions before heading out of the dungeon //
+// Compiled via imoen_bg2_mm.tpa                             //
+///////////////////////////////////////////////////////////////
+
+IF
+	Clicked([ANYONE])
+	PartyHasItem("#LPot01")
+	HasItem("#LPot01","IMOEN2")
+	IsValidForPartyDialogue("IMOEN2")
+	Range(LastTrigger,25)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+	    DisplayStringHead("IMOEN2",@2001) // ~Hang on a sec.  Where'd I put that potion.  Ahh, there it is!~
+	    Wait(2)
+    	UseItem("#LPot01","IMOEN2")
+    	DisplayStringHead("IMOEN2",#16233)
+	    Wait(1)
+    	ActionOverride("IMOEN2",DestroyItem("#LPot01"))
+	    Wait(1)
+	    DisplayStringHead("IMOEN2",@2002) // ~Oops, that was the last of it.  Ok, I'm ready.~
+	    Wait(2)
+    	Continue()
+END
+
+IF
+	Clicked([ANYONE])
+	PartyHasItem("#LPot01")
+	!HasItem("#LPot01","IMOEN2")
+	IsValidForPartyDialogue("IMOEN2")
+	Range(LastTrigger,25)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+	    DisplayStringHead("IMOEN2",@2000) // ~Wait, <CHARNAME>, toss me that potion.~
+	    Wait(2)
+	    ActionOverride("IMOEN2",TakePartyItem("#LPot01"))
+	    SmallWait(10)
+    	UseItem("#LPot01","IMOEN2")
+    	DisplayStringHead("IMOEN2",#16233)
+	    Wait(1)
+    	ActionOverride("IMOEN2",DestroyItem("#LPot01"))
+	    Wait(1)
+	    DisplayStringHead("IMOEN2",@2002) // ~Oops, that was the last of it.  Ok, I'm ready.~
+	    Wait(2)
+    	Continue()
+END
+
+IF
+	Clicked([ANYONE])
+	PartyHasItem("#LPot01")
+	Range(LastTrigger,25)
+THEN
+	RESPONSE #100
+	    ActionOverride(Player1,TakePartyItem("#LPot01"))
+	    SmallWait(10)
+		ActionOverride(Player1,DestroyItem("#LPot01"))
+	    SmallWait(10)
+    	Continue()
+END
+

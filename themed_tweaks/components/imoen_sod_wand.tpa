@@ -1,0 +1,28 @@
+////////////////////////////////////////////////
+// Optional component that gives Imoen a wand // 
+// that will cast up to 3 magic missiles      //
+// for the Caelar Elite attack scene in SoD   //
+////////////////////////////////////////////////
+
+DEFINE_ACTION_FUNCTION imoen_sod_wand BEGIN
+	// A special wand of magic missiles that Imoen supposedly uses at the beginning of SoD
+	COPY ~%mod_root%/objects/#LWnd01.itm~ ~override~
+	    SAY NAME2 @1000 // ~Imoen's Wand of Magic Missiles~
+	    SAY DESC  @1001
+
+	// Put the cutspy where Imoen will fall so it can drop a wand
+	// For some reason it won't jump to her which is what I tried first
+	COPY_EXISTING ~BDCut02.bcs~ ~override~
+	   DECOMPILE_AND_PATCH BEGIN
+	      REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~CreateCreature("cutspy",[628.528],S)~ ~CreateCreature("cutspy",[757.588],S) SmallWait(20) GiveItemCreate("#LWnd01","CUTSPY",0,0,0)~
+	   END
+	BUT_ONLY_IF_IT_CHANGES
+
+	// Using the cutspy to drop Imoen's wand - its demise is dealt with later
+	COPY_EXISTING ~BD0103.bcs~ ~override~
+	   	DECOMPILE_AND_PATCH BEGIN
+	      REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride("cutspy",DestroySelf())~ ~~
+	      REPLACE_TEXTUALLY ~ReallyForceSpellRES("bdgassa1","IMOEN2")~ ~ReallyForceSpellRES("bdgassa1","IMOEN2") Kill("CUTSPY") ActionOverride("cutspy",DestroySelf())~
+		END
+	BUT_ONLY_IF_IT_CHANGES
+END

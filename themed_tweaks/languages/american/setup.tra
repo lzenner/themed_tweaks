@@ -1,0 +1,24 @@
+////////////////////////////////
+// INSTALLATION SETUP STRINGS //
+////////////////////////////////
+@0 		= ~SoD Off~
+@1		= ~Modmerge or Argent's DLC Merger is required before mods can be installed on this game.~
+@2		= ~This mod requires SoD or EET~
+@3		= ~Already installed via the Transitions mod~
+@4		= ~1 - Add stat-based observations and quest options~
+@5		= ~2 - Add a little snark to SoD dialogues~
+@6		= ~4 - Ditch Tour-Guide Corwin Schael~
+@7		= ~5 - Scout the Coast Way Bridge quest~
+@8		= ~3 - Allow PC to give Aid to Imoen after Caelar Elite attack in palace~
+
+
+////////////////////////////////
+// INSTALLATION SETUP STRINGS //
+////////////////////////////////
+@0 		= ~Imoen's Magic~
+@1		= ~Modmerge or Argent's DLC Merger is required before mods can be installed on this game.~
+@2		= ~This component requires SoD or EET~
+@3		= ~This component requires BG2EE or EET~
+@4		= ~Give Imoen a wand that will cast multiple Magic Missiles for attack scene in SoD~
+@5		= ~Give Imoen the innnate ability to cast Magic Missile for attack scene in the Promenade~
+

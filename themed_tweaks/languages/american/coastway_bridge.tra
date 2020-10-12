@@ -1,0 +1,10 @@
+/////////////////////////////////////////////////////////////////////
+// Dialogue lines for the optional coastway bridge quest component //
+// Used for coastway_bridge.d                                      //
+/////////////////////////////////////////////////////////////////////
+
+@1000 = ~You should send out scouts.  Caelar will be expecting us to cross here.~
+@1002 = ~Keep an eye out for Caelar's forces.  They could be lying in wait.~
+@1003 = ~Tell ya what, you keep an eye out for Caelar, and I'll go see what else is out there.~
+@1004 = ~That's actually not a bad idea.  I'll have Bence see to it.~
+@1005 = ~~

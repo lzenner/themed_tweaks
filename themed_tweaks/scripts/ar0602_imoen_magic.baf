@@ -1,0 +1,27 @@
+///////////////////////////////////////////////////////
+// First floor of Chateau Irenicus                   //
+// Puts some revitalization potions in the wall safe //
+// For Imoen to use before confronting Irenicus      //
+// And gives Imoen 2 magic missile innate abilities  //
+// Compiled via imoen_bg2_mm.tpa                     //
+///////////////////////////////////////////////////////
+
+IF
+	Exists("IMOEN2")
+	Global("#L_ImoenIMM","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_ImoenIMM","MYAREA",1)
+	    ActionOverride("IMOEN2",AddSpecialAbility("#LSPIN01"))  // Magic Missile
+	    ActionOverride("IMOEN2",AddSpecialAbility("#LSPIN01"))  // Magic Missile
+	    Continue()
+END
+
+IF
+	Global("#L_PotionsStashed","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_PotionsStashed","MYAREA",1)
+		ActionOverride("Picture1",CreateItem("#LPot01",10,0,0))
+		Continue()
+END

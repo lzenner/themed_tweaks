@@ -1,0 +1,8 @@
+////////////////////////////////////////////////////////
+// Optional stat based observations and quest options //
+// for the SoD campaign only                          //
+////////////////////////////////////////////////////////
+
+DEFINE_ACTION_FUNCTION stat_based_sod BEGIN
+	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/weak_poison.d~ USING ~%tra_loc%/%s/weak_poison.tra~
+END

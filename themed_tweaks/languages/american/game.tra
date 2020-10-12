@@ -1,0 +1,30 @@
+///////////////////////////////////////////
+// IMOEN'S CUSTOM WAND OF MAGIC MISSILES //
+///////////////////////////////////////////
+@1000	= ~Imoen's Wand of Magic Missiles~
+@1001	= ~This wand looks like an ordinary wand of Magic Missiles, but there's something just a little different about it.  When activated, the wand will eject up to three missiles of magical energy that dart forth and unerringly strike their target. This includes enemy creatures in a melee. The target creature must be seen or otherwise detected to be hit, however, so near-total concealment, such as that offered by arrow slits, can render the spell ineffective. Each missile will inflict 1d4+1 points of damage.
+
+STATISTICS:
+
+Charge abilities:
+  Up to 3 magic missiles will strike the target
+  Damage: 1d4+1
+  Range: 100 ft.
+  Area of Effect: 1 creature
+
+Requires:
+ 9 Intelligence
+
+Weight: 1~
+
+////////////////////////////////////////////////////////////////////////////////////////////
+// POTION FOUND IN CHATEAU IRENICUS SO IMOEN CAN REFRESH HER MAGIC MISSILE BEFORE EXITING //
+////////////////////////////////////////////////////////////////////////////////////////////
+@1002	= ~Potion of Revitalization~
+@1003	= ~This inviting potion removes fatigue of the body and the mind.
+
+STATISTICS:
+
+Special: Remove fatigue
+Special: Regain cast spells~
+

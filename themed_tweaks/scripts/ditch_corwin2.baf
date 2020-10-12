@@ -1,0 +1,12 @@
+//////////////////////////////////////////////////////////////////
+// Additional script to each town area where Corwin is an actor //
+//////////////////////////////////////////////////////////////////
+
+IF
+	OnCreation()
+	Global("#L_NoCorwin","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ActionOverride("bdschael",DestroySelf())
+		Continue()
+END

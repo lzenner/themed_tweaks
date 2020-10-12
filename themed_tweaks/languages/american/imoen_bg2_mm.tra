@@ -1,0 +1,7 @@
+////////////////////////////////////////////////////////
+// Dialogues related to Imoen's Magic Missile ability //
+////////////////////////////////////////////////////////
+
+@2000	= ~Wait, <CHARNAME>, toss me that potion.~ [IMOEN09]
+@2001	= ~Hang on a sec.  Where'd I put that potion.  Ahh, there it is!~ [IMOEN09]
+@2002	= ~Oops, that was the last of it.  Ok, I'm ready.~ [IMOEN07]

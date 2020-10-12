@@ -1,0 +1,38 @@
+/////////////////////////////////////////////////////////////////////////
+// Optional component that allows you to roam Baldur's Gate unescorted //
+/////////////////////////////////////////////////////////////////////////
+
+DEFINE_ACTION_FUNCTION ditch_corwin BEGIN
+	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/ditch_corwin.d~ USING ~%tra_loc%/%s/ditch_corwin.tra~
+
+	// Go through all the areas where corwin is an 'actor' and have her destroy herself
+	// if the player elects to wander the streets of Baldur's Gate alone
+	ACTION_DEFINE_ARRAY area_list BEGIN
+		bd0010
+		bd0020
+		bd0030
+   		bd0040
+   		bd0050
+	END
+
+	OUTER_FOR (area_num = 0; VARIABLE_IS_SET $area_list(~%area_num%~); ++area_num) BEGIN 
+		OUTER_SPRINT area_name $area_list("%area_num%")
+		LAF REPLACE_SCRIPT_BLOCK
+			INT_VAR 
+				only_once = 1
+			STR_VAR 
+				script = EVAL ~%area_name%~
+				match = ~ActionOverride("bdschael",JumpToObject(Player1))~
+				insert = ~%mod_root%/scripts/ditch_corwin1.baf~
+		END
+		EXTEND_TOP ~%area_name%.bcs~ ~%mod_root%/scripts/ditch_corwin2.baf~
+	END
+
+	EXTEND_TOP ~bd0104.bcs~ ~%mod_root%/scripts/ditch_corwin2.baf~
+	EXTEND_TOP ~bd0109.bcs~ ~%mod_root%/scripts/ditch_corwin2.baf~
+	EXTEND_TOP ~bd0111.bcs~ ~%mod_root%/scripts/ditch_corwin2.baf~
+	EXTEND_TOP ~bd0121.bcs~ ~%mod_root%/scripts/ditch_corwin2.baf~
+
+	// Hooks to allow for the conspiracy quest and drink scene if not done before
+	EXTEND_TOP ~bd0106.bcs~ ~%mod_root%/scripts/ditch_corwin_bd0106.baf~
+END

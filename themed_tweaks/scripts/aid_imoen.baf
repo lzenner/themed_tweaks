@@ -1,0 +1,24 @@
+////////////////////////////////////////////////
+// Globals needed for the Aid Imoen component //
+////////////////////////////////////////////////
+
+IF
+	Global("BD_IMOEN_DOWN","BD0103",1)
+	Global("#L_AICastHeal","GLOBAL",0)
+	SpellCastOnMe(Player1,0)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_AICastHeal","GLOBAL",1)
+		Continue()
+END
+
+IF
+	Global("BD_IMOEN_DOWN","BD0103",1)
+	Global("#L_AICastSlowPoison","GLOBAL",0)
+	SpellCastOnMe(Player1,INNATE_SLOW_POISON)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_AICastSlowPoison","GLOBAL",1)
+		Continue()
+END
+

@@ -1,0 +1,69 @@
+////////////////////////////////////////////
+// Hooks to start drink scene with Corwin //
+// and handle conspirators                //
+////////////////////////////////////////////
+
+IF
+	OnCreation()
+	Global("#L_NoCorwin","GLOBAL",1)
+	!Global("#L_CorwinDrink","GLOBAL",1)
+	!Global("bd_heard_seditious_talk","GLOBAL",1)
+	!PartyHasItem("bdscrl01")
+THEN
+	RESPONSE #100
+		ActionOverride("bdschael",DestroySelf())
+		Continue()
+END
+
+IF
+	OR(3)
+		Global("#L_CorwinDrink","GLOBAL",1)
+		Global("bd_heard_seditious_talk","GLOBAL",1)
+		PartyHasItem("bdscrl01")
+	!Exists("bdschael")
+THEN
+	RESPONSE #100
+		CreateCreature("bdschael",[448.627],NW)
+		Continue()
+END
+
+IF 
+	Global("#L_CorwinDrink","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_CorwinDrink","GLOBAL",2)
+		SetGlobal("bd_drinks_corwin","global",1)
+		AddJournalEntry(261579,INFO)
+		StartCutSceneMode()
+		ActionOverride("bdschael",FaceObject("BDCHARRA"))
+		ActionOverride(Player1,MoveToPoint([482.588]))
+		ActionOverride("BDCHARRA",MoveToPoint([408.593]))
+		ActionOverride("BDCHARRA",FaceObject("bdschael"))
+		ActionOverride(Player1,FaceObject("BDCHARRA"))
+		SmallWait(20)
+		DisplayStringHead("BDCHARRA",234866)
+		SmallWait(20)
+		DisplayStringHead(Myself,234867)
+		SmallWait(20)
+		DisplayStringHead("BDCHARRA",234868)
+		SmallWait(4)
+		ActionOverride("BDCHARRA",MoveToPoint([369.577]))
+		Wait(2)
+		ActionOverride("BDCHARRA",MoveToPoint([408.593]))
+		ActionOverride("BDCHARRA",FaceObject("bdschael"))
+		Wait(1)
+		ActionOverride(Player1,FaceObject("bdschael"))
+		ActionOverride("bdschael",FaceObject(Player1))
+		SmallWait(5)
+		EndCutSceneMode()
+		ActionOverride("bdschael",StartDialogNoSet(Player1))
+END
+
+IF
+	OR(2)
+		Global("bd_heard_seditious_talk","GLOBAL",1)
+		PartyHasItem("bdscrl01")
+THEN
+	RESPONSE #100
+		ActionOverride("bdschael",StartDialogNoSet(Player1))
+END

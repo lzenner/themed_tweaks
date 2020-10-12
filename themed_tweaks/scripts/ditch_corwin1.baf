@@ -1,0 +1,13 @@
+////////////////////////////////////////////////////////////////
+// Modified script in each town area where Corwin is an actor //
+////////////////////////////////////////////////////////////////
+
+IF
+	OnCreation()
+	Global("#L_NoCorwin","GLOBAL",0)
+THEN
+	RESPONSE #100
+		ActionOverride("bdschael",JumpToObject(Player1))
+		ActionOverride("bdschael",FaceObject(Player1))
+		Continue()
+END
