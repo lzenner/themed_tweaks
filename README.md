@@ -3,7 +3,7 @@
 ---      for EET, BG1EE, SoD, BG2EE, ToB      ---
 -------------------------------------------------
 
-This mod tweaks the storyline in various places.
+This mod main purpose is to augment the roleplaying options through the game series.  To that end, it tweaks the storyline in various places.
 
 COMPONENTS INCLUDE:	
 * SoD       - Give Imoen a special Wand of Magic Missiles for the attack in the palace

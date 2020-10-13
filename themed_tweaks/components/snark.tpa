@@ -7,11 +7,19 @@ DEFINE_ACTION_FUNCTION snark BEGIN
 	// Set stock strings used in dialogues to variables
 	ACTION_IF (GAME_IS ~eet~) THEN BEGIN
 		OUTER_SET minsc_kick_butt = 204101
-	END ELSE BEGIN
+	END ELSE ACTION_IF (GAME_INCUDES ~sod~) THEN BEGIN
 		OUTER_SET minsc_kick_butt = 4107
 	END
 
-	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/snark.d~ USING ~%tra_loc%/%s/snark.tra~
-	EXTEND_TOP ~BD0120.BCS~ ~%mod_root%/scripts/snark.baf~ // Sets the global to allow snarky comments
-	EXTEND_TOP ~BD0103.BCS~ ~%mod_root%/scripts/snark.baf~ // In case they skip Korlasz
+	ACTION_IF (GAME_INCLUDES ~sod~) THEN BEGIN
+		COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/sod_snark.d~ USING ~%tra_loc%/%s/snark.tra~
+		EXTEND_TOP ~BD0120.BCS~ ~%mod_root%/scripts/snark.baf~ // Sets the global to allow snarky comments
+		EXTEND_TOP ~BD0103.BCS~ ~%mod_root%/scripts/snark.baf~ // In case they skip Korlasz
+	END
+
+	ACTION_IF (GAME_IS ~bg2ee eet~) THEN BEGIN
+		COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/bg2_snark.d~ USING ~%tra_loc%/%s/snark.tra~
+		EXTEND_TOP ~AR0602.BCS~ ~%mod_root%/scripts/snark.baf~
+		EXTEND_TOP ~AR0700.BCS~ ~%mod_root%/scripts/snark.baf~
+	END
 END

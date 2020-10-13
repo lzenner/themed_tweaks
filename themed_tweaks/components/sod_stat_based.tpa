@@ -3,6 +3,6 @@
 // for the SoD campaign only                          //
 ////////////////////////////////////////////////////////
 
-DEFINE_ACTION_FUNCTION stat_based_sod BEGIN
-	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/weak_poison.d~ USING ~%tra_loc%/%s/weak_poison.tra~
+DEFINE_ACTION_FUNCTION sod_stat_based BEGIN
+	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/sod_stat_weak_poison.d~ USING ~%tra_loc%/%s/sod_stat_weak_poison.tra~
 END

@@ -4,7 +4,7 @@
 // for the Caelar Elite attack scene in SoD   //
 ////////////////////////////////////////////////
 
-DEFINE_ACTION_FUNCTION imoen_sod_wand BEGIN
+DEFINE_ACTION_FUNCTION sod_imoen_wand BEGIN
 	// A special wand of magic missiles that Imoen supposedly uses at the beginning of SoD
 	COPY ~%mod_root%/objects/#LWnd01.itm~ ~override~
 	    SAY NAME2 @1000 // ~Imoen's Wand of Magic Missiles~

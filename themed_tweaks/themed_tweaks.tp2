@@ -74,7 +74,7 @@ LANGUAGE ~American English~ ~american~
 BEGIN @50
 DESIGNATED 50
 LABEL "#L-SOD-IMOEN_WAND"
-REQUIRE_PREDICATE GAME_INCLUDES ~sod~ @4
+REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
 INCLUDE ~themed_tweaks/components/sod_imoen_wand.tpa~
 LAF sod_imoen_wand END
 
@@ -84,9 +84,9 @@ LAF sod_imoen_wand END
 BEGIN @60
 DESIGNATED 60
 LABEL "#L-SOD-AID_IMOEN"
-REQUIRE_PREDICATE GAME_INCLUDES ~sod~ @4
-INCLUDE ~themed_tweaks/components/aid_imoen.tpa~
-LAF aid_imoen END
+REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
+INCLUDE ~themed_tweaks/components/sod_aid_imoen.tpa~
+LAF sod_aid_imoen END
 
 ///////////////////////////////////////////////////
 // ADD STAT-BASED OBSERVATIONS AND QUEST OPTIONS //
@@ -94,7 +94,7 @@ LAF aid_imoen END
 BEGIN @70
 DESIGNATED 70
 LABEL "#L-SOD-STAT_BASED_OPTIONS"
-REQUIRE_PREDICATE GAME_INCLUDES ~sod~ @4
+REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
 INCLUDE ~themed_tweaks/components/sod_stat_based.tpa~
 LAF sod_stat_based END
 
@@ -104,7 +104,7 @@ LAF sod_stat_based END
 BEGIN @80
 DESIGNATED 80
 LABEL "#L-SOD-DITCH_CORWIN"
-REQUIRE_PREDICATE GAME_INCLUDES ~sod~ @4
+REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
 INCLUDE ~themed_tweaks/components/sod_ditch_corwin.tpa~
 LAF sod_ditch_corwin END
 
@@ -114,7 +114,7 @@ LAF sod_ditch_corwin END
 BEGIN @90
 DESIGNATED 90
 LABEL "#L-SOD-COASTWAY_BRIDGE_QUEST"
-REQUIRE_PREDICATE GAME_INCLUDES ~sod~ @4
+REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
 INCLUDE ~themed_tweaks/components/sod_coastway_bridge.tpa~
 LAF sod_coastway_bridge END
 

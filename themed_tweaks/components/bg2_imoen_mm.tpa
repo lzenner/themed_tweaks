@@ -3,7 +3,7 @@
 // Wand in SoD and Innate in BG2                                         //
 ///////////////////////////////////////////////////////////////////////////
 
-DEFINE_ACTION_FUNCTION imoen_bg2_mm BEGIN
+DEFINE_ACTION_FUNCTION bg2_imoen_mm BEGIN
 	
 	// An innate spell for Imoen so she'll have something to cast at Irenicus
 	COPY ~%mod_root%/objects/#LSPIN01.spl~ ~override~
@@ -23,11 +23,11 @@ DEFINE_ACTION_FUNCTION imoen_bg2_mm BEGIN
 		STR_VAR 
 			script = AR0602
 			match = ~Global("BG1Pantaloons","GLOBAL",0)~
-			insert = ~%mod_root%/scripts/ar0602_imoen_magic.baf~
+			insert = ~%mod_root%/scripts/bg2_imoen_magic_ar0602.baf~
 	END
 
 	// Modify cutscene to have Imoen take the potions of revitalization
-	EXTEND_TOP ~TELE0700.BCS~ ~%mod_root%/scripts/potion_tele0700.baf~ USING ~%tra_loc%/%s/dialogues.tra~
+	EXTEND_TOP ~TELE0700.BCS~ ~%mod_root%/scripts/bg2_imoen_magic_tele0700.baf~ USING ~%tra_loc%/%s/bg2_imoen_mm.tra~
 
     ACTION_IF GAME_IS ~eet~ BEGIN
 		// Imoen's dialogue file is different here
@@ -35,4 +35,7 @@ DEFINE_ACTION_FUNCTION imoen_bg2_mm BEGIN
 		// But for testing without it, this is very helpful
 		OUTER_SPRINT ~IMOEN_JOINED~ ~IMOEN2J~
     END
+
+    // Group dialogue about Imoen's new abilities
+//	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/bg2_imoen_mm.d~ USING ~%tra_loc%/%s/bg2_imoen_mm.tra~
 END

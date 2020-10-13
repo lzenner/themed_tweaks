@@ -2,6 +2,6 @@
 // Optional quest to scout the Coast Way Bridge //
 //////////////////////////////////////////////////
 
-DEFINE_ACTION_FUNCTION coastway_bridge BEGIN
+DEFINE_ACTION_FUNCTION sod_coastway_bridge BEGIN
    // 
 END
