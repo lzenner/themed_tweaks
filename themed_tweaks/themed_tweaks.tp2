@@ -146,6 +146,6 @@ BEGIN @180
 DESIGNATED 180
 LABEL "#L-TRANSITIONS-RESTORE_POWER"
 REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @5
-FORBID_COMPONENT ~transitions/transitions.tp2~ (ID_OF_LABEL ~transitions/transitions.tp2~ "#L-TRANSITIONS-RESTORE_POWER") @7
+REQUIRE_PREDICATE !(MOD_IS_INSTALLED ~transitions/transitions.tp2~ (ID_OF_LABEL ~transitions/transitions.tp2~ "#L-TRANSITIONS-RESTORE_POWER")) @7
 INCLUDE ~themed_tweaks/components/bg2_restore_power.tpa~
 LAF bg2_restore_power END

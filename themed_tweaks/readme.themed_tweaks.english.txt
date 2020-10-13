@@ -48,7 +48,19 @@ Adds a quest to scout the first bridge
 SoD/BG2 - Add a little snark - by Lauriel
 ------------------------------------------------------------------------
 Just adds some fun snarky comments to the otherwise stuffy or inane dialogue
-** PROGRESS: SoD palace snark is finished.  Only and one small comment in BG2 so far
+** PROGRESS: SoD palace snark is finished.  Camp 1 snark in development.  Only one small comment in BG2 so far
+
+------------------------------------------------------------------------
+SoD/BG2 - Remove cut scenes that the PC shouldn't be privy to - by Lauriel
+------------------------------------------------------------------------
+Unless there's a reason for the PC to view a scene, like a scrying pool, scenes about what is happening to other NPCs are skipped.
+** In development
+
+------------------------------------------------------------------------
+SoD/BG2 - Move dreams about Irenicus from SoD to BG2 - by Lauriel
+------------------------------------------------------------------------
+Irenicus shouldn't have enough influence over the PC to be able to invade her dreams in SoD.  Those dreams are moved to BG2 where they will be available for other mods to play with.
+** In development
 
 ------------------------------------------------------------------------
 BG2 - Give Imoen the innate ability to cast Magic Missile - by Lauriel & jastey
@@ -57,7 +69,7 @@ In case Imoen hasn't been dualed to a mage, she is given the innate ability to c
 ** TO-DO: Add group dialogue about her new abilities
 
 ------------------------------------------------------------------------
-BG2 - Use movie of Irenicus in hell as dream to restore Bhaalspawn powers
+BG2 - Use movie of Irenicus in hell as dream to restore Bhaalspawn powers - by Lauriel
 ------------------------------------------------------------------------
 This component is also a part of the Transitions mod.  Will be skipped if installed there.
 
@@ -66,13 +78,11 @@ PLANNED FUTURE ENHANCEMENTS
 ------------------------------------------------------------------------
 * BG1EE		- Give good-aligned reasons to go into peoples' homes
 * BG1EE     - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending
-* BG1EE		- Allow turning down airship thieves guild quest without violence
+* BG1EE		- Allow turning down airship thieves guild quest without aggroing the entire guild
 * BG1EE/SoD - Remove errant references to PC being Bhaalspawn, like Entar
 * SoD       - Add reactions/options when 'A Historical Treatise of Dragonspear Castle' is found
 * SoD       - Speed up the elevator in hell
 * SoD       - Speed up the prison/trial scenes
-* SoD/BG2EE - Remove cut scenes that the PC shouldn't be privy to 
-* SoD/BG2EE - Move dreams about Irenicus from SoD to BG2EE
 * BG2EE     - Distribute group's possessions from the beginning of BG2 to stores in Athkatla
 * ToB       - Add a "continue the adventure" ending with Bhaalspawn powers intact
 * EET       - Allow Imoen to transition to dual-class mage during her training with Duke Liia
