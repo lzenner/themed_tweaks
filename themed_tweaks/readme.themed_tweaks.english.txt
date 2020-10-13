@@ -56,6 +56,11 @@ In case Imoen hasn't been dualed to a mage, she is given the innate ability to c
 ** TO-DO: Add group dialogue about her new abilities
 
 ------------------------------------------------------------------------
+BG2 - Use movie of Irenicus in hell as dream to restore Bhaalspawn powers
+------------------------------------------------------------------------
+This component is also a part of the Transitions mod.  Will be skipped if installed there.
+
+------------------------------------------------------------------------
 PLANNED FUTURE ENHANCEMENTS
 ------------------------------------------------------------------------
 * BG1EE		- Give good-aligned reasons to go into peoples' homes
@@ -69,7 +74,6 @@ PLANNED FUTURE ENHANCEMENTS
 * SoD/BG2EE - Remove cut scenes that the PC shouldn't be privy to 
 * SoD/BG2EE - Move dreams about Irenicus from SoD to BG2EE
 * BG2EE     - Distribute group's possessions from the beginning of BG2 to stores in Athkatla
-* BG2EE     - Move restoration of powers from Transitions to here before going live
 * ToB       - Add a "continue the adventure" ending with Bhaalspawn powers intact
 * EET       - Allow Imoen to transition to dual-class mage during her training with Duke Liia
 * EET       - Remove the recap of information the PC should know from the first BG2 dialogues
