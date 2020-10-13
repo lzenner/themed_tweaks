@@ -9,7 +9,7 @@ GENERAL
 ------------------------------------------------------------------------
 This mod requires BG1EE, SoD, BG2EE or EET.
 
-Themed Tweaks's main purpose is to augment role-playing options through the game series.  To that end, it tweaks the storyline in various places.
+This mod main purpose is to augment the role-playing environment throughout the game series.  To that end, it tweaks the storyline in various places.
 
 ------------------------------------------------------------------------
 DESCRIPTION
@@ -41,7 +41,7 @@ Allows the PC to wander Baldur's Gate with or without Corwin
 SoD - Scouting the Coast Way Crossing - by Lauriel
 ------------------------------------------------------------------------
 Adds a quest to scout the first bridge
-** TO-DO: Needs to be scripted
+** In development
 
 ------------------------------------------------------------------------
 SoD/BG2 - Add a little snark - by Lauriel
@@ -67,7 +67,6 @@ PLANNED FUTURE ENHANCEMENTS
 * BG1EE     - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending
 * BG1EE		- Allow turning down airship thieves guild quest without violence
 * BG1EE/SoD - Remove errant references to PC being Bhaalspawn, like Entar
-* SoD       - Quest: Scouting the Coast Way Crossing
 * SoD       - Add reactions/options when 'A Historical Treatise of Dragonspear Castle' is found
 * SoD       - Speed up the elevator in hell
 * SoD       - Speed up the prison/trial scenes
