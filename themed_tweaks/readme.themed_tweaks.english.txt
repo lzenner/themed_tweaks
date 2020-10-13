@@ -29,7 +29,8 @@ Allows the PC to render aid to Imoen after Caelar's elite have been defeated
 SoD - Add stat-based observations and options - by Lauriel
 ------------------------------------------------------------------------
 Adds comments about the situation based upon INT and WIS and quest options based on various stats
-** TO-DO: Much to be added yet
+** PROGRESS: So far only observations about the weak poison have been put in
+** TO-DO: Add dialogue options to Caelar at bridge about weak-poison
 
 ------------------------------------------------------------------------
 SoD - Ditch tour-guide Corwin Schael - by Lauriel
@@ -47,7 +48,7 @@ Adds a quest to scout the first bridge
 SoD/BG2 - Add a little snark - by Lauriel
 ------------------------------------------------------------------------
 Just adds some fun snarky comments to the otherwise stuffy or inane dialogue
-** TO-DO: Only a small portion is actually finished
+** PROGRESS: SoD palace snark is finished.  Only and one small comment in BG2 so far
 
 ------------------------------------------------------------------------
 BG2 - Give Imoen the innate ability to cast Magic Missile - by Lauriel & jastey
