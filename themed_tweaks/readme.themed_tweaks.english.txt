@@ -36,7 +36,6 @@ Adds comments about the situation based upon INT and WIS and quest options based
 SoD - Ditch tour-guide Corwin Schael - by Lauriel
 ------------------------------------------------------------------------
 Allows the PC to wander Baldur's Gate with or without Corwin
-** TO-DO: Remove journal entry about Corwin being a tour guide - or say you refused her role as tour guide
 
 ------------------------------------------------------------------------
 SoD - Scouting the Coast Way Crossing - by Lauriel

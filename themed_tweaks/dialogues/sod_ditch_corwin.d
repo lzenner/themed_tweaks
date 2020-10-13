@@ -41,10 +41,10 @@ END
 APPEND BDSCHAEL
 	IF ~~ THEN BEGIN STAY_PUT
 		SAY @806 /* ~I don't think that's such a good idea.~ */
-		IF ~OR(2) !Global("BD_MET_OPHYLLIS","GLOBAL",0) !Global("bd_ophyllis_mentioned","locals",1)~ THEN REPLY @807 /* ~Your concerns are noted.  Stay here nonetheless.~ */ DO ~SetGlobal("#L_NoCorwin","GLOBAL",1) AddJournalEntry(259624,INFO) AddJournalEntry(259622,QUEST) AddJournalEntry(266719,QUEST)~ EXIT
-		IF ~Global("#L_Snark","GLOBAL",1) OR(2) !Global("BD_MET_OPHYLLIS","GLOBAL",0) !Global("bd_ophyllis_mentioned","locals",1)~ THEN REPLY @808 /* ~Honestly, Captain Corwin, the only thing that matters here is that I do think it's a good idea.~ */ DO ~SetGlobal("#L_NoCorwin","GLOBAL",1) AddJournalEntry(259624,INFO) AddJournalEntry(259622,QUEST) AddJournalEntry(266719,QUEST)~ EXIT
-		IF ~Global("BD_MET_OPHYLLIS","GLOBAL",0) Global("bd_ophyllis_mentioned","locals",1)~ THEN REPLY @807 /* ~Your concerns are noted.  Stay here nonetheless.~ */ DO ~SetGlobal("#L_NoCorwin","GLOBAL",1) AddJournalEntry(259624,INFO) AddJournalEntry(259622,QUEST) AddJournalEntry(266719,QUEST) AddJournalEntry(259625,QUEST)~ EXIT
-		IF ~Global("#L_Snark","GLOBAL",1) Global("BD_MET_OPHYLLIS","GLOBAL",0) Global("bd_ophyllis_mentioned","locals",1)~ THEN REPLY @808 /* ~Honestly, Captain Corwin, the only thing that matters here is that I do think it's a good idea.~ */ DO ~SetGlobal("#L_NoCorwin","GLOBAL",1) AddJournalEntry(259624,INFO) AddJournalEntry(259622,QUEST) AddJournalEntry(266719,QUEST) AddJournalEntry(259625,QUEST)~ EXIT
+		IF ~OR(2) !Global("BD_MET_OPHYLLIS","GLOBAL",0) !Global("bd_ophyllis_mentioned","locals",1)~ THEN REPLY @807 /* ~Your concerns are noted.  Stay here nonetheless.~ */ DO ~SetGlobal("#L_NoCorwin","GLOBAL",1)~ EXIT
+		IF ~Global("#L_Snark","GLOBAL",1) OR(2) !Global("BD_MET_OPHYLLIS","GLOBAL",0) !Global("bd_ophyllis_mentioned","locals",1)~ THEN REPLY @808 /* ~Honestly, Captain Corwin, the only thing that matters here is that I do think it's a good idea.~ */ DO ~SetGlobal("#L_NoCorwin","GLOBAL",1)~ EXIT
+		IF ~Global("BD_MET_OPHYLLIS","GLOBAL",0) Global("bd_ophyllis_mentioned","locals",1)~ THEN REPLY @807 /* ~Your concerns are noted.  Stay here nonetheless.~ */ DO ~SetGlobal("#L_NoCorwin","GLOBAL",1) AddJournalEntry(259625,QUEST)~ EXIT
+		IF ~Global("#L_Snark","GLOBAL",1) Global("BD_MET_OPHYLLIS","GLOBAL",0) Global("bd_ophyllis_mentioned","locals",1)~ THEN REPLY @808 /* ~Honestly, Captain Corwin, the only thing that matters here is that I do think it's a good idea.~ */ DO ~SetGlobal("#L_NoCorwin","GLOBAL",1) AddJournalEntry(259625,QUEST)~ EXIT
 	END
 
 	IF ~~ THEN BEGIN CORWIN_DRINK_1
