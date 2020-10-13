@@ -25,7 +25,7 @@
 @140	= ~SoD/BG2EE - Remove cut scenes that the PC shouldn't be privy to~
 @150	= ~SoD/BG2EE - Move dreams about Irenicus from SoD to BG2EE~
 @160	= ~BG2EE - Distribute group's possessions from the beginning of BG2 to stores in Athkatla~
-@170	= ~BG2EE - Give Imoen the innnate ability to cast Magic Missile for attack scene in the Promenade~
+@170	= ~BG2EE - Give Imoen innnate Magic Missiles for attack scene~
 @180	= ~BG2EE - Move restoration of powers from Transitions to here before going live~
 @190 	= ~ToB - Add a "continue the adventure" ending with Bhaalspawn powers intact~
 @200	= ~EET - Allow Imoen to transition to dual-class mage during her training with Duke Liia~

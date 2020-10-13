@@ -58,17 +58,21 @@ ALTER_TRANS BDSCHAEL
 		"EPILOGUE" ~EXTERN BDBELT BELT_HAVE_ROOM~
 	END
 
+%BELT_INSISTS_EXTEND_BOTTOM%
+
 APPEND BDBELT
 	IF ~~ THEN BELT_HAVE_ROOM
 		SAY @8012 /* ~I want to make sure you rest here tonight, <CHARNAME>, when you're finished with your preparations.~ */
 		++ @8013 /* ~Imoen and Fenster are up there, I'd not want to disturb them.~ */ EXTERN ~BDLIIA~ LIIA_IMOEN_ROOM_OK
 	END
 
-	IF ~~ THEN BELT_INSIST
-		SAY @8015 /* ~I rather insist upon this, <CHARNAME>.  It's for your safety.~ */
-		++ @8016 /* ~My safety?  That's a bit ironic.~ */ + BELT_NO_SNARK
-		+ ~OR(2) Dead("bdkorlas") Global("BD_KORLASZ_SURRENDER","GLOBAL",1) Global("#L_Snark","GLOBAL",1)~ + @8017 /* ~Like how you managed to keep Imoen safe?  Or that sword of Sarevok's?~ */ + BELT_SNARK
-	END
+	%BELT_INSISTS_BLOCK%
+
+//	IF ~~ THEN BELT_INSIST
+//		SAY @8015 /* ~I rather insist upon this, <CHARNAME>.  It's for your safety.~ */
+//		++ @8016 /* ~My safety?  That's a bit ironic.~ */ + BELT_NO_SNARK
+//		+ ~OR(2) Dead("bdkorlas") Global("BD_KORLASZ_SURRENDER","GLOBAL",1) Global("#L_Snark","GLOBAL",1)~ + @8017 /* ~Like how you managed to keep Imoen safe?  Or that sword of Sarevok's?~ */ + BELT_SNARK
+//	END
 
 	IF ~~ THEN BELT_SNARK
 		SAY @8018 /* ~err...I was going to mention that it went missing...~ */
@@ -90,7 +94,7 @@ END
 APPEND BDLIIA
 	IF ~~ THEN LIIA_IMOEN_ROOM_OK
 		SAY @8014 /* ~Imoen will be moved to her quarters shortly.  You will not disturb her.~ */
-		IF ~~ THEN EXTERN ~BDBELT~ BELT_INSIST
+		%GOTO_BELT_INSISTS_BLOCK%
 	END
 END
 

@@ -7,11 +7,31 @@ DEFINE_ACTION_FUNCTION snark BEGIN
 	// Set stock strings used in dialogues to variables
 	ACTION_IF (GAME_IS ~eet~) THEN BEGIN
 		OUTER_SET minsc_kick_butt = 204101
-	END ELSE ACTION_IF (GAME_INCUDES ~sod~) THEN BEGIN
+	END ELSE ACTION_IF (GAME_INCLUDES ~sod~) THEN BEGIN
 		OUTER_SET minsc_kick_butt = 4107
 	END
 
 	ACTION_IF (GAME_INCLUDES ~sod~) THEN BEGIN
+		// Get block from Transitions we can tie in to 
+		// for the dialogue about staying in the room
+		OUTER_SPRINT GOTO_BELT_INSISTS_BLOCK ~~~~~IF ~~ THEN EXTERN ~BDBELT~ BELT_INSIST~~~~~
+		OUTER_SPRINT BELT_INSISTS_BLOCK ~~~~~IF ~~ THEN BELT_INSIST
+	SAY @8015 
+	++ @8016 + BELT_NO_SNARK
+	+ ~OR(2) Dead("bdkorlas") Global("BD_KORLASZ_SURRENDER","GLOBAL",1) Global("#L_Snark","GLOBAL",1)~ + @8017 + BELT_SNARK
+END~~~~~
+		OUTER_SPRINT BELT_INSISTS_EXTEND_BOTTOM ~~
+
+		ACTION_IF (MOD_IS_INSTALLED ~transitions.tp2~ (ID_OF_LABEL "transitions.tp2" "#L-TRANSITIONS-MAIN")) BEGIN
+			OUTER_SET TRANS_FOR_YOUR_SAFETY = STATE_WHICH_SAYS 8015 IN ~weidu_external/workspace/themed_tweaks/languages/%s/snark.tra~ FROM ~BDBELT~
+			ACTION_IF TRANS_FOR_YOUR_SAFETY > ~-1~ BEGIN
+				OUTER_SPRINT GOTO_BELT_INSISTS_BLOCK ~~~~~IF ~~ THEN EXTERN ~BDBELT~ %TRANS_FOR_YOUR_SAFETY%~~~~~
+				OUTER_SPRINT BELT_INSISTS_EXTEND_BOTTOM ~~~~~EXTEND_BOTTOM BDBELT %TRANS_FOR_YOUR_SAFETY%
+	+ ~OR(2) Dead("bdkorlas") Global("BD_KORLASZ_SURRENDER","GLOBAL",1) Global("#L_Snark","GLOBAL",1)~ + @8017 + BELT_SNARK
+END~~~~~
+				OUTER_SPRINT BELT_INSISTS_BLOCK ~~
+			END
+		END
 		COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/sod_snark.d~ USING ~%tra_loc%/%s/snark.tra~
 		EXTEND_TOP ~BD0120.BCS~ ~%mod_root%/scripts/snark.baf~ // Sets the global to allow snarky comments
 		EXTEND_TOP ~BD0103.BCS~ ~%mod_root%/scripts/snark.baf~ // In case they skip Korlasz

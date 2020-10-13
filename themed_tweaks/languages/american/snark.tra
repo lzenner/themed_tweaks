@@ -3,6 +3,9 @@
 // Used for snark.d                                //
 /////////////////////////////////////////////////////
 
+// BG2
+@3000	= ~Only partially?~
+
 // Response to Corwin's stupid question...
 @8000	= ~How the hells should I know?~
 

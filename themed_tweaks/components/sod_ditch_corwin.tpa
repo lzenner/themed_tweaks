@@ -3,7 +3,7 @@
 /////////////////////////////////////////////////////////////////////////
 
 DEFINE_ACTION_FUNCTION sod_ditch_corwin BEGIN
-	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/ditch_corwin.d~ USING ~%tra_loc%/%s/ditch_corwin.tra~
+	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/sod_ditch_corwin.d~ USING ~%tra_loc%/%s/sod_ditch_corwin.tra~
 
 	// Go through all the areas where corwin is an 'actor' and have her destroy herself
 	// if the player elects to wander the streets of Baldur's Gate alone
