@@ -106,7 +106,7 @@ ALTER_TRANS BDCORWIN
 	BEGIN 7 END
 	BEGIN 0 END
 	BEGIN
-		"REPLY" ~@8026~ // ~I'm your best chance?  I'm going to step down from this pedestal you've put me on, if you don't mind.~
+		"REPLY" ~@8026~ // ~I'm your best chance?  Don't be absurd.~
 	END
 EXTEND_BOTTOM BDCORWIN 7
 	IF ~BeenInParty("Xan")~ THEN REPLY @8027 /* ~I'm your best chance?  Xan was right.  We're doomed!~ */ GOTO 8
