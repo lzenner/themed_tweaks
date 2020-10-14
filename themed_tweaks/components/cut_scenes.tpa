@@ -1,0 +1,26 @@
+//////////////////////////////////////////////
+// Remove cut scenes not viewable by the PC //
+//////////////////////////////////////////////
+
+
+DEFINE_ACTION_FUNCTION cut_scenes BEGIN
+
+	ACTION_IF GAME_INCLUDES ~sod~ BEGIN
+		// Set some variables
+		OUTER_SET SOD_JOURNAL_01 = 59633
+
+		ACTION_IF GAME_IS ~eet~ BEGIN
+			OUTER_SET SOD_JOURNAL_01 = 259633
+		END
+
+		// Remove cut scenes that are started via dialogues
+		COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/sod_cut_scenes.d~
+
+		// Take out the scene with Irenicus, Caelar and whatshisface
+		COPY_EXISTING ~BDCUT10.BCS~ ~override~
+			DECOMPILE_AND_PATCH BEGIN
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~FadeToColor([0.0],0)~ ~~
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~StartCutSceneEx("bdcut11",TRUE)~ ~MultiPlayerSync() FadeFromColor([20.0],0) EndCutSceneMode()~
+			END
+	END
+END

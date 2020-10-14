@@ -129,6 +129,28 @@ REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) OR (GAME_INCLUDES ~sod~) @6
 INCLUDE ~themed_tweaks/components/snark.tpa~
 LAF snark END
 
+/////////////////////////////////////////
+// REMOVE CUT-SCENES THAT PC CAN'T SEE //
+/////////////////////////////////////////
+BEGIN @140
+DESIGNATED 140
+LABEL "#L-SOD-CUTSCENES"
+LABEL "#L-BG2-CUTSCENES"
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) OR (GAME_INCLUDES ~sod~) @6
+INCLUDE ~themed_tweaks/components/cut_scenes.tpa~
+LAF cut_scenes END
+
+///////////////////////////////////////
+// ADD SOME SNARK TO STUFFY DIALOGUE //
+///////////////////////////////////////
+BEGIN @150
+DESIGNATED 150
+LABEL "#L-SOD-IRENICUS_DREAMS"
+LABEL "#L-BG2-IRENICUS_DREAMS"
+REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) OR (GAME_INCLUDES ~sod~) @6
+INCLUDE ~themed_tweaks/components/irenicus_dreams.tpa~
+LAF irenicus_dreams END
+
 ///////////////////////////////////////
 // IMOEN GIVEN MAGIC MISSILE ABILITY //
 ///////////////////////////////////////

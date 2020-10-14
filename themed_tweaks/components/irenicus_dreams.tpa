@@ -1,0 +1,7 @@
+////////////////////////////////////////
+// Move dreams from SoD and make them //
+// available to be viewed in BG2      //
+////////////////////////////////////////
+
+DEFINE_ACTION_FUNCTION irenicus_dreams BEGIN
+END

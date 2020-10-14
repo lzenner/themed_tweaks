@@ -9,9 +9,9 @@ DEFINE_ACTION_FUNCTION sod_aid_imoen BEGIN
 
 	COPY_EXISTING ~BD0103.BCS~ ~override~
 		DECOMPILE_AND_PATCH BEGIN
-			REPLACE_TEXTUALLY ~XEquipItem("NOCIRCLE","IMOEN2",SLOT_RING_LEFT,EQUIP)~ ~~
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~XEquipItem("NOCIRCLE","IMOEN2",SLOT_RING_LEFT,EQUIP)~ ~~
 			// Keep the original spell in there so Imoen's Magic Wand component can find it
-			REPLACE_TEXTUALLY ~ReallyForceSpellRES("bdgassa1","IMOEN2")~ ~ReallyForceSpellRES("bdgassa1","IMOEN2") ApplySpellRES("#LSLEEP","IMOEN2") ActionOverride("IMOEN2",SetSequence(SEQ_SLEEP))~
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ReallyForceSpellRES("bdgassa1","IMOEN2")~ ~ReallyForceSpellRES("bdgassa1","IMOEN2") ApplySpellRES("#LSLEEP","IMOEN2") ActionOverride("IMOEN2",SetSequence(SEQ_SLEEP))~
 		END
 
 	EXTEND_TOP ~BDIMOEN.BCS~ ~%mod_root%/scripts/sod_aid_imoen.baf~
