@@ -12,8 +12,17 @@ DEFINE_ACTION_FUNCTION snark BEGIN
 	END
 
 	ACTION_IF (GAME_INCLUDES ~sod~) THEN BEGIN
-		// Get block from Transitions we can tie in to 
-		// for the dialogue about staying in the room
+		// Snark about sword goes with discussion about room
+		// Transitions needed to have room discussion to make sure the PC has a room
+		// Snark will have to add to that dialogue
+		// Put code into variables first as if Transitions isn't loaded
+		OUTER_SPRINT GOTO_LIIA_WONT_DISTURB_IMOEN ~~~~~++ @8013 EXTERN ~BDLIIA~ LIIA_IMOEN_ROOM_OK~~~~~
+		OUTER_SPRINT LIIA_WONT_DISTURB_IMOEN ~~~~~APPEND BDLIIA
+	IF ~~ THEN LIIA_IMOEN_ROOM_OK
+		SAY @8014
+		%GOTO_BELT_INSISTS_BLOCK%
+	END
+END~~~~~
 		OUTER_SPRINT GOTO_BELT_INSISTS_BLOCK ~~~~~IF ~~ THEN EXTERN ~BDBELT~ BELT_INSIST~~~~~
 		OUTER_SPRINT BELT_INSISTS_BLOCK ~~~~~IF ~~ THEN BELT_INSIST
 	SAY @8015 
@@ -21,8 +30,16 @@ DEFINE_ACTION_FUNCTION snark BEGIN
 	+ ~OR(2) Dead("bdkorlas") Global("BD_KORLASZ_SURRENDER","GLOBAL",1) Global("#L_Snark","GLOBAL",1)~ + @8017 + BELT_SNARK
 END~~~~~
 		OUTER_SPRINT BELT_INSISTS_EXTEND_BOTTOM ~~
+		OUTER_SPRINT GOTO_BELT_WRAP_IT_UP ~++ @8021 + BELT_NO_SNARK~
+		OUTER_SPRINT BELT_WRAP_IT_UP ~~~~~IF ~~ THEN BELT_NO_SNARK
+	SAY @8022 /* ~Be that as it may, if tonight's attack would have happened when you were staying outside the palace, you'd not have had the Flaming Fist to help you fend them off.~ */
+	= @8023 /* ~You would not have been able to defend yourself from them all.~ */
+	++ @8024 /* ~Well, that is true.  You're right, I am safer here.~ */ + 41
+END~~~~~
 
 		ACTION_IF (MOD_IS_INSTALLED ~transitions.tp2~ (ID_OF_LABEL "transitions.tp2" "#L-TRANSITIONS-MAIN")) BEGIN
+			// Get block from Transitions we can tie in to 
+			// for the dialogue about staying in the room
 			OUTER_SET TRANS_FOR_YOUR_SAFETY = STATE_WHICH_SAYS 8015 IN ~weidu_external/workspace/themed_tweaks/languages/%s/snark.tra~ FROM ~BDBELT~
 			ACTION_IF TRANS_FOR_YOUR_SAFETY > ~-1~ BEGIN
 				OUTER_SPRINT GOTO_BELT_INSISTS_BLOCK ~~~~~IF ~~ THEN EXTERN ~BDBELT~ %TRANS_FOR_YOUR_SAFETY%~~~~~
@@ -30,6 +47,17 @@ END~~~~~
 	+ ~OR(2) Dead("bdkorlas") Global("BD_KORLASZ_SURRENDER","GLOBAL",1) Global("#L_Snark","GLOBAL",1)~ + @8017 + BELT_SNARK
 END~~~~~
 				OUTER_SPRINT BELT_INSISTS_BLOCK ~~
+				OUTER_SET TRANS_LIIA_WONT_DISTURB_IMOEN = STATE_WHICH_SAYS 8014 IN ~weidu_external/workspace/themed_tweaks/languages/%s/snark.tra~ FROM ~BDLIIA~
+				ACTION_IF TRANS_LIIA_WONT_DISTURB_IMOEN > ~-1~ BEGIN
+					OUTER_SPRINT GOTO_LIIA_WONT_DISTURB_IMOEN ~~~~~++ @8013 EXTERN ~BDLIIA~ %TRANS_LIIA_WONT_DISTURB_IMOEN%~~~~~
+					OUTER_SPRINT LIIA_WONT_DISTURB_IMOEN ~~
+				END
+
+				OUTER_SET TRANS_WRAP_IT_UP = STATE_WHICH_SAYS 8022 IN ~weidu_external/workspace/themed_tweaks/languages/%s/snark.tra~ FROM ~BDBELT~
+				ACTION_IF TRANS_WRAP_IT_UP > ~-1~ BEGIN
+					OUTER_SPRINT GOTO_BELT_WRAP_IT_UP ~++ @8021 + %TRANS_WRAP_IT_UP%~
+					OUTER_SPRINT BELT_WRAP_IT_UP ~~
+				END
 			END
 		END
 		COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/sod_snark.d~ USING ~%tra_loc%/%s/snark.tra~

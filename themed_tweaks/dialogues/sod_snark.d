@@ -63,11 +63,11 @@ ALTER_TRANS BDSCHAEL
 APPEND BDBELT
 	IF ~~ THEN BELT_HAVE_ROOM
 		SAY @8012 /* ~I want to make sure you rest here tonight, <CHARNAME>, when you're finished with your preparations.~ */
-		++ @8013 /* ~Imoen and Fenster are up there, I'd not want to disturb them.~ */ EXTERN ~BDLIIA~ LIIA_IMOEN_ROOM_OK
+		%GOTO_LIIA_WONT_DISTURB_IMOEN%
+//		++ @8013 /* ~Imoen and Fenster are up there, I'd not want to disturb them.~ */ EXTERN ~BDLIIA~ LIIA_IMOEN_ROOM_OK
 	END
 
 	%BELT_INSISTS_BLOCK%
-
 //	IF ~~ THEN BELT_INSIST
 //		SAY @8015 /* ~I rather insist upon this, <CHARNAME>.  It's for your safety.~ */
 //		++ @8016 /* ~My safety?  That's a bit ironic.~ */ + BELT_NO_SNARK
@@ -81,22 +81,25 @@ APPEND BDBELT
 
 	IF ~~ THEN BELT_SNARK_2
 		SAY @8020 /* ~That I didn't know.~ */
-		++ @8021 /* ~You should probably have someone look into that.  It could end up being important.~ */ + BELT_NO_SNARK
+		%GOTO_BELT_WRAP_IT_UP%
+//		++ @8021 /* ~You should probably have someone look into that.  It could end up being important.~ */ + BELT_NO_SNARK
 	END
 
-	IF ~~ THEN BELT_NO_SNARK
-		SAY @8022 /* ~Be that as it may, if tonight's attack would have happened when you were staying outside the palace, you'd not have had the Flaming Fist to help you fend them off.~ */
-		= @8023 /* ~You would not have been able to defend yourself from them all.~ */
-		++ @8024 /* ~Well, that is true.  You're right, I am safer here.~ */ + 41
-	END
+	%BELT_WRAP_IT_UP%
+//	IF ~~ THEN BELT_NO_SNARK
+//		SAY @8022 /* ~Be that as it may, if tonight's attack would have happened when you were staying outside the palace, you'd not have had the Flaming Fist to help you fend them off.~ */
+//		= @8023 /* ~You would not have been able to defend yourself from them all.~ */
+//		++ @8024 /* ~Well, that is true.  You're right, I am safer here.~ */ + 41
+//	END
 END
 
-APPEND BDLIIA
-	IF ~~ THEN LIIA_IMOEN_ROOM_OK
-		SAY @8014 /* ~Imoen will be moved to her quarters shortly.  You will not disturb her.~ */
-		%GOTO_BELT_INSISTS_BLOCK%
-	END
-END
+%LIIA_WONT_DISTURB_IMOEN%
+//APPEND BDLIIA
+//	IF ~~ THEN LIIA_IMOEN_ROOM_OK
+//		SAY @8014 /* ~Imoen will be moved to her quarters shortly.  You will not disturb her.~ */
+//		%GOTO_BELT_INSISTS_BLOCK%
+//	END
+//END
 
 // Response to ridiculaous statement from Corwin
 ALTER_TRANS BDCORWIN
