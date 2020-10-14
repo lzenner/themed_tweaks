@@ -95,8 +95,8 @@ BEGIN @70
 DESIGNATED 70
 LABEL "#L-SOD-STAT_BASED_OPTIONS"
 REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
-INCLUDE ~themed_tweaks/components/sod_stat_based.tpa~
-LAF sod_stat_based END
+INCLUDE ~themed_tweaks/components/sod_stat_options.tpa~
+LAF sod_stat_options END
 
 //////////////////
 // DITCH CORWIN //
