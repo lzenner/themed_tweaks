@@ -6,7 +6,7 @@
 DEFINE_ACTION_FUNCTION cut_scenes BEGIN
 
 	ACTION_IF GAME_INCLUDES ~sod~ BEGIN
-		// Set some variables
+		// Set required variables based on installed game
 		OUTER_SET SOD_JOURNAL_01 = 59633
 
 		ACTION_IF GAME_IS ~eet~ BEGIN
