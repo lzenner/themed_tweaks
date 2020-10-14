@@ -3,6 +3,9 @@
 // for the SoD campaign only                          //
 ////////////////////////////////////////////////////////
 
-DEFINE_ACTION_FUNCTION sod_stat_based BEGIN
+DEFINE_ACTION_FUNCTION sod_stat_options BEGIN
+	EXTEND_TOP ~BD0120.BCS~ ~%mod_root%/scripts/sod_stat_options.baf~ // Set global to use stat-based options
+	EXTEND_TOP ~BD0103.BCS~ ~%mod_root%/scripts/sod_stat_options.baf~ // In case they skip Korlasz
+
 	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/sod_stat_weak_poison.d~ USING ~%tra_loc%/%s/sod_stat_weak_poison.tra~
 END
