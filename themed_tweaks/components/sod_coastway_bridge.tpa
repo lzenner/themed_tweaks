@@ -3,5 +3,12 @@
 //////////////////////////////////////////////////
 
 DEFINE_ACTION_FUNCTION sod_coastway_bridge BEGIN
-   // 
+   // Using #L_CWBridgeQuest Global = 1 to mean PC thought of the idea
+   // and the area version as a means to track the progress of the quest
+
+   	// Define the journal entries to be used during the quest
+	ADD_JOURNAL @3000 @3001 @3002 USING ~%tra_loc%/%s/sod_coastway_bridge.tra~
+
+	// Compile dialogues
+	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/sod_coastway_bridge.d~ USING ~%tra_loc%/%s/sod_coastway_bridge.tra~
 END

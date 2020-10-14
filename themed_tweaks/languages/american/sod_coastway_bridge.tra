@@ -1,10 +1,24 @@
 /////////////////////////////////////////////////////////////////////
 // Dialogue lines for the optional coastway bridge quest component //
-// Used for coastway_bridge.d                                      //
 /////////////////////////////////////////////////////////////////////
 
-@1000 = ~You should send out scouts.  Caelar will be expecting us to cross here.~
-@1002 = ~Keep an eye out for Caelar's forces.  They could be lying in wait.~
-@1003 = ~Tell ya what, you keep an eye out for Caelar, and I'll go see what else is out there.~
-@1004 = ~That's actually not a bad idea.  I'll have Bence see to it.~
-@1005 = ~~
+/////////////////////
+// Journal entries //
+/////////////////////
+@3000	= ~Scout the Coastway Bridge
+Caelar could be expecting our forces to cross here.  We need to stay alert.~
+@3001	= ~Scout the Coastway Bridge
+The locals say the the bridge is being held by Caelar's forces.~
+@3002	= ~Scout the Coastway Bridge
+I tried to take on Caelar's forces at the bridge on my own.  The results were less than stellar.~
+
+
+//////////////////////////
+// Initialize the quest //
+//////////////////////////
+@2000 = ~You should send out scouts.  Caelar will be expecting us to cross here.~
+@2001 = ~That's actually not a bad idea.  I'll have Bence see to it.~
+@2002 = ~While you do that, I'll do a little scouting on my own. I don't want any surprises before we cross the Winding Water.~
+@2003 = ~Keep an eye out for Caelar's forces.  They could be lying in wait.~
+@2004 = ~Tell ya what, you keep an eye out for Caelar, and I'll go see what else is out there.~
+@2005 = ~We should keep an eye out for Caelar's forces.  They could be lying in wait.~
