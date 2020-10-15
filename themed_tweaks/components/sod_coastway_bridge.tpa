@@ -3,11 +3,28 @@
 //////////////////////////////////////////////////
 
 DEFINE_ACTION_FUNCTION sod_coastway_bridge BEGIN
-   // Using #L_CWBridgeQuest Global = 1 to mean PC thought of the idea
-   // and the area version as a means to track the progress of the quest
+	// Set some strrefs to be used in dialogues depending up on the installed game
+	ACTION_IF GAME_IS ~eet~ BEGIN
+		OUTER_SET BRIDGE_HELD_1 = 252899
+		OUTER_SET BRIDGE_HELD_2 = 252903
+	END ELSE BEGIN
+		OUTER_SET BRIDGE_HELD_1 = 52899
+		OUTER_SET BRIDGE_HELD_2 = 52903
+	END
+
+	// NOTE: Using #L_CWBridgeQuest Global = 1 to mean PC thought of the idea
+	// and the area version as a means to track the progress of the quest
+	// 0 = not started
+	// 1 = warned to be on the look out 3000
+	// 2 = Locals have warned about the bridge being held but the PC hasn't seen it yet 3001
+	// 3 = PC has gotten close enough to the brige to see it's held by Caelar 3002
+	// 4 = Corwin has been informed (one way or another) and she's gathering more intel 3003-5 
 
    	// Define the journal entries to be used during the quest
-	ADD_JOURNAL @3000 @3001 @3002 USING ~%tra_loc%/%s/sod_coastway_bridge.tra~
+	ADD_JOURNAL @3000 @3001 @3002 @3003 @3004 @3005 @3006 @3007 @3008 @3009 @3010 USING ~%tra_loc%/%s/sod_coastway_bridge.tra~
+
+	// Compile the area script
+	EXTEND_TOP ~BD1000.BCS~ ~%mod_root%/scripts/sod_coastway_bridge.baf~ USING ~%tra_loc%/%s/sod_coastway_bridge.tra~
 
 	// Compile dialogues
 	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/sod_coastway_bridge.d~ USING ~%tra_loc%/%s/sod_coastway_bridge.tra~

@@ -2,6 +2,35 @@
 // Dialogue lines for the optional coastway bridge quest component //
 /////////////////////////////////////////////////////////////////////
 
+//////////////////////////
+// Initialize the quest //
+//////////////////////////
+@2000	= ~You should send out scouts.  Caelar will be expecting us to cross here.~
+@2001	= ~That's actually not a bad idea.  I'll have Bence see to it.~
+@2002	= ~While you do that, I'll do a little scouting on my own. I don't want any surprises before we cross the Winding Water.~
+@2003	= ~Keep an eye out for Caelar's forces.  They could be lying in wait.~
+@2004	= ~Tell ya what, you keep an eye out for Caelar, and I'll go see what else is out there.~
+@2005	= ~We should keep an eye out for Caelar's forces.  They could be lying in wait.~
+
+/////////////////////////////////////////////////////
+// Bridge discovered to be held by Caelar's forces //
+/////////////////////////////////////////////////////
+@2010	= ~So, Caelar's forces have control of the bridge.  Just great!  Any ideas how should we proceed, <CHARNAME>?~
+@2011   = ~<CHARNAME>, I'm glad you're back.  The scouts have returned with bad news.  Caelar's forces have control of the bridge.  We need to discuss options.~
+@2012	= ~<CHARNAME>, welcome back.  I'm glad to see you're in one piece.  Do you have anything to report?~
+@2013	= ~Only bad news, I'm afraid.  Caelar's forces have control of the bridge.~
+@2014	= ~That is not what I had hoped to hear, but I can't say it's completely unexpected.  Any ideas on how we should proceed?~
+@2015	= ~Well, Caelar's attack on the palace wasn't meant to kill me.  So, they must be waiting for their people to return with me in tow or they'd have just destroyed the bridge and moved on.~
+@2016	= ~Well, they must be waiting for something, or they'd just have destroyed the bridge and move on.  Maybe they're waiting for their people who attacked the palace?~
+@2017	= ~We need to cross that bridge, no matter what they're waiting for.  I'll start preparations for launching an assault.~
+@2018	= ~A little more information on the size of the force on the other side of the bridge might be in order, don't you think?~
+@2019	= ~That would be part of the preparations, yes.  It will take a while.  Meet here in a few hours.  I should know more by then.~
+@2020	= ~We need to cross that bridge.  They're in our way.  We have to confront them sooner or later.  Now works for me.  I say we attack.~
+@2021	= ~I'll start preparations and get my people on gathering as much intel as possible.  It'll take a while.  Meet here in a few hours.  I should know more by then.~
+@2022	= ~That would be part of the preparations, yes.  It will take a while.  Meet me back at camp in a few hours.  I should know more by then.~
+@2023	= ~I'll start preparations and get my people on gathering as much intel as possible.  It'll take a while.  Meet me back at camp in a few hours.  I should know more by then.~
+
+
 /////////////////////
 // Journal entries //
 /////////////////////
@@ -10,15 +39,20 @@ Caelar could be expecting our forces to cross here.  We need to stay alert.~
 @3001	= ~Scout the Coastway Bridge
 The locals say the the bridge is being held by Caelar's forces.~
 @3002	= ~Scout the Coastway Bridge
+During my explorations, I came across the bridge.  It is being held by Caelar's forces.~
+@3003	= ~Scout the Coastway Bridge
+I reported my findings back to camp.  Corwin is gathering more intel on what we're up against.  I should report back in a few hours to see what she's learned.~
+@3004	= ~Scout the Coastway Bridge
+Scouts have reported that the bridge we need to cross is being held by Caelar's forces.  Corwin is gathering more intel on what we're up against.  I should report back in a few hours to see what she's learned.~
+@3005	= ~Scout the Coastway Bridge
+Corwin left the group to make preparations and gather more intel on what we're up against.  I should report back to camp in a few hours to see what she's learned.~
+@3006	= ~Scout the Coastway Bridge
+Corwin went back to camp to make preparations and gather more intel on what we're up against.  I should report back to camp in a few hours to see what she's learned.~
+@3007	= ~Scout the Coastway Bridge
+After learning the bridge password, we decided to try to disguise Flaming Fist as Caelar elites with me as their prisoner.~
+@3008	= ~Scout the Coastway Bridge
 I tried to take on Caelar's forces at the bridge on my own.  The results were less than stellar.~
-
-
-//////////////////////////
-// Initialize the quest //
-//////////////////////////
-@2000 = ~You should send out scouts.  Caelar will be expecting us to cross here.~
-@2001 = ~That's actually not a bad idea.  I'll have Bence see to it.~
-@2002 = ~While you do that, I'll do a little scouting on my own. I don't want any surprises before we cross the Winding Water.~
-@2003 = ~Keep an eye out for Caelar's forces.  They could be lying in wait.~
-@2004 = ~Tell ya what, you keep an eye out for Caelar, and I'll go see what else is out there.~
-@2005 = ~We should keep an eye out for Caelar's forces.  They could be lying in wait.~
+@3009	= ~Scout the Coastway Bridge
+We were asked for a password at the bridge.  The Flaming Fist's attempt to bluff their way through brought less than stellar results.~
+@3010	= ~Scout the Coastway Bridge
+The untimely escape of our unwilling informant resulted in everything blowing up in our faces, literally.~
