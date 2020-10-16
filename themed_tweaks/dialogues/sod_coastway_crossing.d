@@ -155,3 +155,15 @@ APPEND BDREFG4
 		IF ~~ THEN DO ~SetGlobal("#L_CWBridgeWarn","MYAREA",2)~ EXIT
 	END
 END
+
+EXTEND_TOP BDSCRY 0 #0
+	IF ~Global("bd_sddd12_bridge","LOCALS",0) GlobalLT("BD_Plot","GLOBAL",156)~ THEN REPLY @2030 /* ~The Coast Way Bridge...~ */ GOTO SCRY_POOL_BRIDGE
+END
+
+APPEND BDSCRY
+	IF ~~ THEN BEGIN SCRY_POOL_BRIDGE
+		SAY @2031 /* ~Instead of a person, what weighs heavily on your mind is the bridge you must cross.  As you think of it, the pool grows calm. An indistinct image appears within it, quickly growing in clarity. You find yourself watching a scene unfold from above, as a god might do.~ */
+		IF ~~ THEN DO ~SetGlobal("BD_SDDD12_CLOUDY","MYAREA",1) SetGlobal("bd_sddd12_bridge","LOCALS",1) StartCutSceneMode() StartCutSceneEx("#LCWBQ01",FALSE)~ EXIT
+	END
+END
+

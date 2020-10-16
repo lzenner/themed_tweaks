@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////
-// Dialogue lines for the optional coastway bridge quest component //
+// Dialogue lines for the optional Coast Way Bridge quest component //
 /////////////////////////////////////////////////////////////////////
 
 //////////////////////////
@@ -30,29 +30,36 @@
 @2022	= ~That would be part of the preparations, yes.  It will take a while.  Meet me back at camp in a few hours.  I should know more by then.~
 @2023	= ~I'll start preparations and get my people on gathering as much intel as possible.  It'll take a while.  Meet me back at camp in a few hours.  I should know more by then.~
 
+//////////////////////////
+// Scrying Pool Options //
+//////////////////////////
+@2030	= ~The Coast Way Bridge...~
+@2031	= ~Instead of a person, what weighs heavily on your mind is the bridge you must cross.  As you think of it, the pool grows calm. An indistinct image appears within it, quickly growing in clarity. You find yourself watching a scene unfold from above, as a god might do.~
+@2032	= ~There are enough explosives to destroy the bridge.~
+
 
 /////////////////////
 // Journal entries //
 /////////////////////
-@3000	= ~Scout the Coastway Bridge
+@3000	= ~Scout the Coast Way Bridge
 Caelar could be expecting our forces to cross here.  We need to stay alert.~
-@3001	= ~Scout the Coastway Bridge
+@3001	= ~Scout the Coast Way Bridge
 The locals say the the bridge is being held by Caelar's forces.~
-@3002	= ~Scout the Coastway Bridge
+@3002	= ~Scout the Coast Way Bridge
 During my explorations, I came across the bridge.  It is being held by Caelar's forces.~
-@3003	= ~Scout the Coastway Bridge
+@3003	= ~Scout the Coast Way Bridge
 I reported my findings back to camp.  Corwin is gathering more intel on what we're up against.  I should report back in a few hours to see what she's learned.~
-@3004	= ~Scout the Coastway Bridge
+@3004	= ~Scout the Coast Way Bridge
 Scouts have reported that the bridge we need to cross is being held by Caelar's forces.  Corwin is gathering more intel on what we're up against.  I should report back in a few hours to see what she's learned.~
-@3005	= ~Scout the Coastway Bridge
+@3005	= ~Scout the Coast Way Bridge
 Corwin left the group to make preparations and gather more intel on what we're up against.  I should report back to camp in a few hours to see what she's learned.~
-@3006	= ~Scout the Coastway Bridge
-Corwin went back to camp to make preparations and gather more intel on what we're up against.  I should report back to camp in a few hours to see what she's learned.~
-@3007	= ~Scout the Coastway Bridge
+@3006	= ~Scout the Coast Way Bridge
+You were able to view the bridge using a scrying pool you found in the dwarven dig.  If the vision can be trusted, the bridge is rigged with enough explosives to bring the whole structure down.~
+@3007	= ~Scout the Coast Way Bridge
 After learning the bridge password, we decided to try to disguise Flaming Fist as Caelar elites with me as their prisoner.~
-@3008	= ~Scout the Coastway Bridge
+@3008	= ~Scout the Coast Way Bridge
 I tried to take on Caelar's forces at the bridge on my own.  The results were less than stellar.~
-@3009	= ~Scout the Coastway Bridge
+@3009	= ~Scout the Coast Way Bridge
 We were asked for a password at the bridge.  The Flaming Fist's attempt to bluff their way through brought less than stellar results.~
-@3010	= ~Scout the Coastway Bridge
+@3010	= ~Scout the Coast Way Bridge
 The untimely escape of our unwilling informant resulted in everything blowing up in our faces, literally.~

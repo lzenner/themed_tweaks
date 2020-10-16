@@ -108,15 +108,15 @@ REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
 INCLUDE ~themed_tweaks/components/sod_ditch_corwin.tpa~
 LAF sod_ditch_corwin END
 
-//////////////////////////////////
-// SCOUT COAST WAY BRIDGE QUEST //
-//////////////////////////////////
+////////////////////////////////////
+// SCOUT COAST WAY CROSSING QUEST //
+////////////////////////////////////
 BEGIN @90
 DESIGNATED 90
-LABEL "#L-SOD-COASTWAY_BRIDGE_QUEST"
+LABEL "#L-SOD-COASTWAY_CROSSING_QUEST"
 REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
-INCLUDE ~themed_tweaks/components/sod_coastway_bridge.tpa~
-LAF sod_coastway_bridge END
+INCLUDE ~themed_tweaks/components/sod_coastway_crossing.tpa~
+LAF sod_coastway_crossing END
 
 ///////////////////////////////////////
 // ADD SOME SNARK TO STUFFY DIALOGUE //

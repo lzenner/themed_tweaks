@@ -1,8 +1,8 @@
-//////////////////////////////////////////////////
-// Optional quest to scout the Coast Way Bridge //
-//////////////////////////////////////////////////
+////////////////////////////////////////////////////
+// Optional quest to scout the Coast Way Crossing //
+////////////////////////////////////////////////////
 
-DEFINE_ACTION_FUNCTION sod_coastway_bridge BEGIN
+DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 	// Set some strrefs to be used in dialogues depending up on the installed game
 	ACTION_IF GAME_IS ~eet~ BEGIN
 		OUTER_SET BRIDGE_HELD_1 = 252899
@@ -21,11 +21,14 @@ DEFINE_ACTION_FUNCTION sod_coastway_bridge BEGIN
 	// 4 = Corwin has been informed (one way or another) and she's gathering more intel 3003-5 
 
    	// Define the journal entries to be used during the quest
-	ADD_JOURNAL @3000 @3001 @3002 @3003 @3004 @3005 @3006 @3007 @3008 @3009 @3010 USING ~%tra_loc%/%s/sod_coastway_bridge.tra~
+	ADD_JOURNAL @3000 @3001 @3002 @3003 @3004 @3005 @3006 @3007 @3008 @3009 @3010 USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 
 	// Compile the area script
-	EXTEND_TOP ~BD1000.BCS~ ~%mod_root%/scripts/sod_coastway_bridge.baf~ USING ~%tra_loc%/%s/sod_coastway_bridge.tra~
+	EXTEND_TOP ~BD1000.BCS~ ~%mod_root%/scripts/sod_coastway_crossing.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 
 	// Compile dialogues
-	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/sod_coastway_bridge.d~ USING ~%tra_loc%/%s/sod_coastway_bridge.tra~
+	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/sod_coastway_crossing.d~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
+
+	// New scrying pool cutscene
+	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ01.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 END

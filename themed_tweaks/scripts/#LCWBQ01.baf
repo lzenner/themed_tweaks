@@ -1,0 +1,21 @@
+////////////////////////////////////////
+// Cross Way Bridge Quest Cut Scene   //
+// Shows the bridge rigged up to blow //
+// Can be viewed via scrying pool     //
+////////////////////////////////////////
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		CreateCreature("cutspy",[4480.605],N)
+		MoveViewPoint([4480.605],INSTANT)
+		DisplayStringHead("cutspy",@2032) // ~There are enough explosives to destroy the bridge.~
+		Wait(5)
+		ActionOverride("cutspy",DestroySelf())
+		MoveViewObject(Player1,INSTANT)
+		SetGlobal("#L_CWBridgeRigged","MYAREA",1)
+		AddJournalEntry(@3006,QUEST)
+		EndCutSceneMode()
+END
