@@ -5,169 +5,169 @@ VERSION ~v0.1~
 README ~themed_tweaks/readme.themed_tweaks.%LANGUAGE%.txt~ ~themed_tweaks/readme.themed_tweaks.english.txt~
 
 ALWAYS
-   ACTION_IF !VARIABLE_IS_SET deja_vu BEGIN
-      // Global static variables used by WeiDU
-      OUTER_SPRINT mod_root "themed_tweaks"
-      OUTER_SPRINT external_loc "weidu_external"
-      OUTER_SPRINT tra_base "languages"
-      OUTER_SPRINT base_language "american"
-      OUTER_SPRINT workspace "%external_loc%/workspace/%mod_root%"
-      OUTER_SPRINT tra_loc "%workspace%/%tra_base%"
+	ACTION_IF !VARIABLE_IS_SET deja_vu BEGIN
+		// Global static variables used by WeiDU
+		OUTER_SPRINT mod_root "themed_tweaks"
+		OUTER_SPRINT external_loc "weidu_external"
+		OUTER_SPRINT tra_base "languages"
+		OUTER_SPRINT base_language "american"
+		OUTER_SPRINT workspace "%external_loc%/workspace/%mod_root%"
+		OUTER_SPRINT tra_loc "%workspace%/%tra_base%"
 
-      // Makes external working directories
-      // And copies language files to them
-      INCLUDE ~%mod_root%/lib/run_once.tpa~
-      LAF DO_RUN_ONCE END
+		// Makes external working directories	
+		// And copies language files to them
+		INCLUDE ~%mod_root%/lib/run_once.tpa~
+		LAF DO_RUN_ONCE END
 
-      // Variables used to point to files and stuff
-      INCLUDE ~%mod_root%/lib/#l_cmpvars.tpa~
+		// Variables used to point to files and stuff
+		INCLUDE ~%mod_root%/lib/#l_cmpvars.tpa~
 
-      // Library functions I use frequently
-      INCLUDE ~%mod_root%/lib/alter_script.tpa~
-      INCLUDE ~%mod_root%/lib/update_bcs.tpa~
-   END
+		// Library functions I use frequently
+		INCLUDE ~%mod_root%/lib/alter_script.tpa~
+		INCLUDE ~%mod_root%/lib/update_bcs.tpa~
+	END
 
-   // This needs to be run before every component for some reason
-   // It has something to do with languages that use a different character set
-   ACTION_DEFINE_ARRAY thismod_noconvert BEGIN setup END
-   ACTION_DEFINE_ARRAY thismod_reload BEGIN game cases END
+	// This needs to be run before every component for some reason
+	// It has something to do with languages that use a different character set
+	ACTION_DEFINE_ARRAY thismod_noconvert BEGIN setup END
+	ACTION_DEFINE_ARRAY thismod_reload BEGIN game cases END
 
-   LAF HANDLE_CHARSETS 
-      INT_VAR 
-         infer_charsets = 1 
-      STR_VAR 
-         iconv_path = EVAL "%mod_root%/%tra_base%/iconv"
-         tra_path = EVAL "%tra_loc%"
-         noconvert_array = thismod_noconvert
-         reload_array = thismod_reload
-   END
+	LAF HANDLE_CHARSETS 
+		INT_VAR 
+			infer_charsets = 1 
+		STR_VAR 
+			iconv_path = EVAL "%mod_root%/%tra_base%/iconv"
+			tra_path = EVAL "%tra_loc%"
+			noconvert_array = thismod_noconvert
+			reload_array = thismod_reload
+	END
 
-   ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN
-      FAIL @1 /* ~Modmerge or Argent's DLC Merger is required before mods can be installed on this game.~ */
-   END
-   ACTION_IF ((NOT GAME_IS ~bgee bg2ee eet~) AND (NOT GAME_INCLUDES ~sod~)) BEGIN
-      FAIL @2 /* ~This mod requires BG1EE, SoD, BG2EE or EET~ */
-   END
+	ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN
+		FAIL @1 /* ~Modmerge or Argent's DLC Merger is required before mods can be installed on this game.~ */
+	END
+	ACTION_IF ((NOT GAME_IS ~bgee bg2ee eet~) AND (NOT GAME_INCLUDES ~sod~)) BEGIN
+		FAIL @2 /* ~This mod requires BG1EE, SoD, BG2EE or EET~ */
+	END
 
-   ACTION_IF !VARIABLE_IS_SET deja_vu BEGIN
-      // This actually installs changes to a 2da file so want it to run after the game check
-      INCLUDE ~%mod_root%/lib/cases.tpa~
-      LAF INSTALL_PROPER_CASES END
+	ACTION_IF !VARIABLE_IS_SET deja_vu BEGIN
+		// This actually installs changes to a 2da file so want it to run after the game check
+		INCLUDE ~%mod_root%/lib/cases.tpa~
+		LAF INSTALL_PROPER_CASES END
 
-      OUTER_SET deja_vu = 1
-   END
+		OUTER_SET deja_vu = 1
+	END
 END
 
 // Can't use variables here for some reason
 // Not sure why we use both folders, but that's what the example did
 LANGUAGE ~American English~ ~american~   
-   ~themed_tweaks/languages/american/game.tra~
-   ~weidu_external/workspace/themed_tweaks/languages/american/game.tra~
-   ~themed_tweaks/languages/american/setup.tra~
-   ~weidu_external/workspace/themed_tweaks/languages/american/setup.tra~
-   ~themed_tweaks/languages/american/cases.tra~
-   ~weidu_external/workspace/themed_tweaks/languages/american/cases.tra~
+	~themed_tweaks/languages/american/game.tra~
+	~weidu_external/workspace/themed_tweaks/languages/american/game.tra~
+	~themed_tweaks/languages/american/setup.tra~
+	~weidu_external/workspace/themed_tweaks/languages/american/setup.tra~
+	~themed_tweaks/languages/american/cases.tra~
+	~weidu_external/workspace/themed_tweaks/languages/american/cases.tra~
 
 ///////////////////////////////////////////////
 // IMOEN GIVEN SPECIAL WAND OF MAGIC MISSILE //
 ///////////////////////////////////////////////
 BEGIN @50
-DESIGNATED 50
-LABEL "#L-SOD-IMOEN_WAND"
-REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
-INCLUDE ~themed_tweaks/components/sod_imoen_wand.tpa~
-LAF sod_imoen_wand END
+	DESIGNATED 50
+	LABEL "#L-SOD-IMOEN_WAND"
+	REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
+	INCLUDE ~themed_tweaks/components/sod_imoen_wand.tpa~
+	LAF sod_imoen_wand END
 
 ///////////////////////
 // GIVE AID TO IMOEN //
 ///////////////////////
 BEGIN @60
-DESIGNATED 60
-LABEL "#L-SOD-AID_IMOEN"
-REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
-INCLUDE ~themed_tweaks/components/sod_aid_imoen.tpa~
-LAF sod_aid_imoen END
+	DESIGNATED 60
+	LABEL "#L-SOD-AID_IMOEN"
+	REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
+	INCLUDE ~themed_tweaks/components/sod_aid_imoen.tpa~
+	LAF sod_aid_imoen END
 
 ///////////////////////////////////////////////////
 // ADD STAT-BASED OBSERVATIONS AND QUEST OPTIONS //
 ///////////////////////////////////////////////////
 BEGIN @70
-DESIGNATED 70
-LABEL "#L-SOD-STAT_BASED_OPTIONS"
-REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
-INCLUDE ~themed_tweaks/components/sod_stat_options.tpa~
-LAF sod_stat_options END
+	DESIGNATED 70
+	LABEL "#L-SOD-STAT_BASED_OPTIONS"
+	REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
+	INCLUDE ~themed_tweaks/components/sod_stat_options.tpa~
+	LAF sod_stat_options END
 
 //////////////////
 // DITCH CORWIN //
 //////////////////
 BEGIN @80
-DESIGNATED 80
-LABEL "#L-SOD-DITCH_CORWIN"
-REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
-INCLUDE ~themed_tweaks/components/sod_ditch_corwin.tpa~
-LAF sod_ditch_corwin END
+	DESIGNATED 80
+	LABEL "#L-SOD-DITCH_CORWIN"
+	REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
+	INCLUDE ~themed_tweaks/components/sod_ditch_corwin.tpa~
+	LAF sod_ditch_corwin END
 
 ////////////////////////////////////
 // SCOUT COAST WAY CROSSING QUEST //
 ////////////////////////////////////
 BEGIN @90
-DESIGNATED 90
-LABEL "#L-SOD-COASTWAY_CROSSING_QUEST"
-REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
-INCLUDE ~themed_tweaks/components/sod_coastway_crossing.tpa~
-LAF sod_coastway_crossing END
+	DESIGNATED 90
+	LABEL "#L-SOD-COASTWAY_CROSSING_QUEST"
+	REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
+	INCLUDE ~themed_tweaks/components/sod_coastway_crossing.tpa~
+	LAF sod_coastway_crossing END
 
 ///////////////////////////////////////
 // ADD SOME SNARK TO STUFFY DIALOGUE //
 ///////////////////////////////////////
 BEGIN @130
-DESIGNATED 130
-LABEL "#L-SOD-SNARK"
-LABEL "#L-BG2-SNARK"
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) OR (GAME_INCLUDES ~sod~) @6
-INCLUDE ~themed_tweaks/components/snark.tpa~
-LAF snark END
+	DESIGNATED 130
+	LABEL "#L-SOD-SNARK"
+	LABEL "#L-BG2-SNARK"
+	REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) OR (GAME_INCLUDES ~sod~) @6
+	INCLUDE ~themed_tweaks/components/snark.tpa~
+	LAF snark END
 
 /////////////////////////////////////////
 // REMOVE CUT-SCENES THAT PC CAN'T SEE //
 /////////////////////////////////////////
 BEGIN @140
-DESIGNATED 140
-LABEL "#L-SOD-CUTSCENES"
-LABEL "#L-BG2-CUTSCENES"
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) OR (GAME_INCLUDES ~sod~) @6
-INCLUDE ~themed_tweaks/components/cut_scenes.tpa~
-LAF cut_scenes END
+	DESIGNATED 140
+	LABEL "#L-SOD-CUTSCENES"
+	LABEL "#L-BG2-CUTSCENES"
+	REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) OR (GAME_INCLUDES ~sod~) @6
+	INCLUDE ~themed_tweaks/components/cut_scenes.tpa~
+	LAF cut_scenes END
 
 ///////////////////////////////////////
 // ADD SOME SNARK TO STUFFY DIALOGUE //
 ///////////////////////////////////////
 BEGIN @150
-DESIGNATED 150
-LABEL "#L-SOD-IRENICUS_DREAMS"
-LABEL "#L-BG2-IRENICUS_DREAMS"
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) OR (GAME_INCLUDES ~sod~) @6
-INCLUDE ~themed_tweaks/components/irenicus_dreams.tpa~
-LAF irenicus_dreams END
+	DESIGNATED 150
+	LABEL "#L-SOD-IRENICUS_DREAMS"
+	LABEL "#L-BG2-IRENICUS_DREAMS"
+	REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) OR (GAME_INCLUDES ~sod~) @6
+	INCLUDE ~themed_tweaks/components/irenicus_dreams.tpa~
+	LAF irenicus_dreams END
 
 ///////////////////////////////////////
 // IMOEN GIVEN MAGIC MISSILE ABILITY //
 ///////////////////////////////////////
 BEGIN @170
-DESIGNATED 170
-LABEL "#L-BG2-IMOEN_MM"
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @5
-INCLUDE ~themed_tweaks/components/bg2_imoen_mm.tpa~
-LAF bg2_imoen_mm END
+	DESIGNATED 170
+	LABEL "#L-BG2-IMOEN_MM"
+	REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @5
+	INCLUDE ~themed_tweaks/components/bg2_imoen_mm.tpa~
+	LAF bg2_imoen_mm END
 
 ///////////////////////////////
 // RESTORE BHAALSPAWN POWERS //
 ///////////////////////////////
 BEGIN @180
-DESIGNATED 180
-LABEL "#L-TRANSITIONS-RESTORE_POWER"
-REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @5
-REQUIRE_PREDICATE !(MOD_IS_INSTALLED ~transitions/transitions.tp2~ (ID_OF_LABEL ~transitions/transitions.tp2~ "#L-TRANSITIONS-RESTORE_POWER")) @7
-INCLUDE ~themed_tweaks/components/bg2_restore_power.tpa~
-LAF bg2_restore_power END
+	DESIGNATED 180
+	LABEL "#L-TRANSITIONS-RESTORE_POWER"
+	REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @5
+	REQUIRE_PREDICATE !(MOD_IS_INSTALLED ~transitions/transitions.tp2~ (ID_OF_LABEL ~transitions/transitions.tp2~ "#L-TRANSITIONS-RESTORE_POWER")) @7
+	INCLUDE ~themed_tweaks/components/bg2_restore_power.tpa~
+	LAF bg2_restore_power END
