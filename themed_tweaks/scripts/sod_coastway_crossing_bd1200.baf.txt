@@ -1,0 +1,13 @@
+///////////////////////////////////
+// Changes to BG1200 area script //
+///////////////////////////////////
+
+IF
+	IsValidForPartyDialogue("CORWIN")
+	Global("#L_CWBridgeRigged","GLOBAL",1)
+	Global("#L_CWBridgeExplosivesTalk","GLOBAL",0)
+THEN
+	RESPONSE #100
+		ActionOverride("CORWIN",StartDialogueNoSet(Player1))
+END
+

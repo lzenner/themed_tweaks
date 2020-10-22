@@ -78,7 +78,7 @@ THEN
 		ApplySpellRES("bdunhide",Player4)
 		ApplySpellRES("bdunhide",Player5)
 		ApplySpellRES("bdunhide",Player6)
-		SetGlobal("#L_CWBridgeRigged","MYAREA",1)
+		SetGlobal("#L_CWBridgeRigged","GLOBAL",1)
 		AddJournalEntry(@3006,QUEST)
 		SmallWait(7)
 		MoveViewObject("Scryingpool",INSTANT)

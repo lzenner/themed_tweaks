@@ -1,52 +1,52 @@
-////////////////////////////////
-// Changes to the area script //
-////////////////////////////////
+///////////////////////////////////
+// Changes to bg1000 area script //
+///////////////////////////////////
 
 IF
-	GlobalLT("#L_BridgeQuest","MYAREA",3)
+	GlobalLT("#L_CWBridgeQuest","GLOBAL",3)
 	OR(2)
 		TriggerOverride(Player1,See("BDCRUS10"))
 		TriggerOverride(Player1,See("BDCRUS11"))		
 THEN
 	RESPONSE #100
 		SetInterrupt(FALSE)
-		SetGlobal("#L_BridgeQuest","MYAREA",3)
+		SetGlobal("#L_CWBridgeQuest","GLOBAL",3)
 		AddJournalEntry(@3002,QUEST)
 	    SetInterrupt(TRUE)		
 END
 
 IF
 	Global("BD_Plot","GLOBAL",156)
-	GlobalLT("#L_BridgeQuest","MYAREA",5)
+	GlobalLT("#L_CWBridgeQuest","GLOBAL",5)
 THEN
 	RESPONSE #100
-		SetGlobal("#L_BridgeQuest","MYAREA",97)
+		SetGlobal("#L_CWBridgeQuest","GLOBAL",97)
 		AddJournalEntry(@3008,QUEST_DONE)
 END
 
 IF
 	Global("BD_Plot","GLOBAL",156)
-	Global("#L_BridgeQuest","MYAREA",5)
+	Global("#L_CWBridgeQuest","GLOBAL",5)
 THEN
 	RESPONSE #100
-		SetGlobal("#L_BridgeQuest","MYAREA",98)
+		SetGlobal("#L_CWBridgeQuest","GLOBAL",98)
 		AddJournalEntry(@3009,QUEST_DONE)
 END
 
 IF
 	Global("BD_Plot","GLOBAL",156)
-	Global("#L_BridgeQuest","MYAREA",6)
+	Global("#L_CWBridgeQuest","GLOBAL",6)
 THEN
 	RESPONSE #100
-		SetGlobal("#L_BridgeQuest","MYAREA",99)
+		SetGlobal("#L_CWBridgeQuest","GLOBAL",99)
 		AddJournalEntry(@3010,QUEST_DONE)
 END
 
 IF
 	IsValidForPartyDialogue("CORWIN")
 	OR(2) 
-		Global("#L_CWBridgeQuest","MYAREA",2)
-		Global("#L_CWBridgeQuest","MYAREA",3)
+		Global("#L_CWBridgeQuest","GLOBAL",2)
+		Global("#L_CWBridgeQuest","GLOBAL",3)
 THEN
 	RESPONSE #100
 		ActionOverride("CORWIN",StartDialogueNoSet(Player1))
@@ -54,11 +54,11 @@ END
 
 IF
 	!InParty("CORWIN")
-	GlobalLT("#L_CWBridgeQuest","MYAREA",4)
+	GlobalLT("#L_CWBridgeQuest","GLOBAL",4)
 	OR(3)
 		GlobalTimerExpired("#L_CWBridgeScoutTimer","MYAREA") 
-		Global("#L_CWBridgeQuest","MYAREA",2)
-		Global("#L_CWBridgeQuest","MYAREA",3)
+		Global("#L_CWBridgeQuest","GLOBAL",2)
+		Global("#L_CWBridgeQuest","GLOBAL",3)
 	TriggerOverride("CORWIN",See(Player1))
 THEN
 	RESPONSE #100

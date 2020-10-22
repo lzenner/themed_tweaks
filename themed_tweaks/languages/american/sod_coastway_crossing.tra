@@ -37,6 +37,36 @@
 @2031	= ~Instead of a person, what weighs heavily on your mind is the bridge you must cross.  As you think of it, the pool grows calm. An indistinct image appears within it, quickly growing in clarity. You find yourself watching a scene unfold from above, as a god might do.~
 @2032	= ~There are enough explosives to make the bridge unusable.~
 
+////////////////////////////////////////////////////
+// Bridge discovered to be rigged with explosives //
+////////////////////////////////////////////////////
+@2040	= ~This complicates things.  We'll need to get rid of those barrels before making any sort of assault.~
+@2041	= ~Good timing <CHARNAME>.  We've been able to ascertain that the bridge is very likely rigged with barrels of explosives.  We'll need to get rid of them before making any sort of assault.~
+@2042	= ~Ahh, good you're back, <CHARNAME>.  Have you been able to learn anything more about Caelar's forces on the bridge?~
+@2043	= ~The news keeps getting worse, I'm afraid.  The bridge is rigged with barrels of explosives.  One fire arrow and the whole bridge could come down.~
+@2044	= ~Do you have any ideas how we should deal with them?~
+@2045	= ~I do have one crazy idea.  They are expecting those assassins Caelar sent to the palace to return with me in tow.  We could give them that.  Half way across we might be able to throw those barrels into the river before they're able to be lit.~
+@2046	= ~I do have one crazy idea.  They're probably expecting Caelar's assassins to return from their attack on the palace.  We could give them that.  Half way across we might be able to throw those barrels into the river before they're able to be lit.~
+@2047	= ~If we can get a small group disguised as Caelar's crusaders past the guards at the bridge entrance, we might be able to throw those barrels into the river before they're able to be lit.~
+@2048	= ~This could work.  It's risky, but I don't see a better option.  If we try to rush it, they'll blow the bridge for sure.~
+@2049	= ~As soon as we're out of this dungeon, I'll go get my people prepared for this.~
+@2050	= ~I need to get our plan in motion.  Meet me at the bridge as soon as you can.  We'll be ready for you and I can rejoin you there.~
+@2051	= ~Ahh, good you're back, <CHARNAME>.  My people are as ready as they'll ever be.~
+@2052	= ~What if a password is required?~
+@2053	= ~Hmm...I'll get one of our mages to charm a guard.  If there's a password, we'll learn what it is.~
+@2054	= ~A mage was able to charm one of the guards.  We learned the password is 'nectu'.~
+@2055	= ~The disguised Fist will meet you near the bridge entrance when you're ready.~
+@2056	= ~Don't you think they will recognize me?  My face is fairly well known.  They did try to kill me, remember.~
+@2057	= ~We will disguise your features as much as possible.  Some of the Fist hold you in high esteem.  It will bolster their confidence.~
+@2058	= ~If you say so.  Whatever.~
+@2059	= ~If you're sure it'll help.  Ok.~
+@2060	= ~Understood.  I'll head over there shortly.~
+
+/////////////////////////////////////////////
+// The futile attempt to disarm the bridge //
+/////////////////////////////////////////////
+
+
 /////////////////////
 // Journal entries //
 /////////////////////
@@ -53,12 +83,20 @@ Scouts have reported that the bridge we need to cross is being held by Caelar's 
 @3005	= ~Scout the Coast Way Crossing
 Corwin left the group to make preparations and gather more intel on what we're up against.  I should report back to camp in a few hours to see what she's learned.~
 @3006	= ~Scout the Coast Way Crossing
-You were able to view the bridge using a scrying pool you found in the dwarven dig.  If the vision can be trusted, the bridge is rigged with enough explosives to bring the whole structure down.~
+I was able to view the bridge using a scrying pool I found in a dwarven dig.  If the vision can be trusted, the bridge is rigged with enough explosives to bring the whole structure down.~
 @3007	= ~Scout the Coast Way Crossing
-After learning the bridge password, we decided to try to disguise Flaming Fist as Caelar elites with me as their prisoner.~
+Flaming Fist scouts were able to determine that the bridge is rigged with enough explosives to bring the whole structure down.~
 @3008	= ~Scout the Coast Way Crossing
-I tried to take on Caelar's forces at the bridge on my own.  The results were less than stellar.~
+We decided to try to send a small group disguised as Caelar assassins to throw the barrels of explosives off the bridge.  I'm to meet with them there.~
 @3009	= ~Scout the Coast Way Crossing
-We were asked for a password at the bridge.  The Flaming Fist's attempt to bluff their way through brought less than stellar results.~
+We decided to try to disguise Flaming Fist as Caelar elites with me as their prisoner to throw the barrels of explosives off the bridge.  I'm to meet with them there.~
 @3010	= ~Scout the Coast Way Crossing
+With password in hand, we will send a small group disguised as Caelar assassins to throw the barrels of explosives off the bridge.  I'm to meet with them there.~
+@3011	= ~Scout the Coast Way Crossing
+With password in hand, we will try to disguise Flaming Fist as Caelar elites with me as their prisoner to throw the barrels of explosives off the bridge.  I'm to meet with them there.~
+@3012	= ~Scout the Coast Way Crossing
+I tried to take on Caelar's forces at the bridge on my own.  The results were less than stellar.~
+@3013	= ~Scout the Coast Way Crossing
+We were asked for a password at the bridge.  The Flaming Fist's attempt to bluff their way through brought less than stellar results.~
+@3014	= ~Scout the Coast Way Crossing
 The untimely escape of our unwilling informant resulted in everything blowing up in our faces, literally.~
