@@ -97,6 +97,8 @@ INSTALLATION
 ------------------------------------------------------------------------
 If you're going to install Transitions or Endless BG1, do so before Themed Tweaks.
 
+Installation using Project Infinity (https://forums.beamdog.com/discussion/comment/1145416/#Comment_1145416) will ensure this and other mods are installed in the correct order.
+
 NOTE: If you've previously installed the mod, remove it before extracting a new version. To do this, uninstall all previously installed components and delete the mod folder and executables. 
 
 When installing or uninstalling, do not close the DOS window by clicking on the X button! Instead, press the Enter key when instructed to do so.
