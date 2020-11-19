@@ -51,21 +51,19 @@
 @2048	= ~This could work.  It's risky, but I don't see a better option.  If we try to rush it, they'll blow the bridge for sure.~
 @2049	= ~As soon as we're out of this dungeon, I'll go get my people prepared for this.~
 @2050	= ~I need to get our plan in motion.  Meet me at the bridge as soon as you can.  We'll be ready for you and I can rejoin you there.~
-@2051	= ~Ahh, good you're back, <CHARNAME>.  My people are as ready as they'll ever be.~
-@2052	= ~What if a password is required?~
-@2053	= ~Hmm...I'll get one of our mages to charm a guard.  If there's a password, we'll learn what it is.~
-@2054	= ~A mage was able to charm one of the guards.  We learned the password is 'nectu'.~
-@2055	= ~The disguised Fist will meet you near the bridge entrance when you're ready.~
-@2056	= ~Don't you think they will recognize me?  My face is fairly well known.  They did try to kill me, remember.~
-@2057	= ~We will disguise your features as much as possible.  Some of the Fist hold you in high esteem.  It will bolster their confidence.~
-@2058	= ~If you say so.  Whatever.~
-@2059	= ~If you're sure it'll help.  Ok.~
-@2060	= ~Understood.  I'll head over there shortly.~
+@2051	= ~What if a password is required?~
+@2052	= ~Hmm...I'll get one of our mages to charm a guard.  If there's a password, we'll learn what it is.~
+@2053	= ~The disguised Fist will meet you near the bridge entrance when you're ready.~
+@2054	= ~Don't you think they will recognize me?  My face is fairly well known.  They did try to kill me, remember.~
+@2055	= ~We will disguise your features as much as possible.  Some of the Fist hold you in high esteem.  It will bolster their confidence.~
+@2056	= ~If you say so.  Whatever.~
+@2057	= ~If you're sure it'll help.  Ok.~
+@2058	= ~Understood.  I'll head over there shortly.~
 
 /////////////////////////////////////////////
 // The futile attempt to disarm the bridge //
 /////////////////////////////////////////////
-
+@2070	= ~A mage was able to charm one of the guards.  We learned the password is 'nikto'.~
 
 /////////////////////
 // Journal entries //
