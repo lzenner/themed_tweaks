@@ -140,9 +140,10 @@ BEGIN @140
 	INCLUDE ~themed_tweaks/components/cut_scenes.tpa~
 	LAF cut_scenes END
 
-///////////////////////////////////////
-// ADD SOME SNARK TO STUFFY DIALOGUE //
-///////////////////////////////////////
+//////////////////////////////////////////
+// REMOVE DREAMS FROM IRENICUS FROM SOD //
+// ADD THEM TO BG2                      //
+//////////////////////////////////////////
 BEGIN @150
 	DESIGNATED 150
 	LABEL "#L-SOD-IRENICUS_DREAMS"
