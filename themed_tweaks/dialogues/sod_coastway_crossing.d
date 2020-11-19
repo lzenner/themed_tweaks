@@ -70,6 +70,51 @@ APPEND BDCORWIN
 		SAY @2021 /* ~I'll start preparations and get my people on gathering as much intel as possible.  It'll take a while.  Meet here in  a few hours.  I should know more by then.~ */
 		IF ~~ THEN DO ~SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4)~ EXIT
 	END
+	
+	IF WEIGHT #-96 ~AreaCheck("BD1000") Global("#L_CWBridgeExplosivesTalk","GLOBAL",0) Global("#L_CWBridgeQuest","GLOBAL",4) Global("#L_CWBridgeRigged","GLOBAL",1)~ BEGIN CORWIN_BRIDGE_QUEST_3.1
+		SAY @2040 /* ~This complicates things.  We'll need to get rid of those barrels before making any sort of assault.~ */
+		IF ~SetGlobal("#L_CWBridgeExplosivesTalk","GLOBAL",1)~ THEN GOTO CORWIN_BRIDGE_QUEST_3.2
+	END
+	
+	IF WEIGHT #-96 ~AreaCheck("BD1000") Global("#L_CWBridgeExplosivesTalk","GLOBAL",0) Global("#L_CWBridgeRigged","GLOBAL",0) GlobalTimerExpired("#L_CWBridgeScoutTimer","MYAREA")~ BEGIN CORWIN_BRIDGE_QUEST_3.1
+		SAY @2040 /* ~This complicates things.  We'll need to get rid of those barrels before making any sort of assault.~ */
+		IF ~SetGlobal("#L_CWBridgeExplosivesTalk","GLOBAL",1)~ THEN GOTO CORWIN_BRIDGE_QUEST_3.2
+	END
+	
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.2
+		SAY @2044 /* ~Do you have any ideas how we should deal with them?~ */
+		IF ~Global("#L_WeakPoison","GLOBAL",1) RandomNum(10,1)~ THEN REPLY @2045 /* ~I do have one crazy idea.  They are expecting those assassins Caelar sent to the palace to return with me in tow.  We could give them that. Half way across we might be able to throw those barrels into the river before they're able to be lit.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",6)~ UNSOLVED_JOURNAL @3009 + CORWIN_BRIDGE_QUEST_3.3A
+		IF ~Global("#L_WeakPoison","GLOBAL",1) RandomNumGT(10,1)~ THEN REPLY @2045 /* ~I do have one crazy idea.  They are expecting those assassins Caelar sent to the palace to return with me in tow.  We could give them that. Half way across we might be able to throw those barrels into the river before they're able to be lit.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",6)~ UNSOLVED_JOURNAL @3011 + CORWIN_BRIDGE_QUEST_3.3B1
+		IF ~Global("#L_WeakPoison","GLOBAL",0) Global("#L_SoDStatOptions","GLOBAL",1) CheckStatGT(Player1,9,INT) RandomNumLT(10,6)~ THEN REPLY @2046 /* ~I do have one crazy idea.  They're probably expecting Caelar's assassins to return from their attack on the palace.  We could give them that.  Half way across we might be able to throw those barrels into the river before they're able to be lit.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",5)~ UNSOLVED_JOURNAL @3008 + CORWIN_BRIDGE_QUEST_3.3A
+		IF ~Global("#L_WeakPoison","GLOBAL",0) Global("#L_SoDStatOptions","GLOBAL",1) CheckStatGT(Player1,9,INT) RandomNumGT(10,5)~ THEN REPLY @2046 /* ~I do have one crazy idea.  They're probably expecting Caelar's assassins to return from their attack on the palace.  We could give them that.  Half way across we might be able to throw those barrels into the river before they're able to be lit.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",5)~ UNSOLVED_JOURNAL @3010 + CORWIN_BRIDGE_QUEST_3.3B1
+		IF ~RandomNumGT(10,1)~ THEN REPLY @2047 /* ~If we can get a small group disguised as Caelar's crusaders past the guards at the bridge entrance, we might be able to throw those barrels into the river before they're able to be lit.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",5)~ UNSOLVED_JOURNAL @3008 + CORWIN_BRIDGE_QUEST_3.3A
+		IF ~RandomNum(10,1)~ THEN REPLY @2047 /* ~If we can get a small group disguised as Caelar's crusaders past the guards at the bridge entrance, we might be able to throw those barrels into the river before they're able to be lit.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",5)~ UNSOLVED_JOURNAL @3010 + CORWIN_BRIDGE_QUEST_3.3B1
+	END
+	
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.3A
+		SAY @2048 /* ~This could work.  It's risky, but I don't see a better option.  If we try to rush it, they'll blow the bridge for sure.~ */
+		IF ~~ THEN GOTO CORWIN_BRIDGE_QUEST_3.4
+	END
+	
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.3B1
+		SAY @2048 /* ~This could work.  It's risky, but I don't see a better option.  If we try to rush it, they'll blow the bridge for sure.~ */
+		IF ~~ THEN REPLY @2051 /* ~What if a password is required?~ */ GOTO CORWIN_BRIDGE_QUEST_3.3B2
+	END
+	
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.3B2
+		SAY @2052 /* ~Hmm...I'll get one of our mages to charm a guard.  If there's a password, we'll learn what it is.~ */
+		IF ~~ THEN DO ~SetGlobal("#L_CWBridgePassword","GLOBAL",1)~ GOTO CORWIN_BRIDGE_QUEST_3.4
+	END
+	
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.4
+		SAY @2049 /* ~As soon as we're out of this dungeon, I'll go get my people prepared for this.~ */
+		IF ~~ THEN EXIT
+	END
+	
+	IF WEIGHT #-97 ~AreaCheck("BD1000") Global("#L_CWBridgeRigged","GLOBAL",1) Global("#L_CWBridgeExplosivesTalk","GLOBAL",1) Global("#L_CWBridgeFFPrepped","GLOBAL",0)~ BEGIN CORWIN_BRIDGE_QUEST_4.1
+		SAY @2050 /* ~I need to get our plan in motion.  Meet me at the bridge as soon as you can.  We'll be ready and I can rejoin you there.~ */
+		IF ~~ THEN REPLY @2060 /* ~Understood.  I'll head over there shortly.~ */ DO ~SetGlobal("#L_CWBridgeFFPrepped","GLOBAL",1) LeaveParty() EscapeAreaMove("bd1000",2905,1495,NE)~ EXIT
+	END
 END
 
 APPEND BDCORWIJ
@@ -122,7 +167,7 @@ APPEND BDCORWIJ
 	
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.3B2
 		SAY @2052 /* ~Hmm...I'll get one of our mages to charm a guard.  If there's a password, we'll learn what it is.~ */
-		IF ~~ THEN GOTO CORWIN_BRIDGE_QUEST_3.4
+		IF ~~ THEN DO ~SetGlobal("#L_CWBridgePassword","GLOBAL",1)~ GOTO CORWIN_BRIDGE_QUEST_3.4
 	END
 	
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.4
@@ -131,8 +176,8 @@ APPEND BDCORWIJ
 	END
 	
 	IF WEIGHT #-97 ~AreaCheck("BD1000") Global("#L_CWBridgeRigged","GLOBAL",1) Global("#L_CWBridgeExplosivesTalk","GLOBAL",1) Global("#L_CWBridgeFFPrepped","GLOBAL",0)~ BEGIN CORWIN_BRIDGE_QUEST_4.1
-		SAY @2050 /* ~I need to get our plan in motion.  Meet me at the bridge as soon as you can.  We'll be ready for you and I can rejoin you there.~ */
-		IF ~~ THEN DO ~LeaveParty() EscapeAreaMove("bd1000",2905,1495,NE)~ EXIT
+		SAY @2050 /* ~I need to get our plan in motion.  Meet me at the bridge as soon as you can.  We'll be ready and I can rejoin you there.~ */
+		IF ~~ THEN REPLY @2060 /* ~Understood.  I'll head over there shortly.~ */ DO ~SetGlobal("#L_CWBridgeFFPrepped","GLOBAL",1) LeaveParty() EscapeAreaMove("bd1000",2905,1495,NE)~ EXIT
 	END
 END
 
