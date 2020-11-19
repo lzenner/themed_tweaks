@@ -7,10 +7,10 @@ DEFINE_ACTION_FUNCTION cut_scenes BEGIN
 
 	ACTION_IF GAME_INCLUDES ~sod~ BEGIN
 		// Set required variables based on installed game
-		OUTER_SET SOD_JOURNAL_01 = 59633
-
 		ACTION_IF GAME_IS ~eet~ BEGIN
 			OUTER_SET SOD_JOURNAL_01 = 259633
+		END ELSE BEGIN
+			OUTER_SET SOD_JOURNAL_01 = 59633
 		END
 
 		// Remove cut scenes that are started via dialogues
