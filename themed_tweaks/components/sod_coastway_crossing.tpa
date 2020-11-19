@@ -16,24 +16,25 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 	// 0 = not started
 	// 1 = warned to be on the look out 3000
 	// 2 = Locals have warned about the bridge being held but the PC hasn't seen it yet 3001
-	// 3 = PC has gotten close enough to the brige to see it's held by Caelar 3002
+	// 3 = PC has gotten close enough to the bridge to see it's held 3002
 	// 4 = Corwin has been informed (one way or another) that the bridge is being held by Caelar's forces and she's gathering more intel 3003-5 
 	// 5 = Using disguises to disarm the explosives on the bridge 3008,10
 	// 6 = Using PC as bait to disarm the explosives on the bridge 3009,11
-	// 97 = PC took on the bridge with no planning 3012
-	// 98 = Flaming Fist botched the password 3013 (3/4 chance)
-	// 99 = The charmed informant escaped and ruined the plan 3014 (1/4 chance)
+	// 97 = PC took on the bridge without the Flaming Fist 3012
+	// 98 = Flaming Fist botched the password 3013
+	// 99 = The charmed informant escaped and ruined the plan 3014
 	
 	// #L_CWBridgeRigged global variable used to track if PC knows the bridge is rigged with explosives 3006-7
 	// #L_CWBridgeExplosivesTalk global variable used to track if PC and Corwin have discussed the explosives
-	// #L_CWBridgePassword global variable used to track if FF know the password to gain access to the bridge (50/50 chance)
+	// #L_CWBridgePassword global variable used to track if FF know the password to gain access to the bridge
 	// #L_CWBridgeWarn global variable used to track how often the PC is warned by locals that bridge is held by Caelar..0 1 or 2
 
    	// Define the journal entries to be used during the quest
 	ADD_JOURNAL @3000 @3001 @3002 @3003 @3004 @3005 @3006 @3007 @3008 @3009 @3010 @3011 @3012 @3013 @3014 USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 
-	// Compile the area script
-	EXTEND_TOP ~BD1000.BCS~ ~%mod_root%/scripts/sod_coastway_crossing.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
+	// Compile the area scripts
+	EXTEND_TOP ~BD1000.BCS~ ~%mod_root%/scripts/sod_coastway_crossing_bd1000.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
+	EXTEND_TOP ~BD1200.BCS~ ~%mod_root%/scripts/sod_coastway_crossing_bd1200.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 
 	// Compile dialogues
 	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/sod_coastway_crossing.d~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
