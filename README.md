@@ -5,7 +5,7 @@
 
 This mod main purpose is to augment the role-playing environment throughout the game series.  To that end, it tweaks the storyline in various places.
 
-COMPONENTS INCLUDE:	
+COMPONENTS INCLUDE:
 * SoD       - Give Imoen a special Wand of Magic Missiles for the attack in the palace
 * SoD       - Allow PC to give aid to Imoen after the attack in the palace
 * SoD       - Ditch tour-guide Corwin Schael
