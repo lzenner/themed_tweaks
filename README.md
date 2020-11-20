@@ -3,7 +3,7 @@
 ---      for EET, BG1EE, SoD, BG2EE, ToB      ---
 -------------------------------------------------
 
-This mod main purpose is to augment the role-playing environment throughout the game series.  To that end, it tweaks the storyline in various places.
+This mod's main purpose is to augment the role-playing environment throughout the game series.  To that end, it tweaks the storyline in various places.
 
 COMPONENTS INCLUDE:  
 -------------------
