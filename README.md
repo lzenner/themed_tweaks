@@ -5,7 +5,7 @@
 
 This mod main purpose is to augment the role-playing environment throughout the game series.  To that end, it tweaks the storyline in various places.
 
-COMPONENTS INCLUDE:
+COMPONENTS INCLUDE:  
 * SoD       - Give Imoen a special Wand of Magic Missiles for the attack in the palace
 * SoD       - Allow PC to give aid to Imoen after the attack in the palace
 * SoD       - Ditch tour-guide Corwin Schael
@@ -13,13 +13,13 @@ COMPONENTS INCLUDE:
 * BG2EE     - Give Imoen innate Magic Missile abilities for BG2 scene
 * BG2EE     - Use movie of Irenicus in hell as a dream to restore all Bhaalspawn powers
 
-COMPONENTS IN DEVELOPMENT:
+COMPONENTS IN DEVELOPMENT:  
 * SoD       - Stat-based observations and options
 * SoD       - Quest: Scouting the Coast Way Crossing
 * SoD/BG2EE - Remove cut scenes that the PC shouldn't be privy to 
 * SoD/BG2EE - Move dreams about Irenicus from SoD to BG2
 
-COMPONENTS TO BE DONE:
+COMPONENTS TO BE DONE:  
 * BG1EE		- Give good-aligned reasons to go into peoples' homes
 * BG1EE     - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending
 * BG1EE		- Allow turning down airship thieves guild quest without aggroing the entire guild
