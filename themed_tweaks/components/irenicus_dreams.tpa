@@ -4,4 +4,9 @@
 ////////////////////////////////////////
 
 DEFINE_ACTION_FUNCTION irenicus_dreams BEGIN
+	COPY_EXISTING ~PLAYER1D.BCS~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			// This will keep them from playing in SoD, but we'll need to work on their timing in BG2
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~GlobalLT("chapter","global",13)~ ~Global("EndOfBG1","GLOBAL",2)~
+		END
 END
