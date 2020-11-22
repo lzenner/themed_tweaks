@@ -249,3 +249,45 @@ EXTEND_TOP BDSAFANA 44 #1
 	IF ~Global("#L_WeakPoison","GLOBAL",1)~ THEN REPLY @134 /* ~Earlier this night, assassins penetrated the Ducal Palace and attempted to poison me. They were sent by Caelar Argent.~ */ GOTO 46
 END
 
+ALTER_TRANS BDEDWIN
+	BEGIN 21 END
+	BEGIN 1 2 3 END
+	BEGIN
+		"TRIGGER" ~Global("#L_WeakPoison","GLOBAL",0)~
+	END
+EXTEND_BOTTOM BDEDWIN 21
+	IF ~Global("#L_WeakPoison","GLOBAL",1)~ THEN REPLY @135 /* ~Once again, I find myself dragged into events. Caelar Argent seeks to capture me.~ */ GOTO 39
+	IF ~Global("#L_WeakPoison","GLOBAL",1)~ THEN REPLY @136	/* ~Caelar Argent tried to poison me, and now I'm trying to pay her back. Childish, yes, ...~ */ GOTO 32
+	IF ~Global("#L_WeakPoison","GLOBAL",1) Global("#L_HistoricalTreatise","GLOBAL",0)~ THEN REPLY @137 /* ~I know not why, but Caelar Argent tried to poison me. ...~ */ GOTO 32
+	IF ~Global("#L_WeakPoison","GLOBAL",1) Global("#L_HistoricalTreatise","GLOBAL",1)~ THEN REPLY @138 /* ~For reasons I don't care to go into, ...~ */ GOTO 32
+END
+
+ALTER_TRANS BDEDWIN
+	BEGIN 31 36 END
+	BEGIN 1 2 END
+	BEGIN
+		"TRIGGER" ~Global("#L_WeakPoison","GLOBAL",0)~
+	END
+EXTEND_BOTTOM BDEDWIN 31
+	IF ~Global("#L_WeakPoison","GLOBAL",1)~ THEN REPLY @136	/* ~Caelar Argent tried to poison me, and now I'm trying to pay her back. Childish, yes, ...~ */ GOTO 32
+	IF ~Global("#L_WeakPoison","GLOBAL",1)~ THEN REPLY @139	/* ~I am <CHARNAME>. The Shining Lady tried to poison me. Obviously, she failed, ...~ */ GOTO 32
+END
+EXTEND_BOTTOM BDEDWIN 36
+	IF ~Global("#L_WeakPoison","GLOBAL",1)~ THEN REPLY @136	/* ~Caelar Argent tried to poison me, and now I'm trying to pay her back. Childish, yes, ...~ */ GOTO 32
+	IF ~Global("#L_WeakPoison","GLOBAL",1) Global("#L_HistoricalTreatise","GLOBAL",0)~ THEN REPLY @141 /* ~I am <CHARNAME>. I know not why, but the Shining Lady has targeted me...~ */ GOTO 32
+	IF ~Global("#L_WeakPoison","GLOBAL",1) Global("#L_HistoricalTreatise","GLOBAL",1)~ THEN REPLY @142 /* ~I am <CHARNAME>. For reasons I don't care to go into...~ */ GOTO 32
+END
+
+ALTER_TRANS BDEDWIN
+	BEGIN 35 END
+	BEGIN 2 END
+	BEGIN
+		"TRIGGER" ~Global("#L_WeakPoison","GLOBAL",0)~
+	END
+EXTEND_BOTTOM BDEDWIN 35
+	IF ~Global("#L_WeakPoison","GLOBAL",1)~ THEN REPLY @140 /* ~The Shining Lady attacked me. Now it is my turn.~ */ GOTO 32
+END
+	
+
+
+
