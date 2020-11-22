@@ -29,12 +29,12 @@ APPEND BDCORWIN
 
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_1.2A
 		SAY @2003 /* ~Keep an eye out for Caelar's forces.  They could be lying in wait.~ */
-		++ @2004 /* ~Tell ya what, you keep an eye out for Caelar, and I'll go see what else is out there.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",1) SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",ONE_HOUR)~ UNSOLVED_JOURNAL @3000 EXIT
+		++ @2004 /* ~Tell ya what, you keep an eye out for Caelar, and I'll go see what else is out there.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",1) SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",EIGHT_HOURS)~ UNSOLVED_JOURNAL @3000 EXIT
 	END
 
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_1.2B
 		SAY @2005 /* ~We should keep an eye out for Caelar's forces.  They could be lying in wait.~ */
-		IF ~~ THEN DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",1) SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",ONE_HOUR)~ UNSOLVED_JOURNAL @3000 EXIT
+		IF ~~ THEN DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",1) SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",EIGHT_HOURS)~ UNSOLVED_JOURNAL @3000 EXIT
 	END
 
 	IF WEIGHT #-98 ~AreaCheck("BD1000") GlobalGT("#L_CWBridgeQuest","GLOBAL",1) GlobalLT("#L_CWBridgeQuest","GLOBAL",4)~ THEN BEGIN CORWIN_BRIDGE_QUEST_2.1A
