@@ -30,6 +30,7 @@ SoD - Add stat-based observations and options - by Lauriel
 ------------------------------------------------------------------------
 Adds comments about the situation based upon INT and WIS and quest options based on various stats
 ** TODO: Weak Poison dialogue options need to be added to Caelar scene at bridge
+** TODO: Fix dialogue with Edwin that mentions Caelar trying to kill the PC
 
 ------------------------------------------------------------------------
 SoD - Ditch tour-guide Corwin Schael - by Lauriel
@@ -86,7 +87,7 @@ PLANNED FUTURE ENHANCEMENTS
 * BG1EE/SoD - Remove errant references to PC being Bhaalspawn, like Entar
 * SoD       - Speed up the elevator in hell
 * SoD       - Speed up the prison/trial scenes
-* BG2EE     - Distribute group's possessions from the beginning of BG2 to stores in Athkatla
+* BG2EE     - Distribute group's possessions from the beginning of BG2 to stores in Athkatla - might have to be EET only
 * ToB       - Add a "continue the adventure" ending with Bhaalspawn powers intact
 * EET       - Allow Imoen to transition to dual-class mage during her training with Duke Liia
 * EET       - Remove the recap of information the PC should know from the first BG2 dialogues
