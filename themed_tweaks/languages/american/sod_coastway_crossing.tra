@@ -63,7 +63,14 @@
 /////////////////////////////////////////////
 // The futile attempt to disarm the bridge //
 /////////////////////////////////////////////
+/*
+~Here she is now.~
+~<CHARNAME>, let's get you and your team into disguise.~
+~Would you like to join me?~
+~Yes, the rest of the troops will be watching for my signal~
+~
 @2070	= ~A mage was able to charm one of the guards.  We learned the password is 'nikto'.~
+*/
 
 /////////////////////
 // Journal entries //

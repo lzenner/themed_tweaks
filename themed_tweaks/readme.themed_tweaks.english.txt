@@ -80,9 +80,9 @@ This component is also a part of the Transitions mod.  Will be skipped if instal
 ------------------------------------------------------------------------
 PLANNED FUTURE ENHANCEMENTS
 ------------------------------------------------------------------------
-* BG1EE		- Give good-aligned reasons to go into peoples' homes
+* BG1EE     - Give good-aligned reasons to go into peoples' homes
 * BG1EE     - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending
-* BG1EE		- Allow turning down airship thieves guild quest without aggroing the entire guild
+* BG1EE     - Allow turning down airship thieves guild quest without aggroing the entire guild
 * BG1EE/SoD - Remove errant references to PC being Bhaalspawn, like Entar
 * SoD       - Speed up the elevator in hell
 * SoD       - Speed up the prison/trial scenes
