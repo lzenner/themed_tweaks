@@ -40,7 +40,7 @@ Allows the PC to wander Baldur's Gate with or without Corwin
 SoD - Scouting the Coast Way Crossing - by Lauriel
 ------------------------------------------------------------------------
 Adds a quest to scout the first bridge
-** In development
+** In development - just need to finish the bridge scene
 
 ------------------------------------------------------------------------
 SoD/BG2 - Add a little snark - by Lauriel
