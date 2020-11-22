@@ -1,0 +1,19 @@
+///////////////////////////////////////////////////////////////////
+// Make sure the player notices the interesting bits in the book //
+///////////////////////////////////////////////////////////////////
+
+@2000	= ~What is this?  Did you see this, <CHARNAME>?~
+@2001	= ~This book you found says there's a portal leading to Avernus under Dragonspear Castle.~
+@2002	= ~Not only that, but that it can be opened using blood that contains the essense of a god.~
+@2003	= ~Is that what Caelar has in mind?  Opening a portal to Avernus?  Is she mad?!~
+@2004	= ~Ugh, so that's what she's up to.  I think you're right.  I think she's lost her mind.~
+@2005	= ~What is this?  This book I found says there's a portal leading to Avernus under Dragonspear Castle.~
+@2006	= ~And it can be opened with my blood.~
+@2007	= ~Ugh, so that's what she's up to.  She wants my blood to open that portal.  She must mad!~
+
+//////////////////////////////////////////////////////
+// Journal Entry - just a journal note, not a quest //
+//////////////////////////////////////////////////////
+@3000	= ~A Historical Treatise of Dragonspear Castle
+
+I found a book that outlines what I believe are Caelar's plans concerning me.  She wants to use my blood to open a portal to Avernus.  The only conclusion is that she has lost her mind.~

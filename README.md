@@ -19,6 +19,7 @@ COMPONENTS IN DEVELOPMENT:
 --------------------------
 * SoD       - Stat-based observations and options
 * SoD       - Quest: Scouting the Coast Way Crossing
+* SoD       - Add reactions/options when 'A Historical Treatise of Dragonspear Castle' is found
 * SoD/BG2EE - Remove cut scenes that the PC shouldn't be privy to 
 * SoD/BG2EE - Move dreams about Irenicus from SoD to BG2
 
@@ -29,7 +30,6 @@ COMPONENTS TO BE DONE:
 * BG1EE     - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending
 * BG1EE		- Allow turning down airship thieves guild quest without aggroing the entire guild
 * BG1EE/SoD - Remove errant references to PC being Bhaalspawn, like Entar
-* SoD       - Add reactions/options when 'A Historical Treatise of Dragonspear Castle' is found
 * SoD       - Speed up the elevator in hell
 * SoD       - Speed up the prison/trial scenes
 * BG2EE     - Distribute group's possessions from the beginning of BG2 to stores in Athkatla

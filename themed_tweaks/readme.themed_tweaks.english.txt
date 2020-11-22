@@ -43,6 +43,12 @@ Adds a quest to scout the first bridge
 ** In development - just need to finish the bridge scene
 
 ------------------------------------------------------------------------
+SoD - 'A Historical Treatise of Dragonspear Castle' reactions - by Lauriel
+------------------------------------------------------------------------
+Adds reactions and dialogue options when the book "A Historical Treatise of Dragonspear Castle" is found in the random water troll area
+** In development
+
+------------------------------------------------------------------------
 SoD/BG2 - Add a little snark - by Lauriel
 ------------------------------------------------------------------------
 Just adds some fun snarky comments to the otherwise stuffy or inane dialogue
@@ -78,7 +84,6 @@ PLANNED FUTURE ENHANCEMENTS
 * BG1EE     - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending
 * BG1EE		- Allow turning down airship thieves guild quest without aggroing the entire guild
 * BG1EE/SoD - Remove errant references to PC being Bhaalspawn, like Entar
-* SoD       - Add reactions/options when 'A Historical Treatise of Dragonspear Castle' is found
 * SoD       - Speed up the elevator in hell
 * SoD       - Speed up the prison/trial scenes
 * BG2EE     - Distribute group's possessions from the beginning of BG2 to stores in Athkatla
