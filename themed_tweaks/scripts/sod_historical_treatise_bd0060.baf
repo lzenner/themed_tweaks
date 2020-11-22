@@ -71,9 +71,10 @@ THEN
 		StartCutSceneMode()
 		DisplayStringHead(Player1,@2005) // ~What is this?  This book I found says there's a portal leading to Avernus under Dragonspear Castle.~
 		Wait(2)
-		DisplayStringHead(Player1,@2006) // ~And it can be opened with my blood.~
+		DisplayStringHead(Player1,@2006) // ~And it can be opened with my blood?~
 		Wait(2)
 		DisplayStringHead(Player1,@2007) // ~Ugh, so that's what she's up to.  She wants my blood to open that portal.  She must mad!~
+		Wait(2)
 		AddJournalEntry(@3000,INFO)
 		EndCutSceneMode()
 END
