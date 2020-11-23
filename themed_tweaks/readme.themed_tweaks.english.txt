@@ -107,7 +107,7 @@ NOTE: If you've previously installed the mod, remove it before extracting a new 
 
 When installing or uninstalling, do not close the DOS window by clicking on the X button! Instead, press the Enter key when instructed to do so.
 
-IMPORTANT: EET_End will need to be reinstalled after installing this mod on EET.
+IMPORTANT FOR EET INSTALLATIONS: EET_End will need to be reinstalled after installing this mod.
  
 General (Windows, Mac OS X, and Linux)
 
