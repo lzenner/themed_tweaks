@@ -3,6 +3,15 @@
 ///////////////////////////////////
 
 IF
+	Global("BD_Plot","GLOBAL",100)
+	GlobalGT("#L_CWBridgeQuest","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("BD_Plot","GLOBAL",101) // Skip initial conversation with Corwin if we ignored her when we first got to camp
+		Continue()
+END
+
+IF
 	GlobalLT("#L_CWBridgeQuest","GLOBAL",3)
 	OR(2)
 		TriggerOverride(Player1,See("BDCRUS10"))
@@ -21,7 +30,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("#L_CWBridgeQuest","GLOBAL",97)
-		AddJournalEntry(@3008,QUEST_DONE)
+		AddJournalEntry(@3012,QUEST_DONE)
 END
 
 IF
@@ -30,7 +39,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("#L_CWBridgeQuest","GLOBAL",98)
-		AddJournalEntry(@3009,QUEST_DONE)
+		AddJournalEntry(@3013,QUEST_DONE)
 END
 
 IF
@@ -39,7 +48,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("#L_CWBridgeQuest","GLOBAL",99)
-		AddJournalEntry(@3010,QUEST_DONE)
+		AddJournalEntry(@3014,QUEST_DONE)
 END
 
 IF
