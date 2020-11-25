@@ -132,5 +132,25 @@ THEN
 		CreateCreature("bdfistex",[1980.1790],NE)
 		CreateCreature("bdfistex",[2035.1825],NE)
 
+		CreateCreature("bdfistex",[1920.1815],NE)
+		CreateCreature("bdfistex",[1975.1850],NE)
+		CreateCreature("bdfistex",[1860.1740],NE)
+		CreateCreature("bdfistex",[1915.1775],NE)
+
+		CreateCreature("bdfistex",[1800.1865],NE)
+		CreateCreature("bdfistex",[1855.1900],NE)
+		CreateCreature("bdfistex",[1740.1790],NE)
+		CreateCreature("bdfistex",[1795.1825],NE)
+		
+		CreateCreature("bdfistex",[1680.1915],NE)
+		CreateCreature("bdfistex",[1735.1950],NE)
+		CreateCreature("bdfistex",[1620.1840],NE)
+		CreateCreature("bdfistex",[1675.1875],NE)
+		
+		CreateCreature("bdfistex",[1560.1965],NE)
+		CreateCreature("bdfistex",[1615.2000],NE)
+		CreateCreature("bdfistex",[1500.1890],NE)
+		CreateCreature("bdfistex",[1555.1925],NE)
+
 		Continue()
 END
