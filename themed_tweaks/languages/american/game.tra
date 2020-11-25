@@ -28,3 +28,10 @@ STATISTICS:
 Special: Remove fatigue
 Special: Regain cast spells~
 
+/////////////////////////////////////////////////////
+// COAST WAY CROSSING QUEST DISGUISED FLAMING FIST //
+/////////////////////////////////////////////////////
+@1004	= ~Disguised Flaming Fist Veteran~
+@1005	= ~Disguised Flaming Fist Battlemage~
+@1006	= ~Disguised Flaming Fist Cleric~
+
