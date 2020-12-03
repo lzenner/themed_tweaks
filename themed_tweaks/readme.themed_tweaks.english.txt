@@ -80,16 +80,20 @@ This component is also a part of the Transitions mod.  Will be skipped if instal
 ------------------------------------------------------------------------
 PLANNED FUTURE ENHANCEMENTS
 ------------------------------------------------------------------------
-* BG1EE     - Give good-aligned reasons to go into peoples' homes
-* BG1EE     - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending
-* BG1EE     - Allow turning down airship thieves guild quest without aggroing the entire guild
-* BG1EE/SoD - Remove errant references to PC being Bhaalspawn, like Entar
-* SoD       - Speed up the elevator in hell
-* SoD       - Speed up the prison/trial scenes
-* BG2EE     - Distribute group's possessions from the beginning of BG2 to stores in Athkatla - might have to be EET only
-* ToB       - Add a "continue the adventure" ending with Bhaalspawn powers intact
-* EET       - Allow Imoen to transition to dual-class mage during her training with Duke Liia
-* EET       - Remove the recap of information the PC should know from the first BG2 dialogues
+* BG1EE/BG2EE     - Give good-aligned reasons to go into peoples' homes
+* BG1EE/SoD/BG2EE - Fix cut scenes that rearrange the group
+* BG1EE           - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending
+* BG1EE           - Allow turning down airship thieves guild quest without aggroing the entire guild
+* BG1EE/SoD       - Remove errant references to PC being Bhaalspawn, like Entar
+* SoD             - Speed up the elevator in hell
+* SoD             - Speed up the prison/trial scenes
+* BG2EE           - Distribute group's possessions from the beginning of BG2 to stores in Athkatla - might have to be EET only
+* BG2EE           - Allow addition of heads to the Flail of Ages in any order
+* ToB             - Give viable reasons as to why the PC should attack its siblings in their own enclaves
+* ToB             - Have Balthesar relent even if PC hasn't taken down any of the others yet
+* ToB             - Add a "continue the adventure" ending with Bhaalspawn powers intact
+* EET             - Allow Imoen to transition to dual-class mage during her training with Duke Liia
+* EET             - Remove the recap of information the PC should know from the first BG2 dialogues
 
 ------------------------------------------------------------------------
 COMPATABIITY NOTES

@@ -71,8 +71,8 @@ LANGUAGE ~American English~ ~american~
 ///////////////////////////////////////////////
 // IMOEN GIVEN SPECIAL WAND OF MAGIC MISSILE //
 ///////////////////////////////////////////////
-BEGIN @50
-	DESIGNATED 50
+BEGIN @60
+	DESIGNATED 60
 	LABEL "#L-SOD-IMOEN_WAND"
 	REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
 	INCLUDE ~themed_tweaks/components/sod_imoen_wand.tpa~
@@ -81,8 +81,8 @@ BEGIN @50
 ///////////////////////
 // GIVE AID TO IMOEN //
 ///////////////////////
-BEGIN @60
-	DESIGNATED 60
+BEGIN @70
+	DESIGNATED 70
 	LABEL "#L-SOD-AID_IMOEN"
 	REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
 	INCLUDE ~themed_tweaks/components/sod_aid_imoen.tpa~
@@ -91,8 +91,8 @@ BEGIN @60
 ///////////////////////////////////////////////////
 // ADD STAT-BASED OBSERVATIONS AND QUEST OPTIONS //
 ///////////////////////////////////////////////////
-BEGIN @70
-	DESIGNATED 70
+BEGIN @80
+	DESIGNATED 80
 	LABEL "#L-SOD-STAT_BASED_OPTIONS"
 	REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
 	INCLUDE ~themed_tweaks/components/sod_stat_options.tpa~
@@ -101,8 +101,8 @@ BEGIN @70
 //////////////////
 // DITCH CORWIN //
 //////////////////
-BEGIN @80
-	DESIGNATED 80
+BEGIN @90
+	DESIGNATED 90
 	LABEL "#L-SOD-DITCH_CORWIN"
 	REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
 	INCLUDE ~themed_tweaks/components/sod_ditch_corwin.tpa~
@@ -111,8 +111,8 @@ BEGIN @80
 ////////////////////////////////////
 // SCOUT COAST WAY CROSSING QUEST //
 ////////////////////////////////////
-BEGIN @90
-	DESIGNATED 90
+BEGIN @100
+	DESIGNATED 100
 	LABEL "#L-SOD-COASTWAY_CROSSING_QUEST"
 	REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
 	INCLUDE ~themed_tweaks/components/sod_coastway_crossing.tpa~
@@ -121,8 +121,8 @@ BEGIN @90
 ///////////////////////////////////
 // HISTORICAL TREATISE REACTIONS //
 ///////////////////////////////////
-BEGIN @100
-	DESIGNATED 100
+BEGIN @110
+	DESIGNATED 110
 	LABEL "#L-SOD-HISTORICAL_TREATISE_REACTIONS"
 	REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
 	INCLUDE ~themed_tweaks/components/sod_historical_treatise.tpa~
@@ -131,8 +131,8 @@ BEGIN @100
 ///////////////////////////////////////
 // ADD SOME SNARK TO STUFFY DIALOGUE //
 ///////////////////////////////////////
-BEGIN @130
-	DESIGNATED 130
+BEGIN @140
+	DESIGNATED 140
 	LABEL "#L-SOD-SNARK"
 	LABEL "#L-BG2-SNARK"
 	REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) OR (GAME_INCLUDES ~sod~) @6
@@ -142,8 +142,8 @@ BEGIN @130
 /////////////////////////////////////////
 // REMOVE CUT-SCENES THAT PC CAN'T SEE //
 /////////////////////////////////////////
-BEGIN @140
-	DESIGNATED 140
+BEGIN @150
+	DESIGNATED 150
 	LABEL "#L-SOD-CUTSCENES"
 	LABEL "#L-BG2-CUTSCENES"
 	REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) OR (GAME_INCLUDES ~sod~) @6
@@ -154,8 +154,8 @@ BEGIN @140
 // REMOVE DREAMS FROM IRENICUS FROM SOD //
 // ADD THEM TO BG2                      //
 //////////////////////////////////////////
-BEGIN @150
-	DESIGNATED 150
+BEGIN @160
+	DESIGNATED 160
 	LABEL "#L-SOD-IRENICUS_DREAMS"
 	LABEL "#L-BG2-IRENICUS_DREAMS"
 	REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) OR (GAME_INCLUDES ~sod~) @6
@@ -165,8 +165,8 @@ BEGIN @150
 ///////////////////////////////////////
 // IMOEN GIVEN MAGIC MISSILE ABILITY //
 ///////////////////////////////////////
-BEGIN @170
-	DESIGNATED 170
+BEGIN @180
+	DESIGNATED 180
 	LABEL "#L-BG2-IMOEN_MM"
 	REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @5
 	INCLUDE ~themed_tweaks/components/bg2_imoen_mm.tpa~
@@ -175,8 +175,8 @@ BEGIN @170
 ///////////////////////////////
 // RESTORE BHAALSPAWN POWERS //
 ///////////////////////////////
-BEGIN @180
-	DESIGNATED 180
+BEGIN @200
+	DESIGNATED 200
 	LABEL "#L-TRANSITIONS-RESTORE_POWER"
 	REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) @5
 	REQUIRE_PREDICATE !(MOD_IS_INSTALLED ~transitions/transitions.tp2~ (ID_OF_LABEL ~transitions/transitions.tp2~ "#L-TRANSITIONS-RESTORE_POWER")) @7

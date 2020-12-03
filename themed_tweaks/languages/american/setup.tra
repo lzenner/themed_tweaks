@@ -10,24 +10,31 @@
 @6 		= ~This component requires SoD, BG2EE, or EET~
 @7		= ~Already installed via Transitions~
 
-@10		= ~BG1EE - Give good-aligned reasons to go into peoples' homes~
-@20		= ~BG1EE - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending~
-@30		= ~BG1EE - Allow turning down airship thieves guild quest without aggroing entire guild~
-@40		= ~BG1EE/SoD - Remove errant references to PC being Bhaalspawn~
-@50		= ~SoD - Give Imoen a special wand for palace attack scene~
-@60		= ~SoD - Allow PC to give aid to Imoen after attack in palace~
-@70		= ~SoD - Stat-based observations and quest options~
-@80		= ~SoD - Ditch Tour-Guide Corwin Schael~
-@90		= ~SoD - Quest: Scouting the Coast Way Crossing~
-@100	= ~SoD - Add reactions to 'A Historical Treatise of Dragonspear Castle'~
-@110	= ~SoD - Speed up the elevator in hell~
-@120	= ~SoD - Speed up the prison/trial scenes~
-@130	= ~SoD/BG2EE - Add a little snark to dialogues~
-@140	= ~SoD/BG2EE - Remove cut scenes that the PC shouldn't be privy to~
-@150	= ~SoD/BG2EE - Move dreams about Irenicus from SoD to BG2EE~
-@160	= ~BG2EE - Distribute group's possessions from the beginning of BG2 to stores in Athkatla~
-@170	= ~BG2EE - Give Imoen innnate Magic Missiles for attack scene~
-@180	= ~BG2EE - Use Irenicus in hell movie as dream to restore Bhaalspawn powers~
-@190 	= ~ToB - Add a "continue the adventure" ending with Bhaalspawn powers intact~
-@200	= ~EET - Allow Imoen to transition to dual-class mage during her training with Duke Liia~
-@210	= ~EET - Remove the recap of information the PC should know from the first BG2 dialogues~
+@10		= ~BG1EE/BG2EE - Give good-aligned reasons to go into peoples' homes~
+@20		= ~BG1EE/SoD/BG2EE - Fix cut scenes that rearrange the group~
+@30		= ~BG1EE - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending~
+@40		= ~BG1EE - Allow turning down airship thieves guild quest without aggroing entire guild~
+@50		= ~BG1EE/SoD - Remove errant references to PC being Bhaalspawn~
+@60		= ~SoD - Give Imoen a special wand for palace attack scene~
+@70		= ~SoD - Allow PC to give aid to Imoen after attack in palace~
+@80		= ~SoD - Stat-based observations and quest options~
+@90		= ~SoD - Ditch Tour-Guide Corwin Schael~
+@100	= ~SoD - Quest: Scouting the Coast Way Crossing~
+@110	= ~SoD - Add reactions to 'A Historical Treatise of Dragonspear Castle'~
+@120	= ~SoD - Speed up the elevator in hell~
+@130	= ~SoD - Speed up the prison/trial scenes~
+@140	= ~SoD/BG2EE - Add a little snark to dialogues~
+@150	= ~SoD/BG2EE - Remove cut scenes that the PC shouldn't be privy to~
+@160	= ~SoD/BG2EE - Move dreams about Irenicus from SoD to BG2EE~
+@170	= ~BG2EE - Distribute group's possessions from the beginning of BG2 to stores in Athkatla~
+@180	= ~BG2EE - Give Imoen innnate Magic Missiles for attack scene~
+@190	= ~BG2EE - Allow addition of heads to the Flail of Ages in any order
+@200	= ~BG2EE - Use Irenicus in hell movie as dream to restore Bhaalspawn powers~
+@210	= ~ToB - Give viable reasons as to why the PC should attack its siblings in their own enclaves
+@220	= ~ToB - Have Balthesar relent even if PC hasn't taken down any of the others yet
+@230 	= ~ToB - Add a "continue the adventure" ending with Bhaalspawn powers intact~
+@240	= ~EET - Allow Imoen to transition to dual-class mage during her training with Duke Liia~
+@250	= ~EET - Remove the recap of information the PC should know from the first BG2 dialogues~
+
+
+
