@@ -18,6 +18,7 @@ Requires:
 Weight: 1~
 
 ////////////////////////////////////////////////////////////////////////////////////////////
+// FOR BG2 IMOEN'S MAGIC MISSILE COMPONENT                                                //
 // POTION FOUND IN CHATEAU IRENICUS SO IMOEN CAN REFRESH HER MAGIC MISSILE BEFORE EXITING //
 ////////////////////////////////////////////////////////////////////////////////////////////
 @1002	= ~Potion of Revitalization~
@@ -33,5 +34,5 @@ Special: Regain cast spells~
 /////////////////////////////////////////////////////
 @1004	= ~Disguised Flaming Fist Veteran~
 @1005	= ~Disguised Flaming Fist Battlemage~
-@1006	= ~Disguised Flaming Fist Cleric~
+@1006	= ~Disguised Flaming Fist Healer~
 

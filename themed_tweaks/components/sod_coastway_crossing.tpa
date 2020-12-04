@@ -12,36 +12,58 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 		OUTER_SET BRIDGE_HELD_2 = 52903
 	END
 	
-	// Modified Caelar Elite to use as a FF Merc in disguise
-	COPY_EXISTING ~BDGASS5.CRE~ ~override/#LFFAss1.cre~
+	// Disguised Flaming Fist
+	// TODO: Make them externally exactly like the elites that attacked the palace BDGASS5
+	//	  	 Have the Veteran call the PC into their place and then walk toward the bridge
+	//       Override default area script to only fire when on quest cue
+	//       There are a lot of changes to be made to the dialogue with Caelar
+	COPY_EXISTING ~bdfist26.CRE~ ~override/#LFFAss1.cre~
 		SAY NAME1 @1004	/* ~Disguised Flaming Fist Veteran~ */
 		SAY NAME2 @1004	/* ~Disguised Flaming Fist Veteran~ */
+		WRITE_LONG 0x0028 25344 // Animation = THIEF_MALE_HUMAN
+		WRITE_BYTE 0x002c 226 // Metal color = Metal normal - Eigengrau
+		WRITE_BYTE 0x002d 242 // Minor color = Thief Minor - Pale Olive
+		WRITE_BYTE 0x002e 241 // Major color = Thief Major - Olive
+		WRITE_BYTE 0x0030 228 // Leather color = Leather - Spectral Green
+		WRITE_BYTE 0x0031 244 // Armor color = Fighter Minor - Dark Cadet Gray
 		WRITE_ASCII SCRIPT_OVERRIDE ~#LFFAss1~ #8
-		WRITE_ASCII SCRIPT_CLASS ~~ #8
-		WRITE_ASCII SCRIPT_RACE ~~ #8
 		WRITE_ASCII SCRIPT_GENERAL ~~ #8
+		WRITE_ASCII SCRIPT_RACE ~~ #8
+		WRITE_ASCII SCRIPT_CLASS ~~ #8
 		WRITE_ASCII SCRIPT_DEFAULT ~~ #8
 		WRITE_ASCII DEATHVAR ~#LFFAss1~ #32
 		WRITE_ASCII DIALOG ~#LFFAss1~ #8
 
-	COPY_EXISTING ~BDGASS5.CRE~ ~override/#LFFAss2.cre~
+	COPY_EXISTING ~bdfistm2.CRE~ ~override/#LFFAss2.cre~
 		SAY NAME1 @1005 /* ~Disguised Flaming Fist Battlemage~ */
 		SAY NAME2 @1005	/* ~Disguised Flaming Fist Battlemage~ */
+		WRITE_LONG 0x0028 25344 // Animation = THIEF_MALE_HUMAN
+		WRITE_BYTE 0x002c 226 // Metal color = Metal normal - Eigengrau
+		WRITE_BYTE 0x002d 242 // Minor color = Thief Minor - Pale Olive
+		WRITE_BYTE 0x002e 241 // Major color = Thief Major - Olive
+		WRITE_BYTE 0x0030 228 // Leather color = Leather - Spectral Green
+		WRITE_BYTE 0x0031 244 // Armor color = Fighter Minor - Dark Cadet Gray
 		WRITE_ASCII SCRIPT_OVERRIDE ~~ #8
-		WRITE_ASCII SCRIPT_CLASS ~~ #8
-		WRITE_ASCII SCRIPT_RACE ~~ #8
 		WRITE_ASCII SCRIPT_GENERAL ~~ #8
+		WRITE_ASCII SCRIPT_RACE ~~ #8
+		WRITE_ASCII SCRIPT_CLASS ~~ #8
 		WRITE_ASCII SCRIPT_DEFAULT ~~ #8
 		WRITE_ASCII DEATHVAR ~#LFFAss2~ #32
 		WRITE_ASCII DIALOG ~~ #8
 
-	COPY_EXISTING ~BDGASS5.CRE~ ~override/#LFFAss3.cre~
-		SAY NAME1 @1006 /* ~Disguised Flaming Fist Cleric~ */
-		SAY NAME2 @1006 /* ~Disguised Flaming Fist Cleric~ */
+	COPY_EXISTING ~bdfist24.CRE~ ~override/#LFFAss3.cre~
+		SAY NAME1 @1006 /* ~Disguised Flaming Fist Healer~ */
+		SAY NAME2 @1006 /* ~Disguised Flaming Fist Healer~ */
+		WRITE_LONG 0x0028 25344 // Animation = THIEF_MALE_HUMAN
+		WRITE_BYTE 0x002c 226 // Metal color = Metal normal - Eigengrau
+		WRITE_BYTE 0x002d 242 // Minor color = Thief Minor - Pale Olive
+		WRITE_BYTE 0x002e 241 // Major color = Thief Major - Olive
+		WRITE_BYTE 0x0030 228 // Leather color = Leather - Spectral Green
+		WRITE_BYTE 0x0031 244 // Armor color = Fighter Minor - Dark Cadet Gray
 		WRITE_ASCII SCRIPT_OVERRIDE ~~ #8
-		WRITE_ASCII SCRIPT_CLASS ~~ #8
-		WRITE_ASCII SCRIPT_RACE ~~ #8
 		WRITE_ASCII SCRIPT_GENERAL ~~ #8
+		WRITE_ASCII SCRIPT_RACE ~~ #8
+		WRITE_ASCII SCRIPT_CLASS ~~ #8
 		WRITE_ASCII SCRIPT_DEFAULT ~~ #8
 		WRITE_ASCII DEATHVAR ~#LFFAss3~ #32
 		WRITE_ASCII DIALOG ~~ #8
