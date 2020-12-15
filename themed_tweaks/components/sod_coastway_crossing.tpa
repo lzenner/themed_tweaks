@@ -13,9 +13,10 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 	END
 	
 	// Disguised Flaming Fist
-	// TODO: Make them externally exactly like the elites that attacked the palace BDGASS5
-	//	  	 Have the Veteran call the PC into their place and then walk toward the bridge
+	// TODO: Have the Veteran call the PC into their place and then walk toward the bridge
 	//       Override default area script to only fire when on quest cue
+	//	     Have the group rush into the bridge area when the FF are discovered to not be elites
+	//		 Make sure disguised FF are inside the barrier for the fight
 	//       There are a lot of changes to be made to the dialogue with Caelar
 	COPY_EXISTING ~bdfist26.CRE~ ~override/#LFFAss1.cre~
 		SAY NAME1 @1004	/* ~Disguised Flaming Fist Veteran~ */
