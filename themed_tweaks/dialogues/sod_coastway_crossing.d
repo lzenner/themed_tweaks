@@ -7,6 +7,8 @@ EXTEND_TOP BDCORWIN 5 #0
 	IF ~Global("#L_SoDStatOptions","GLOBAL",1) OR(2) CheckStatGT(Player1,15,WIS) CheckStatGT(Player1,15,INT)~ THEN REPLY @2000 /* ~You should send out scouts.  Caelar will be expecting us to cross here.~ */ DO ~SetGlobal("bd_plot","global",101) SetGlobal("#L_CWBridgeQuest","GLOBAL",1)~ + CORWIN_BRIDGE_QUEST_1.1
 END
 
+//EXTEND_TOP BDCORWIN 53 
+
 ALTER_TRANS BDCORWIN
 	BEGIN 9 END
 	BEGIN 0 END
@@ -128,6 +130,8 @@ APPEND BDCORWIN
 	
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.4A // Going with Fist as their wookiee
 		SAY @2053 /* ~The disguised Fist will meet you near the bridge entrance when you're ready.~ */
+		++ @2071 /* ~Join me.  I've something to do before heading to the bridge, but I still want your help.~ */ GOTO CORWIN_BRIDGE_QUEST_3.6A
+		++ @2095 /* ~Corwin, would you like to join me?~ */ GOTO CORWIN_BRIDGE_QUEST_3.6B
 		++ @2058 /* ~Understood.  I'll head over there shortly.~ */ EXIT
 	END
 	
@@ -138,9 +142,23 @@ APPEND BDCORWIN
 	
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.5
 		SAY @2055 /* ~We will disguise your features as much as possible.  Some of the Fist hold you in high esteem.  It will bolster their confidence.~ */
+		++ @2071 /* ~Join me.  I've something to do before heading to the bridge, but I still want your help.~ */ GOTO CORWIN_BRIDGE_QUEST_3.6A
+		++ @2095 /* ~Corwin, would you like to join me?~ */ GOTO CORWIN_BRIDGE_QUEST_3.6B
 		IF ~!Global("#L_Snark","GLOBAL",0)~ THEN REPLY @2056 /* ~If you say so.  Whatever.~ */ EXIT
 		IF ~~ THEN REPLY @2057 /* ~If you're sure it'll help.  Ok.~ */ EXIT
 	END
+	
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.6A
+		SAY @2075 /* ~Alright, but let's not keep the Fist waiting too long.~ */
+		IF ~~ THEN DO ~JoinParty()~ EXIT
+	END
+	
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.6B
+		SAY @2096 /* ~Yes, the rest of the troops will be watching for my signal~ */
+		IF ~~ THEN DO ~JoinParty()~ EXIT
+	END
+	
+//	IF WEIGHT #-94 ~AreaCheck("BD1000") Global("#L_CWBridgeFFPrepped","GLOBAL",1) GlobalTimerExpired("#L_CWBridgeScoutTimer","MYAREA")~ BEGIN CORWIN_BRIDGE_QUEST_3.1B
 END
 
 APPEND BDCORWIJ
@@ -158,7 +176,7 @@ APPEND BDCORWIJ
 
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_2.3A
 		SAY @2022 /* ~That would be part of the preparations, yes.  It will take a while.  Meet me back at camp in a few hours.  I should know more by then.~ */
-		IF ~~ THEN DO ~SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() MoveToPoint([570.3520])~ EXIT
+		IF ~~ THEN DO ~SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() ApplySpell(MYSELF,WIZARD_IMPROVED_HASTE) MoveToPoint([570.3520])~ EXIT
 	END
 
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_2.2B
@@ -203,7 +221,8 @@ APPEND BDCORWIJ
 	
 	IF WEIGHT #-97 ~AreaCheck("BD1000") Global("#L_CWBridgeRigged","GLOBAL",1) Global("#L_CWBridgeExplosivesTalk","GLOBAL",1) Global("#L_CWBridgeFFPrepped","GLOBAL",0)~ BEGIN CORWIN_BRIDGE_QUEST_4.1
 		SAY @2050 /* ~I need to get our plan in motion.  Meet me at the bridge as soon as you can.  We'll be ready and I can rejoin you there.~ */
-		IF ~~ THEN REPLY @2058 /* ~Understood.  I'll head over there shortly.~ */ DO ~SetGlobal("#L_CWBridgeFFPrepped","GLOBAL",1) LeaveParty() EscapeAreaMove("bd1000",2905,1495,NE)~ EXIT
+		IF ~~ THEN REPLY @2058 /* ~Understood.  I'll head over there shortly.~ */ DO ~SetInterrupt(FALSE) SetGlobal("#L_CWBridgeFFPrepped","GLOBAL",1) LeaveParty() ApplySpell(MYSELF,WIZARD_IMPROVED_HASTE) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
+		//EscapeAreaMove("bd1000",2905,1495,NE) 
 	END
 END
 

@@ -50,7 +50,7 @@
 @2047	= ~If we can get a small group disguised as Caelar's crusaders past the guards at the bridge entrance, we might be able to throw those barrels into the river before they're able to be lit.~
 @2048	= ~This could work.  It's risky, but I don't see a better option.  If we try to rush it, they'll blow the bridge for sure.~
 @2049	= ~As soon as we're out of this dungeon, I'll go get my people prepared for this.~
-@2050	= ~I need to get our plan in motion.  Meet me at the bridge as soon as you can.  We'll be ready for you and I can rejoin you there.~
+@2050	= ~I need to get our plan in motion.  Meet me as soon as you can, at camp or the bridge.  We'll be ready for you and I can rejoin you then.~
 @2051	= ~What if a password is required?~
 @2052	= ~Hmm...I'll get one of our mages to charm a guard.  If there's a password, we'll learn what it is.~
 @2053	= ~The disguised Fist will meet you near the bridge entrance when you're ready.~
@@ -60,17 +60,40 @@
 @2057	= ~If you're sure it'll help.  Ok.~
 @2058	= ~Understood.  I'll head over there shortly.~
 
+///////////////////////////////////////////////////
+// PC goes to camp after Corwin leaves the group //
+///////////////////////////////////////////////////
+@2070	= ~I've just finished getting the Fist in place.  I'm ready to head to the bridge.  Are you?~
+@2071	= ~Join me.  I've something to do before heading to the bridge, but I still want your help.~
+@2072	= ~Yes, I'm ready.  Join me.  Let's go.~
+@2073	= ~I'll meet you up there when I'm ready.~
+@2074	= ~I'm heading there now, but I won't be needing you with me.~
+@2075	= ~Alright, but let's not keep the Fist waiting too long.~
+@2076	= ~Excellent.  Let's go!~
+@2077	= ~Alright.  But don't keep us waiting too long.~
+@2078	= ~Ok, if you're sure.  I'll meet you up there, just the same.~
+
+////////////////////////////////////////////////////////////////////
+// PC meets the disguised Flaming Fist and Corwin near the bridge //
+////////////////////////////////////////////////////////////////////
+@2090	= ~Here <PRO_HESHE> is now.~
+@2091	= ~<CHARNAME>, let's get you into disguise. Over here.~
+@2092	= ~What about the rest of my team?~
+@2093	= ~We won't be far behind.~
+@2094	= ~I won't be far behind.~
+@2095	= ~Corwin, would you like to join me?~ 
+@2096	= ~Yes, the rest of the troops will be watching for my signal~
+@2097	= ~Did we learn anything about a password?~
+@2098	= ~Yes, a mage was able to charm one of the guards.  The password is 'nikto'.~
+@2099	= ~Alright, I'm ready to do this.~
+@2100	= ~Would you like me to join you?~
+@2101	= ~No, that's not necessary.  You coordinate things on this end.~
+@2102	= ~I think that would be best, yes.  The rest of you, watch for my signal.  Let's go!~
+@2102	= ~You heard <PRO_HIMHER>.  Head out!~
+
 /////////////////////////////////////////////
 // The futile attempt to disarm the bridge //
 /////////////////////////////////////////////
-/*
-~Here <PRO_HESHE> is now.~
-~<CHARNAME>, let's get you into disguise.~
-~Would you like to join me?~
-~Yes, the rest of the troops will be watching for my signal~
-~
-@2070	= ~A mage was able to charm one of the guards.  We learned the password is 'nikto'.~
-*/
 
 /////////////////////
 // Journal entries //
