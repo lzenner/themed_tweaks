@@ -176,12 +176,12 @@ APPEND BDCORWIJ
 
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_2.3A
 		SAY @2022 /* ~That would be part of the preparations, yes.  It will take a while.  Meet me back at camp in a few hours.  I should know more by then.~ */
-		IF ~~ THEN DO ~SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() ApplySpell(MYSELF,WIZARD_IMPROVED_HASTE) MoveToPoint([570.3520])~ EXIT
+		IF ~~ THEN DO ~SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) ApplySpell(MYSELF,WIZARD_HASTE) MoveToPoint([570.3520])~ EXIT
 	END
 
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_2.2B
 		SAY @2023 /* ~I'll start preparations and get my people on gathering as much intel as possible.  It'll take a while.  Meet me back at camp in a few hours.  I should know more by then.~ */
-		IF ~~ THEN DO ~SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() MoveToPoint([570.3520])~ EXIT
+		IF ~~ THEN DO ~SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) ApplySpell(MYSELF,WIZARD_HASTE) MoveToPoint([570.3520])~ EXIT
 	END
 	
 	IF WEIGHT #-98 ~AreaCheck("BD1200") Global("#L_CWBridgeRigged","GLOBAL",1) Global("#L_CWBridgeExplosivesTalk","GLOBAL",0)~ BEGIN CORWIN_BRIDGE_QUEST_3.1
@@ -220,8 +220,8 @@ APPEND BDCORWIJ
 	END
 	
 	IF WEIGHT #-97 ~AreaCheck("BD1000") Global("#L_CWBridgeRigged","GLOBAL",1) Global("#L_CWBridgeExplosivesTalk","GLOBAL",1) Global("#L_CWBridgeFFPrepped","GLOBAL",0)~ BEGIN CORWIN_BRIDGE_QUEST_4.1
-		SAY @2050 /* ~I need to get our plan in motion.  Meet me at the bridge as soon as you can.  We'll be ready and I can rejoin you there.~ */
-		IF ~~ THEN REPLY @2058 /* ~Understood.  I'll head over there shortly.~ */ DO ~SetInterrupt(FALSE) SetGlobal("#L_CWBridgeFFPrepped","GLOBAL",1) LeaveParty() ApplySpell(MYSELF,WIZARD_IMPROVED_HASTE) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
+		SAY @2050 /* ~I need to get our plan in motion.  Meet me at camp or the bridge as soon as you can.  We'll be ready and I can rejoin you there.~ */
+		IF ~~ THEN REPLY @2058 /* ~Understood.  I'll head over there shortly.~ */ DO ~SetInterrupt(FALSE) SetGlobal("#L_CWBridgeFFPrepped","GLOBAL",1) LeaveParty() ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) ApplySpell(MYSELF,WIZARD_HASTE) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
 		//EscapeAreaMove("bd1000",2905,1495,NE) 
 	END
 END
