@@ -88,8 +88,9 @@
 @2099	= ~Alright, I'm ready to do this.~
 @2100	= ~Would you like me to join you?~
 @2101	= ~No, that's not necessary.  You coordinate things on this end.~
-@2102	= ~I think that would be best, yes.  The rest of you, watch for my signal.  Let's go!~
-@2102	= ~You heard <PRO_HIMHER>.  Head out!~
+@2102	= ~I think that would be best, yes.  Let's do this!~
+@2103	= ~You heard <PRO_HIMHER>.  Head out!~
+@2104	= ~The rest of you, watch for my signal.  Let's go!~
 
 /////////////////////////////////////////////
 // The futile attempt to disarm the bridge //
