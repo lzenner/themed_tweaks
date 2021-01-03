@@ -32,6 +32,7 @@ COMPONENTS TO BE DONE:
 * BG1EE           - Allow Dorn to join good group for the purpose of completing his revenge quest
 * BG1EE           - Allow turning down airship thieves guild quest without aggroing the entire guild
 * BG1EE/SoD       - Remove errant references to PC being Bhaalspawn, like Entar
+* SoD             - Expanded Coast Way Crossing quest allowing Boareskyr Bridge area to be skipped
 * SoD             - Speed up the elevator in hell
 * SoD             - Speed up the prison/trial scenes
 * BG2EE           - Distribute group's possessions from the beginning of BG2 to stores in Athkatla - might have to be EET only
