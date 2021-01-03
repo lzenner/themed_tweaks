@@ -158,73 +158,107 @@ APPEND BDCORWIN
 		IF ~~ THEN DO ~JoinParty()~ EXIT
 	END
 	
-//	IF WEIGHT #-94 ~AreaCheck("BD1000") Global("#L_CWBridgeFFPrepped","GLOBAL",1) GlobalTimerExpired("#L_CWBridgeScoutTimer","MYAREA")~ BEGIN CORWIN_BRIDGE_QUEST_3.1B
+	IF WEIGHT #-90 ~AreaCheck("BD1000") Global("#L_CWBridgeQuest","GLOBAL",4)~ THEN BEGIN CORWIN_BRIDGE_QUEST_4
+		SAY @2024 /* ~I have my people gathering more intel. Do you need me for something?~ */
+		IF ~~ THEN REPLY #%CORWIN_NEED_1% /* ~I want you to come with me.~ */ GOTO 54
+		IF ~~ THEN REPLY #%CORWIN_NEED_2% /* ~Your skills are wasted here. Stay here and they'll waste away entirely. Join me and I promise I'll find a way to put them to better use.~ */ GOTO 54
+		IF ~~ THEN REPLY #%CORWIN_NEED_3% /* ~For the moment, nothing.~ */ GOTO 55
+		IF ~~ THEN REPLY #%CORWIN_NEED_4% /* ~From you? Don't flatter yourself.~ */ GOTO 56
+	END
+
+	IF WEIGHT #-90 ~AreaCheck("BD1000") TriggerOverride("FF_Camp",IsOverMe("CORWIN")) OR(2) Global("#L_CWBridgeQuest","GLOBAL",5) Global("#L_CWBridgeQuest","GLOBAL",6)~ THEN BEGIN CORWIN_BRIDGE_QUEST_5
+		SAY @2070 /* ~The Fist are in place and I'm ready to head to the bridge.  Are you?~ */
+		++ @2071 /* ~Join me.  I've something to do before heading to the bridge, but I still want your help.~ */ GOTO CORWIN_BRIDGE_QUEST_5.1A
+		++ @2072 /* ~Yes, I'm ready.  Join me.  Let's go.~ */ GOTO CORWIN_BRIDGE_QUEST_5.1B
+		++ @2073 /* ~I'll meet you up there when I'm ready.~ */ GOTO CORWIN_BRIDGE_QUEST_5.1C
+		++ @2074 /* ~I'm heading there now, but I won't be needing you with me.~ */ GOTO CORWIN_BRIDGE_QUEST_5.1D
+	END
+	
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_5.1A
+		SAY @2075 /* ~Alright, but let's not keep the Fist waiting too long.~ */
+		IF ~~ THEN DO ~JoinParty()~ EXIT
+	END
+	
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_5.1B
+		SAY @2076 /* ~Excellent.  Let's go!~ */
+		IF ~~ THEN DO ~JoinParty()~ EXIT
+	END
+
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_5.1C
+		SAY @2077 /* ~Alright.  But don't keep us waiting too long.~ */
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_5.1D
+		SAY @2078 /* ~Ok, if you're sure.  I'll meet you up there, just the same.~ */
+		IF ~~ THEN EXIT
+	END
 END
 
 APPEND BDCORWIJ
-	IF WEIGHT #-99 ~AreaCheck("BD1000") GlobalGT("#L_CWBridgeQuest","GLOBAL",1) GlobalLT("#L_CWBridgeQuest","GLOBAL",4)~ THEN BEGIN CORWIN_BRIDGE_QUEST_2.1
+	IF WEIGHT #-99 ~AreaCheck("BD1000") GlobalGT("#L_CWBridgeQuest","GLOBAL",1) GlobalLT("#L_CWBridgeQuest","GLOBAL",4)~ THEN BEGIN CORWINJ_BRIDGE_QUEST_2.1
 		SAY	@2010 /* ~So, Caelar's forces have control of the bridge.  Just great!  Any ideas how should we proceed, <CHARNAME>?~ */
-		+ ~Global("#L_WeakPoison","GLOBAL",1)~ + @2015 /* ~Well, Caelar's attack on the palace wasn't meant to kill me.  So, they must be waiting for their people to return with me in tow or they'd have just destroyed the bridge and moved on.~ */ UNSOLVED_JOURNAL @3005 GOTO CORWIN_BRIDGE_QUEST_2.2A
-		+ ~Global("#L_WeakPoison","GLOBAL",0) Global("#L_SoDStatOptions","GLOBAL",1) CheckStatGT(Player1,9,INT)~ + @2016 /* ~Well, they must be waiting for something, or they'd just have destroyed the bridge and move on.  Maybe they're waiting for their people who attacked the palace?~ */ UNSOLVED_JOURNAL @3005 GOTO CORWIN_BRIDGE_QUEST_2.2A
-		++ @2020 /* ~We need to cross that bridge.  They're in our way.  We have to confront them sooner or later.  Now works for me.  I say we attack.~ */ UNSOLVED_JOURNAL @3005 + CORWIN_BRIDGE_QUEST_2.2B
+		+ ~Global("#L_WeakPoison","GLOBAL",1)~ + @2015 /* ~Well, Caelar's attack on the palace wasn't meant to kill me.  So, they must be waiting for their people to return with me in tow or they'd have just destroyed the bridge and moved on.~ */ UNSOLVED_JOURNAL @3005 GOTO CORWINJ_BRIDGE_QUEST_2.2A
+		+ ~Global("#L_WeakPoison","GLOBAL",0) Global("#L_SoDStatOptions","GLOBAL",1) CheckStatGT(Player1,9,INT)~ + @2016 /* ~Well, they must be waiting for something, or they'd just have destroyed the bridge and move on.  Maybe they're waiting for their people who attacked the palace?~ */ UNSOLVED_JOURNAL @3005 GOTO CORWINJ_BRIDGE_QUEST_2.2A
+		++ @2020 /* ~We need to cross that bridge.  They're in our way.  We have to confront them sooner or later.  Now works for me.  I say we attack.~ */ UNSOLVED_JOURNAL @3005 + CORWINJ_BRIDGE_QUEST_2.2B
 	END
 
-	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_2.2A
+	IF ~~ THEN BEGIN CORWINJ_BRIDGE_QUEST_2.2A
 		SAY @2017 /* ~We need to cross that bridge, no matter what they're waiting for.  I'll start preparations for launching an assault.~ */
-		++ @2018 /* ~A little more information on the size of the force on the other side of the bridge might be in order, don't you think? */ + CORWIN_BRIDGE_QUEST_2.3A
+		++ @2018 /* ~A little more information on the size of the force on the other side of the bridge might be in order, don't you think? */ + CORWINJ_BRIDGE_QUEST_2.3A
 	END
 
-	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_2.3A
+	IF ~~ THEN BEGIN CORWINJ_BRIDGE_QUEST_2.3A
 		SAY @2022 /* ~That would be part of the preparations, yes.  It will take a while.  Meet me back at camp in a few hours.  I should know more by then.~ */
-		IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
-		IF ~NotStateCheck(MYSELF,STATE_HASTED) !Global("A7_AutoHasteActive","GLOBAL",1)~ THEN DO ~SetInterrupt(FALSE) SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) ApplySpell(MYSELF,WIZARD_HASTE) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
+		IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() SetGlobal("#L_CWBridgeCorwinLeft","GLOBAL",1) ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
+		IF ~NotStateCheck(MYSELF,STATE_HASTED) !Global("A7_AutoHasteActive","GLOBAL",1)~ THEN DO ~SetInterrupt(FALSE) SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() SetGlobal("#L_CWBridgeCorwinLeft","GLOBAL",1) ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) ApplySpell(MYSELF,WIZARD_HASTE) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
 	END
 
-	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_2.2B
+	IF ~~ THEN BEGIN CORWINJ_BRIDGE_QUEST_2.2B
 		SAY @2023 /* ~I'll start preparations and get my people on gathering as much intel as possible.  It'll take a while.  Meet me back at camp in a few hours.  I should know more by then.~ */
-		IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
-		IF ~NotStateCheck(MYSELF,STATE_HASTED) !Global("A7_AutoHasteActive","GLOBAL",1)~ THEN DO ~SetInterrupt(FALSE) SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) ApplySpell(MYSELF,WIZARD_HASTE) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
+		IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() SetGlobal("#L_CWBridgeCorwinLeft","GLOBAL",1) ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
+		IF ~NotStateCheck(MYSELF,STATE_HASTED) !Global("A7_AutoHasteActive","GLOBAL",1)~ THEN DO ~SetInterrupt(FALSE) SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() SetGlobal("#L_CWBridgeCorwinLeft","GLOBAL",1) ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) ApplySpell(MYSELF,WIZARD_HASTE) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
 	END
 	
-	IF WEIGHT #-98 ~AreaCheck("BD1200") Global("#L_CWBridgeRigged","GLOBAL",1) Global("#L_CWBridgeExplosivesTalk","GLOBAL",0)~ BEGIN CORWIN_BRIDGE_QUEST_3.1
+	IF WEIGHT #-98 ~AreaCheck("BD1200") Global("#L_CWBridgeRigged","GLOBAL",1) Global("#L_CWBridgeExplosivesTalk","GLOBAL",0)~ BEGIN CORWINJ_BRIDGE_QUEST_3.1
 		SAY @2040 /* ~This complicates things.  We'll need to get rid of those barrels before making any sort of assault.~ */
-		IF ~~ THEN DO ~SetGlobal("#L_CWBridgeExplosivesTalk","GLOBAL",1)~ GOTO CORWIN_BRIDGE_QUEST_3.2
+		IF ~~ THEN DO ~SetGlobal("#L_CWBridgeExplosivesTalk","GLOBAL",1)~ GOTO CORWINJ_BRIDGE_QUEST_3.2
 	END
 	
-	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.2
+	IF ~~ THEN BEGIN CORWINJ_BRIDGE_QUEST_3.2
 		SAY @2044 /* ~Do you have any ideas how we should deal with them?~ */
-		IF ~Global("#L_WeakPoison","GLOBAL",1) RandomNum(10,1)~ THEN REPLY @2045 /* ~I do have one crazy idea.  They are expecting those assassins Caelar sent to the palace to return with me in tow.  We could give them that. Half way across we might be able to throw those barrels into the river before they're able to be lit.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",6)~ UNSOLVED_JOURNAL @3009 + CORWIN_BRIDGE_QUEST_3.3A
-		IF ~Global("#L_WeakPoison","GLOBAL",1) RandomNumGT(10,1)~ THEN REPLY @2045 /* ~I do have one crazy idea.  They are expecting those assassins Caelar sent to the palace to return with me in tow.  We could give them that. Half way across we might be able to throw those barrels into the river before they're able to be lit.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",6)~ UNSOLVED_JOURNAL @3011 + CORWIN_BRIDGE_QUEST_3.3B1
-		IF ~Global("#L_WeakPoison","GLOBAL",0) Global("#L_SoDStatOptions","GLOBAL",1) CheckStatGT(Player1,9,INT) RandomNumLT(10,6)~ THEN REPLY @2046 /* ~I do have one crazy idea.  They're probably expecting Caelar's assassins to return from their attack on the palace.  We could give them that.  Half way across we might be able to throw those barrels into the river before they're able to be lit.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",5)~ UNSOLVED_JOURNAL @3008 + CORWIN_BRIDGE_QUEST_3.3A
-		IF ~Global("#L_WeakPoison","GLOBAL",0) Global("#L_SoDStatOptions","GLOBAL",1) CheckStatGT(Player1,9,INT) RandomNumGT(10,5)~ THEN REPLY @2046 /* ~I do have one crazy idea.  They're probably expecting Caelar's assassins to return from their attack on the palace.  We could give them that.  Half way across we might be able to throw those barrels into the river before they're able to be lit.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",5)~ UNSOLVED_JOURNAL @3010 + CORWIN_BRIDGE_QUEST_3.3B1
-		IF ~RandomNumGT(10,1)~ THEN REPLY @2047 /* ~If we can get a small group disguised as Caelar's crusaders past the guards at the bridge entrance, we might be able to throw those barrels into the river before they're able to be lit.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",5)~ UNSOLVED_JOURNAL @3008 + CORWIN_BRIDGE_QUEST_3.3A
-		IF ~RandomNum(10,1)~ THEN REPLY @2047 /* ~If we can get a small group disguised as Caelar's crusaders past the guards at the bridge entrance, we might be able to throw those barrels into the river before they're able to be lit.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",5)~ UNSOLVED_JOURNAL @3010 + CORWIN_BRIDGE_QUEST_3.3B1
+		IF ~Global("#L_WeakPoison","GLOBAL",1) RandomNum(10,1)~ THEN REPLY @2045 /* ~I do have one crazy idea.  They are expecting those assassins Caelar sent to the palace to return with me in tow.  We could give them that. Half way across we might be able to throw those barrels into the river before they're able to be lit.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",6)~ UNSOLVED_JOURNAL @3009 + CORWINJ_BRIDGE_QUEST_3.3A
+		IF ~Global("#L_WeakPoison","GLOBAL",1) RandomNumGT(10,1)~ THEN REPLY @2045 /* ~I do have one crazy idea.  They are expecting those assassins Caelar sent to the palace to return with me in tow.  We could give them that. Half way across we might be able to throw those barrels into the river before they're able to be lit.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",6)~ UNSOLVED_JOURNAL @3011 + CORWINJ_BRIDGE_QUEST_3.3B1
+		IF ~Global("#L_WeakPoison","GLOBAL",0) Global("#L_SoDStatOptions","GLOBAL",1) CheckStatGT(Player1,9,INT) RandomNumLT(10,6)~ THEN REPLY @2046 /* ~I do have one crazy idea.  They're probably expecting Caelar's assassins to return from their attack on the palace.  We could give them that.  Half way across we might be able to throw those barrels into the river before they're able to be lit.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",5)~ UNSOLVED_JOURNAL @3008 + CORWINJ_BRIDGE_QUEST_3.3A
+		IF ~Global("#L_WeakPoison","GLOBAL",0) Global("#L_SoDStatOptions","GLOBAL",1) CheckStatGT(Player1,9,INT) RandomNumGT(10,5)~ THEN REPLY @2046 /* ~I do have one crazy idea.  They're probably expecting Caelar's assassins to return from their attack on the palace.  We could give them that.  Half way across we might be able to throw those barrels into the river before they're able to be lit.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",5)~ UNSOLVED_JOURNAL @3010 + CORWINJ_BRIDGE_QUEST_3.3B1
+		IF ~RandomNumGT(10,1)~ THEN REPLY @2047 /* ~If we can get a small group disguised as Caelar's crusaders past the guards at the bridge entrance, we might be able to throw those barrels into the river before they're able to be lit.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",5)~ UNSOLVED_JOURNAL @3008 + CORWINJ_BRIDGE_QUEST_3.3A
+		IF ~RandomNum(10,1)~ THEN REPLY @2047 /* ~If we can get a small group disguised as Caelar's crusaders past the guards at the bridge entrance, we might be able to throw those barrels into the river before they're able to be lit.~ */ DO ~SetGlobal("#L_CWBridgeQuest","GLOBAL",5)~ UNSOLVED_JOURNAL @3010 + CORWINJ_BRIDGE_QUEST_3.3B1
 	END
 	
-	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.3A
+	IF ~~ THEN BEGIN CORWINJ_BRIDGE_QUEST_3.3A
 		SAY @2048 /* ~This could work.  It's risky, but I don't see a better option.  If we try to rush it, they'll blow the bridge for sure.~ */
-		IF ~~ THEN GOTO CORWIN_BRIDGE_QUEST_3.4
+		IF ~~ THEN GOTO CORWINJ_BRIDGE_QUEST_3.4
 	END
 	
-	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.3B1
+	IF ~~ THEN BEGIN CORWINJ_BRIDGE_QUEST_3.3B1
 		SAY @2048 /* ~This could work.  It's risky, but I don't see a better option.  If we try to rush it, they'll blow the bridge for sure.~ */
-		IF ~~ THEN REPLY @2051 /* ~What if a password is required?~ */ GOTO CORWIN_BRIDGE_QUEST_3.3B2
+		IF ~~ THEN REPLY @2051 /* ~What if a password is required?~ */ GOTO CORWINJ_BRIDGE_QUEST_3.3B2
 	END
 	
-	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.3B2
+	IF ~~ THEN BEGIN CORWINJ_BRIDGE_QUEST_3.3B2
 		SAY @2052 /* ~Hmm...I'll get one of our mages to charm a guard.  If there's a password, we'll learn what it is.~ */
-		IF ~~ THEN DO ~SetGlobal("#L_CWBridgePassword","GLOBAL",1)~ GOTO CORWIN_BRIDGE_QUEST_3.4
+		IF ~~ THEN DO ~SetGlobal("#L_CWBridgePassword","GLOBAL",1)~ GOTO CORWINJ_BRIDGE_QUEST_3.4
 	END
 	
-	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.4
+	IF ~~ THEN BEGIN CORWINJ_BRIDGE_QUEST_3.4
 		SAY @2049 /* ~As soon as we're out of this dungeon, I'll go get my people prepared for this.~ */
 		IF ~~ THEN EXIT
 	END
 	
-	IF WEIGHT #-97 ~AreaCheck("BD1000") Global("#L_CWBridgeRigged","GLOBAL",1) Global("#L_CWBridgeExplosivesTalk","GLOBAL",1) Global("#L_CWBridgeFFPrepped","GLOBAL",0)~ BEGIN CORWIN_BRIDGE_QUEST_4.1
+	IF WEIGHT #-97 ~AreaCheck("BD1000") Global("#L_CWBridgeRigged","GLOBAL",1) Global("#L_CWBridgeExplosivesTalk","GLOBAL",1) Global("#L_CWBridgeFFPrepped","GLOBAL",0)~ BEGIN CORWINJ_BRIDGE_QUEST_4.1
 		SAY @2050 /* ~I need to get our plan in motion.  Meet me at camp or the bridge as soon as you can.  We'll be ready and I can rejoin you there.~ */
-		IF ~OR(2) StateCheck(MYSELF,STATE_HASTED) Global("A7_AutoHasteActive","GLOBAL",1)~ THEN REPLY @2058 /* ~Understood.  I'll head over there shortly.~ */ DO ~SetInterrupt(FALSE) SetGlobal("#L_CWBridgeFFPrepped","GLOBAL",1) LeaveParty() ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
-		IF ~NotStateCheck(MYSELF,STATE_HASTED) !Global("A7_AutoHasteActive","GLOBAL",1)~ THEN REPLY @2058 /* ~Understood.  I'll head over there shortly.~ */ DO ~SetInterrupt(FALSE) SetGlobal("#L_CWBridgeFFPrepped","GLOBAL",1) LeaveParty() ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) ApplySpell(MYSELF,WIZARD_HASTE) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
+		IF ~OR(2) StateCheck(MYSELF,STATE_HASTED) Global("A7_AutoHasteActive","GLOBAL",1)~ THEN REPLY @2058 /* ~Understood.  I'll head over there shortly.~ */ DO ~SetInterrupt(FALSE) SetGlobal("#L_CWBridgeFFPrepped","GLOBAL",1) LeaveParty() SetGlobal("#L_CWBridgeCorwinLeft","GLOBAL",1) ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
+		IF ~NotStateCheck(MYSELF,STATE_HASTED) !Global("A7_AutoHasteActive","GLOBAL",1)~ THEN REPLY @2058 /* ~Understood.  I'll head over there shortly.~ */ DO ~SetInterrupt(FALSE) SetGlobal("#L_CWBridgeFFPrepped","GLOBAL",1) LeaveParty() SetGlobal("#L_CWBridgeCorwinLeft","GLOBAL",1) ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) ApplySpell(MYSELF,WIZARD_HASTE) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
 		//EscapeAreaMove("bd1000",2905,1495,NE) 
 	END
 END

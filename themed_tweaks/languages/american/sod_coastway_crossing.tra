@@ -29,6 +29,7 @@
 @2021	= ~I'll start preparations and get my people on gathering as much intel as possible.  It'll take a while.  Meet here in a few hours.  I should know more by then.~
 @2022	= ~That would be part of the preparations, yes.  It will take a while.  Meet me back at camp in a few hours.  I should know more by then.~
 @2023	= ~I'll start preparations and get my people on gathering as much intel as possible.  It'll take a while.  Meet me back at camp in a few hours.  I should know more by then.~
+@2024	= ~I have my people gathering more intel. Do you need me for something?~
 
 //////////////////////////
 // Scrying Pool Options //
@@ -63,7 +64,7 @@
 ///////////////////////////////////////////////////
 // PC goes to camp after Corwin leaves the group //
 ///////////////////////////////////////////////////
-@2070	= ~I've just finished getting the Fist in place.  I'm ready to head to the bridge.  Are you?~
+@2070	= ~The Fist are in place and I'm ready to head to the bridge.  Are you?~
 @2071	= ~Join me.  I've something to do before heading to the bridge, but I still want your help.~
 @2072	= ~Yes, I'm ready.  Join me.  Let's go.~
 @2073	= ~I'll meet you up there when I'm ready.~

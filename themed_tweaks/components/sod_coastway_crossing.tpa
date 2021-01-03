@@ -7,9 +7,17 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 	ACTION_IF GAME_IS ~eet~ BEGIN
 		OUTER_SET BRIDGE_HELD_1 = 252899
 		OUTER_SET BRIDGE_HELD_2 = 252903
+		OUTER_SET CORWIN_NEED_1 = 256087
+		OUTER_SET CORWIN_NEED_2 = 256088
+		OUTER_SET CORWIN_NEED_3 = 256089
+		OUTER_SET CORWIN_NEED_4 = 256090
 	END ELSE BEGIN
 		OUTER_SET BRIDGE_HELD_1 = 52899
 		OUTER_SET BRIDGE_HELD_2 = 52903
+		OUTER_SET CORWIN_NEED_1 = 56087
+		OUTER_SET CORWIN_NEED_2 = 56088
+		OUTER_SET CORWIN_NEED_3 = 56089
+		OUTER_SET CORWIN_NEED_4 = 56090
 	END
 	
 	// Disguised Flaming Fist
@@ -70,8 +78,8 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 		WRITE_ASCII DIALOG ~~ #8
 
 	// #L_CWBridgeQuest global variable used as a means to track the progress of the quest
-	// 0 = not started
-	// 1 = warned to be on the look out 3000
+	// 0 = Not started
+	// 1 = Warned to be on the look out 3000
 	// 2 = Locals have warned about the bridge being held but the PC hasn't seen it yet 3001
 	// 3 = PC has gotten close enough to the bridge to see it's held 3002
 	// 4 = Corwin has been informed (one way or another) that the bridge is being held by Caelar's forces and she's gathering more intel 3003-5 
@@ -100,5 +108,5 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ01.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 	
 	// Bridge infiltration cutscenes
-	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ02.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~	// Put FF in place
+	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ02.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 END
