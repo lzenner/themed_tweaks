@@ -3,6 +3,41 @@
 ////////////////////////////////////////////////////
 
 DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
+	// TODO: Have the Veteran call the PC into their place and then walk toward the bridge
+	//       Override default area script to only fire when on quest cue
+	//	     Have the group rush into the bridge area when the FF are discovered to not be elites
+	//		 Make sure disguised FF are inside the barrier for the fight
+	//       There are a lot of changes to be made to the dialogue with Caelar
+	//       Additions to wrap-up dialogues with Corwin and Bence
+	// FUTURE: Allow for successfully saving the bridge (this may need its own mod)
+	//		This would allow for Boareskyr Bridge to be skipped
+	//		Will have Jaheira and wassisname approach PC after success to request aid for Bridgefort
+	//		Player will have to decide which to do first (or at all), in what order, and from which direction(s)
+	//		If heading to the coallition camp first, ie coming from the north:
+	//			will move the temple of Cyric to the north of the Boareskyr area
+	//			temple can be done and still skip Boareskyr
+	//			will need another teleportation circle on the north side of the river
+	//				2 activation stones - one for the southern circle, one for the northern
+	//		Can have a two-pronged attack, from both the north and the south
+
+	// #L_CWBridgeQuest global variable used as a means to track the progress of the quest
+	// Associated numbers in the 3ks are journal entry references
+	// 0 = Not started
+	// 1 = Warned to be on the look out 3000
+	// 2 = Locals have warned about the bridge being held but the PC hasn't seen it yet 3001
+	// 3 = PC has gotten close enough to the bridge to see it's held 3002
+	// 4 = Corwin has been informed (one way or another) that the bridge is being held by Caelar's forces and she's gathering more intel 3003-5 
+	// 5 = Using disguises to disarm the explosives on the bridge 3008,10 without or with password
+	// 6 = Using PC as bait to disarm the explosives on the bridge 3009,11 without or with password
+	// 97 = PC took on the bridge without the Flaming Fist 3012
+	// 98 = Flaming Fist botched the password 3013
+	// 99 = The charmed informant escaped and ruined the plan 3014
+	
+	// #L_CWBridgeRigged global variable used to track if PC knows the bridge is rigged with explosives 3006-7
+	// #L_CWBridgeExplosivesTalk global variable used to track if PC and Corwin have discussed the explosives
+	// #L_CWBridgePassword global variable used to track if FF know the password to gain access to the bridge
+	// #L_CWBridgeWarn global variable used to track how often the PC is warned by locals that bridge is held by Caelar..0 1 or 2
+
 	// Set some strrefs to be used in dialogues depending up on the installed game
 	ACTION_IF GAME_IS ~eet~ BEGIN
 		OUTER_SET BRIDGE_HELD_1 = 252899
@@ -21,11 +56,6 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 	END
 	
 	// Disguised Flaming Fist
-	// TODO: Have the Veteran call the PC into their place and then walk toward the bridge
-	//       Override default area script to only fire when on quest cue
-	//	     Have the group rush into the bridge area when the FF are discovered to not be elites
-	//		 Make sure disguised FF are inside the barrier for the fight
-	//       There are a lot of changes to be made to the dialogue with Caelar
 	COPY_EXISTING ~bdfist26.CRE~ ~override/#LFFAss1.cre~
 		SAY NAME1 @1004	/* ~Disguised Flaming Fist Veteran~ */
 		SAY NAME2 @1004	/* ~Disguised Flaming Fist Veteran~ */
@@ -76,23 +106,6 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 		WRITE_ASCII SCRIPT_DEFAULT ~~ #8
 		WRITE_ASCII DEATHVAR ~#LFFAss3~ #32
 		WRITE_ASCII DIALOG ~~ #8
-
-	// #L_CWBridgeQuest global variable used as a means to track the progress of the quest
-	// 0 = Not started
-	// 1 = Warned to be on the look out 3000
-	// 2 = Locals have warned about the bridge being held but the PC hasn't seen it yet 3001
-	// 3 = PC has gotten close enough to the bridge to see it's held 3002
-	// 4 = Corwin has been informed (one way or another) that the bridge is being held by Caelar's forces and she's gathering more intel 3003-5 
-	// 5 = Using disguises to disarm the explosives on the bridge 3008,10 without or with password
-	// 6 = Using PC as bait to disarm the explosives on the bridge 3009,11 without or with password
-	// 97 = PC took on the bridge without the Flaming Fist 3012
-	// 98 = Flaming Fist botched the password 3013
-	// 99 = The charmed informant escaped and ruined the plan 3014
-	
-	// #L_CWBridgeRigged global variable used to track if PC knows the bridge is rigged with explosives 3006-7
-	// #L_CWBridgeExplosivesTalk global variable used to track if PC and Corwin have discussed the explosives
-	// #L_CWBridgePassword global variable used to track if FF know the password to gain access to the bridge
-	// #L_CWBridgeWarn global variable used to track how often the PC is warned by locals that bridge is held by Caelar..0 1 or 2
 
    	// Define the journal entries to be used during the quest
 	ADD_JOURNAL @3000 @3001 @3002 @3003 @3004 @3005 @3006 @3007 @3008 @3009 @3010 @3011 @3012 @3013 @3014 USING ~%tra_loc%/%s/sod_coastway_crossing.tra~

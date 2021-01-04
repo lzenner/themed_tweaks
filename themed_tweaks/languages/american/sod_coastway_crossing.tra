@@ -61,9 +61,9 @@
 @2057	= ~If you're sure it'll help.  Ok.~
 @2058	= ~Understood.  I'll head over there shortly.~
 
-///////////////////////////////////////////////////
-// PC goes to camp after Corwin leaves the group //
-///////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+// PC talks to Corwin in camp before meeting at the bridge for the assault //
+/////////////////////////////////////////////////////////////////////////////
 @2070	= ~The Fist are in place and I'm ready to head to the bridge.  Are you?~
 @2071	= ~Join me.  I've something to do before heading to the bridge, but I still want your help.~
 @2072	= ~Yes, I'm ready.  Join me.  Let's go.~
