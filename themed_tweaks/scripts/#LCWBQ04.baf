@@ -1,0 +1,107 @@
+//////////////////////////////////////
+// Coast Way Bridge Quest Cut Scene //
+// The charmed informant escapes    //
+//////////////////////////////////////
+
+IF
+	Global("#L_CWBridgeQuest","GLOBAL",5) // No prisoner
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		
+		// This will be a custom NPC soon
+		MoveViewObject("BDCRUS11",INSTANT)
+		DisplayStringHead("BDCRUS11",@2126) // ~WAIT!  WAIT!  Don't let 'em pass!  They're Flaming Fist and that's the Hero with 'em!~
+		Wait(2)
+		
+		MoveViewObject(Player1,INSTANT)
+		DisplayStringHead(Player1,@2128) // ~Oh great, how'd she get loose?~
+		Wait(2)
+		
+		Continue()
+END
+
+IF
+	Global("#L_CWBridgeQuest","GLOBAL",6) // PC posing as prisoner
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		
+		// This will be a custom NPC soon
+		MoveViewObject("BDCRUS11",INSTANT)
+		DisplayStringHead("BDCRUS11",@2127) // ~WAIT!  WAIT!  Don't let 'em pass!  That's the Flaming Fist with the Hero!~
+		Wait(2)
+		
+		MoveViewObject(Player1,INSTANT)
+		DisplayStringHead(Player1,@2128) // ~Oh great, how'd she get loose?~
+		Wait(2)
+
+		Continue()
+END
+
+IF
+	NumInParty(2)
+	OR(2)
+		Gender(Player2,MALE)
+		Gender(Player2,FEMALE)
+	IsValidForPartyDialogue(Player2)
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+
+		MoveViewObject(Player2,INSTANT)
+		SmallWait(5)
+		DisplayStringHead(Player2,@2129) // ~They're in trouble!  I'm coming!~
+		Wait(1)
+
+		Continue()
+END
+
+IF
+	NumInPartyGT(2)
+	OR(2)
+		Gender(Player2,MALE)
+		Gender(Player2,FEMALE)
+	IsValidForPartyDialogue(Player2)
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+
+		MoveViewObject(Player2,INSTANT)
+		SmallWait(5)
+		DisplayStringHead(Player2,@2130) // ~They're in trouble!  Let's go!
+		Wait(1)
+
+		Continue()
+END
+
+IF
+	NumInPartyGT(2)
+	!Gender(Player2,MALE)
+	!Gender(Player2,FEMALE)
+	OR(2)
+		Gender(Player3,MALE)
+		Gender(Player3,FEMALE)
+	IsValidForPartyDialogue(Player3)
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+
+		MoveViewObject(Player3,INSTANT)
+		SmallWait(5)
+		DisplayStringHead(Player3,@2130) // ~They're in trouble!  Let's go!
+		Wait(1)
+
+		Continue()
+END	
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+
+		ClearAllActions()
+		SetGlobal("bd_plot","global",156)
+		StartCutSceneEx("bdcut14",TRUE)
+END

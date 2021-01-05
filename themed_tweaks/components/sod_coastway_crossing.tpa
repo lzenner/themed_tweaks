@@ -3,10 +3,13 @@
 ////////////////////////////////////////////////////
 
 DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
-	// TODO: Have the group rush into the bridge area when the FF are discovered to not be elites
-	//		 Set the FF battle scripts up when the fighting starts
+	// TODO: Informant is a dwarf female (BDCrus11)- Bence does something (unspecified) to break the charm - the FF mage will not be happy with him
+	//		 Set the FF battle scripts up when the fighting starts so they don't just stand there
 	//       There are a lot of changes to be made to the dialogue with Caelar
 	//       Additions to wrap-up dialogues with Corwin and Bence
+	//			If Corwin not in the group, bring Bence to her position
+	//			  If no password - bring him there right away
+	//			  If password - have him be there after bridge go boom
 	// FUTURE: Allow for successfully saving the bridge (this may need its own mod)
 	//		This would allow for Boareskyr Bridge to be skipped
 	//		Will have Jaheira and wassisname approach PC after success to request aid for Bridgefort
@@ -116,6 +119,21 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 		DECOMPILE_AND_PATCH BEGIN
 			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~GlobalLT("bd_plot","global",145)~ ~GlobalLT("bd_plot","global",145) GlobalLT("#L_CWBridgeQuest","GLOBAL",5)~
 		END
+		
+	// Make sure the disguised Flaming Fist get past the barrier
+	WITH_TRA ~%tra_loc%/%s/sod_coastway_crossing.tra~ BEGIN
+		OUTER_SET STRREF_PROTECT_HERO = RESOLVE_STR_REF (@2131)
+	END
+	COPY_EXISTING ~BDCUT14.BCS~ ~Override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player2,MoveToPoint([3815.1005]))~ ~ActionOverride("#LFFAss1",MoveToPoint([3795.1045]) ActionOverride("#LFFAss2",MoveToPoint([3845.1080]) ActionOverride("#LFFAss3",MoveToPoint([3740.1130]) ActionOverride(Player2,MoveToPoint([3815.1005]))~
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player2,SetSequence(SEQ_DAMAGE))~ ~ActionOverride("#LFFAss1",SetSequence(SEQ_DAMAGE)) ActionOverride("#LFFAss2",SetSequence(SEQ_DAMAGE)) ActionOverride("#LFFAss3",SetSequence(SEQ_DAMAGE)) ActionOverride(Player2,SetSequence(SEQ_DAMAGE))~
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride("bdcutid",ReallyForceSpellRES("bdthrow",Player2))~ ~ActionOverride("bdcutid",ReallyForceSpellRES("bdthrow","#LFFAss1")) ActionOverride("bdcutid",ReallyForceSpellRES("bdthrow","#LFFAss2")) ActionOverride("bdcutid",ReallyForceSpellRES("bdthrow","#LFFAss3")) ActionOverride("bdcutid",ReallyForceSpellRES("bdthrow",Player2))~
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player2,JumpToPoint([3655.1135]))~ ~ActionOverride("#LFFAss1",JumpToPoint([3795.1045])) ActionOverride("#LFFAss2",JumpToPoint([3845.1080])) ActionOverride("#LFFAss3",JumpToPoint([3740.1130])) ActionOverride(Player2,JumpToPoint([3655.1135]))~
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player2,SetSequence(SEQ_AWAKE))~ ~ActionOverride("#LFFAss1",SetSequence(SEQ_AWAKE)) SmallWait(2) ActionOverride("#LFFAss2",SetSequence(SEQ_AWAKE)) SmallWait(2) ActionOverride("#LFFAss3",SetSequence(SEQ_AWAKE)) SmallWait(2) ActionOverride(Player2,SetSequence(SEQ_AWAKE))~
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player2,Face(NE))~ ~ActionOverride("#LFFAss1",Face(NE)) SmallWait(2) ActionOverride("#LFFAss2",Face(NE)) SmallWait(2) ActionOverride("#LFFAss3",Face(NE)) SmallWait(2) ActionOverride(Player2,Face(NE))~
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~EndCutSceneMode()~ ~Wait(1) DisplayStringHead("#LFFAss1",#%STRREF_PROTECT_HERO%) Wait(2) EndCutSceneMode()~
+		END
 	
 	// Compile the area scripts
 	EXTEND_TOP ~BD1000.BCS~ ~%mod_root%/scripts/sod_coastway_crossing_bd1000.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
@@ -133,4 +151,5 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 	// Bridge infiltration cutscenes
 	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ02.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ03.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
+	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ04.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 END

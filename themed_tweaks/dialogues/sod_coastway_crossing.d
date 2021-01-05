@@ -204,6 +204,11 @@ APPEND BDCORWIN
 	
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_NIKTO
 		SAY @2099 /* ~Yes, a mage was able to charm one of the guards.  The password is 'nikto'.~ */
+		IF ~~ THEN REPLY @2110 /* ~And where's this informant?~ */ GOTO CORWIN_BRIDGE_QUEST_BENCE_GUARDING
+	END
+
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_BENCE_GUARDING
+		SAY @2111 /* ~The charm should last a good long while yet.  Bence is making sure she doesn't wander.~  */
 		IF ~NumInParty(6)~ THEN REPLY @2100 /* ~Alright, let's go.~ */ GOTO CORWIN_BRIDGE_QUEST_HEAD_OUT
 		IF ~NumInPartyLT(6)~ THEN REPLY @2100 /* ~Alright, let's go.~ */ GOTO CORWIN_BRIDGE_QUEST_CAN_I_COME
 		IF ~NumInPartyLT(6)~ THEN REPLY @2101 /* ~Alright.  Would you like to join me, Corwin?~ */ GOTO CORWIN_BRIDGE_QUEST_ME_TOO
@@ -385,4 +390,52 @@ APPEND BDSCRY
 		IF ~~ THEN DO ~SetGlobal("BD_SDDD12_CLOUDY","MYAREA",1) SetGlobal("bd_sddd12_bridge","LOCALS",1) StartCutSceneMode() StartCutSceneEx("#LCWBQ01",FALSE)~ EXIT
 	END
 END
+
+// Gnome crusader guarding the bridge (BDCRUS13 but his dialogue is BDCRUS10)
+APPEND BDCRUS10
+	IF WEIGHT #-99 ~AreaCheck("BD1000") OR(2) Global("#L_CWBridgeQuest","GLOBAL",5) Global("#L_CWBridgeQuest","GLOBAL",6) Global("#L_CWBridgeHailed","BD1000",1)~ THEN BEGIN WHO_ARE_YOU
+		SAY #%KNOW_YOU_NOT%
+		IF ~Global("#L_CWBridgeQuest","GLOBAL",5)~ THEN EXTERN "#LFFAss1" BG_NO_PRISONER
+		IF ~Global("#L_CWBridgeQuest","GLOBAL",6)~ THEN EXTERN "#LFFAss1" BG_WITH_PRISONER
+	END
+	
+	IF ~~ THEN BEGIN WHATS_THE_PASSWORD
+		SAY @2122 /* ~I don't recognize ya.  What's the password?~ */
+		IF ~Global("#L_CWBridgePassword","GLOBAL",0)~ THEN EXTERN "#LFFAss1" NO_PASSWORD
+		IF ~!Global("#L_CWBridgePassword","GLOBAL",0)~ THEN EXTERN "#LFFAss1" KNOW_PASSWORD
+	END
+	
+	IF ~~ THEN BEGIN OH_YES_YOU_DO
+		SAY @2124 /* ~Oh yes you do!  Hey!  That's the Hero!! And these aren't no stickin' elites!~ */
+		IF ~~ THEN DO ~ClearAllActions() SetGlobal("bd_plot","global",156) StartCutSceneMode() StartCutSceneEx("bdcut14",TRUE)~ EXIT
+	END
+	
+	IF ~~ THEN BEGIN ALRIGHT_THEN
+		SAY @2125 /* ~Alright, that's it alright.~ */
+		IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutSceneEx("#LCWBQ04",TRUE)~ EXIT
+	END
+END
+
+// Disguised FF Veteran
+BEGIN "#LFFAss1"
+	IF ~~ THEN BEGIN BG_NO_PRISONER
+		SAY @2120 /* ~We're Caelar's elites returning from Baldur's Gate.~ */
+		IF ~~ THEN EXTERN BDCRUS10 WHATS_THE_PASSWORD
+	END
+	
+	IF ~~ THEN BEGIN BG_WITH_PRISONER
+		SAY @2121 /* ~We're Caelar's elites returning from Baldur's Gate with a prisoner.~ */
+		IF ~~ THEN EXTERN BDCRUS10 WHATS_THE_PASSWORD
+	END
+	
+	IF ~~ THEN BEGIN NO_PASSWORD
+		SAY @2123 /* ~Uh...password?  Uh, we don't need no stinkin' password!~ */
+		IF ~~ THEN EXTERN BDCRUS10 OH_YES_YOU_DO
+	END
+	
+	IF ~~ THEN BEGIN KNOW_PASSWORD
+		SAY @2124 /* ~It's nikto.~ */
+		IF ~~ THEN EXTERN BDCRUS10 ALRIGHT_THEN
+	END
+// End of new dialogue file #LFFAss1
 

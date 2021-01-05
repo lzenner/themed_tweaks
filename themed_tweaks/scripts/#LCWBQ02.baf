@@ -16,8 +16,7 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
-		MoveViewObject("#LFFAss1",VERY_FAST)
-		Wait(1)
+		MoveViewObject("#LFFAss1",INSTANT)
 		DisplayStringHead("#LFFAss2",@2090) // ~Here <PRO_HESHE> is now.~
 		Wait(2)
 		DisplayStringHead("#LFFAss1",@2091) // ~<CHARNAME>, let's get you into disguise. Over here.~
