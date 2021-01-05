@@ -229,7 +229,6 @@ APPEND BDCORWIN
 		SAY @2107 /* ~The rest of you, watch for my signal.  Let's go!~ */
 		IF ~~ THEN DO ~JoinParty() StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ EXIT
 	END
-	
 END
 
 APPEND BDCORWIJ
