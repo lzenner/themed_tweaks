@@ -3,10 +3,8 @@
 ////////////////////////////////////////////////////
 
 DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
-	// TODO: Have the Veteran call the PC into their place and then walk toward the bridge
-	//       Override default area script to only fire when on quest cue
-	//	     Have the group rush into the bridge area when the FF are discovered to not be elites
-	//		 Make sure disguised FF are inside the barrier for the fight
+	// TODO: Have the group rush into the bridge area when the FF are discovered to not be elites
+	//		 Set the FF battle scripts up when the fighting starts
 	//       There are a lot of changes to be made to the dialogue with Caelar
 	//       Additions to wrap-up dialogues with Corwin and Bence
 	// FUTURE: Allow for successfully saving the bridge (this may need its own mod)
@@ -113,7 +111,7 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
    	// Define the journal entries to be used during the quest
 	ADD_JOURNAL @3000 @3001 @3002 @3003 @3004 @3005 @3006 @3007 @3008 @3009 @3010 @3011 @3012 @3013 @3014 USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 
-	// Only have the normal bridge-go-boom scene start on our cue
+	// The normal bridge-go-boom scene should only start on our cue
 	COPY_EXISTING ~BD1000.BCS~ ~Override~
 		DECOMPILE_AND_PATCH BEGIN
 			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~GlobalLT("bd_plot","global",145)~ ~GlobalLT("bd_plot","global",145) GlobalLT("#L_CWBridgeQuest","GLOBAL",5)~
@@ -129,7 +127,7 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 	// New scrying pool cutscene
 	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ01.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 	
-	// Disguised Flaming Fist Veteran's override script to have him initiate dialogue
+	// Disguised Flaming Fist Veteran's override script to have him start the cut scene
 	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LFFAss1.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 	
 	// Bridge infiltration cutscenes
