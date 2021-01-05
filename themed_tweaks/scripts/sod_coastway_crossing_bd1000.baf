@@ -115,6 +115,7 @@ If
 THEN
 	RESPONSE #100
 		SetGlobal("#L_CWBridgeFFSet","GLOBAL",1)
+		SetGlobal("#L_CWBridgeFFPrepped","GLOBAL",1)
 		
 		CreateCreature("bdfistex",[2430.1615],NE)
 		CreateCreature("bdfistex",[2370.1650],NE)

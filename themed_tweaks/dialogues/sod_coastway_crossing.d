@@ -193,6 +193,43 @@ APPEND BDCORWIN
 		SAY @2078 /* ~Ok, if you're sure.  I'll meet you up there, just the same.~ */
 		IF ~~ THEN EXIT
 	END
+	
+	IF WEIGHT #-89 ~AreaCheck("BD1000") !TriggerOverride("FF_Camp",IsOverMe("CORWIN")) OR(2) Global("#L_CWBridgeQuest","GLOBAL",5) Global("#L_CWBridgeQuest","GLOBAL",6) Global("#L_CWBridgeHailed","BD1000",1)~ THEN BEGIN CORWIN_BRIDGE_QUEST_6
+		SAY @2095 /* ~Everything's in place.  Are you ready to do this, <CHARNAME>?~ */
+		IF ~Global("#L_CWBridgePassword","GLOBAL",1)~ THEN REPLY @2096 /* ~Did we learn anything about a password? */ GOTO CORWIN_BRIDGE_QUEST_NIKTO
+		IF ~!Global("#L_CWBridgePassword","GLOBAL",1) NumInParty(6)~ THEN REPLY @2100 /* ~Alright, let's go.~ */ GOTO CORWIN_BRIDGE_QUEST_HEAD_OUT
+		IF ~!Global("#L_CWBridgePassword","GLOBAL",1) NumInPartyLT(6)~ THEN REPLY @2097 /* ~I'm ready.  Let's go.~ */ GOTO CORWIN_BRIDGE_QUEST_CAN_I_COME
+		IF ~!Global("#L_CWBridgePassword","GLOBAL",1) NumInPartyLT(6)~ THEN REPLY @2098 /* ~I'm ready.  Would you like to join me, Corwin?~ */ GOTO CORWIN_BRIDGE_QUEST_ME_TOO
+	END
+	
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_NIKTO
+		SAY @2099 /* ~Yes, a mage was able to charm one of the guards.  The password is 'nikto'.~ */
+		IF ~NumInParty(6)~ THEN REPLY @2100 /* ~Alright, let's go.~ */ GOTO CORWIN_BRIDGE_QUEST_HEAD_OUT
+		IF ~NumInPartyLT(6)~ THEN REPLY @2100 /* ~Alright, let's go.~ */ GOTO CORWIN_BRIDGE_QUEST_CAN_I_COME
+		IF ~NumInPartyLT(6)~ THEN REPLY @2101 /* ~Alright.  Would you like to join me, Corwin?~ */ GOTO CORWIN_BRIDGE_QUEST_ME_TOO
+	END
+
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_CAN_I_COME
+		SAY @2103 /* ~Would you like me to join you, <CHARNAME>?~ */
+		++ @2104 /* ~No, that's not necessary.  You coordinate things on this end.~ */ GOTO CORWIN_BRIDGE_QUEST_HEAD_OUT
+		++ @2105 /* ~I think that would be best, yes.  Let's do this!~ */ GOTO CORWIN_BRIDGE_QUEST_REST_OF_YOU
+	END
+	
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_HEAD_OUT
+		SAY @2106 /* ~You heard <PRO_HIMHER>.  Head out!~ */
+		IF ~~ THEN DO ~StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ EXIT
+	END
+	
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_ME_TOO
+		SAY @2102 /* ~Yes, I'll be right behind you.  The rest of the troops will be watching for my signal~ */
+		IF ~~ THEN DO ~JoinParty() StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ EXIT
+	END
+	
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_REST_OF_YOU
+		SAY @2107 /* ~The rest of you, watch for my signal.  Let's go!~ */
+		IF ~~ THEN DO ~JoinParty() StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ EXIT
+	END
+	
 END
 
 APPEND BDCORWIJ
@@ -261,6 +298,23 @@ APPEND BDCORWIJ
 		IF ~NotStateCheck(MYSELF,STATE_HASTED) !Global("A7_AutoHasteActive","GLOBAL",1)~ THEN REPLY @2058 /* ~Understood.  I'll head over there shortly.~ */ DO ~SetInterrupt(FALSE) SetGlobal("#L_CWBridgeFFPrepped","GLOBAL",1) LeaveParty() SetGlobal("#L_CWBridgeCorwinLeft","GLOBAL",1) ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) ApplySpell(MYSELF,WIZARD_HASTE) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
 		//EscapeAreaMove("bd1000",2905,1495,NE) 
 	END
+
+	IF WEIGHT #-96 ~AreaCheck("BD1000") !TriggerOverride("FF_Camp",IsOverMe("CORWIN")) OR(2) Global("#L_CWBridgeQuest","GLOBAL",5) Global("#L_CWBridgeQuest","GLOBAL",6) Global("#L_CWBridgeHailed","BD1000",1)~ THEN BEGIN CORWIN_BRIDGE_QUEST_6
+		SAY @2095 /* ~Everything's in place.  Are you ready to do this, <CHARNAME>?~ */
+		IF ~Global("#L_CWBridgePassword","GLOBAL",1)~ THEN REPLY @2096 /* ~Did we learn anything about a password? */ GOTO CORWIN_BRIDGE_QUEST_NIKTO
+		IF ~!Global("#L_CWBridgePassword","GLOBAL",1)~ THEN REPLY @2100 /* ~Alright, let's go.~ */ GOTO CORWIN_BRIDGE_QUEST_REST_OF_YOU
+	END
+	
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_NIKTO
+		SAY @2099 /* ~Yes, a mage was able to charm one of the guards.  The password is 'nikto'.~ */
+		IF ~~ THEN REPLY @2100 /* ~Alright, let's go.~ */ GOTO CORWIN_BRIDGE_QUEST_REST_OF_YOU
+	END
+
+	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_REST_OF_YOU
+		SAY @2108 /* ~I'll be just a little ways behind you, <CHARNAME>. The rest of you, watch for my signal.  Let's head out!~ */
+		IF ~~ THEN DO ~StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ EXIT
+	END
+	
 END
 
 APPEND BDPOOL21

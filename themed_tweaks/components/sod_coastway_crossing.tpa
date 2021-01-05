@@ -16,8 +16,8 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 	//		If heading to the coallition camp first, ie coming from the north:
 	//			will move the temple of Cyric to the north of the Boareskyr area
 	//			temple can be done and still skip Boareskyr
-	//			will need another teleportation circle on the north side of the river
-	//				2 activation stones - one for the southern circle, one for the northern
+	//			will need another teleportation circle on the north side of the river - replaces?  in addition to?
+	//				2 activation stones? - one for the southern circle, one for the northern
 	//		Can have a two-pronged attack, from both the north and the south
 
 	// #L_CWBridgeQuest global variable used as a means to track the progress of the quest
@@ -37,6 +37,7 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 	// #L_CWBridgeExplosivesTalk global variable used to track if PC and Corwin have discussed the explosives
 	// #L_CWBridgePassword global variable used to track if FF know the password to gain access to the bridge
 	// #L_CWBridgeWarn global variable used to track how often the PC is warned by locals that bridge is held by Caelar..0 1 or 2
+	// #L_CWBridgeHailed area variable used to track if the disguised veteran has hailed the PC (start of cut scene)
 
 	// Set some strrefs to be used in dialogues depending up on the installed game
 	ACTION_IF GAME_IS ~eet~ BEGIN
@@ -73,9 +74,9 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 		WRITE_ASCII DEATHVAR ~#LFFAss1~ #32
 		WRITE_ASCII DIALOG ~#LFFAss1~ #8
 
-	COPY_EXISTING ~bdfistm2.CRE~ ~override/#LFFAss2.cre~
-		SAY NAME1 @1005 /* ~Disguised Flaming Fist Battlemage~ */
-		SAY NAME2 @1005	/* ~Disguised Flaming Fist Battlemage~ */
+	COPY_EXISTING ~bdfist24.CRE~ ~override/#LFFAss2.cre~
+		SAY NAME1 @1006 /* ~Disguised Flaming Fist Healer~ */
+		SAY NAME2 @1006 /* ~Disguised Flaming Fist Healer~ */
 		WRITE_LONG 0x0028 25344 // Animation = THIEF_MALE_HUMAN
 		WRITE_BYTE 0x002c 226 // Metal color = Metal normal - Eigengrau
 		WRITE_BYTE 0x002d 242 // Minor color = Thief Minor - Pale Olive
@@ -90,9 +91,9 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 		WRITE_ASCII DEATHVAR ~#LFFAss2~ #32
 		WRITE_ASCII DIALOG ~~ #8
 
-	COPY_EXISTING ~bdfist24.CRE~ ~override/#LFFAss3.cre~
-		SAY NAME1 @1006 /* ~Disguised Flaming Fist Healer~ */
-		SAY NAME2 @1006 /* ~Disguised Flaming Fist Healer~ */
+	COPY_EXISTING ~bdfistm2.CRE~ ~override/#LFFAss3.cre~
+		SAY NAME1 @1005 /* ~Disguised Flaming Fist Battlemage~ */
+		SAY NAME2 @1005	/* ~Disguised Flaming Fist Battlemage~ */
 		WRITE_LONG 0x0028 25344 // Animation = THIEF_MALE_HUMAN
 		WRITE_BYTE 0x002c 226 // Metal color = Metal normal - Eigengrau
 		WRITE_BYTE 0x002d 242 // Minor color = Thief Minor - Pale Olive
@@ -120,6 +121,10 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 	// New scrying pool cutscene
 	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ01.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 	
+	// Disguised Flaming Fist Veteran's override script to have him initiate dialogue
+	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LFFAss1.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
+	
 	// Bridge infiltration cutscenes
 	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ02.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
+	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ03.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 END

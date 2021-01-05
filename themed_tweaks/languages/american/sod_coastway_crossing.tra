@@ -82,16 +82,21 @@
 @2092	= ~What about the rest of my team?~
 @2093	= ~We won't be far behind.~
 @2094	= ~I won't be far behind.~
-@2095	= ~Corwin, would you like to join me?~ 
-@2096	= ~Yes, the rest of the troops will be watching for my signal~
-@2097	= ~Did we learn anything about a password?~
-@2098	= ~Yes, a mage was able to charm one of the guards.  The password is 'nikto'.~
-@2099	= ~Alright, I'm ready to do this.~
-@2100	= ~Would you like me to join you?~
-@2101	= ~No, that's not necessary.  You coordinate things on this end.~
-@2102	= ~I think that would be best, yes.  Let's do this!~
-@2103	= ~You heard <PRO_HIMHER>.  Head out!~
-@2104	= ~The rest of you, watch for my signal.  Let's go!~
+@2095	= ~Everything's in place.  Are you ready to do this, <CHARNAME>?~
+@2096	= ~Did we learn anything about a password?~
+@2097	= ~I'm ready.  Let's go.~
+@2098	= ~I'm ready.  Would you like to join me, Corwin?~ 
+@2099	= ~Yes, a mage was able to charm one of the guards.  The password is 'nikto'.~
+@2100	= ~Alright, let's go.~
+@2101	= ~Alright.  Would you like to join me, Corwin?~
+@2102	= ~Yes, I'll be right behind you.  The rest of the troops will be watching for my signal~
+@2103	= ~Would you like me to join you, <CHARNAME>?~
+@2104	= ~No, that's not necessary.  You coordinate things on this end.~
+@2105	= ~I think that would be best, yes.  Let's do this!~
+@2106	= ~You heard <PRO_HIMHER>.  Head out!~
+@2107	= ~The rest of you, watch for my signal.  Let's go!~
+@2108	= ~I'll be just a little ways behind you, <CHARNAME>. The rest of you, watch for my signal.  Let's head out!~
+@2109	= ~Ugh...finally.  Ok!~
 
 /////////////////////////////////////////////
 // The futile attempt to disarm the bridge //

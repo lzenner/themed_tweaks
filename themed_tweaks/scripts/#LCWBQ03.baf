@@ -1,0 +1,19 @@
+//////////////////////////////////////////////////////////
+// Coast Way Bridge Quest Cut Scene                     //
+// The futile attempt to clear the bridge of explosives //
+//////////////////////////////////////////////////////////
+
+// If there was an attempt to get the password, 
+// a mage will show up before they leave to inform the fist
+// The guard that provided the password will break the charm and alert the rest of the crusader guards
+
+// If no attempt to get the password
+// The two front fist will fail in their bluff
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		EndCutSceneMode()
+END

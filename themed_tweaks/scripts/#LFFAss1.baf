@@ -1,0 +1,16 @@
+////////////////////////////////////////////////////////////
+// Coast Way Crossing Quest                               //
+// Override script for the disguised Flaming Fist veteran //
+////////////////////////////////////////////////////////////
+
+IF
+	LOS([PC],30)
+	AreaCheck("BD1000")		// Probably not necessary since I only ever spawn this guy in BD1000
+	Global("#L_CWBridgeHailed","BD1000",0)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		SetGlobal("#L_CWBridgeHailed","BD1000",1)
+		StartCutSceneMode()
+		StartCutSceneEx("#LCWBQ02",TRUE)
+END

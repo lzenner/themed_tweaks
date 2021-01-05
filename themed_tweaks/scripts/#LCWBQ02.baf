@@ -1,22 +1,127 @@
-//////////////////////////////////////////////////////////
-// Coast Way Bridge Quest Cut Scene                     //
-// The futile attempt to clear the bridge of explosives //
-//////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+// Coast Way Bridge Quest Cut Scene                    //
+// Prepping for the futile attempt to clear the bridge //
+/////////////////////////////////////////////////////////
 
 // There are 2 FF in the front
 // PC goes behind them at 2818.1484
 // If PC is posing as prisoner, there'll be another FF in the back
 // A large contingent representing the whole of the FF will be lined up behind them
 // The rest of the group, if any, will hang back until the fight begins
-
-
 // Corwin will show up after the PC gets there
-// And offer to join the group once more
+// And once more offer to join the group if she's no already a member of the party
 
-// If there was an attempt to get the password, 
-// a mage will show up before they leave to inform the fist
-// The guard that provided the password will break the charm and alert the rest of the crusader guards
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		MoveViewObject("#LFFAss1",VERY_FAST)
+		Wait(1)
+		DisplayStringHead("#LFFAss2",@2090) // ~Here <PRO_HESHE> is now.~
+		Wait(2)
+		DisplayStringHead("#LFFAss1",@2091) // ~<CHARNAME>, let's get you into disguise. Over here.~
+		Wait(1)
+		MoveToPoint([2818.1484])
+		Wait(2)
+		Continue()
+END
 
-// If no attempt to get the password
-// The two front fist will fail in their bluff
+IF
+	NumInParty(2)
+	OR(2)
+		Gender(Player2,MALE)
+		Gender(Player2,FEMALE)
+	IsValidForPartyDialogue(Player2)
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		DisplayStringHead(Player1,@2092) // ~What about the rest of my team?~
+		Wait(1)
+		MoveViewObject(Player2,INSTANT)
+		SmallWait(5)
+		DisplayStringHead(Player2,@2094) // ~I won't be far behind.~
+		Wait(2)
+		MoveViewObject("#LFFAss1",INSTANT)
+		SmallWait(5)
+		Continue()
+END
+
+IF
+	NumInPartyGT(2)
+	OR(2)
+		Gender(Player2,MALE)
+		Gender(Player2,FEMALE)
+	IsValidForPartyDialogue(Player2)
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		DisplayStringHead(Player1,@2092) // ~What about the rest of my team?~
+		Wait(1)
+		MoveViewObject(Player2,INSTANT)
+		SmallWait(5)
+		DisplayStringHead(Player2,@2093) // ~We won't be far behind.~
+		Wait(2)
+		MoveViewObject("#LFFAss1",INSTANT)
+		SmallWait(5)
+		Continue()
+END
+
+IF
+	NumInPartyGT(2)
+	!Gender(Player2,MALE)
+	!Gender(Player2,FEMALE)
+	OR(2)
+		Gender(Player3,MALE)
+		Gender(Player3,FEMALE)
+	IsValidForPartyDialogue(Player3)
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		DisplayStringHead(Player1,@2092) // ~What about the rest of my team?~
+		Wait(1)
+		MoveViewObject(Player3,INSTANT)
+		SmallWait(5)
+		DisplayStringHead(Player3,@2093) // ~We won't be far behind.~
+		Wait(2)
+		MoveViewObject("#LFFAss1",INSTANT)
+		SmallWait(5)
+		Continue()
+END
+
+IF
+	InPartyAllowDead("CORWIN")
+	!IsValidForPartyDialogue("CORWIN")
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride("#LFFAss2",ApplySpellRES("sppr712","CORWIN"))
+		SmallWait(10)
+		ActionOverride("#LFFAss2",ApplySpellRES("bpdispel","CORWIN"))
+		SmallWait(10)
+		ActionOverride("#LFFAss2",ApplySpellRES("sppr713","CORWIN"))
+		Wait(1)
+		DisplayStringHead("CORWIN",@2109) // ~Ugh...finally.  Ok!~
+		Wait(2)
+		Continue()
+END
+
+IF
+	!InPartyAllowDead("CORWIN")
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride("CORWIN",JumpToPoint([2295.1850]))
+		SmallWait(2)
+		Continue()
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride("CORWIN",MoveToObject(Player1))
+		ActionOverride("CORWIN",StartDialogueNoSet(Player1))
+END
 
