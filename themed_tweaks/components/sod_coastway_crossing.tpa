@@ -47,6 +47,7 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 		OUTER_SET CORWIN_NEED_2 = 256088
 		OUTER_SET CORWIN_NEED_3 = 256089
 		OUTER_SET CORWIN_NEED_4 = 256090
+		OUTER_SET KNOW_YOU_NOT = 204931	// Sound Gnome03
 	END ELSE BEGIN
 		OUTER_SET BRIDGE_HELD_1 = 52899
 		OUTER_SET BRIDGE_HELD_2 = 52903
@@ -54,6 +55,7 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 		OUTER_SET CORWIN_NEED_2 = 56088
 		OUTER_SET CORWIN_NEED_3 = 56089
 		OUTER_SET CORWIN_NEED_4 = 56090
+		OUTER_SET KNOW_YOU_NOT = 4931
 	END
 	
 	// Disguised Flaming Fist
@@ -111,6 +113,12 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
    	// Define the journal entries to be used during the quest
 	ADD_JOURNAL @3000 @3001 @3002 @3003 @3004 @3005 @3006 @3007 @3008 @3009 @3010 @3011 @3012 @3013 @3014 USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 
+	// Only have the normal bridge-go-boom scene start on our cue
+	COPY_EXISTING ~BD1000.BCS~ ~Override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~GlobalLT("bd_plot","global",145)~ ~GlobalLT("bd_plot","global",145) GlobalLT("#L_CWBridgeQuest","GLOBAL",5)~
+		END
+	
 	// Compile the area scripts
 	EXTEND_TOP ~BD1000.BCS~ ~%mod_root%/scripts/sod_coastway_crossing_bd1000.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 	EXTEND_TOP ~BD1200.BCS~ ~%mod_root%/scripts/sod_coastway_crossing_bd1200.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~

@@ -101,6 +101,16 @@
 /////////////////////////////////////////////
 // The futile attempt to disarm the bridge //
 /////////////////////////////////////////////
+@2120	= ~We're returning from Baldur's Gate.~
+@2121	= ~We're returning from Baldur's Gate with a prisoner.~
+@2122	= ~I don't recognize ya.  What's the password?~
+@2123	= ~Uh...password?  Uh, we don't need no stinkin' password!~
+@2124	= ~Oh yes you do!  Hey!  That's the Hero!! And these aren't no stickin' elites!~
+@2124	= ~It's nikto.~
+@2125	= ~Alright, that's it alright.~
+@2126	= ~WAIT!  WAIT!  Don't let 'em pass!  They're Flaming Fist and that's the Hero with 'em!~
+@2127	= ~WAIT!  WAIT!  Don't let 'em pass!  That's the Flaming Fist with the Hero!~
+@2128	= ~Oh great, how'd he get loose?~
 
 /////////////////////
 // Journal entries //
