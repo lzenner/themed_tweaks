@@ -314,7 +314,6 @@ APPEND BDCORWIJ
 		SAY @2108 /* ~I'll be just a little ways behind you, <CHARNAME>. The rest of you, watch for my signal.  Let's head out!~ */
 		IF ~~ THEN DO ~StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ EXIT
 	END
-	
 END
 
 APPEND BDPOOL21
