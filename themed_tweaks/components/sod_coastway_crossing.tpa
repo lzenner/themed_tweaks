@@ -4,7 +4,6 @@
 
 DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 	// TODO: Informant is a dwarf female (BDCrus11)- Bence does something (unspecified) to break the charm - the FF mage will not be happy with him
-	//		 Make sure CUTSKIP is updated with FF changes
 	//       There are a lot of changes to be made to the dialogue with Caelar
 	//       Additions to wrap-up dialogues with Corwin and Bence
 	//			If Corwin not in the group, bring Bence to her position
@@ -134,7 +133,13 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player2,Face(NE))~ ~ActionOverride("#LFFAss1",Face(NE)) SmallWait(2) ActionOverride("#LFFAss2",Face(NE)) SmallWait(2) ActionOverride("#LFFAss3",Face(NE)) SmallWait(2) ActionOverride(Player2,Face(NE))~
 			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~EndCutSceneMode()~ ~Wait(1) DisplayStringHead("#LFFAss1",#%STRREF_PROTECT_HERO%) Wait(2) EndCutSceneMode()~
 		END
-	
+	COPY_EXISTING ~CUTSKIP.BCS~ ~Override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player2,JumpToPoint([3655.1135]))~ ~ActionOverride("#LFFAss1",JumpToPoint([3795.1045])) ActionOverride("#LFFAss2",JumpToPoint([3845.1080])) ActionOverride("#LFFAss3",JumpToPoint([3740.1130])) ActionOverride(Player2,JumpToPoint([3655.1135]))~
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player2,SetSequence(SEQ_AWAKE))~ ~ActionOverride("#LFFAss1",SetSequence(SEQ_AWAKE)) SmallWait(2) ActionOverride("#LFFAss2",SetSequence(SEQ_AWAKE)) SmallWait(2) ActionOverride("#LFFAss3",SetSequence(SEQ_AWAKE)) SmallWait(2) ActionOverride(Player2,SetSequence(SEQ_AWAKE))~
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player2,Face(NE))~ ~ActionOverride("#LFFAss1",Face(NE)) SmallWait(2) ActionOverride("#LFFAss2",Face(NE)) SmallWait(2) ActionOverride("#LFFAss3",Face(NE)) SmallWait(2) ActionOverride(Player2,Face(NE))~
+		END
+
 	// Compile the area scripts
 	EXTEND_TOP ~BD1000.BCS~ ~%mod_root%/scripts/sod_coastway_crossing_bd1000.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 	EXTEND_TOP ~BD1200.BCS~ ~%mod_root%/scripts/sod_coastway_crossing_bd1200.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
