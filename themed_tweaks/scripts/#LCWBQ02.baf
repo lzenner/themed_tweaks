@@ -11,6 +11,18 @@
 // Corwin will show up after the PC gets there
 // And once more offer to join the group if she's no already a member of the party
 
+// Get the informant into position if one was charmed
+IF
+	Global("#L_CWBridgePassword","GLOBAL",1)
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ApplySpellRES("bdhide","BDCRUS11")
+		ApplySpellRES("bdhaste","BDCRUS11")
+		ActionOverride("BDCRUS11",JumpToPoint([3250.1555])
+		Continue()
+END
+
 IF
 	True()
 THEN

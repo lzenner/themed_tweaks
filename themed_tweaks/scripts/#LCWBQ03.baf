@@ -4,19 +4,6 @@
 /////////////////////////////////////////////
 
 
-// If a password was obtained, show the informant walking back to the bridge
-IF
-	Global("#L_CWBridgePassword","GLOBAL",1)
-THEN
-	RESPONSE #100
-		CutSceneId("#LFFAss1")
-		
-		ActionOverride("BDCRUS11",JumpToPoint([3250.1555])
-		SmallWait(2)
-		ActionOverride("BDCRUS11",MoveToPoint([3515.1265])
-		Continue()
-END
-
 // Just 2 FF and PC walk to bridge
 IF
 	Global("#L_CWBridgeQuest","GLOBAL",5)

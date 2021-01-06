@@ -9,8 +9,11 @@ THEN
 	RESPONSE #100
 		CutSceneId(Player1)
 		
-		// This will be a custom NPC soon
+		ApplySpellRES("bdunhide","BDCRUS11")
+		SmallWait(5)
+
 		MoveViewObject("BDCRUS11",INSTANT)
+		ActionOverride("BDCRUS11",MoveToPoint([3515.1265])
 		DisplayStringHead("BDCRUS11",@2126) // ~WAIT!  WAIT!  Don't let 'em pass!  They're Flaming Fist and that's the Hero with 'em!~
 		Wait(2)
 		
@@ -18,6 +21,8 @@ THEN
 		DisplayStringHead(Player1,@2128) // ~Oh great, how'd she get loose?~
 		Wait(2)
 		
+		ApplySpellRES("#LUNHAST","BDCRUS11")
+
 		Continue()
 END
 
@@ -27,14 +32,20 @@ THEN
 	RESPONSE #100
 		CutSceneId(Player1)
 		
-		// This will be a custom NPC soon
+
+		ApplySpellRES("bdunhide","BDCRUS11")
+		SmallWait(5)
+
 		MoveViewObject("BDCRUS11",INSTANT)
+		ActionOverride("BDCRUS11",MoveToPoint([3515.1265])
 		DisplayStringHead("BDCRUS11",@2127) // ~WAIT!  WAIT!  Don't let 'em pass!  That's the Flaming Fist with the Hero!~
 		Wait(2)
 		
 		MoveViewObject(Player1,INSTANT)
 		DisplayStringHead(Player1,@2128) // ~Oh great, how'd she get loose?~
 		Wait(2)
+
+		ApplySpellRES("#LUNHAST","BDCRUS11")
 
 		Continue()
 END
@@ -52,6 +63,12 @@ THEN
 		MoveViewObject(Player2,INSTANT)
 		SmallWait(5)
 		DisplayStringHead(Player2,@2129) // ~They're in trouble!  I'm coming!~
+
+		ActionOverride("#LFFAss1",MoveToPoint([3795.1045]))
+		ActionOverride("#LFFAss2",MoveToPoint([3845.1080]))
+		ActionOverride("#LFFAss3",MoveToPoint([3740.1130]))
+		ActionOverride(Player2,MoveToPoint([3815.1005]))
+
 		Wait(1)
 
 		Continue()
@@ -70,6 +87,16 @@ THEN
 		MoveViewObject(Player2,INSTANT)
 		SmallWait(5)
 		DisplayStringHead(Player2,@2130) // ~They're in trouble!  Let's go!
+
+		ActionOverride("#LFFAss1",MoveToPoint([3795.1045]))
+		ActionOverride("#LFFAss2",MoveToPoint([3845.1080]))
+		ActionOverride("#LFFAss3",MoveToPoint([3740.1130]))
+		ActionOverride(Player2,MoveToPoint([3815.1005]))
+		ActionOverride(Player3,MoveToPoint([3890.1095]))
+		ActionOverride(Player4,MoveToPoint([3790.1080]))
+		ActionOverride(Player5,MoveToPoint([3720.1045]))
+		ActionOverride(Player6,MoveToPoint([3795.1145]))
+
 		Wait(1)
 
 		Continue()
@@ -90,6 +117,16 @@ THEN
 		MoveViewObject(Player3,INSTANT)
 		SmallWait(5)
 		DisplayStringHead(Player3,@2130) // ~They're in trouble!  Let's go!
+
+		ActionOverride("#LFFAss1",MoveToPoint([3795.1045]))
+		ActionOverride("#LFFAss2",MoveToPoint([3845.1080]))
+		ActionOverride("#LFFAss3",MoveToPoint([3740.1130]))
+		ActionOverride(Player2,MoveToPoint([3815.1005]))
+		ActionOverride(Player3,MoveToPoint([3890.1095]))
+		ActionOverride(Player4,MoveToPoint([3790.1080]))
+		ActionOverride(Player5,MoveToPoint([3720.1045]))
+		ActionOverride(Player6,MoveToPoint([3795.1145]))
+
 		Wait(1)
 
 		Continue()
@@ -101,8 +138,6 @@ THEN
 	RESPONSE #100
 		CutSceneId(Player1)
 		
-		ClearAllActions()
-
 		// Get the FF battle scripts in place
 		ActionOverride("#LFFAss1",ChangeAIScript("BDFIST",CLASS))
 		ActionOverride("#LFFAss1",ChangeAIScript("BDSHOUT",RACE))

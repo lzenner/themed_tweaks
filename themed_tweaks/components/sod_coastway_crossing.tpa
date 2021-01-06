@@ -109,6 +109,9 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 		WRITE_ASCII SCRIPT_DEFAULT ~~ #8
 		WRITE_ASCII DEATHVAR ~#LFFAss3~ #32
 		WRITE_ASCII DIALOG ~~ #8
+		
+	// A spell I need for the cut scenes
+	COPY ~%mod_root%/objects/#LUNHAST.SPL~ ~override~
 
    	// Define the journal entries to be used during the quest
 	ADD_JOURNAL @3000 @3001 @3002 @3003 @3004 @3005 @3006 @3007 @3008 @3009 @3010 @3011 @3012 @3013 @3014 USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
