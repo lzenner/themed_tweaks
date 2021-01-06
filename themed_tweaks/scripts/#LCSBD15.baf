@@ -1,0 +1,61 @@
+////////////////////////////////////////////////////////////////////////
+// Cut Scene Replacement for BDCut15                                  //
+// Fight between Hephernaan and Jayvis shouldn't be visible to the PC //
+////////////////////////////////////////////////////////////////////////
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ClearAllActions()
+		CreateCreature("bddarnas",[4895.50],SW)  // Darnas
+		CreateCreature("bdbarghe",[4965.65],SW)  // The Barghest
+		CreateCreature("bdolonei",[4920.90],SW)  // Oloneiros
+		CreateCreature("bdcaelar",[4960.140],SW)  // Caelar Argent
+		CreateCreature("bdvichan",[5015.155],SW)  // Vichand
+		CreateCreature("bdhormor",[5025.95],SW)  // Hormorn
+		CreateCreature("bdrhayla",[5080.155],SW)  // Rhayla
+		CreateCreature("BDCCHOB1",[4655.275],S)  // Mercenary
+		CreateCreature("BDCCSAR1",[4875.410],W)  // Crusader Sergeant
+		CreateCreature("bdjayvis",[4675.460],NW)  // Jayvis
+		CreateCreature("bdhepher",[4630.425],SE)  // Hephernaan
+		ActionOverride("bddarnas",ChangeAIScript("bdcutsce",OVERRIDE))
+		ActionOverride("bdbarghe",ChangeAIScript("bdcutsce",OVERRIDE))
+		ActionOverride("bdolonei",ChangeAIScript("bdcutsce",OVERRIDE))
+		ActionOverride("bdvichan",ChangeAIScript("bdcutsce",OVERRIDE))
+		ActionOverride("bdhormor",ChangeAIScript("bdcutsce",OVERRIDE))
+		ActionOverride("bdrhayla",ChangeAIScript("bdcutsce",OVERRIDE))
+		ChangeEnemyAlly("bdrhayla",NEUTRAL)  // Rhayla
+		ActionOverride("BDCCHOB1",ChangeAIScript("bdcutsce",OVERRIDE))
+		ActionOverride("BDCCSAR1",ChangeAIScript("bdcutsce",OVERRIDE))
+		ActionOverride("bdjayvis",ChangeAIScript("bdcutsce",OVERRIDE))
+		ActionOverride("bdhepher",ChangeAIScript("bdcutsce",OVERRIDE))
+		ActionOverride("BDCCHOB1",SetSequence(SEQ_HEAD_TURN))
+		ActionOverride("BDCCSAR1",SetSequence(SEQ_HEAD_TURN))
+		ActionOverride("bdcaelar",ChangeAIScript("",RACE))
+		ActionOverride("bdcaelar",ChangeAIScript("",GENERAL))
+		FadeToColor([10.0],0)
+		SmallWait(5)
+		CreateCreature("cutspy2",[4665.425],N)  // No such index
+// SKIP 15
+		ApplySpellRES("clearcld",Player1)  // No such index
+		MoveViewPoint([4665.425],INSTANT)
+		ActionOverride("bddarnas",JumpToPoint([4710.220]))
+		ActionOverride("bdbarghe",JumpToPoint([4785.265]))
+		ActionOverride("bdolonei",JumpToPoint([4735.285]))
+		ActionOverride("bdcaelar",JumpToPoint([4740.350]))
+		ActionOverride("bdvichan",JumpToPoint([4820.350]))
+		ActionOverride("bdhormor",JumpToPoint([4835.300]))
+		ActionOverride("bdrhayla",JumpToPoint([4890.360]))
+		SmallWait(2)
+		ActionOverride("bdhepher",FaceObject("bdcaelar"))  // Caelar Argent
+		ActionOverride("bdjayvis",FaceObject("bdcaelar"))  // Caelar Argent
+		FadeFromColor([10.0],0)
+		StartMusic(MISC3,QUICK_FADE)
+		SetGlobal("bd_plot","global",161)
+		SmallWait(5)
+		StartCutSceneEx("bdcut16",TRUE)
+END
+
+

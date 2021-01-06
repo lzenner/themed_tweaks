@@ -16,11 +16,19 @@ DEFINE_ACTION_FUNCTION cut_scenes BEGIN
 		// Remove cut scenes that are started via dialogues
 		COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/sod_cut_scenes.d~
 
-		// Take out the scene with Irenicus, Caelar and whatshisface
+		// Take out the scene with Irenicus, Caelar and Hephernaan
 		COPY_EXISTING ~BDCUT10.BCS~ ~override~
 			DECOMPILE_AND_PATCH BEGIN
 				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~FadeToColor([0.0],0)~ ~~
 				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~StartCutSceneEx("bdcut11",TRUE)~ ~MultiPlayerSync() FadeFromColor([20.0],0) EndCutSceneMode()~
 			END
+			
+		// Take out the scene with Hephernaan and Jayvis at the Coast Way bridge
+		COPY_EXISTING ~BD1000.BCS~ ~override~
+			DECOMPILE_AND_PATCH BEGIN
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~StartCutSceneEx("bdcut15",TRUE)~ ~StartCutSceneEx("#LCSBD15",TRUE)~
+			END
+		
+		COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCSBD15.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 	END
 END

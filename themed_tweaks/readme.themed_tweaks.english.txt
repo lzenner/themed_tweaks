@@ -31,6 +31,7 @@ SoD - Add stat-based observations and options - by Lauriel
 Adds comments about the situation based upon INT and WIS and quest options based on various stats
 ** TODO: Weak Poison dialogue options need to be added to Caelar scene at bridge
 	     Add dialogue option to Caelar scene at bridge about scrying pool scene with H-man (if viewed)
+		 Ask Eltan to interview the fallen paladin in his cells once he sobers up
 
 ------------------------------------------------------------------------
 SoD - Ditch tour-guide Corwin Schael - by Lauriel
@@ -58,7 +59,7 @@ Just adds some fun snarky comments to the otherwise stuffy or inane dialogue
 ------------------------------------------------------------------------
 SoD/BG2 - Remove cut scenes that the PC shouldn't be privy to - by Lauriel
 ------------------------------------------------------------------------
-Unless there's a reason for the PC to view a scene, like a scrying pool, scenes about what is happening to other NPCs are skipped.
+Unless there's a reason for the PC to view a scene, like a scrying pool, scenes about what is happening to other NPCs outside of the PC's line-of-sight are skipped.
 
 ------------------------------------------------------------------------
 SoD/BG2 - Move dreams about Irenicus from SoD to BG2 - by Lauriel
@@ -70,7 +71,7 @@ Irenicus shouldn't have enough influence over the PC to be able to invade her dr
 BG2 - Give Imoen the innate ability to cast Magic Missile - by Lauriel & jastey
 ------------------------------------------------------------------------
 In case Imoen hasn't been dualed to a mage, she is given the innate ability to cast magic missile twice at the beginning of BG2.  A potion will be provided in Chateau Irenicus for her to use to make sure she is capable of casting it when they arrive at the promenade.
-** TO-DO: Add group dialogue about her new abilities
+** TO-DO: Add group dialogue about her new abilities (jastey)
 
 ------------------------------------------------------------------------
 BG2 - Use movie of Irenicus in hell as dream to restore Bhaalspawn powers - by Lauriel
