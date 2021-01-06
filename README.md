@@ -20,7 +20,6 @@ COMPONENTS IN DEVELOPMENT:
 --------------------------
 * SoD             - Stat-based observations and options
 * SoD             - Quest: Scouting the Coast Way Crossing
-* SoD             - Add reactions/options when 'A Historical Treatise of Dragonspear Castle' is found
 * SoD/BG2EE       - Remove cut scenes that the PC shouldn't be privy to 
 
 

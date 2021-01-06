@@ -30,8 +30,9 @@ SoD - Add stat-based observations and options - by Lauriel
 ------------------------------------------------------------------------
 Adds comments about the situation based upon INT and WIS and quest options based on various stats
 ** TODO: Weak Poison dialogue options need to be added to Caelar scene at bridge
-	     Add dialogue option to Caelar scene at bridge about scrying pool scene with H-man (if viewed)
+	     Add dialogue option to Caelar scene at bridge about scrying pool scene with Hephernaan (if viewed)
 		 Ask Eltan to interview the fallen paladin in his cells once he sobers up
+		 Add dialogue option about Historical Treatise to Caelar scene at bridge
 
 ------------------------------------------------------------------------
 SoD - Ditch tour-guide Corwin Schael - by Lauriel
@@ -43,12 +44,6 @@ SoD - Scouting the Coast Way Crossing - by Lauriel
 ------------------------------------------------------------------------
 Adds a quest to scout the first bridge
 ** TODO: Post-combat dialogues
-
-------------------------------------------------------------------------
-SoD - 'A Historical Treatise of Dragonspear Castle' reactions - by Lauriel
-------------------------------------------------------------------------
-Adds reactions and dialogue options when the book "A Historical Treatise of Dragonspear Castle" is found in the random water troll area
-** TODO: Dialogue with Caelar after Coast Way bridge has been destroyed
 
 ------------------------------------------------------------------------
 SoD/BG2 - Add a little snark - by Lauriel

@@ -118,16 +118,6 @@ BEGIN @100
 	INCLUDE ~themed_tweaks/components/sod_coastway_crossing.tpa~
 	LAF sod_coastway_crossing END
 
-///////////////////////////////////
-// HISTORICAL TREATISE REACTIONS //
-///////////////////////////////////
-BEGIN @110
-	DESIGNATED 110
-	LABEL "#L-SOD-HISTORICAL_TREATISE_REACTIONS"
-	REQUIRE_PREDICATE (GAME_INCLUDES ~sod~) @4
-	INCLUDE ~themed_tweaks/components/sod_historical_treatise.tpa~
-	LAF sod_historical_treatise END
-
 ///////////////////////////////////////
 // ADD SOME SNARK TO STUFFY DIALOGUE //
 ///////////////////////////////////////
