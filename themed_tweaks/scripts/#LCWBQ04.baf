@@ -100,8 +100,20 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
-
+		
 		ClearAllActions()
+
+		// Get the FF battle scripts in place
+		ActionOverride("#LFFAss1",ChangeAIScript("BDFIST",CLASS))
+		ActionOverride("#LFFAss1",ChangeAIScript("BDSHOUT",RACE))
+		ActionOverride("#LFFAss1",ChangeAIScript("BDFIGH27",GENERAL))
+		ActionOverride("#LFFAss2",ChangeAIScript("BDFIST",CLASS))
+		ActionOverride("#LFFAss2",ChangeAIScript("BDSHOUT",RACE))
+		ActionOverride("#LFFAss2",ChangeAIScript("BDCLER22",GENERAL))
+		ActionOverride("#LFFAss3",ChangeAIScript("BDFIST",CLASS))
+		ActionOverride("#LFFAss3",ChangeAIScript("BDSHOUT",RACE))
+		ActionOverride("#LFFAss3",ChangeAIScript("BDMAGE25",GENERAL))		
+
 		SetGlobal("bd_plot","global",156)
 		StartCutSceneEx("bdcut14",TRUE)
 END

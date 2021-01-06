@@ -4,7 +4,7 @@
 
 DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 	// TODO: Informant is a dwarf female (BDCrus11)- Bence does something (unspecified) to break the charm - the FF mage will not be happy with him
-	//		 Set the FF battle scripts up when the fighting starts so they don't just stand there
+	//		 Make sure CUTSKIP is updated with FF changes
 	//       There are a lot of changes to be made to the dialogue with Caelar
 	//       Additions to wrap-up dialogues with Corwin and Bence
 	//			If Corwin not in the group, bring Bence to her position
