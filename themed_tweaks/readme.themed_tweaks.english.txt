@@ -59,13 +59,12 @@ Just adds some fun snarky comments to the otherwise stuffy or inane dialogue
 SoD/BG2 - Remove cut scenes that the PC shouldn't be privy to - by Lauriel
 ------------------------------------------------------------------------
 Unless there's a reason for the PC to view a scene, like a scrying pool, scenes about what is happening to other NPCs are skipped.
-** TODO: Find appropriate spots to place the dreams during BG2EE
 
 ------------------------------------------------------------------------
 SoD/BG2 - Move dreams about Irenicus from SoD to BG2 - by Lauriel
 ------------------------------------------------------------------------
 Irenicus shouldn't have enough influence over the PC to be able to invade her dreams in SoD.  Those dreams are moved to BG2 where they will be available for other mods to play with.
-** In development, removed from SoD, but need to place them in BG2 yet
+** TODO: Find appropriate spots to place the dreams during BG2EE
 
 ------------------------------------------------------------------------
 BG2 - Give Imoen the innate ability to cast Magic Missile - by Lauriel & jastey
