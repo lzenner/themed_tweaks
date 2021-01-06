@@ -1,7 +1,8 @@
-///////////////////////////////////////////////////////////////
-// Dialogue file to be used by whomever reads the book aloud //
-///////////////////////////////////////////////////////////////
+/////////////////////////////////
+// Dialogue involving the book //
+/////////////////////////////////
 
+// Dialogue file to be used by whomever reads the book aloud //
 BEGIN ~#LHTRead~
 	IF ~True()~ THEN BEGIN HISTORICAL_TREATISE_1
 		SAY @2000 /* ~What is this?  Did you see this, <CHARNAME>?~ */
@@ -11,3 +12,4 @@ BEGIN ~#LHTRead~
 		++ @2004 /* ~Ugh, so that's what she's up to.  I think you're right.  I think she's lost her mind.~ */ JOURNAL @3000 EXIT
 	END
 // END of new #LHTRead
+

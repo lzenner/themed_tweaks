@@ -4,6 +4,10 @@
 //////////////////////////////////////////////////////////////////
 
 DEFINE_ACTION_FUNCTION sod_historical_treatise BEGIN
+	// TODO: Use this knowledge when confronting Caelar at the Coast Way bridge
+	
+	// #L_TreatiseFound global used to track if PC has found the book
+	
    	// Define the journal entries 
 	ADD_JOURNAL @3000 USING ~%tra_loc%/%s/sod_historical_treatise.tra~
 	
