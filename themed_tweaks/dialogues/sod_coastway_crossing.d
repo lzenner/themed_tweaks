@@ -7,8 +7,6 @@ EXTEND_TOP BDCORWIN 5 #0
 	IF ~Global("#L_SoDStatOptions","GLOBAL",1) OR(2) CheckStatGT(Player1,15,WIS) CheckStatGT(Player1,15,INT)~ THEN REPLY @2000 /* ~You should send out scouts.  Caelar will be expecting us to cross here.~ */ DO ~SetGlobal("bd_plot","global",101) SetGlobal("#L_CWBridgeQuest","GLOBAL",1)~ + CORWIN_BRIDGE_QUEST_1.1
 END
 
-//EXTEND_TOP BDCORWIN 53 
-
 ALTER_TRANS BDCORWIN
 	BEGIN 9 END
 	BEGIN 0 END
