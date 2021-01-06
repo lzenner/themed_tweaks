@@ -30,6 +30,7 @@ SoD - Add stat-based observations and options - by Lauriel
 ------------------------------------------------------------------------
 Adds comments about the situation based upon INT and WIS and quest options based on various stats
 ** TODO: Weak Poison dialogue options need to be added to Caelar scene at bridge
+	     Add dialogue option to Caelar scene at bridge about scrying pool scene with H-man (if viewed)
 
 ------------------------------------------------------------------------
 SoD - Ditch tour-guide Corwin Schael - by Lauriel
@@ -40,13 +41,13 @@ Allows the PC to wander Baldur's Gate with or without Corwin
 SoD - Scouting the Coast Way Crossing - by Lauriel
 ------------------------------------------------------------------------
 Adds a quest to scout the first bridge
-** In development - just need to finish the bridge scene
+** TODO: Post-combat dialogues
 
 ------------------------------------------------------------------------
 SoD - 'A Historical Treatise of Dragonspear Castle' reactions - by Lauriel
 ------------------------------------------------------------------------
 Adds reactions and dialogue options when the book "A Historical Treatise of Dragonspear Castle" is found in the random water troll area
-** In development
+** TODO: Dialogue with Caelar after Coast Way bridge has been destroyed
 
 ------------------------------------------------------------------------
 SoD/BG2 - Add a little snark - by Lauriel
@@ -58,13 +59,13 @@ Just adds some fun snarky comments to the otherwise stuffy or inane dialogue
 SoD/BG2 - Remove cut scenes that the PC shouldn't be privy to - by Lauriel
 ------------------------------------------------------------------------
 Unless there's a reason for the PC to view a scene, like a scrying pool, scenes about what is happening to other NPCs are skipped.
-** In development
+** TODO: Find appropriate spots to place the dreams during BG2EE
 
 ------------------------------------------------------------------------
 SoD/BG2 - Move dreams about Irenicus from SoD to BG2 - by Lauriel
 ------------------------------------------------------------------------
 Irenicus shouldn't have enough influence over the PC to be able to invade her dreams in SoD.  Those dreams are moved to BG2 where they will be available for other mods to play with.
-** In development
+** In development, removed from SoD, but need to place them in BG2 yet
 
 ------------------------------------------------------------------------
 BG2 - Give Imoen the innate ability to cast Magic Missile - by Lauriel & jastey
@@ -87,6 +88,7 @@ PLANNED FUTURE ENHANCEMENTS
 * BG1EE           - Allow turning down airship thieves guild quest without aggroing the entire guild
 * BG1EE/SoD       - Remove errant references to PC being Bhaalspawn, like Entar
 * SoD             - Expanded Coast Way Crossing quest allowing Boareskyr Bridge area to be skipped
+* SoD             - Add confrontation with Bence and Corwin over Bence bedding Skie
 * SoD             - Speed up the elevator in hell
 * SoD             - Speed up the prison/trial scenes
 * BG2EE           - Distribute group's possessions from the beginning of BG2 to stores in Athkatla - might have to be EET only
