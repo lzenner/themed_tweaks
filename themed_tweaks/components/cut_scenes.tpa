@@ -24,12 +24,11 @@ DEFINE_ACTION_FUNCTION cut_scenes BEGIN
 			END
 			
 		// Take out the scene with Hephernaan and Jayvis at the Coast Way bridge
-		// TODO: Future version, if not in combat, make it so can overhear Hephernaan yelling (just the one line) and see the scuffle...add group comments 
 		COPY_EXISTING ~BD1000.BCS~ ~override~
 			DECOMPILE_AND_PATCH BEGIN
 				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~StartCutSceneEx("bdcut15",TRUE)~ ~StartCutSceneEx("#LCSBD15",TRUE)~
 			END
 		
-		COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCSBD15.baf~
+		COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCSBD15.baf~ USING ~%tra_loc%/%s/cut_scenes.tra~ 
 	END
 END

@@ -54,6 +54,7 @@ Just adds some fun snarky comments to the otherwise stuffy or inane dialogue
 SoD/BG2 - Remove cut scenes that the PC shouldn't be privy to - by Lauriel
 ------------------------------------------------------------------------
 Unless there's a reason for the PC to view a scene, like a scrying pool, scenes about what is happening to other NPCs outside of the PC's line-of-sight are skipped.
+** PROGRESS: SoD is finished (I think), BG2 yet to do
 
 ------------------------------------------------------------------------
 SoD/BG2 - Move dreams about Irenicus from SoD to BG2 - by Lauriel
