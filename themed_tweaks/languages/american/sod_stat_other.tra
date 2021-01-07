@@ -1,7 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Make sure the player notices the interesting bits in the Historical Treatise //
 //////////////////////////////////////////////////////////////////////////////////
-
 @2000	= ~What is this?  Did you see this, <CHARNAME>?~
 @2001	= ~This book you found says there's a portal leading to Avernus under Dragonspear Castle.~
 @2002	= ~Not only that, but that it can be opened using blood that contains the essense of a god.~
@@ -26,3 +25,14 @@
 @3000	= ~A Historical Treatise of Dragonspear Castle
 
 I found a book that outlines what I believe are Caelar's plans concerning me.  She wants to use my blood to open a portal to Avernus.  The only conclusion is that she has lost her mind.~
+
+/////////////////////////////////////////
+// Corwin relays Eltan's message to PC //
+/////////////////////////////////////////
+@4030	= ~By the way, I have a message for you from Duke Eltan, <CHARNAME>.~
+@4031	= ~Excellent!  What did he find out?~
+@4032	= ~Better late than never I guess.  What did he find out?~
+@4033	= ~Had you kept in contact with the camp, you'd have received it much sooner.  I've had it for a while now.~
+@4034	= ~He found out that Caelar, through some fault of her own, wound up a prisoner in Avernus.~
+@4035	= ~Her uncle managed to get her out by sacrificing himself.  He is now a prisoner in Avernus...in her place.~
+@4036	= ~How awful.  But that explains a lot.~

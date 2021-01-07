@@ -64,11 +64,13 @@ APPEND BDCORWIN
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_2.3A
 		SAY @2019 /*~That would be part of the preparations, yes.  It will take a while.  Meet here in a few hours.  I should know more by then.~ */
 		IF ~~ THEN DO ~SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4)~ EXIT
+		IF ~Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN DO ~SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4)~ GOTO MESSAGE_FOR_YOU_SIR
 	END
 
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_2.2B
 		SAY @2021 /* ~I'll start preparations and get my people on gathering as much intel as possible.  It'll take a while.  Meet here in  a few hours.  I should know more by then.~ */
 		IF ~~ THEN DO ~SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4)~ EXIT
+		IF ~Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN DO ~SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4)~ GOTO MESSAGE_FOR_YOU_SIR
 	END
 	
 	IF WEIGHT #-96 ~AreaCheck("BD1000") Global("#L_CWBridgeExplosivesTalk","GLOBAL",0) Global("#L_CWBridgeQuest","GLOBAL",4) Global("#L_CWBridgeRigged","GLOBAL",1)~ BEGIN CORWIN_BRIDGE_QUEST_3.1A
@@ -130,7 +132,8 @@ APPEND BDCORWIN
 		SAY @2053 /* ~The disguised Fist will meet you near the bridge entrance when you're ready.~ */
 		++ @2071 /* ~Join me.  I've something to do before heading to the bridge, but I still want your help.~ */ GOTO CORWIN_BRIDGE_QUEST_3.6A
 		++ @2095 /* ~Corwin, would you like to join me?~ */ GOTO CORWIN_BRIDGE_QUEST_3.6B
-		++ @2058 /* ~Understood.  I'll head over there shortly.~ */ EXIT
+		IF ~!Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN REPLY @2058 /* ~Understood.  I'll head over there shortly.~ */ EXIT
+		IF ~Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN REPLY @2058 /* ~Understood.  I'll head over there shortly.~ */ GOTO MESSAGE_FOR_YOU_SIR
 	END
 	
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.4B // Going with Fist in disguise
@@ -142,18 +145,22 @@ APPEND BDCORWIN
 		SAY @2055 /* ~We will disguise your features as much as possible.  Some of the Fist hold you in high esteem.  It will bolster their confidence.~ */
 		++ @2071 /* ~Join me.  I've something to do before heading to the bridge, but I still want your help.~ */ GOTO CORWIN_BRIDGE_QUEST_3.6A
 		++ @2095 /* ~Corwin, would you like to join me?~ */ GOTO CORWIN_BRIDGE_QUEST_3.6B
-		IF ~!Global("#L_Snark","GLOBAL",0)~ THEN REPLY @2056 /* ~If you say so.  Whatever.~ */ EXIT
-		IF ~~ THEN REPLY @2057 /* ~If you're sure it'll help.  Ok.~ */ EXIT
+		IF ~!Global("#L_SoDStat_Dauston","GLOBAL",2) !Global("#L_Snark","GLOBAL",0)~ THEN REPLY @2056 /* ~If you say so.  Whatever.~ */ EXIT
+		IF ~!Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN REPLY @2057 /* ~If you're sure it'll help.  Ok.~ */ EXIT
+		IF ~Global("#L_SoDStat_Dauston","GLOBAL",2) !Global("#L_Snark","GLOBAL",0)~ THEN REPLY @2056 /* ~If you say so.  Whatever.~ */ GOTO MESSAGE_FOR_YOU_SIR
+		IF ~Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN REPLY @2057 /* ~If you're sure it'll help.  Ok.~ */ GOTO MESSAGE_FOR_YOU_SIR
 	END
 	
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.6A
 		SAY @2075 /* ~Alright, but let's not keep the Fist waiting too long.~ */
-		IF ~~ THEN DO ~JoinParty()~ EXIT
+		IF ~!Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN DO ~JoinParty()~ EXIT
+		IF ~Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN GOTO MESSAGE_FOR_YOU_SIR_THEN_JOIN
 	END
 	
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_3.6B
 		SAY @2096 /* ~Yes, the rest of the troops will be watching for my signal~ */
-		IF ~~ THEN DO ~JoinParty()~ EXIT
+		IF ~!Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN DO ~JoinParty()~ EXIT
+		IF ~Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN GOTO MESSAGE_FOR_YOU_SIR_THEN_JOIN
 	END
 	
 	IF WEIGHT #-90 ~AreaCheck("BD1000") Global("#L_CWBridgeQuest","GLOBAL",4)~ THEN BEGIN CORWIN_BRIDGE_QUEST_4
@@ -174,22 +181,26 @@ APPEND BDCORWIN
 	
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_5.1A
 		SAY @2075 /* ~Alright, but let's not keep the Fist waiting too long.~ */
-		IF ~~ THEN DO ~JoinParty()~ EXIT
+		IF ~!Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN DO ~JoinParty()~ EXIT
+		IF ~Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN GOTO MESSAGE_FOR_YOU_SIR_THEN_JOIN
 	END
 	
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_5.1B
 		SAY @2076 /* ~Excellent.  Let's go!~ */
-		IF ~~ THEN DO ~JoinParty()~ EXIT
+		IF ~!Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN DO ~JoinParty()~ EXIT
+		IF ~Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN GOTO MESSAGE_FOR_YOU_SIR_THEN_JOIN
 	END
 
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_5.1C
 		SAY @2077 /* ~Alright.  But don't keep us waiting too long.~ */
-		IF ~~ THEN EXIT
+		IF ~!Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN EXIT
+		IF ~Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN GOTO MESSAGE_FOR_YOU_SIR
 	END
 	
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_5.1D
 		SAY @2078 /* ~Ok, if you're sure.  I'll meet you up there, just the same.~ */
-		IF ~~ THEN EXIT
+		IF ~!Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN EXIT
+		IF ~Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN GOTO MESSAGE_FOR_YOU_SIR
 	END
 	
 	IF WEIGHT #-89 ~AreaCheck("BD1000") !TriggerOverride("FF_Camp",IsOverMe("CORWIN")) OR(2) Global("#L_CWBridgeQuest","GLOBAL",5) Global("#L_CWBridgeQuest","GLOBAL",6) Global("#L_CWBridgeHailed","BD1000",1)~ THEN BEGIN CORWIN_BRIDGE_QUEST_6
@@ -220,17 +231,104 @@ APPEND BDCORWIN
 	
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_HEAD_OUT
 		SAY @2106 /* ~You heard <PRO_HIMHER>.  Head out!~ */
-		IF ~~ THEN DO ~StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ EXIT
+		IF ~!Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN DO ~StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ EXIT
+		IF ~Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN GOTO MESSAGE_FOR_YOU_SIR_THEN_CUT
 	END
 	
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_ME_TOO
 		SAY @2102 /* ~Yes, I'll be right behind you.  The rest of the troops will be watching for my signal~ */
 		IF ~~ THEN DO ~JoinParty() StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ EXIT
+		IF ~Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN GOTO MESSAGE_FOR_YOU_SIR_THEN_JOIN_CUT
 	END
 	
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_REST_OF_YOU
 		SAY @2107 /* ~The rest of you, watch for my signal.  Let's go!~ */
 		IF ~~ THEN DO ~JoinParty() StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ EXIT
+		IF ~Global("#L_SoDStat_Dauston","GLOBAL",2)~ THEN GOTO MESSAGE_FOR_YOU_SIR_THEN_JOIN_CUT
+	END
+
+	IF ~~ THEN BEGIN MESSAGE_FOR_YOU_SIR
+		SAY @4030 /* ~By the way, I have a message for you from Duke Eltan, <CHARNAME>.~ */
+		IF ~GlobalGT("BD_PLOT","GLOBAL",160)~ THEN REPLY @4032 /* ~Better late than never I guess.  What did he find out?~ */ GOTO DAUSTON_MESSAGE_1
+		IF ~GlobalLT("BD_PLOT","GLOBAL",160)~ THEN REPLY @4031 /* ~Excellent!  What did he find out?~ */ GOTO DAUSTON_MESSAGE_2
+	END
+	
+	IF ~~ THEN BEGIN DAUSTON_MESSAGE_1
+		SAY @4033 /* ~Had you kept in contact with the camp, you'd have received it much sooner.  I've had it for a while now.~ */
+		IF ~~ THEN GOTO DAUSTON_MESSAGE_2
+	END
+	
+	IF ~~ THEN BEGIN DAUSTON_MESSAGE_2
+		SAY @4034 /* ~He found out that Caelar, through some fault of her own, wound up a prisoner in Avernus.~ */
+		IF ~~ THEN GOTO DAUSTON_MESSAGE_3
+	END
+	
+	IF ~~ THEN BEGIN DAUSTON_MESSAGE_3
+		SAY @4035 /* ~Her uncle managed to get her out by sacrificing himself.  He is now a prisoner in Avernus...in her place.~ */
+		IF ~~ THEN REPLY @4036 /* ~How awful.  But that does explain a lot.~ */ DO ~SetGlobal("#L_SoDStat_Dauston","GLOBAL",3)~ EXIT
+	END
+
+	IF ~~ THEN BEGIN MESSAGE_FOR_YOU_SIR_THEN_JOIN
+		SAY @4030 /* ~By the way, I have a message for you from Duke Eltan, <CHARNAME>.~ */
+		IF ~GlobalGT("BD_PLOT","GLOBAL",160)~ THEN REPLY @4032 /* ~Better late than never I guess.  What did he find out?~ */ GOTO DAUSTON_MESSAGE_1J
+		IF ~GlobalLT("BD_PLOT","GLOBAL",160)~ THEN REPLY @4031 /* ~Excellent!  What did he find out?~ */ GOTO DAUSTON_MESSAGE_2J
+	END
+	
+	IF ~~ THEN BEGIN DAUSTON_MESSAGE_1J
+		SAY @4033 /* ~Had you kept in contact with the camp, you'd have received it much sooner.  I've had it for a while now.~ */
+		IF ~~ THEN GOTO DAUSTON_MESSAGE_2J
+	END
+	
+	IF ~~ THEN BEGIN DAUSTON_MESSAGE_2J
+		SAY @4034 /* ~He found out that Caelar, through some fault of her own, wound up a prisoner in Avernus.~ */
+		IF ~~ THEN GOTO DAUSTON_MESSAGE_3J
+	END
+	
+	IF ~~ THEN BEGIN DAUSTON_MESSAGE_3J
+		SAY @4035 /* ~Her uncle managed to get her out by sacrificing himself.  He is now a prisoner in Avernus...in her place.~ */
+		IF ~~ THEN REPLY @4036 /* ~How awful.  But that does explain a lot.~ */ DO ~SetGlobal("#L_SoDStat_Dauston","GLOBAL",3) JoinParty()~ EXIT
+	END
+
+	IF ~~ THEN BEGIN MESSAGE_FOR_YOU_SIR_THEN_CUT
+		SAY @4030 /* ~By the way, I have a message for you from Duke Eltan, <CHARNAME>.~ */
+		IF ~GlobalGT("BD_PLOT","GLOBAL",160)~ THEN REPLY @4032 /* ~Better late than never I guess.  What did he find out?~ */ GOTO DAUSTON_MESSAGE_1C
+		IF ~GlobalLT("BD_PLOT","GLOBAL",160)~ THEN REPLY @4031 /* ~Excellent!  What did he find out?~ */ GOTO DAUSTON_MESSAGE_2C
+	END
+	
+	IF ~~ THEN BEGIN DAUSTON_MESSAGE_1C
+		SAY @4033 /* ~Had you kept in contact with the camp, you'd have received it much sooner.  I've had it for a while now.~ */
+		IF ~~ THEN GOTO DAUSTON_MESSAGE_2C
+	END
+	
+	IF ~~ THEN BEGIN DAUSTON_MESSAGE_2C
+		SAY @4034 /* ~He found out that Caelar, through some fault of her own, wound up a prisoner in Avernus.~ */
+		IF ~~ THEN GOTO DAUSTON_MESSAGE_3C
+	END
+	
+	IF ~~ THEN BEGIN DAUSTON_MESSAGE_3C
+		SAY @4035 /* ~Her uncle managed to get her out by sacrificing himself.  He is now a prisoner in Avernus...in her place.~ */
+		IF ~~ THEN REPLY @4036 /* ~How awful.  But that does explain a lot.~ */ DO ~SetGlobal("#L_SoDStat_Dauston","GLOBAL",3) StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ EXIT
+	END
+
+	IF ~~ THEN BEGIN MESSAGE_FOR_YOU_SIR_THEN_JOIN_CUT
+		SAY @4030 /* ~By the way, I have a message for you from Duke Eltan, <CHARNAME>.~ */
+		IF ~GlobalGT("BD_PLOT","GLOBAL",160)~ THEN REPLY @4032 /* ~Better late than never I guess.  What did he find out?~ */ GOTO DAUSTON_MESSAGE_1JC
+		IF ~GlobalLT("BD_PLOT","GLOBAL",160)~ THEN REPLY @4031 /* ~Excellent!  What did he find out?~ */ GOTO DAUSTON_MESSAGE_2JC
+	END
+	
+	IF ~~ THEN BEGIN DAUSTON_MESSAGE_1JC
+		SAY @4033 /* ~Had you kept in contact with the camp, you'd have received it much sooner.  I've had it for a while now.~ */
+		IF ~~ THEN GOTO DAUSTON_MESSAGE_2JC
+	END
+	
+	IF ~~ THEN BEGIN DAUSTON_MESSAGE_2JC
+		SAY @4034 /* ~He found out that Caelar, through some fault of her own, wound up a prisoner in Avernus.~ */
+		IF ~~ THEN GOTO DAUSTON_MESSAGE_3JC
+	END
+	
+	IF ~~ THEN BEGIN DAUSTON_MESSAGE_3JC
+		SAY @4035 /* ~Her uncle managed to get her out by sacrificing himself.  He is now a prisoner in Avernus...in her place.~ */
+		IF ~~ THEN REPLY @4036 /* ~How awful.  But that does explain a lot.~ */ DO ~SetGlobal("#L_SoDStat_Dauston","GLOBAL",3) JoinParty() StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ EXIT
 	END
 END
 
