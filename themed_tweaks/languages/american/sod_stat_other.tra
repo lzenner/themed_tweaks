@@ -12,6 +12,15 @@
 @2007	= ~Ugh, so that's what she's up to.  She wants my blood to open that portal.  She must mad!~
 
 //////////////////////////////////////////////////////
+// Ask Eltan to interview Dauston when he sobers up //
+//////////////////////////////////////////////////////
+@2020	= ~Well enough, sir. But I have a favor to ask of you concerning the fallen paladin named Dauston that is currently sleeping it off in your cells.~
+@2021	= ~Of course.  What can I do for the Hero of Baldur's Gate?~
+@2022	= ~Can you interview him when he is awake.  He knows something of Caelar's past that might prove useful.~
+@2023	= ~Easy enough.  Consider it done.  I'll send a messenger with the results at the first opportunity.~
+@2024	= ~Thank you, sir.  How are you holding up through all of this?~
+
+//////////////////////////////////////////////////////
 // Journal Entry - just a journal note, not a quest //
 //////////////////////////////////////////////////////
 @3000	= ~A Historical Treatise of Dragonspear Castle

@@ -5,21 +5,22 @@
 
 DEFINE_ACTION_FUNCTION sod_stat_options BEGIN
 	// TODO:
-	//	Ask Eltan to interview the fallen paladin sleeping it off in his cells
+	//	Get message from Eltan about his interview with Dauston
 	//		Use the information gleaned when confronting Caelar
 	//	Use info on Hephernaan (from scrying pool and Edwin) when confronting Caelar (name not mentioned but could clearly see him there and behind Caelar
 	//	Use Historical Treatise info when confronting Caelar
 
 	// #L_SoDStatOptions Global set to indicate we want to use PC stats for dialogue and quest options (to be used by other components)
-	// #L_WeakPoison Global used to track if PC knows Caelar didn't try to kill her
+	// #L_SoDStat_WeakPoison Global used to track if PC knows Caelar didn't try to kill her
 	// #L_SoDStat_HephUmbral Global used to track if PC knows about Hephernaan being an agent of the Umbral Accord
 	// #L_SodStat_HephEdwin Global used to track if PC know about Hephernaan from Edwin
-	// #L_TreatiseFound global used to track if PC has found the book 'A Historical Treatise of Dragonspear Castle
+	// #L_SoDStat_Dauston  Global used to track if PC talked to Dauston, followed up on it, and received an answer 0 1 2 or 3
+	// #L_SoDStat_TreatiseFound global used to track if PC has found the book 'A Historical Treatise of Dragonspear Castle
 
 	EXTEND_TOP ~BD0120.BCS~ ~%mod_root%/scripts/sod_stat_options.baf~ // Set global to use stat-based options
 	EXTEND_TOP ~BD0103.BCS~ ~%mod_root%/scripts/sod_stat_options.baf~ // In case they skip Korlasz
 
-	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/sod_stat_weak_poison.d~ USING ~%tra_loc%/%s/sod_stat_weak_poison.tra~
+	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/sod_stat_weak_poison.d~ USING ~%tra_loc%/%s/sod_stat_weak_poison.tra~ // Lots of changes so separate file
 	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/sod_stat_other.d~ USING ~%tra_loc%/%s/sod_stat_other.tra~
 
    	// Define the journal entries 
