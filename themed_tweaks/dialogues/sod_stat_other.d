@@ -140,6 +140,21 @@ END
 // Track if PC knows about Hephernaan being an agent of the Umbral Accord
 REPLACE_ACTION_TEXT BDSCRY ~SetGlobal("bd_sddd12_hood","LOCALS",1)~ ~SetGlobal("#L_SoDStat_HephUmbral","GLOBAL",1) SetGlobal("bd_sddd12_hood","LOCALS",1)~
 
+// Track if PC learned that Hephernaan is Caelar's advisor from Edwin
+ALTER_TRANS BDEDWIN
+	BEGIN 48 END
+	BEGIN 0 END
+	BEGIN
+		"ACTION" ~SetGlobal("#L_SodStat_HephEdwin","GLOBAL",1)~
+	END
+
+ALTER_TRANS BDEDWINJ
+	BEGIN 5 6 END
+	BEGIN 0 END
+	BEGIN
+		"ACTION" ~SetGlobal("#L_SodStat_HephEdwin","GLOBAL",1)~
+	END
+
 /////////////////////////////////
 // Dialogue involving the book //
 /////////////////////////////////

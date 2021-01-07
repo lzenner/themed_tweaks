@@ -29,6 +29,8 @@ I found a book that outlines what I believe are Caelar's plans concerning me.  S
 /////////////////////////////////////////
 // Corwin relays Eltan's message to PC //
 /////////////////////////////////////////
+// THESE ARE ALSO IN SOD_COASTWAY_CROSSING.TRA
+// IF CHANGED HERE, NEED TO CHANGE THERE AS WELL
 @4030	= ~By the way, I have a message for you from Duke Eltan, <CHARNAME>.~
 @4031	= ~Excellent!  What did he find out?~
 @4032	= ~Better late than never I guess.  What did he find out?~

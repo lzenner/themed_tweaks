@@ -159,6 +159,8 @@ The untimely escape of our unwilling informant resulted in everything blowing up
 /////////////////////////////////////////
 // Corwin relays Eltan's message to PC //
 /////////////////////////////////////////
+// THESE ARE ALSO IN SOD_STAT_OPTIONS.TRA
+// IF CHANGED HERE, NEED TO CHANGE THERE AS WELL
 @4030	= ~By the way, I have a message for you from Duke Eltan, <CHARNAME>.~
 @4031	= ~Excellent!  What did he find out?~
 @4032	= ~Better late than never I guess.  What did he find out?~

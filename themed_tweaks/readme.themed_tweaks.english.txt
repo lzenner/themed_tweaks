@@ -31,7 +31,6 @@ SoD - Add stat-based observations and options - by Lauriel
 Adds comments about the situation based upon INT and WIS and quest options based on various stats
 ** TODO: Weak Poison dialogue options need to be added to Caelar scene at bridge
 	     Add dialogue option to Caelar scene at bridge about scrying pool scene with Hephernaan (if viewed)
-		 Ask Eltan to interview the fallen paladin in his cells once he sobers up
 		 Add dialogue option about Historical Treatise to Caelar scene at bridge
 
 ------------------------------------------------------------------------
