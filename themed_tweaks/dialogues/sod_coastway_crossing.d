@@ -195,7 +195,7 @@ APPEND BDCORWIN
 	IF WEIGHT #-89 ~AreaCheck("BD1000") !TriggerOverride("FF_Camp",IsOverMe("CORWIN")) OR(2) Global("#L_CWBridgeQuest","GLOBAL",5) Global("#L_CWBridgeQuest","GLOBAL",6) Global("#L_CWBridgeHailed","BD1000",1)~ THEN BEGIN CORWIN_BRIDGE_QUEST_6
 		SAY @2095 /* ~Everything's in place.  Are you ready to do this, <CHARNAME>?~ */
 		IF ~Global("#L_CWBridgePassword","GLOBAL",1)~ THEN REPLY @2096 /* ~Did we learn anything about a password? */ GOTO CORWIN_BRIDGE_QUEST_NIKTO
-		IF ~!Global("#L_CWBridgePassword","GLOBAL",1) NumInParty(6)~ THEN REPLY @2100 /* ~Alright, let's go.~ */ GOTO CORWIN_BRIDGE_QUEST_HEAD_OUT
+		IF ~!Global("#L_CWBridgePassword","GLOBAL",1) NumInParty(6)~ THEN REPLY @2097 /* ~I'm ready.  Let's go.~ */ GOTO CORWIN_BRIDGE_QUEST_HEAD_OUT
 		IF ~!Global("#L_CWBridgePassword","GLOBAL",1) NumInPartyLT(6)~ THEN REPLY @2097 /* ~I'm ready.  Let's go.~ */ GOTO CORWIN_BRIDGE_QUEST_CAN_I_COME
 		IF ~!Global("#L_CWBridgePassword","GLOBAL",1) NumInPartyLT(6)~ THEN REPLY @2098 /* ~I'm ready.  Would you like to join me, Corwin?~ */ GOTO CORWIN_BRIDGE_QUEST_ME_TOO
 	END
@@ -304,7 +304,7 @@ APPEND BDCORWIJ
 	IF WEIGHT #-96 ~AreaCheck("BD1000") !TriggerOverride("FF_Camp",IsOverMe("CORWIN")) OR(2) Global("#L_CWBridgeQuest","GLOBAL",5) Global("#L_CWBridgeQuest","GLOBAL",6) Global("#L_CWBridgeHailed","BD1000",1)~ THEN BEGIN CORWIN_BRIDGE_QUEST_6
 		SAY @2095 /* ~Everything's in place.  Are you ready to do this, <CHARNAME>?~ */
 		IF ~Global("#L_CWBridgePassword","GLOBAL",1)~ THEN REPLY @2096 /* ~Did we learn anything about a password? */ GOTO CORWIN_BRIDGE_QUEST_NIKTO
-		IF ~!Global("#L_CWBridgePassword","GLOBAL",1)~ THEN REPLY @2100 /* ~Alright, let's go.~ */ GOTO CORWIN_BRIDGE_QUEST_REST_OF_YOU
+		IF ~!Global("#L_CWBridgePassword","GLOBAL",1)~ THEN REPLY @2097 /* ~I'm ready.  Let's go.~ */ GOTO CORWIN_BRIDGE_QUEST_REST_OF_YOU
 	END
 	
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_NIKTO
@@ -404,8 +404,8 @@ APPEND BDCRUS10
 	END
 	
 	IF ~~ THEN BEGIN OH_YES_YOU_DO
-		SAY @2124 /* ~Oh yes you do!  Hey!  That's the Hero!! And these aren't no stickin' elites!~ */
-		IF ~~ THEN DO ~ClearAllActions() SetGlobal("bd_plot","global",156) StartCutSceneMode() StartCutSceneEx("bdcut14",TRUE)~ EXIT
+		SAY @2132 /* ~Oh yes you do!  Hey!  That's the Hero!! And these aren't no stickin' elites!~ */
+		IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutSceneEx("#LCWBQ04",TRUE)~ EXIT
 	END
 	
 	IF ~~ THEN BEGIN ALRIGHT_THEN

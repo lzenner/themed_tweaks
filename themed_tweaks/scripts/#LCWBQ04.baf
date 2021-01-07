@@ -5,6 +5,7 @@
 
 IF
 	Global("#L_CWBridgeQuest","GLOBAL",5) // No prisoner
+	Global("#L_CWBridgePassword","GLOBAL",1) // Informant escapes
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
@@ -28,6 +29,7 @@ END
 
 IF
 	Global("#L_CWBridgeQuest","GLOBAL",6) // PC posing as prisoner
+	Global("#L_CWBridgePassword","GLOBAL",1) // Informant escapes
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
