@@ -137,22 +137,22 @@ APPEND BDCORWIN
 	END
 END
 
-// Track if PC knows about Hephernaan being an agent of the Umbral Accord
+// Track if PC knows about Hephernaan being an agent of the Umbral Accord (1=knows face, 2=knows face and name)
 REPLACE_ACTION_TEXT BDSCRY ~SetGlobal("bd_sddd12_hood","LOCALS",1)~ ~SetGlobal("#L_SoDStat_HephUmbral","GLOBAL",1) SetGlobal("bd_sddd12_hood","LOCALS",1)~
 
-// Track if PC learned that Hephernaan is Caelar's advisor from Edwin
+// Track if PC learned that Hephernaan is Caelar's advisor (1=knows name, 2=knows both name and face)
 ALTER_TRANS BDEDWIN
 	BEGIN 48 END
 	BEGIN 0 END
 	BEGIN
-		"ACTION" ~SetGlobal("#L_SodStat_HephEdwin","GLOBAL",1)~
+		"ACTION" ~SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",1)~
 	END
 
 ALTER_TRANS BDEDWINJ
 	BEGIN 5 6 END
 	BEGIN 0 END
 	BEGIN
-		"ACTION" ~SetGlobal("#L_SodStat_HephEdwin","GLOBAL",1)~
+		"ACTION" ~SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",1)~
 	END
 
 // Dialogue file to be used by whomever in the party meets the requirements //
@@ -160,7 +160,7 @@ BEGIN ~#LS0Temp~
 	IF ~Global("#L_SoDStat_TreatiseFound","GLOBAL",1)~ THEN BEGIN READ_HISTORICAL_TREATISE
 		SAY @2000 /* ~What is this?  Did you see this, <CHARNAME>?~ */
 		= @2001 /* ~This book you found says there's a portal leading to Avernus under Dragonspear Castle.~ */
-		= @2002	/* ~Not only that, but that it an be opened using the blood that has the essense of a god.~ */
+		= @2002	/* ~Not only that, but that it can be opened using the blood that has the essense of a god.~ */
 		= @2003	/* ~Is that what Caelar has in mind?  Opening a portal to Avernus?  Is she mad?!~ */
 		++ @2004 /* ~Ugh, so that's what she's up to.  I think you're right.  I think she's lost her mind.~ */ DO ~SetGlobal("#L_SoDStat_TreatiseFound","GLOBAL",2)~ JOURNAL @3000 EXIT
 	END
@@ -184,9 +184,24 @@ EXTEND_TOP BDCAELAR 10
 	IF ~Global("#L_SoDStat_TreatiseFound","GLOBAL",2) Global("#L_SoDStat_DaustonTalk","GLOBAL",3)~ THEN REPLY @2030 DO ~SetGlobal("bd_plot","global",170) ChangeAIScript("bdcutsce",OVERRIDE)~ GOTO 23
 	IF ~Global("#L_SoDStat_TreatiseFound","GLOBAL",2) !Global("#L_SoDStat_DaustonTalk","GLOBAL",3)~ THEN REPLY @2035 DO ~SetGlobal("bd_plot","global",170) ChangeAIScript("bdcutsce",OVERRIDE)~ GOTO 23
 END
+
+ALTER_TRANS BDCAELAR
+	BEGIN 14 END
+	BEGIN 0 END
+	BEGIN "TRIGGER" ~CheckStatGT(Player1,14,INT) !Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ END
+ALTER_TRANS BDCAELAR
+	BEGIN 14 END
+	BEGIN 1 END
+	BEGIN "TRIGGER" ~!CheckStatGT(Player1,14,INT) !Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ END
+EXTEND_TOP BDCAELAR 14
+	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN REPLY @2036 /*	~How is the fact you try to kidnap me instead of kill me make you any less an enemy?~ */ GOTO 15
+	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1) Global("#L_Snark","GLOBAL",1)~ THEN REPLY @2037 /* ~Since your goal was to kidnap and not kill me we should the be best of friends? Seriously?~ */ GOTO 15
+END
+
 EXTEND_TOP BDCAELAR 26
 	IF ~Global("#L_SoDStat_DaustonTalk","GLOBAL",3)~ THEN REPLY @2031 GOTO 33
 END
+
 EXTEND_BOTTOM BDCAELAR 33
 	IF ~GlobalGT("#L_SoDStat_HephUmbral","GLOBAL",0)~ THEN GOTO ONLY_I_CAN_CHALLENGE_FIENDS
 END
@@ -209,3 +224,4 @@ APPEND BDHEPHER
 		IF ~~ THEN EXTERN ~BDCAELAR~ WONT_LISTEN
 	END
 END
+
