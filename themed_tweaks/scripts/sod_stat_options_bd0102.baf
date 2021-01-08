@@ -1,7 +1,9 @@
-/////////////////////////////////////////////////////////////////////////////////////////
-// Prompt the PC to talk to Eltan about Dauston                                        //
-// This is very spoilery info we're giving the PC - make it rather difficult to obtain //
-/////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+// Prompt the PC to talk to Eltan about Dauston                                          //
+// This is very spoilery info we're giving the PC - make it's rather difficult to obtain //
+// No one in the stock canon group could advise the PC to talk to Eltan                  //
+// but since there are a lot of NPC mods, one of them now may                            //
+///////////////////////////////////////////////////////////////////////////////////////////
 
 IF
 	Global("#L_SoDStat_DaustonTalk","GLOBAL",1)
