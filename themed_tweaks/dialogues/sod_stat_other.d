@@ -194,8 +194,8 @@ ALTER_TRANS BDCAELAR
 	BEGIN 1 END
 	BEGIN "TRIGGER" ~!CheckStatGT(Player1,14,INT) !Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ END
 EXTEND_TOP BDCAELAR 14
-	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN REPLY @2036 /*	~How is the fact you try to kidnap me instead of kill me make you any less an enemy?~ */ GOTO 15
-	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1) Global("#L_Snark","GLOBAL",1)~ THEN REPLY @2037 /* ~Since your goal was to kidnap and not kill me we should the be best of friends? Seriously?~ */ GOTO 15
+	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN REPLY @2036 /*	~How is the fact you tried to kidnap me instead of kill me make you any less an enemy?~ */ GOTO 15
+	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1) Global("#L_Snark","GLOBAL",1)~ THEN REPLY @2037 /* ~Since your goal was to capture and not kill me we should the be best of friends? Seriously?~ */ GOTO 15
 END
 
 EXTEND_TOP BDCAELAR 26
@@ -213,8 +213,9 @@ APPEND BDCAELAR
 	END
 	
 	IF ~~ THEN BEGIN WONT_LISTEN
-		SAY @2034 /* ~I will not listen to unfounded accusations against my most trusted advisor!~ */
-		IF ~~ THEN GOTO 34
+		SAY @2034 /* ~Hephernaan? No. I will not listen to unfounded accusations against my most trusted advisor!~ */
+		IF ~Global("#L_Snark","GLOBAL",1) OR(2) GlobalLT("#L_SoDStat_HephUmbral","GLOBAL",2) GlobalLT("#L_SodStat_HephAdvisor","GLOBAL",2)~ THEN REPLY @2038 /* ~That agent of the Umbral Accord is your most trusted advisor?  Oh, this just keeps getting better and better!~ */ DO ~SetGlobal("#L_SoDStat_HephUmbral","GLOBAL",2) SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",2)~ GOTO 34
+		IF ~~ THEN REPLY @2039 /* ~Then you're a fool as well.  It's not gods that are on your side, but demons.~ */ DO ~SetGlobal("#L_SoDStat_HephUmbral","GLOBAL",2) SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",2)~ GOTO 34
 	END
 END
 

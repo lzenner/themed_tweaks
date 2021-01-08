@@ -28,14 +28,16 @@
 ///////////////////////////////////////////////////////////////
 // Dialogue with Caelar after the Coast Way Bridge explosion //
 ///////////////////////////////////////////////////////////////
-@2030	= ~I know your 'truth' already. There is a portal to Avernus within Dragonspear Castle and you mean to open it. You tell others it is to rescue their loved ones, when in fact it is simply a futile attempt to assuage your own guilt over your uncle.~
-@2031	= ~Still you attempt to hold the high moral ground!  Do you deceive even yourself that your motives are not remotely altruistic.  To risk thousands more being unjustly imprisoned for the sake of easing your own guilt is the height of selfishness and arrogance.~
+@2030	= ~I know your 'truth' already. There is a portal to Avernus within Dragonspear Castle that you mean to open in a futile attempt to assuage your guilt over your uncle.~
+@2031	= ~Still you attempt to hold the moral high ground!  Do you deceive even yourself? Your motives are not even remotely altruistic.  To risk thousands more being unjustly imprisoned for the sake of easing your own guilt is the height of selfishness and arrogance.~
 @2032	= ~If you plan on fighting these fiends, then why is one of their servants standing right behind you?~
 @2033	= ~(*cough*)~
-@2034	= ~I will not listen to unfounded accusations against my most trusted advisor!~
+@2034	= ~Hephernaan? No. I will not listen to unfounded accusations against my most trusted advisor!~
 @2035	= ~I know your 'truth' already, or enough of it. There is a portal to Avernus within Dragonspear Castle and you mean to open it.~
-@2036	= ~How is the fact you try to kidnap me instead of kill me make you any less an enemy?~
-@2037	= ~Since your goal was to kidnap and not kill me we should the be best of friends? Seriously?~
+@2036	= ~How is the fact you tried to kidnap me instead of kill me make you any less an enemy?~
+@2037	= ~Since your goal was to capture and not kill me we should the be best of friends? Seriously?~
+@2038	= ~That agent of the Umbral Accord is your most trusted advisor?  Oh, this just keeps getting better and better!~
+@2039	= ~Then you're a fool as well.  It's not gods that are on your side, but demons.~
 
 /////////////////////
 // Journal Entries //
