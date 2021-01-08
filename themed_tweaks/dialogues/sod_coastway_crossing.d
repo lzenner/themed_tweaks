@@ -534,3 +534,11 @@ BEGIN "#LFFAss1"
 	END
 // End of new dialogue file #LFFAss1
 
+// Allow a line even if solo because Fist are present
+ALTER_TRANS BDCAELAR
+	BEGIN 7 END
+	BEGIN 1 END
+	BEGIN
+		"TRIGGER" ~OR(2) NumInPartyGT(1) GlobalGT("#L_CWBridgeQuest","GLOBAL",97)~
+	END
+

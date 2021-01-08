@@ -122,7 +122,7 @@ APPEND BDCORWIN
 	END
 	
 	IF ~~ THEN BEGIN DAUSTON_MESSAGE_1J
-		SAY @4033 /* ~Had you kept in contact with the camp, you'd have received it much sooner.  I've had it for a while now.~ */
+		SAY @4033 /* ~Had you kept in contact with the camp, you'd have received it much sooner.  We've had it for a while now.~ */
 		IF ~~ THEN GOTO DAUSTON_MESSAGE_2J
 	END
 	
@@ -180,3 +180,32 @@ BEGIN ~#LS0Temp~
 ////////////////////////////////////////////////////
 // Dialogue with Caelar at the Coast Way Crossing //
 ////////////////////////////////////////////////////
+EXTEND_TOP BDCAELAR 10
+	IF ~Global("#L_SoDStat_TreatiseFound","GLOBAL",2) Global("#L_SoDStat_DaustonTalk","GLOBAL",3)~ THEN REPLY @2030 DO ~SetGlobal("bd_plot","global",170) ChangeAIScript("bdcutsce",OVERRIDE)~ GOTO 23
+	IF ~Global("#L_SoDStat_TreatiseFound","GLOBAL",2) !Global("#L_SoDStat_DaustonTalk","GLOBAL",3)~ THEN REPLY @2035 DO ~SetGlobal("bd_plot","global",170) ChangeAIScript("bdcutsce",OVERRIDE)~ GOTO 23
+END
+EXTEND_TOP BDCAELAR 26
+	IF ~Global("#L_SoDStat_DaustonTalk","GLOBAL",3)~ THEN REPLY @2031 GOTO 33
+END
+EXTEND_BOTTOM BDCAELAR 33
+	IF ~GlobalGT("#L_SoDStat_HephUmbral","GLOBAL",0)~ THEN GOTO ONLY_I_CAN_CHALLENGE_FIENDS
+END
+
+APPEND BDCAELAR
+	IF ~~ THEN BEGIN ONLY_I_CAN_CHALLENGE_FIENDS
+		SAY #256585 /* ~Only I can challenge the fiends of the Nine Hells. I must carry my mission out to its end.~ [BD56585] */
+		IF ~~ THEN REPLY @2032 /* ~If you plan on fighting these fiends, then why is one of their servants standing right behind you?~ */ EXTERN ~BDHEPHER~ HEPH_COUGH 
+	END
+	
+	IF ~~ THEN BEGIN WONT_LISTEN
+		SAY @2034 /* ~I will not listen to unfounded accusations against my most trusted advisor!~ */
+		IF ~~ THEN GOTO 34
+	END
+END
+
+APPEND BDHEPHER
+	IF ~~ THEN BEGIN HEPH_COUGH
+		SAY @2033 /* ~(*cough*)~ */
+		IF ~~ THEN EXTERN ~BDCAELAR~ WONT_LISTEN
+	END
+END
