@@ -5,61 +5,66 @@
 IF
 	PartyHasItem("BDBook11")
 	Global("#L_SoDStat_TreatiseFound","GLOBAL",0)
+	IsValidForPartyDialogue(Player2)
 	OR(2)
 		CheckStatGT(Player2,15,INT)
 		CheckStatGT(Player2,15,WIS)
 THEN
 	RESPONSE #100
 		SetGlobal("#L_SoDStat_TreatiseFound","GLOBAL",1)
-		ActionOverride(Player2,StartDialogOverride("#LHTRead",Player1))
+		ActionOverride(Player2,StartDialogOverride("#LS0Temp",Player1))
 END
 
 IF
 	PartyHasItem("BDBook11")
 	Global("#L_SoDStat_TreatiseFound","GLOBAL",0)
+	IsValidForPartyDialogue(Player3)
 	OR(2)
 		CheckStatGT(Player3,15,INT)
 		CheckStatGT(Player3,15,WIS)
 THEN
 	RESPONSE #100
 		SetGlobal("#L_SoDStat_TreatiseFound","GLOBAL",1)
-		ActionOverride(Player3,StartDialogOverride("#LHTRead",Player1))
+		ActionOverride(Player3,StartDialogOverride("#LS0Temp",Player1))
 END
 
 IF
 	PartyHasItem("BDBook11")
 	Global("#L_SoDStat_TreatiseFound","GLOBAL",0)
+	IsValidForPartyDialogue(Player4)
 	OR(2)
 		CheckStatGT(Player4,15,INT)
 		CheckStatGT(Player4,15,WIS)
 THEN
 	RESPONSE #100
 		SetGlobal("#L_SoDStat_TreatiseFound","GLOBAL",1)
-		ActionOverride(Player4,StartDialogOverride("#LHTRead",Player1))
+		ActionOverride(Player4,StartDialogOverride("#LS0Temp",Player1))
 END
 
 IF
 	PartyHasItem("BDBook11")
 	Global("#L_SoDStat_TreatiseFound","GLOBAL",0)
+	IsValidForPartyDialogue(Player5)
 	OR(2)
 		CheckStatGT(Player5,15,INT)
 		CheckStatGT(Player5,15,WIS)
 THEN
 	RESPONSE #100
 		SetGlobal("#L_SoDStat_TreatiseFound","GLOBAL",1)
-		ActionOverride(Player5,StartDialogOverride("#LHTRead",Player1))
+		ActionOverride(Player5,StartDialogOverride("#LS0Temp",Player1))
 END
 
 IF
 	PartyHasItem("BDBook11")
 	Global("#L_SoDStat_TreatiseFound","GLOBAL",0)
+	IsValidForPartyDialogue(Player6)
 	OR(2)
 		CheckStatGT(Player6,15,INT)
 		CheckStatGT(Player6,15,WIS)
 THEN
 	RESPONSE #100
 		SetGlobal("#L_SoDStat_TreatiseFound","GLOBAL",1)
-		ActionOverride(Player6,StartDialogOverride("#LHTRead",Player1))
+		ActionOverride(Player6,StartDialogOverride("#LS0Temp",Player1))
 END
 
 IF
@@ -67,7 +72,7 @@ IF
 	Global("#L_SoDStat_TreatiseFound","GLOBAL",0)
 THEN
 	RESPONSE #100
-		SetGlobal("#L_SoDStat_TreatiseFound","GLOBAL",1)
+		SetGlobal("#L_SoDStat_TreatiseFound","GLOBAL",2)
 		StartCutSceneMode()
 		DisplayStringHead(Player1,@2005) // ~What is this?  This book I found says there's a portal leading to Avernus under Dragonspear Castle.~
 		Wait(2)

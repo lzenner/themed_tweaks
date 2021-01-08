@@ -10,21 +10,44 @@
 @2006	= ~And it can be opened with my blood?~
 @2007	= ~Ugh, so that's what she's up to.  She wants my blood to open that portal.  She must mad!~
 
+/////////////////////////////////////////////////////////////////////////////
+// Have a member of the group prompt the PC to talk to Eltan about Dauston //
+/////////////////////////////////////////////////////////////////////////////
+@2010	= ~<CHARNAME>, perhaps you should talk to Duke Eltan about that fallen paladin we spoke to...Dauston.~
+@2011	= ~<CHARNAME>, perhaps thou shouldst talk to Duke Eltan about the unfortunate fallen paladin we spoke to...Dauston.~
+
 //////////////////////////////////////////////////////
 // Ask Eltan to interview Dauston when he sobers up //
 //////////////////////////////////////////////////////
 @2020	= ~Well enough, sir. But I have a favor to ask of you concerning the fallen paladin named Dauston that is currently sleeping it off in your cells.~
 @2021	= ~Of course.  What can I do for the Hero of Baldur's Gate?~
 @2022	= ~Can you interview him when he is awake.  He knows something of Caelar's past that might prove useful.~
-@2023	= ~Easy enough.  Consider it done.  I'll send a messenger with the results at the first opportunity.~
+@2023	= ~Easy enough.  Consider it done.  I'll send a messenger with the results to Corwin at the first opportunity.~
 @2024	= ~Thank you, sir.  How are you holding up through all of this?~
 
-//////////////////////////////////////////////////////
-// Journal Entry - just a journal note, not a quest //
-//////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+// Dialogue with Caelar after the Coast Way Bridge explosion //
+///////////////////////////////////////////////////////////////
+
+
+/////////////////////
+// Journal Entries //
+/////////////////////
 @3000	= ~A Historical Treatise of Dragonspear Castle
 
 I found a book that outlines what I believe are Caelar's plans concerning me.  She wants to use my blood to open a portal to Avernus.  The only conclusion is that she has lost her mind.~
+@3001	= ~Alas Poor Dauston
+
+The fallen paladin who is currently sleeping it off in the Flaming Fist cells may have important information about Caelar.  I don't have time to wait for him to sober up.  Maybe Duke Eltan can learn more from him.~
+@3002	= ~Alas Poor Dauston
+
+A member of my group suggested I talk to Duke Eltan about the fallen paladin passed out in the Flaming Fist cells.~
+@3003	= ~Alas Poor Dauston
+
+Duke Eltan said he would interview Dauston once the fallen paladin has sobered up and send what he learns to Corwin.~
+@3004	= ~Alas Poor Dauston
+
+We learned that Dauston's mentor, Caelar's uncle, volunteered to take Caelar's place as a prisoner in Avernus.~
 
 /////////////////////////////////////////
 // Corwin relays Eltan's message to PC //
@@ -34,7 +57,7 @@ I found a book that outlines what I believe are Caelar's plans concerning me.  S
 @4030	= ~By the way, I have a message for you from Duke Eltan, <CHARNAME>.~
 @4031	= ~Excellent!  What did he find out?~
 @4032	= ~Better late than never I guess.  What did he find out?~
-@4033	= ~Had you kept in contact with the camp, you'd have received it much sooner.  I've had it for a while now.~
+@4033	= ~Had you kept in contact with the camp, you'd have received it much sooner.  We've had it for a while now.~
 @4034	= ~He found out that Caelar, through some fault of her own, wound up a prisoner in Avernus.~
 @4035	= ~Her uncle managed to get her out by sacrificing himself.  He is now a prisoner in Avernus...in her place.~
 @4036	= ~How awful.  But that explains a lot.~

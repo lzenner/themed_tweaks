@@ -84,9 +84,6 @@ THEN
 		CreateCreature("#LFFAss1",[2840.1450],NE)
 		CreateCreature("#LFFAss2",[2895.1505],NE)
 		CreateCreature("#LFFAss3",[2770.1525],NE)
-		ChangeEnemyAlly("#LFFAss1",ALLY)
-		ChangeEnemyAlly("#LFFAss2",ALLY)
-		ChangeEnemyAlly("#LFFAss3",ALLY)
 		Continue()
 END
 
@@ -99,8 +96,6 @@ THEN
 	RESPONSE #100
 		CreateCreature("#LFFAss1",[2840.1450],NE)
 		CreateCreature("#LFFAss2",[2895.1505],NE)
-		ChangeEnemyAlly("#LFFAss1",ALLY)
-		ChangeEnemyAlly("#LFFAss2",ALLY)
 		Continue()
 END
 

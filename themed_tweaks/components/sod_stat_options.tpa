@@ -5,8 +5,7 @@
 
 DEFINE_ACTION_FUNCTION sod_stat_options BEGIN
 	// TODO:
-	//	Get message from Eltan about his interview with Dauston
-	//		Use the information gleaned when confronting Caelar
+	//	Use the information gleaned from Dauston when confronting Caelar
 	//	Use info on Hephernaan (from scrying pool and Edwin) when confronting Caelar (name not mentioned but could clearly see him there and behind Caelar
 	//	Use Historical Treatise info when confronting Caelar
 
@@ -14,7 +13,8 @@ DEFINE_ACTION_FUNCTION sod_stat_options BEGIN
 	// #L_SoDStat_WeakPoison Global used to track if PC knows Caelar didn't try to kill her
 	// #L_SoDStat_HephUmbral Global used to track if PC knows about Hephernaan being an agent of the Umbral Accord
 	// #L_SodStat_HephEdwin Global used to track if PC know about Hephernaan from Edwin
-	// #L_SoDStat_Dauston  Global used to track if PC talked to Dauston, followed up on it, and received an answer 0 1 2 or 3
+	// #L_SoDStat_DaustonTalk  Global used to track if PC talked to Dauston, followed up on it, and received an answer 0 1 2 or 3
+	// #L_SoDStat_DaustonPrompt area bd0102 variabed used to track if PC has been prompted to ask Eltan about Dauston by a member of the group
 	// #L_SoDStat_TreatiseFound global used to track if PC has found the book 'A Historical Treatise of Dragonspear Castle
 
 	EXTEND_TOP ~BD0120.BCS~ ~%mod_root%/scripts/sod_stat_options.baf~ // Set global to use stat-based options
@@ -25,7 +25,9 @@ DEFINE_ACTION_FUNCTION sod_stat_options BEGIN
 
    	// Define the journal entries 
 	ADD_JOURNAL @3000 USING ~%tra_loc%/%s/sod_stat_other.tra~	// Historical Treatise
+	ADD_JOURNAL @3001 @3002 @3003 @3004 USING ~%tra_loc%/%s/sod_stat_other.tra~ // Dauston Talk
 	
 	// Compile the area scripts
 	EXTEND_TOP ~BD0060.BCS~ ~%mod_root%/scripts/sod_stat_options_bd0060.baf~ USING ~%tra_loc%/%s/sod_stat_other.tra~	// Historical Treatise
+	EXTEND_BOTTOM ~BD0102.BCS~ ~%mod_root%/scripts/sod_stat_options_bd0102.baf~ USING ~%tra_loc%/%s/sod_stat_other.tra~	// Prompt PC to talk to Eltan about Dauston
 END
