@@ -11,10 +11,10 @@ DEFINE_ACTION_FUNCTION sod_stat_options BEGIN
 	// #L_SoDStat_WeakPoison Global used to track if PC knows Caelar didn't try to kill her 0 or 1
 	// #L_SoDStat_HephUmbral Global used to track if PC knows about Hephernaan being an agent of the Umbral Accord 1 = face, 2 = name and face
 	// #L_SodStat_HephAdvisor Global used to track if PC know about Hephernaan from Edwin 1 = name, 2 = name and face
-	// #L_SoDStat_DaustonTalk  Global used to track if PC talked to Dauston, followed up on it, and received an answer 0 1 2 or 3
-	// #L_SoDStat_DaustonPrompt area bd0102 variable used to track if PC has been prompted to ask Eltan about Dauston by a member of the group
-	// #L_SoDStat_TreatiseFound global used to track if PC has found the book 'A Historical Treatise of Dragonspear Castle 1 = found, 2 = read
-
+	// #L_SoDStat_DaustonTalk Global used to track if PC talked to Dauston, followed up on it, and received an answer 0 1 2 or 3
+	// #L_SoDStat_DaustonPrompt Area bd0102 variable used to track if PC has been prompted to ask Eltan about Dauston
+	// #L_SoDStat_TreatiseFound Global used to track if PC has found the book 'A Historical Treatise of Dragonspear Castle 1 = found, 2 = read
+	
 	EXTEND_TOP ~BD0120.BCS~ ~%mod_root%/scripts/sod_stat_options.baf~ // Set global to use stat-based options
 	EXTEND_TOP ~BD0103.BCS~ ~%mod_root%/scripts/sod_stat_options.baf~ // In case they skip Korlasz
 
