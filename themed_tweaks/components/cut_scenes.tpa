@@ -49,7 +49,7 @@ DEFINE_ACTION_FUNCTION cut_scenes BEGIN
 
 	ACTION_IF (GAME_IS ~bg2ee eet~) THEN BEGIN
 		// Let other components know that cut scenes have been removed
-		// Important for components like stat options where knowledge of who is who is tracked
+		// May be important for components that track what the PC knows
 		EXTEND_TOP ~AR0602.BCS~ ~%mod_root%/scripts/cut_scenes.baf~
 		EXTEND_TOP ~AR0700.BCS~ ~%mod_root%/scripts/cut_scenes.baf~ // In case they skip Chateau Irenicus
 	END
