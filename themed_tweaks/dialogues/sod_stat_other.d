@@ -211,7 +211,13 @@ BEGIN ~#LS0Temp~
 		= @2001 /* ~This book you found says there's a portal leading to Avernus under Dragonspear Castle.~ */
 		= @2002	/* ~Not only that, but that it can be opened using the blood that has the essense of a god.~ */
 		= @2003	/* ~Is that what Caelar has in mind?  Opening a portal to Avernus?  Is she mad?!~ */
-		++ @2004 /* ~Ugh, so that's what she's up to.  I think you're right.  I think she's lost her mind.~ */ DO ~SetGlobal("#L_SoDStat_TreatiseFound","GLOBAL",2)~ JOURNAL @3000 EXIT
+		++ @2004 /* ~Ugh, so that's what she's up to.  I think you're right.  I think she's lost her mind.~ */ DO ~SetGlobal("#L_SoDStat_TreatiseFound","GLOBAL",2)~ GOTO NOT_BHAALSPAWN
+	END
+	
+	IF ~~ THEN BEGIN NOT_BHAALSPAWN
+		SAY @2007 /* ~If Caelar was a child of Bhaal as rumors suggest, she'd have opened the portal already.  It appears the rumors are false.~ */
+		IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN JOURNAL @3000 EXIT
+		IF ~!Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN JOURNAL @3005 EXIT
 	END
 
 	// If PC isn't the sharpest tool in the shed, but someone in the group is, have them tell the PC to ask Eltan about Dauston
@@ -263,6 +269,11 @@ EXTEND_TOP BDCAELAR 14
 	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN REPLY @2036 /*	~How is the fact you tried to kidnap me instead of kill me make you any less an enemy?~ */ GOTO 15
 	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1) Global("#L_Snark","GLOBAL",1)~ THEN REPLY @2037 /* ~Since your goal was to capture and not kill me we should the be best of friends? Seriously?~ */ GOTO 15
 END
+
+ALTER_TRANS BDCAELAR
+	BEGIN 16 21 END
+	BEGIN 1 END
+	BEGIN "TRIGGER" ~!Global("#L_SoDStat_TreatiseFound","GLOBAL",2)~ END
 
 EXTEND_TOP BDCAELAR 26
 	IF ~Global("#L_SoDStat_DaustonTalk","GLOBAL",3)~ THEN REPLY @2031 DO ~IncrementGlobal("bd_mdd420_good","global",5)~ GOTO 33

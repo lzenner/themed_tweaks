@@ -22,7 +22,7 @@ DEFINE_ACTION_FUNCTION sod_stat_options BEGIN
 	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/sod_stat_other.d~ USING ~%tra_loc%/%s/sod_stat_other.tra~
 
    	// Define the journal entries 
-	ADD_JOURNAL @3000 USING ~%tra_loc%/%s/sod_stat_other.tra~	// Historical Treatise
+	ADD_JOURNAL @3000 @3005 USING ~%tra_loc%/%s/sod_stat_other.tra~	// Historical Treatise
 	ADD_JOURNAL @3001 @3002 @3003 @3004 USING ~%tra_loc%/%s/sod_stat_other.tra~ // Dauston Talk
 	
 	// Compile the area scripts
