@@ -1,0 +1,12 @@
+///////////////////////////////////////////////////////////////
+// Sets up a global to indicate cut scenes have been removed //
+// Patched via cut_scenes.tpa                                //
+///////////////////////////////////////////////////////////////
+IF
+	Global("#L_CutScenesRemoved","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_CutScenesRemoved","GLOBAL",1)
+  		Continue()
+END
+
