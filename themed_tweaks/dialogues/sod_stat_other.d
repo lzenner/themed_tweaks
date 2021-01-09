@@ -139,6 +139,13 @@ END
 
 // Track if PC knows about Hephernaan being an agent of the Umbral Accord (1=knows face, 2=knows face and name)
 REPLACE_ACTION_TEXT BDSCRY ~SetGlobal("bd_sddd12_hood","LOCALS",1)~ ~SetGlobal("#L_SoDStat_HephUmbral","GLOBAL",1) SetGlobal("bd_sddd12_hood","LOCALS",1)~
+ALTER_TRANS BDSCRY
+	BEGIN 3 END
+	BEGIN 0 END
+	BEGIN "TRIGGER" ~!IsValidForPartyDialogue("EDWIN")~ END
+EXTEND_BOTTOM BDSCRY 3
+	IF ~IsValidForPartyDialogue("EDWIN")~ THEN DO ~SetGlobal("BD_SDDD12_CLOUDY","MYAREA",1) SetGlobal("bd_sddd12_hood","LOCALS",1) SetGlobal("#L_SoDStat_HephUmbral","GLOBAL",1) ActionOverride("EDWIN",SetGlobal("#L_SoDStat_HephUmbral","LOCALS",1)) StartCutSceneMode() StartCutSceneEx("bdscry05",FALSE)~ EXIT
+END
 
 // Track if PC learned that Hephernaan is Caelar's advisor (1=knows name, 2=knows both name and face)
 ALTER_TRANS BDEDWIN
@@ -154,8 +161,38 @@ ALTER_TRANS BDEDWINJ
 	BEGIN
 		"ACTION" ~SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",1)~
 	END
+	
+APPEND BDEDWINJ
+	IF ~Global("#L_SoDStat_HephUmbral","LOCALS",1)~	THEN BEGIN I_KNEW_IT
+		SAY @2060 /* ~I knew something was off with that hedge wizard! (I always know.)~ */
+		++ @2061 /* ~Which hedge wizard, Edwin?~ */ GOTO KNEW_WHO
+		++ @2062 /* ~You know him, Edwin?~ */ GOTO YOU_KNOW_HIM
+	END
+	
+	IF ~~ THEN BEGIN KNEW_WHO
+		SAY @2063 /* ~That poor excuse for a wizard talking to that man in the hood.  That's Hephernaan.  Caelar's most trusted advisor. (Unbelievable...what a fool.)~ */
+		IF ~!Global("#L_SoDStat_TreatiseFound","GLOBAL",2)~ THEN REPLY @2065 /* ~Pieces of the puzzle are falling into place.  Thank you, Edwin.  You've been invaluable.~ */ GOTO OF_COURSE_1
+		IF ~Global("#L_SoDStat_TreatiseFound","GLOBAL",2)~ THEN REPLY @2067 /* ~Of course he is.  This just keeps getting better and better.  Thank you, Edwin.  That was an invaluable piece of information.~ */ GOTO OF_COURSE_2
+	END
+	
+	IF ~~ THEN BEGIN YOU_KNOW_HIM
+		SAY @2064 /* ~Yes yes, I know him.  That poor excuse for a wizard talking to the hooded figure is Hephernaan.  Caelar's most trusted advisor. (Unbelievable...what a fool.)~ */
+		IF ~!Global("#L_SoDStat_TreatiseFound","GLOBAL",2)~ THEN REPLY @2065 /* ~Pieces of the puzzle are falling into place.  Thank you, Edwin.  You've been invaluable.~ */ GOTO OF_COURSE_1
+		IF ~Global("#L_SoDStat_TreatiseFound","GLOBAL",2)~ THEN REPLY @2067 /* ~Of course he is.  This just keeps getting better and better.  Thank you, Edwin.  That was an invaluable piece of information.~ */ GOTO OF_COURSE_2
+	END
+	
+	IF ~~ THEN BEGIN OF_COURSE_1
+		SAY @2066 /* ~Of course I have.  I always am.~ */
+		IF ~~ THEN DO ~SetGlobal("#L_SoDStat_HephUmbral","GLOBAL",2) SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",2)~ EXIT
+	END
+	
+	IF ~~ THEN BEGIN OF_COURSE_2
+		SAY @2068 /* ~Of course.  You expected anything less from me? (I should hope not!)~ */
+		IF ~~ THEN DO ~SetGlobal("#L_SoDStat_HephUmbral","GLOBAL",2) SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",2)~ EXIT
+	END
+END
 
-// Dialogue file to be used by whomever in the party meets the requirements //
+// Dialogue file to be used by whomever in the party meets the requirements of the moment //
 BEGIN ~#LS0Temp~
 	IF ~Global("#L_SoDStat_TreatiseFound","GLOBAL",1)~ THEN BEGIN READ_HISTORICAL_TREATISE
 		SAY @2000 /* ~What is this?  Did you see this, <CHARNAME>?~ */
@@ -175,7 +212,7 @@ BEGIN ~#LS0Temp~
 		SAY @2011 /* ~<CHARNAME>, perhaps thou shouldst talk to Duke Eltan about the unfortunate fallen paladin we spoke to...Dauston.~ */
 		IF ~~ THEN DO ~SetGlobal("#L_SoDStat_DaustonPrompt","MYAREA",2)~ UNSOLVED_JOURNAL @3002 EXIT
 	END
-// END of new #LHTRead
+// END of new #LS0Temp
 
 ////////////////////////////////////////////////////
 // Dialogue with Caelar at the Coast Way Crossing //

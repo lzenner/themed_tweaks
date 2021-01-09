@@ -42,6 +42,19 @@
 @2041	= ~Destiny, and the poison dripping from the blades of your elites in the palace in Baldur's Gate were what brought me here.~
 @2042	= ~In fairness, you did attack me first.~
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+// Dialogue with Edwin when he is in the group during the scrying on the hooded man and Hephernaan //
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+@2060	= ~I knew something was off with that hedge wizard! (I always know.)~
+@2061	= ~Which hedge wizard, Edwin?~
+@2062	= ~You know him, Edwin?~
+@2063	= ~That poor excuse for a wizard talking to that man in the hood.  That's Hephernaan.  Caelar's most trusted advisor. (Unbelievable...what a fool.)~
+@2064	= ~Yes yes, I know him.  That poor excuse for a wizard talking to the hooded figure is Hephernaan.  Caelar's most trusted advisor. (Unbelievable...what a fool.)~
+@2065	= ~Pieces of the puzzle are falling into place.  Thank you, Edwin.  You've been invaluable.~
+@2066	= ~Of course I have.  I always am.~
+@2067	= ~Of course he is.  This just keeps getting better and better.  Thank you, Edwin.  That was an invaluable piece of information.~
+@2068	= ~Of course.  You expected anything less from me? (I should hope not!)~
+
 /////////////////////
 // Journal Entries //
 /////////////////////
