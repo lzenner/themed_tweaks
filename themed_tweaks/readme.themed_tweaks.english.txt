@@ -28,10 +28,7 @@ Allows the PC to render aid to Imoen after Caelar's elite have been defeated
 ------------------------------------------------------------------------
 SoD - Add stat-based observations and options - by Lauriel
 ------------------------------------------------------------------------
-Adds comments about the situation based upon INT and WIS and quest options based on various stats
-** TODO: Weak Poison dialogue options need to be added to Caelar scene at bridge
-	     Add dialogue option to Caelar scene at bridge about scrying pool scene with Hephernaan (if viewed)
-		 Add dialogue option about Historical Treatise to Caelar scene at bridge
+Adds comments about the situation and quest options based upon various stats
 
 ------------------------------------------------------------------------
 SoD - Ditch tour-guide Corwin Schael - by Lauriel

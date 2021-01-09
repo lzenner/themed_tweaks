@@ -4,9 +4,6 @@
 ////////////////////////////////////////////////////////
 
 DEFINE_ACTION_FUNCTION sod_stat_options BEGIN
-	// TODO:
-	// If Edwin identifies Hephernaan in scrying pool or at the bridge, use that info earlier - state that you know her trusted advisor is a servant of fiends
-
 	// #L_SoDStatOptions Global set to indicate we want to use PC stats for dialogue and quest options (to be used by other components)
 	// #L_SoDStat_WeakPoison Global used to track if PC knows Caelar didn't try to kill her 0 or 1
 	// #L_SoDStat_HephUmbral Global used to track if PC knows about Hephernaan being an agent of the Umbral Accord 1 = face, 2 = name and face
