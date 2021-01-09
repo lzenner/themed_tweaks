@@ -4,10 +4,14 @@
 // That's handled in a separate file because of it's volume //
 //////////////////////////////////////////////////////////////
 
-// Track who has talked to Dauston (drunken fallen paladin) about Caelar
+///////////////////////////////////////////////////////////////////////////
+// Track who has talked to Dauston (drunken fallen paladin) about Caelar //
+///////////////////////////////////////////////////////////////////////////
 REPLACE_ACTION_TEXT BDDAUSTO ~SetGlobal("BD_PASSOUT_DAUSTON","BD0030",1)~ ~SetGlobal("BD_PASSOUT_DAUSTON","BD0030",1) SetGlobal("#L_SoDStat_DaustonTalk","GLOBAL",1) ActionOverride(Player2,SetGlobal("#L_SoDStat_DaustonTalk","LOCALS",1)) ActionOverride(Player3,SetGlobal("#L_SoDStat_DaustonTalk","LOCALS",1)) ActionOverride(Player4,SetGlobal("#L_SoDStat_DaustonTalk","LOCALS",1)) ActionOverride(Player5,SetGlobal("#L_SoDStat_DaustonTalk","LOCALS",1)) ActionOverride(Player6,SetGlobal("#L_SoDStat_DaustonTalk","LOCALS",1))~
 
-// Ask Eltan to interview Dauston when he sobers up
+//////////////////////////////////////////////////////
+// Ask Eltan to interview Dauston when he sobers up //
+//////////////////////////////////////////////////////
 EXTEND_TOP BDELTAN 10 #0
 	IF ~Global("#L_SoDStat_DaustonTalk","GLOBAL",1) Global("#L_SoDStat_DaustonPrompt","MYAREA",2)~ THEN REPLY @2020 /* ~Well enough, sir. But I have a favor to ask of you concerning the fallen paladin named Dauston that is currently sleeping it off in your cells.~ */ GOTO ELTAN_ASK_ABOUT_DAUSTON
 END
@@ -24,7 +28,9 @@ APPEND BDELTAN
 	END
 END
 
-// Have Corwin have a message from Eltan for you if you speak with her more than once
+////////////////////////////////////////////////////////////////////////////////////////
+// Have Corwin have a message from Eltan for you if you speak with her more than once //
+////////////////////////////////////////////////////////////////////////////////////////
 EXTEND_BOTTOM BDCORWIN 17
 	IF ~Global("#L_SoDStat_DaustonTalk","GLOBAL",2)~ THEN DO ~AddJournalEntry(266861,QUEST_DONE) AddJournalEntry(266862,QUEST) ActionOverride("bdbence",EscapeAreaObject("ff_camp"))~ GOTO MESSAGE_FOR_YOU_SIR
 END
@@ -137,7 +143,9 @@ APPEND BDCORWIN
 	END
 END
 
-// Track if PC knows about Hephernaan being an agent of the Umbral Accord (1=knows face, 2=knows face and name)
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Track if PC knows about Hephernaan being an agent of the Umbral Accord (1=knows face, 2=knows face and name) //
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 REPLACE_ACTION_TEXT BDSCRY ~SetGlobal("bd_sddd12_hood","LOCALS",1)~ ~SetGlobal("#L_SoDStat_HephUmbral","GLOBAL",1) SetGlobal("bd_sddd12_hood","LOCALS",1)~
 ALTER_TRANS BDSCRY
 	BEGIN 3 END
@@ -147,7 +155,9 @@ EXTEND_BOTTOM BDSCRY 3
 	IF ~IsValidForPartyDialogue("EDWIN")~ THEN DO ~SetGlobal("BD_SDDD12_CLOUDY","MYAREA",1) SetGlobal("bd_sddd12_hood","LOCALS",1) SetGlobal("#L_SoDStat_HephUmbral","GLOBAL",1) ActionOverride("EDWIN",SetGlobal("#L_SoDStat_HephUmbral","LOCALS",1)) StartCutSceneMode() StartCutSceneEx("bdscry05",FALSE)~ EXIT
 END
 
-// Track if PC learned that Hephernaan is Caelar's advisor (1=knows name, 2=knows both name and face)
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Track if PC learned that Hephernaan is Caelar's advisor (1=knows name, 2=knows both name and face) //
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 ALTER_TRANS BDEDWIN
 	BEGIN 48 END
 	BEGIN 0 END
@@ -192,7 +202,9 @@ APPEND BDEDWINJ
 	END
 END
 
+////////////////////////////////////////////////////////////////////////////////////////////
 // Dialogue file to be used by whomever in the party meets the requirements of the moment //
+////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN ~#LS0Temp~
 	IF ~Global("#L_SoDStat_TreatiseFound","GLOBAL",1)~ THEN BEGIN READ_HISTORICAL_TREATISE
 		SAY @2000 /* ~What is this?  Did you see this, <CHARNAME>?~ */
