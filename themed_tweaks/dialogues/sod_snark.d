@@ -119,3 +119,21 @@ APPEND BDMINSCJ
 		IF ~~ THEN EXTERN BDCORWIN 8
 	END
 END
+
+// Answer to inane statement by Caelar Argent at the Coastway Crossing
+ALTER_TRANS BDCAELAR
+	BEGIN 11 END
+	BEGIN 0 END
+	BEGIN 
+		"REPLY" ~@8050~  // ~Are you seriously comparing my averting war to your starting one as being in way similar? Mind boggling!~
+		"ACTION" ~IncrementGlobal("bd_mdd420_good","global",1)~
+	END
+
+ALTER_TRANS BDCAELAR
+	BEGIN 15 END
+	BEGIN 0 END
+	BEGIN "REPLY" ~@8051~ END // ~You presume to know what my goals are?  You really are delusional!~
+
+EXTEND_TOP BDCAELAR 16 #1
+	IF ~~ THEN REPLY @8052 /* ~You're mad if you think they'd listen to me even if I had the slightest inclination of doing so.~ */ GOTO 18
+END

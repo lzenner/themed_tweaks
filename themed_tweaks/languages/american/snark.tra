@@ -46,6 +46,11 @@
 @8025	= ~With all due respect sir, I'm not a babysitter.  Neither is the Fist.  But if you insist upon this folly, her fate is upon your head, not mine.~
 
 // Corwin
-@8026 = ~I'm your best chance?  Not the hundreds of Flaming Fist under your command? Don't be absurd.~
-@8027 = ~I'm your best chance?  Xan was right.  We're doomed!~
-@8028 = ~I appreciate the fact that you'd take an arrow for me, Corwin, but it's hardly necessary.  That's what Minsc is for.~
+@8026	= ~I'm your best chance?  Not the hundreds of Flaming Fist under your command? Don't be absurd.~
+@8027	= ~I'm your best chance?  Xan was right.  We're doomed!~
+@8028	= ~I appreciate the fact that you'd take an arrow for me, Corwin, but it's hardly necessary.  That's what Minsc is for.~
+
+// Caelar after Coastway Crossing goes boom
+@8050	= ~Are you seriously comparing my averting war to your starting one as being in ANY way similar? Mind boggling!~
+@8051	= ~You presume to know what my goals are?  You really are delusional!~
+@8052	= ~You're mad if you think they'd listen to me even if I had the slightest inclination of doing so.~

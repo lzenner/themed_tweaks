@@ -182,7 +182,24 @@ BEGIN ~#LS0Temp~
 ////////////////////////////////////////////////////
 EXTEND_TOP BDCAELAR 10
 	IF ~Global("#L_SoDStat_TreatiseFound","GLOBAL",2) Global("#L_SoDStat_DaustonTalk","GLOBAL",3)~ THEN REPLY @2030 DO ~SetGlobal("bd_plot","global",170) ChangeAIScript("bdcutsce",OVERRIDE)~ GOTO 23
-	IF ~Global("#L_SoDStat_TreatiseFound","GLOBAL",2) !Global("#L_SoDStat_DaustonTalk","GLOBAL",3)~ THEN REPLY @2035 DO ~SetGlobal("bd_plot","global",170) ChangeAIScript("bdcutsce",OVERRIDE)~ GOTO 23
+	IF ~Global("#L_SoDStat_TreatiseFound","GLOBAL",2) !Global("#L_SoDStat_DaustonTalk","GLOBAL",3)~ THEN REPLY @2035 DO ~SetGlobal("bd_plot","global",170) ChangeAIScript("bdcutsce",OVERRIDE)~ GOTO 11
+END
+
+ALTER_TRANS BDCAELAR
+	BEGIN 12 END
+	BEGIN 0 1 END
+	BEGIN "TRIGGER" ~Global("#L_SoDStat_WeakPoison","GLOBAL",0)~ END
+EXTEND_TOP BDCAELAR 12
+	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN REPLY @2040 /* ~You were what brought me here—...~ */ DO ~IncrementGlobal("bd_mdd420_good","global",3)~ GOTO 14
+	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN REPLY @2041 /* ~Destiny, and the poison dripping ....*/ GOTO 14
+END
+
+ALTER_TRANS BDCAELAR
+	BEGIN 13 END
+	BEGIN 1 END
+	BEGIN "TRIGGER" ~Global("#L_SoDStat_WeakPoison","GLOBAL",0)~ END
+EXTEND_TOP BDCAELAR 13 #1
+	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN REPLY @2042 /* ~In fairness, you did attack me first.~ */ GOTO 14
 END
 
 ALTER_TRANS BDCAELAR
@@ -199,7 +216,7 @@ EXTEND_TOP BDCAELAR 14
 END
 
 EXTEND_TOP BDCAELAR 26
-	IF ~Global("#L_SoDStat_DaustonTalk","GLOBAL",3)~ THEN REPLY @2031 GOTO 33
+	IF ~Global("#L_SoDStat_DaustonTalk","GLOBAL",3)~ THEN REPLY @2031 DO ~IncrementGlobal("bd_mdd420_good","global",5)~ GOTO 33
 END
 
 EXTEND_BOTTOM BDCAELAR 33
