@@ -135,6 +135,21 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player2,SetSequence(SEQ_AWAKE))~ ~ActionOverride("#LFFAss1",SetSequence(SEQ_AWAKE)) SmallWait(2) ActionOverride("#LFFAss2",SetSequence(SEQ_AWAKE)) SmallWait(2) ActionOverride("#LFFAss3",SetSequence(SEQ_AWAKE)) SmallWait(2) ActionOverride(Player2,SetSequence(SEQ_AWAKE))~
 			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player2,Face(NE))~ ~ActionOverride("#LFFAss1",Face(NE)) SmallWait(2) ActionOverride("#LFFAss2",Face(NE)) SmallWait(2) ActionOverride("#LFFAss3",Face(NE)) SmallWait(2) ActionOverride(Player2,Face(NE))~
 			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~EndCutSceneMode()~ ~Wait(1) DisplayStringHead("#LFFAss1",#%STRREF_PROTECT_HERO%) Wait(2) EndCutSceneMode()~
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player2,FaceObject("bdwilhm"))~ ~END
+IF
+	!Global("#L_CWBridgeQuest","GLOBAL",5) !Global("#L_CWBridgeQuest","GLOBAL",6) !Global("#L_CWBridgeQuest","GLOBAL",98) !Global("#L_CWBridgeQuest","GLOBAL",99)
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		ActionOverride(Player2,FaceObject("bdwilhm"))~
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player6,FaceObject("bdwilhm"))~ ~ActionOverride(Player6,FaceObject("bdwilhm"))
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)~
 		END
 	COPY_EXISTING ~CUTSKIP.BCS~ ~Override~
 		DECOMPILE_AND_PATCH BEGIN

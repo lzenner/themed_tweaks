@@ -10,7 +10,6 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
-		ClearAllActions()
 		CreateCreature("bddarnas",[4895.50],SW)  // Darnas
 		CreateCreature("bdbarghe",[4965.65],SW)  // The Barghest
 		CreateCreature("bdolonei",[4920.90],SW)  // Oloneiros
@@ -66,7 +65,7 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
-		ClearAllActions()
+
 		SmallWait(10)
 		ActionOverride("bdhepher",SetSequence(SEQ_ATTACK_SLASH))
 		SmallWait(10)
