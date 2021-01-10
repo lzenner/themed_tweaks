@@ -534,11 +534,11 @@ BEGIN "#LFFAss1"
 	END
 // End of new dialogue file #LFFAss1
 
-// Allow a line even if solo because Fist are present
+// Allow a line even if solo because Fist are present (if they're still alive)
 ALTER_TRANS BDCAELAR
 	BEGIN 7 END
 	BEGIN 1 END
 	BEGIN
-		"TRIGGER" ~OR(2) NumInPartyGT(1) GlobalGT("#L_CWBridgeQuest","GLOBAL",97)~
+		"TRIGGER" ~OR(2) NumInPartyGT(1) GlobalGT("#L_CWBridgeQuest","GLOBAL",97) OR(4) !GlobalGT("#L_CWBridgeQuest","GLOBAL",97) !Dead("#LFFAss1") !Dead("#LFFAss2") !Dead("#LFFAss3")~
 	END
 

@@ -160,4 +160,5 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ02.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ03.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ04.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
+	EXTEND_TOP ~BDCUT17.BCS~ ~%mod_root%/scripts/sod_coastway_crossing_bdcut17.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 END

@@ -1,0 +1,110 @@
+///////////////////////////////////////////////////////////////////////
+// The disguised Flaming Fist flank the PC when speaking with Caelar //
+///////////////////////////////////////////////////////////////////////
+
+IF
+	GlobalGT("#L_CWBridgeQuest","GLOBAL",97)
+	!Dead("#LFFAss1")
+	OR(2)
+		!Dead("#LFFAss2")
+		!Dead("#LFFAss3")
+THEN
+	RESPONSE #100
+		CutSceneId("bdcutid")
+		MoveViewObject("#LFFAss1",INSTANT)
+		DisplayStringHead("#LFFAss1",@2133) // ~Fist!  Protect the Hero!~
+		Wait(1)
+END
+
+IF
+	GlobalGT("#L_CWBridgeQuest","GLOBAL",97)
+	Dead("#LFFAss1")
+	!Dead("#LFFAss2")
+	!Dead("#LFFAss3")
+THEN
+	RESPONSE #100
+		CutSceneId("bdcutid")
+		MoveViewObject("#LFFAss2",INSTANT)
+		DisplayStringHead("#LFFAss2",@2133) // ~Fist!  Protect the Hero!~
+		Wait(1)
+END
+
+IF
+	GlobalGT("#L_CWBridgeQuest","GLOBAL",97)
+	!Dead("#LFFAss1")
+	Dead("#LFFAss2")
+	Dead("#LFFAss3")
+THEN
+	RESPONSE #100
+		CutSceneId("bdcutid")
+		MoveViewObject("#LFFAss1",INSTANT)
+		DisplayStringHead("#LFFAss1",@2134) // ~I will protect you, m'<PRO_LORDLADY>.~
+		Wait(1)
+END
+
+IF
+	GlobalGT("#L_CWBridgeQuest","GLOBAL",97)
+	Dead("#LFFAss1")
+	!Dead("#LFFAss2")
+	Dead("#LFFAss3")
+THEN
+	RESPONSE #100
+		CutSceneId("bdcutid")
+		MoveViewObject("#LFFAss2",INSTANT)
+		DisplayStringHead("#LFFAss2",@2134) // ~I will protect you, m'<PRO_LORDLADY>.~
+		Wait(1)
+END
+
+IF
+	GlobalGT("#L_CWBridgeQuest","GLOBAL",97)
+	Dead("#LFFAss1")
+	Dead("#LFFAss2")
+	!Dead("#LFFAss3")
+THEN
+	RESPONSE #100
+		CutSceneId("bdcutid")
+		MoveViewObject("#LFFAss3",INSTANT)
+		DisplayStringHead("#LFFAss3",@2134) // ~I will protect you, m'<PRO_LORDLADY>.~
+		Wait(1)
+END
+
+IF
+	GlobalGT("#L_CWBridgeQuest","GLOBAL",97)
+	!Dead("#LFFAss1")
+THEN
+	RESPONSE #100
+		CutSceneId("bdcutid")
+		ActionOverride("#LFFAss1",MoveToPoint([4255.690]))
+		SmallWait(10)
+END
+
+IF
+	GlobalGT("#L_CWBridgeQuest","GLOBAL",97)
+	!Dead("#LFFAss2")
+THEN
+	RESPONSE #100
+		CutSceneId("bdcutid")
+		ActionOverride("#LFFAss2",MoveToPoint([4375.740]))
+		SmallWait(10)
+END
+
+IF
+	GlobalGT("#L_CWBridgeQuest","GLOBAL",97)
+	!Dead("#LFFAss3")
+THEN
+	RESPONSE #100
+		CutSceneId("bdcutid")
+		ActionOverride("#LFFAss3",MoveToPoint([4285.740]))
+END
+
+IF
+	GlobalGT("#L_CWBridgeQuest","GLOBAL",97)
+	OR(3)
+		!Dead("#LFFAss1")
+		!Dead("#LFFAss2")
+		!Dead("#LFFAss3")
+THEN
+	RESPONSE #100
+		CutSceneId("bdcutid")
+		Wait(5) // give them time to get into position
+END
