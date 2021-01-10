@@ -1,0 +1,11 @@
+////////////////////////////////////////
+// Changes to FF Extras used in quest //
+////////////////////////////////////////
+
+IF
+	AreaCheck("BD1000")
+	GlobalGT("BD_Plot","GLOBAL",155)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END

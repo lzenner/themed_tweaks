@@ -143,10 +143,6 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player2,Face(NE))~ ~ActionOverride("#LFFAss1",Face(NE)) SmallWait(2) ActionOverride("#LFFAss2",Face(NE)) SmallWait(2) ActionOverride("#LFFAss3",Face(NE)) SmallWait(2) ActionOverride(Player2,Face(NE))~
 			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player1,JumpToPoint([4360.705]))~ ~ActionOverride("#LFFAss1",JumpToPoint([4255.690])) ActionOverride("#LFFAss2",JumpToPoint([4370.770])) ActionOverride("#LFFAss3",JumpToPoint([4195.720])) ActionOverride(Player1,JumpToPoint([4360.705]))~
 		END
-	COPY_EXISTING ~BDCUT17.BCS~ ~override~
-		DECOMPILE_AND_PATCH BEGIN
-			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~True()~ ~OR(2) !GlobalGT("#L_CWBridgeQuest","GLOBAL",97) Dead("#LFFAss1") OR(2) !GlobalGT("#L_CWBridgeQuest","GLOBAL",97) Dead("#LFFAss2") OR(2) !GlobalGT("#L_CWBridgeQuest","GLOBAL",97) Dead("#LFFAss3")~
-		END
 
 	// Compile the area scripts
 	EXTEND_TOP ~BD1000.BCS~ ~%mod_root%/scripts/sod_coastway_crossing_bd1000.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
@@ -165,5 +161,14 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ02.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ03.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ04.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
+	
+	// The surviving disguised FF flank the PC when speaking to Caelar
+	COPY_EXISTING ~BDCUT17.BCS~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~True()~ ~OR(2) !GlobalGT("#L_CWBridgeQuest","GLOBAL",97) Dead("#LFFAss1") OR(2) !GlobalGT("#L_CWBridgeQuest","GLOBAL",97) Dead("#LFFAss2") OR(2) !GlobalGT("#L_CWBridgeQuest","GLOBAL",97) Dead("#LFFAss3")~
+		END
 	EXTEND_TOP ~BDCUT17.BCS~ ~%mod_root%/scripts/sod_coastway_crossing_bdcut17.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
+	
+	// Addition to FF Extras override scripts so they go poof when the bridge is destroyed
+	EXTEND_BOTTOM ~BDFISTEX.BCS~ ~%mod_root%/scripts/sod_coastway_crossing_bdfistex.baf~
 END
