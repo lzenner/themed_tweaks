@@ -1,0 +1,72 @@
+//////////////////////////////////////
+// Coast Way Bridge Quest Cut Scene //
+// The disguised FF leave the scene //
+//////////////////////////////////////
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		SmallWait(10)
+END
+
+IF
+	!Dead("#LFFAss1")
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		
+		MoveViewObject("#LFFAss1",INSTANT)
+		SmallWait(10)
+		
+		DisplayStringHead("#LFFAss1",@2135) // ~It has been an honor to fight at your side, <PRO_LORDLADY>.  Well earned is the title of Hero of Baldur's Gate.~
+		Wait(2)
+END
+
+IF
+	!Dead("#LFFAss1")
+	OR(2)
+		!Dead("#LFFAss1")
+		!Dead("#LFFAss1")
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		DisplayStringHead("#LFFAss1",@2138) // ~Fist!  Head out!~
+		Wait(2)
+		ActionOverride("#LFFAss1",EscapeArea())
+END
+
+IF
+	!Dead("#LFFAss2")
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		
+		MoveViewObject("#LFFAss2",INSTANT)
+		
+		DisplayStringHead("#LFFAss2",@2136) // ~I'm glad <PRO_HESHE>'s on our side.~
+		ActionOverride("#LFFAss2",EscapeArea())
+		Wait(1)
+END
+
+IF
+	!Dead("#LFFAss3")
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		
+		MoveViewObject("#LFFAss3",INSTANT)
+		
+		DisplayStringHead("#LFFAss3",@2137) // ~Eh...<PRO_HESHE>'s ok, I guess.~
+		ActionOverride("#LFFAss3",EscapeArea())
+		Wait(2)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		EndCutSceneMode()
+END

@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Cut Scene Replacement for BDCut15                                                              //
 // PC shouldn't be able to be privy to the fight between Hephernaan and Jayvis if still in combat //
-// If out of combat, the first line should be heard, and they can see him hitting Jayvis and      //
+// If out of combat, they can see him hitting Jayvis and                                          //
 // the movement of the rest of the NPCs, but not make out what is being said                      //
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,36 +63,6 @@ IF
 	Dead("bdcrus12")  // Seed
 	Dead("bdcrus13")  // Elwood Dowser
 	Dead("bdcrus14")  // Twelve-Fingers
-	!TimeOfDay(NIGHT)
-THEN
-	RESPONSE #100
-		CutSceneId(Player1)
-		ClearAllActions()
-		DisplayStringHead("bdhepher",234556)  // Curse you, Jayvis! Do you know what your cowardice has cost us this day?
-END
-
-IF
-	Dead("bdivann")  // Ivann
-	Dead("bdcrus10")  // Barachus
-	Dead("bdcrus11")  // Kerra Tinbasher
-	Dead("bdcrus12")  // Seed
-	Dead("bdcrus13")  // Elwood Dowser
-	Dead("bdcrus14")  // Twelve-Fingers
-	TimeOfDay(NIGHT)
-THEN
-	RESPONSE #100
-		CutSceneId(Player1)
-		ClearAllActions()
-		DisplayStringHead("bdhepher",235793)  // Curse you, Jayvis! Do you know what your cowardice has cost us this night?
-END
-
-IF
-	Dead("bdivann")  // Ivann
-	Dead("bdcrus10")  // Barachus
-	Dead("bdcrus11")  // Kerra Tinbasher
-	Dead("bdcrus12")  // Seed
-	Dead("bdcrus13")  // Elwood Dowser
-	Dead("bdcrus14")  // Twelve-Fingers
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
@@ -101,7 +71,7 @@ THEN
 		ActionOverride("bdhepher",SetSequence(SEQ_ATTACK_SLASH))
 		SmallWait(10)
 		ActionOverride("bdjayvis",SetSequence(SEQ_DAMAGE))
-		Wait(5)
+		Wait(2)
 		
 		MoveViewObject(Player1,INSTANT)
 		SmallWait(10)
@@ -120,7 +90,7 @@ THEN
 		ActionOverride("bdhepher",SetSequence(SEQ_ATTACK_SLASH))
 		SmallWait(10)
 		ActionOverride("bdjayvis",SetSequence(SEQ_DAMAGE))
-		Wait(3)
+		Wait(2)
 END
 
 IF
@@ -130,6 +100,25 @@ IF
 	Dead("bdcrus12")  // Seed
 	Dead("bdcrus13")  // Elwood Dowser
 	Dead("bdcrus14")  // Twelve-Fingers
+	IsValidForPartyDialogue(Player2)
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+
+		MoveViewObject(Player2,INSTANT)
+		SmallWait(10)
+		DisplayStringHead(Player2,@2001)	// ~Why'd they have it rigged if they weren't supposed to light it?~
+		Wait(5)
+END
+
+IF
+	Dead("bdivann")  // Ivann
+	Dead("bdcrus10")  // Barachus
+	Dead("bdcrus11")  // Kerra Tinbasher
+	Dead("bdcrus12")  // Seed
+	Dead("bdcrus13")  // Elwood Dowser
+	Dead("bdcrus14")  // Twelve-Fingers
+	!IsValidForPartyDialogue(Player2)
 	IsValidForPartyDialogue(Player3)
 THEN
 	RESPONSE #100
@@ -138,7 +127,14 @@ THEN
 		MoveViewObject(Player3,INSTANT)
 		SmallWait(10)
 		DisplayStringHead(Player3,@2001)	// ~Why'd they have it rigged if they weren't supposed to light it?~
-		Wait(5)
+		Wait(5)		
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
 		
 		MoveViewObject(Player1,INSTANT)
 		DisplayStringHead(Player1,@2002)	// ~Wish I could hear ... ~
@@ -149,42 +145,7 @@ THEN
 		ActionOverride("bdhepher",FaceObject("bdcaelar"))  // Caelar Argent
 		ActionOverride("bdjayvis",FaceObject("bdcaelar"))  // Caelar Argent
 		SmallWait(20)
-END
 
-IF
-	Dead("bdivann")  // Ivann
-	Dead("bdcrus10")  // Barachus
-	Dead("bdcrus11")  // Kerra Tinbasher
-	Dead("bdcrus12")  // Seed
-	Dead("bdcrus13")  // Elwood Dowser
-	Dead("bdcrus14")  // Twelve-Fingers
-	!IsValidForPartyDialogue(Player3)
-	IsValidForPartyDialogue(Player2)
-THEN
-	RESPONSE #100
-		CutSceneId(Player1)
-
-		MoveViewObject(Player3,INSTANT)
-		SmallWait(10)
-		DisplayStringHead(Player3,@2001)	// ~Why'd they have it rigged if they weren't supposed to light it?~
-		Wait(5)
-		
-		MoveViewObject(Player1,INSTANT)
-		DisplayStringHead(Player1,@2002)	// ~Curiouser and curiouser~
-		Wait(4)
-		
-		MoveViewPoint([4665.425],INSTANT)
-		SmallWait(4)
-		ActionOverride("bdhepher",FaceObject("bdcaelar"))  // Caelar Argent
-		ActionOverride("bdjayvis",FaceObject("bdcaelar"))  // Caelar Argent
-		SmallWait(20)
-END
-
-IF
-	True()
-THEN
-	RESPONSE #100
-		CutSceneId(Player1)
 		StartMusic(MISC3,QUICK_FADE)
 		SetGlobal("bd_plot","global",161)
 		SmallWait(4)

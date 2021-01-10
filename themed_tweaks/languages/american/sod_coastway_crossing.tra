@@ -117,10 +117,11 @@
 @2131	= ~FIST!  PROTECT THE HERO!~
 @2132	= ~Oh yes you do!  Hey!  That's the Hero!! And these aren't no stickin' elites!~
 @2133	= ~Fist!  Protect the Hero!~
-@2134	= ~I will protect you, m'<PRO_LORDLADY>.~
-@2135	= ~It has been an honor to fight at your side, m'<PRO_LORDLADY>.  Well earned is the title of Hero of Baldur's Gate.~
+@2134	= ~I will protect you, m'<PRO_LADYLORD>.~
+@2135	= ~It has been an honor to fight at your side, m'<PRO_LADYLORD>.  Well earned is the title of Hero of Baldur's Gate.~
 @2136	= ~I'm glad <PRO_HESHE>'s on our side.~
 @2137	= ~Eh...<PRO_HESHE>'s ok, I guess.~
+@2138	= ~Fist!  Head out!~
 
 //////////////////////////////////////////////////////////////////
 // Conversation with Corwin and Bence after the bridge explodes //

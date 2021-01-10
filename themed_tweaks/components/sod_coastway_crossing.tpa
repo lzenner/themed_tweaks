@@ -161,6 +161,7 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ02.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ03.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ04.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
+	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LCWBQ05.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 	
 	// The surviving disguised FF flank the PC when speaking to Caelar
 	COPY_EXISTING ~BDCUT17.BCS~ ~override~
@@ -171,4 +172,23 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 	
 	// Addition to FF Extras override scripts so they go poof when the bridge is destroyed
 	EXTEND_BOTTOM ~BDFISTEX.BCS~ ~%mod_root%/scripts/sod_coastway_crossing_bdfistex.baf~
+	
+	// Don't want the sergeant and the scouts to appear if doing quest with the other FF
+	LAF ALTER_SCRIPT_BLOCK
+		INT_VAR
+			only_once = 1
+		STR_VAR
+			script = ~BDCUT16~
+			match = ~OpenDoor("force_wall_door")~
+			swap_out = ~True()~
+			swap_in = ~GlobalLT("#L_CWBridgeQuest","GLOBAL",98)~
+	END
+	LAF INSERT_SCRIPT_BLOCK
+		INT_VAR
+			only_once = 1
+		STR_VAR
+			script = ~BDCUT16~
+			match = ~OpenDoor("force_wall_door")~
+			insert = ~%mod_root%/scripts/sod_coastway_crossing_bdcut16.baf~
+	END
 END

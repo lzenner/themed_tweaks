@@ -195,3 +195,18 @@ THEN
 		Continue()
 END
 
+IF
+	Global("BD_Plot","GLOBAL",170)
+	GlobalGT("#L_CWBridgeQuest","GLOBAL",97)
+	Global("#L_CWBridgeFFBye","MYAREA",0)
+	!TriggerOverride("BDCAELAR",LOS(Player1,20))
+	OR(3)
+		!Dead("#LFFAss1")
+		!Dead("#LFFAss2")
+		!Dead("#LFFAss3")
+THEN
+	RESPONSE #100
+		SetGlobal("#L_CWBridgeFFBye","MYAREA",1)
+		StartCutSceneMode() 
+		StartCutSceneEx("#LCWBQ05",TRUE)
+END
