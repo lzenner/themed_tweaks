@@ -141,7 +141,7 @@ THEN
 		Wait(5)
 		
 		MoveViewObject(Player1,INSTANT)
-		DisplayStringHead(Player1,@2002)	// ~Curiouser and curiouser~
+		DisplayStringHead(Player1,@2002)	// ~Wish I could hear ... ~
 		Wait(4)
 		
 		MoveViewPoint([4665.425],INSTANT)

@@ -141,6 +141,11 @@ DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
 			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player2,JumpToPoint([3655.1135]))~ ~ActionOverride("#LFFAss1",JumpToPoint([3795.1045])) ActionOverride("#LFFAss2",JumpToPoint([3845.1080])) ActionOverride("#LFFAss3",JumpToPoint([3740.1130])) ActionOverride(Player2,JumpToPoint([3655.1135]))~
 			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player2,SetSequence(SEQ_AWAKE))~ ~ActionOverride("#LFFAss1",SetSequence(SEQ_AWAKE)) SmallWait(2) ActionOverride("#LFFAss2",SetSequence(SEQ_AWAKE)) SmallWait(2) ActionOverride("#LFFAss3",SetSequence(SEQ_AWAKE)) SmallWait(2) ActionOverride(Player2,SetSequence(SEQ_AWAKE))~
 			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player2,Face(NE))~ ~ActionOverride("#LFFAss1",Face(NE)) SmallWait(2) ActionOverride("#LFFAss2",Face(NE)) SmallWait(2) ActionOverride("#LFFAss3",Face(NE)) SmallWait(2) ActionOverride(Player2,Face(NE))~
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player1,JumpToPoint([4360.705]))~ ~ActionOverride("#LFFAss1",JumpToPoint([4255.690])) ActionOverride("#LFFAss2",JumpToPoint([4370.770])) ActionOverride("#LFFAss3",JumpToPoint([4195.720])) ActionOverride(Player1,JumpToPoint([4360.705]))~
+		END
+	COPY_EXISTING ~BDCUT17.BCS~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~True()~ ~OR(2) !GlobalGT("#L_CWBridgeQuest","GLOBAL",97) Dead("#LFFAss1") OR(2) !GlobalGT("#L_CWBridgeQuest","GLOBAL",97) Dead("#LFFAss2") OR(2) !GlobalGT("#L_CWBridgeQuest","GLOBAL",97) Dead("#LFFAss3")~
 		END
 
 	// Compile the area scripts

@@ -75,7 +75,7 @@ THEN
 	RESPONSE #100
 		CutSceneId("bdcutid")
 		ActionOverride("#LFFAss1",MoveToPoint([4255.690]))
-		SmallWait(10)
+		SmallWait(2)
 END
 
 IF
@@ -84,8 +84,8 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId("bdcutid")
-		ActionOverride("#LFFAss2",MoveToPoint([4375.740]))
-		SmallWait(10)
+		ActionOverride("#LFFAss2",MoveToPoint([4370.770]))
+		SmallWait(2)
 END
 
 IF
@@ -94,7 +94,8 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId("bdcutid")
-		ActionOverride("#LFFAss3",MoveToPoint([4285.740]))
+		ActionOverride("#LFFAss3",MoveToPoint([4195.720]))
+		SmallWait(2)
 END
 
 IF
@@ -105,6 +106,16 @@ IF
 		!Dead("#LFFAss3")
 THEN
 	RESPONSE #100
-		CutSceneId("bdcutid")
-		Wait(5) // give them time to get into position
+		CutSceneId("bdcutid")  // No such index
+		SetAreaScript("cutskip",OVERRIDE)
+		SetGlobal("BD_CUTSCENE_BREAKABLE","GLOBAL",17)
+		SetCutSceneBreakable(TRUE)
+
+		Wait(5)
+		MoveViewPoint([4360.705],BD_WALK)
+		ActionOverride(Player1,MoveToPoint([4360.705]))
+		SmallWait(10)
+		ActionOverride("bdcaelar",SetSequence(SEQ_HEAD_TURN))
+		Wait(1)
+		StartCutSceneEx("bdcut17b",TRUE)
 END
