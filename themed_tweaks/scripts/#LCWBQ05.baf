@@ -27,8 +27,8 @@ END
 IF
 	!Dead("#LFFAss1")
 	OR(2)
-		!Dead("#LFFAss1")
-		!Dead("#LFFAss1")
+		!Dead("#LFFAss2")
+		!Dead("#LFFAss3")
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)
@@ -51,6 +51,7 @@ THEN
 END
 
 IF
+	!Dead("#LFFAss2")
 	!Dead("#LFFAss3")
 THEN
 	RESPONSE #100
@@ -59,6 +60,13 @@ THEN
 		MoveViewObject("#LFFAss3",INSTANT)
 		
 		DisplayStringHead("#LFFAss3",@2137) // ~Eh...<PRO_HESHE>'s ok, I guess.~
+END
+
+IF
+	!Dead("#LFFAss3")
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
 		ActionOverride("#LFFAss3",EscapeArea())
 		Wait(2)
 END

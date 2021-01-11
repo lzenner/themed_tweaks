@@ -13,8 +13,17 @@ THEN
 		SmallWait(5)
 		AmbientActivate("force_wall",FALSE)
 		OpenDoor("force_wall_door")
+		CreateCreature("bdbence",[465.3555],NE)  // Bence Duncan
+END
+
+IF
+	GlobalGT("#L_CWBridgeQuest","GLOBAL",97)
+	!InPartyAllowDead("CORWIN")
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
 
 		ActionOverride("CORWIN",JumpToPoint([3430.1265]))
 		ActionOverride("CORWIN",Face(NE))
-		CreateCreature("bdbence",[3300.1175],E)  // Bence Duncan
 END
+
