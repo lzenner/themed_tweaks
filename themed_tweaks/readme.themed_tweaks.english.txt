@@ -39,31 +39,29 @@ Allows the PC to wander Baldur's Gate with or without Corwin
 SoD - Scouting the Coast Way Crossing - by Lauriel
 ------------------------------------------------------------------------
 Adds a quest to scout the first bridge
-** TODO: Post-combat dialogues
 
 ------------------------------------------------------------------------
 SoD/BG2 - Add a little snark - by Lauriel
 ------------------------------------------------------------------------
 Just adds some fun snarky comments to the otherwise stuffy or inane dialogue
-** PROGRESS: SoD palace snark is finished.  Camp 1 snark in development.  Only one small comment in BG2 so far
+** PROGRESS: SoD palace and Camp1 snark is finished. Only one small comment in BG2 so far
 
 ------------------------------------------------------------------------
 SoD/BG2 - Remove cut scenes that the PC shouldn't be privy to - by Lauriel
 ------------------------------------------------------------------------
 Unless there's a reason for the PC to view a scene, like a scrying pool, scenes about what is happening to other NPCs outside of the PC's line-of-sight are skipped.
-** PROGRESS: SoD is finished (I think), BG2 yet to do
+** PROGRESS: SoD through the 1st camp is finished.  Remainder of SoD and BG2 yet to do
 
 ------------------------------------------------------------------------
 SoD/BG2 - Move dreams about Irenicus from SoD to BG2 - by Lauriel
 ------------------------------------------------------------------------
 Irenicus shouldn't have enough influence over the PC to be able to invade her dreams in SoD.  Those dreams are moved to BG2 where they will be available for other mods to play with.
-** TODO: Find appropriate spots to place the dreams during BG2EE
+** PROGRESS: SoD dreams are removed.  Still need to find appropriate spots to place them in BG2
 
 ------------------------------------------------------------------------
-BG2 - Give Imoen the innate ability to cast Magic Missile - by Lauriel & jastey
+BG2 - Give Imoen the innate ability to cast Magic Missile - by Lauriel
 ------------------------------------------------------------------------
 In case Imoen hasn't been dualed to a mage, she is given the innate ability to cast magic missile twice at the beginning of BG2.  A potion will be provided in Chateau Irenicus for her to use to make sure she is capable of casting it when they arrive at the promenade.
-** TO-DO: Add group dialogue about her new abilities (jastey)
 
 ------------------------------------------------------------------------
 BG2 - Use movie of Irenicus in hell as dream to restore Bhaalspawn powers - by Lauriel
@@ -84,6 +82,7 @@ PLANNED FUTURE ENHANCEMENTS
 * SoD             - Speed up the elevator in hell
 * SoD             - Speed up the prison/trial scenes
 * BG2EE           - Distribute group's possessions from the beginning of BG2 to stores in Athkatla - might have to be EET only
+* BG2EE           - Add comments from the group about Imoen's new innate ability to cast Magic Missile 
 * BG2EE           - Allow addition of heads to the Flail of Ages in any order
 * ToB             - Give viable reasons as to why the PC should attack its siblings in their own enclaves
 * ToB             - Have Balthesar relent even if PC hasn't taken down any of the others yet
