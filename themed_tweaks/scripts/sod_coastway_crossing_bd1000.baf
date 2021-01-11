@@ -210,3 +210,24 @@ THEN
 		StartCutSceneMode() 
 		StartCutSceneEx("#LCWBQ05",TRUE)
 END
+
+IF
+	Global("#L_CWBridgeWrap","MYAREA",0)
+	Global("BD_Plot","GLOBAL",170)
+	GlobalGT("#L_CWBridgeQuest","GLOBAL",97)
+	TriggerOverride("CORWIN",LOS(Player1,20))
+THEN
+	RESPONSE #100
+		SetGlobal("#L_CWBridgeWrap","MYAREA",1)
+		ActionOverride("CORWIN",StartDialogueNoSet(Player1))
+END
+
+IF
+	Global("#L_CWBridgeWrap","MYAREA",1)
+	TriggerOverride("CORWIN",LOS(Player1,20))
+	TriggerOverride("FF_Camp",IsOverMe("CORWIN"))
+THEN
+	RESPONSE #100
+		SetGlobal("#L_CWBridgeWrap","MYAREA",2)
+		ActionOverride("CORWIN",StartDialogueNoSet(Player1))
+END

@@ -98,7 +98,7 @@
 @2108	= ~I'll be just a little ways behind you, <CHARNAME>. The rest of you, watch for my signal.  Let's head out!~
 @2109	= ~Ugh...finally.  Ok!~
 @2110	= ~And where's this informant?~
-@2111	= ~The charm should last a good long while yet.  Bence is making sure she doesn't wander.~ 
+@2111	= ~She's back at camp. Bence is making sure she doesn't wander.~ 
 
 /////////////////////////////////////////////
 // The futile attempt to disarm the bridge //
@@ -126,7 +126,12 @@
 //////////////////////////////////////////////////////////////////
 // Conversation with Corwin and Bence after the bridge explodes //
 //////////////////////////////////////////////////////////////////
-
+@2150	= ~I saw what happened.  That was unfortunate.~
+@2151	= ~Yeah, it never occured to me to check for a password.~
+@2152	= ~It's not your fault.  It never occured to any of us.~
+@2153	= ~Unfortunate?! More like incompentence!~
+@2154	= ~Looks like we'll have to find another way to cross the bridge.~
+@2155	= ~Follow me back to camp. I need to inform Bence of our need to head for Boareskyr Bridge as soon as possible.~
 
 /////////////////////
 // Journal entries //
@@ -164,7 +169,6 @@ The untimely escape of our unwilling informant resulted in everything blowing up
 @3015	= ~Alas Poor Dauston
 
 We learned that Dauston's mentor, Caelar's uncle, volunteered to take Caelar's place as a prisoner in Avernus.~
-
 
 /////////////////////////////////////////
 // Corwin relays Eltan's message to PC //

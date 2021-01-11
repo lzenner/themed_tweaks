@@ -159,6 +159,12 @@ THEN
 			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player1,JumpToPoint([4360.705]))~ ~ActionOverride("#LFFAss1",JumpToPoint([4255.690])) ActionOverride("#LFFAss2",JumpToPoint([4370.770])) ActionOverride("#LFFAss3",JumpToPoint([4195.720])) ActionOverride(Player1,JumpToPoint([4360.705]))~
 		END
 
+	// Make sure Corwin only talks to the PC on cue after the bridge is blown
+	COPY_EXISTING ~BDCORWIN.BCS~ ~Override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Global("bd_plot","global",170)~ ~Global("bd_plot","global",170) GlobalLT("#L_CWBridgeQuest","GLOBAL",98)~
+		END
+		
 	// Compile the area scripts
 	EXTEND_TOP ~BD1000.BCS~ ~%mod_root%/scripts/sod_coastway_crossing_bd1000.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~
 	EXTEND_TOP ~BD1200.BCS~ ~%mod_root%/scripts/sod_coastway_crossing_bd1200.baf~ USING ~%tra_loc%/%s/sod_coastway_crossing.tra~

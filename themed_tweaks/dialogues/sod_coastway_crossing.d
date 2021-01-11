@@ -20,6 +20,9 @@ ALTER_TRANS BDCORWIN
 	BEGIN
 		"EPILOGUE" ~GOTO CORWIN_BRIDGE_QUEST_1.2B~
 	END
+	
+ADD_STATE_TRIGGER BDCORWIN 14 ~GlobalLT("#L_CWBridgeQuest","GLOBAL",98)~
+ADD_STATE_TRIGGER BDBENCE 15 ~GlobalLT("#L_CWBridgeQuest","GLOBAL",98)~
 
 APPEND BDCORWIN
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_1.1
@@ -330,6 +333,28 @@ APPEND BDCORWIN
 		SAY @4035 /* ~Her uncle managed to get her out by sacrificing himself.  He is now a prisoner in Avernus...in her place.~ */
 		IF ~~ THEN REPLY @4036 /* ~How awful.  But that does explain a lot.~ */ DO ~SetGlobal("#L_SoDStat_DaustonTalk","GLOBAL",3) JoinParty() StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ SOLVED_JOURNAL @3015 EXIT
 	END
+	
+	IF WEIGHT #-88 ~Global("#L_CWBridgeWrap","MYAREA",1)~ THEN BEGIN THAT_WAS_UNFORTUNATE
+		SAY @2150 /* ~I saw what happened.  That was unfortunate.~ */
+		IF ~Global("#L_CWBridgePassword","GLOBAL",0)~ THEN REPLY @2151 /* ~Yeah, it never occured to me to check for a password.~ */ GOTO NEITHER_DID_WE
+		IF ~Global("#L_CWBridgePassword","GLOBAL",1)~ THEN REPLY @2153 /* ~Unfortunate?! More like incompentence!~ */ GOTO NEED_ANOTHER_WAY
+	END
+	
+	IF ~~ THEN BEGIN NEITHER_DID_WE
+		SAY @2152 /* ~It's not your fault.  It never occured to any of us.~ */ 
+		IF ~~ THEN GOTO NEED_ANOTHER_WAY
+	END
+	
+	IF ~~ THEN BEGIN NEED_ANOTHER_WAY
+		SAY @2154 /* ~Looks like we'll have to find another way to cross the bridge.~ */
+		= @2155 /* ~Follow me back to camp. I need to inform Bence of our need to head for Boareskyr Bridge as soon as possible.~ */
+		IF ~~ THEN DO ~SetInterrupt(FALSE) ApplySpellRES("BDHaste","CORWIN") EscapeAreaObjectMove("BD1000","FF_Camp",570,3520,W) ApplySpellRES("#LUnHast","CORWIN") SetInterrupt(TRUE)~ EXIT
+	END
+	
+	IF WEIGHT #-87 ~Global("BD_PLOT","GLOBAL",170) Global("#L_CWBridgeWrap","MYAREA",2)~ THEN BEGIN CORPORAL_MOVE
+		SAY #235933 /* ~We need to get to Bridgefort. Corporal, spread the word to the troops to strike camp. Make sure to mark our new path on everyone's maps. We move out as soon as our friend is ready.~ [BD35933] */
+		IF ~~ THEN DO ~SetGlobal("BD_PLOT","GLOBAL",175)~ EXTERN ~BDBENCE~ 14
+	END
 END
 
 APPEND BDCORWIJ
@@ -348,13 +373,13 @@ APPEND BDCORWIJ
 	IF ~~ THEN BEGIN CORWINJ_BRIDGE_QUEST_2.3A
 		SAY @2022 /* ~That would be part of the preparations, yes.  It will take a while.  Meet me back at camp in a few hours.  I should know more by then.~ */
 		IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() SetGlobal("#L_CWBridgeCorwinLeft","GLOBAL",1) ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
-		IF ~NotStateCheck(MYSELF,STATE_HASTED) !Global("A7_AutoHasteActive","GLOBAL",1)~ THEN DO ~SetInterrupt(FALSE) SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() SetGlobal("#L_CWBridgeCorwinLeft","GLOBAL",1) ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) ApplySpell(MYSELF,WIZARD_HASTE) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
+		IF ~NotStateCheck(MYSELF,STATE_HASTED) !Global("A7_AutoHasteActive","GLOBAL",1)~ THEN DO ~SetInterrupt(FALSE) SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() SetGlobal("#L_CWBridgeCorwinLeft","GLOBAL",1) ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) ApplySpellRES("BDHaste","CORWIN") EscapeAreaObjectMove("BD1000","FF_Camp",570,3520,W) ApplySpellRES("#LUnHast","CORWIN")~ EXIT
 	END
 
 	IF ~~ THEN BEGIN CORWINJ_BRIDGE_QUEST_2.2B
 		SAY @2023 /* ~I'll start preparations and get my people on gathering as much intel as possible.  It'll take a while.  Meet me back at camp in a few hours.  I should know more by then.~ */
 		IF ~~ THEN DO ~SetInterrupt(FALSE) SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() SetGlobal("#L_CWBridgeCorwinLeft","GLOBAL",1) ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) MoveToPoint([570.3520]) SetInterrupt(TRUE)~ EXIT
-		IF ~NotStateCheck(MYSELF,STATE_HASTED) !Global("A7_AutoHasteActive","GLOBAL",1)~ THEN DO ~SetInterrupt(FALSE) SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() SetGlobal("#L_CWBridgeCorwinLeft","GLOBAL",1) ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) ApplySpellRES("BDHaste",MYSELF) MoveToPoint([570.3520]) SetInterrupt(TRUE) ApplySpellRES("#LUnHast",MYSELF)~ EXIT
+		IF ~NotStateCheck(MYSELF,STATE_HASTED) !Global("A7_AutoHasteActive","GLOBAL",1)~ THEN DO ~SetInterrupt(FALSE) SetGlobalTimer("#L_CWBridgeScoutTimer","MYAREA",THREE_HOURS) SetGlobal("#L_CWBridgeQuest","GLOBAL",4) LeaveParty() SetGlobal("#L_CWBridgeCorwinLeft","GLOBAL",1) ChangeAIScript("BDSHOUT",RACE) ChangeAIScript("BDFIGH01",GENERAL) ChangeAIScript("",DEFAULT) ApplySpellRES("BDHaste","CORWIN") EscapeAreaObjectMove("BD1000","FF_Camp",570,3520,W) ApplySpellRES("#LUnHast","CORWIN")~ EXIT
 	END
 	
 	IF WEIGHT #-98 ~AreaCheck("BD1200") Global("#L_CWBridgeRigged","GLOBAL",1) Global("#L_CWBridgeExplosivesTalk","GLOBAL",0)~ BEGIN CORWINJ_BRIDGE_QUEST_3.1

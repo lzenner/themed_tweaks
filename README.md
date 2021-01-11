@@ -14,13 +14,10 @@ COMPONENTS INCLUDE:
 * SoD/BG2EE       - Add a little snark
 * SoD             - Remove cut scenes that the PC shouldn't be privy to 
 * SoD             - Stat-based observations and options
+* SoD             - Quest: Scouting the Coast Way Crossing
 * BG2EE           - Give Imoen innate Magic Missile abilities for BG2 scene
 * BG2EE           - Use movie of Irenicus in hell as a dream to restore all Bhaalspawn powers
 
-
-COMPONENTS IN DEVELOPMENT:  
---------------------------
-* SoD             - Quest: Scouting the Coast Way Crossing
 
 COMPONENTS TO BE DONE:  
 ----------------------
