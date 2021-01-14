@@ -19,9 +19,13 @@ COMPONENTS INCLUDE:
 * BG2EE           - Use movie of Irenicus in hell as a dream to restore all Bhaalspawn powers
 
 
+COMPONENTS IN DEVELOPMENT:
+----------------------
+* BG1EE           - Give good-aligned reasons to go into peoples' homes
+
+
 COMPONENTS TO BE DONE:  
 ----------------------
-* BG1EE/BG2EE     - Give good-aligned reasons to go into peoples' homes
 * BG1EE/SoD/BG2EE - Fix cut scenes that rearrange the group
 * BG1EE           - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending
 * BG1EE           - Allow Dorn to join good group for the purpose of completing his revenge quest
@@ -34,6 +38,7 @@ COMPONENTS TO BE DONE:
 * BG2EE           - Distribute group's possessions from the beginning of BG2 to stores in Athkatla - might have to be EET only
 * BG2EE           - Remove cut scenes that the PC shouldn't be privy to 
 * BG2EE           - Add dreams about Irenicus that have been removed from SoD
+* BG2EE           - Give good-aligned reasons to go into peoples' homes
 * BG2EE           - Allow addition of heads to the Flail of Ages in any order
 * ToB             - Give viable reasons as to why the PC should attack its siblings in their own enclaves
 * ToB             - Have Balthesar relent even if PC hasn't taken down any of the others yet

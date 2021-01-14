@@ -1,0 +1,23 @@
+///////////////////////////////////////////////
+// Give the PC good reasons to go into homes //
+///////////////////////////////////////////////
+
+DEFINE_ACTION_FUNCTION good_reasons BEGIN
+	// Variables based upon installed game
+	ACTION_IF (GAME_IS ~eet~) THEN BEGIN
+		OUTER_SPRINT SND_CARBOS ~BGMAINME~
+		OUTER_SPRINT SND_SHANK ~BGMALE6E~
+	END ELSE ACTION_IF (GAME_IS ~bgee~) THEN BEGIN
+		OUTER_SPRINT SND_CARBOS ~MAINM11~
+		OUTER_SPRINT SND_SHANK ~MALE6E~
+	END
+	
+	// Give the Gatewarden a DV so I can put a string over his head
+	COPY_EXISTING ~GATEWA.CRE~ ~override~
+		WRITE_ASCII DEATHVAR ~GATEWARD~ #32
+		
+	// Compile the area scripts
+	ACTION_IF (GAME_IS ~eet bgee~) THEN BEGIN
+		EXTEND_TOP ~%Candlekeep%.BCS~ ~%mod_root%/scripts/bg1_good_reasons_bg2600.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
+	END
+END

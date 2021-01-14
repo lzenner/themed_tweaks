@@ -1,0 +1,7 @@
+////////////////////////////////////////////////////////////////////
+// Dialogues related to good reasons for PC to enter homes in BG1 //
+////////////////////////////////////////////////////////////////////
+
+@2000	= ~Hey you!  Yeah you!  Come in here for a sec.  I need your help.~ [%SND_CARBOS%]
+@2001	= ~Hey you!  Hurry!  Come in here!~ [%SND_SHANK%]
+@2002	= ~Ye look a mite worse fer wear, <CHARNAME>. Maybe ye should go visit the clinic, get a tonic or somethin'. It's right next door.~
