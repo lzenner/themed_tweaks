@@ -16,8 +16,10 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 	COPY_EXISTING ~GATEWA.CRE~ ~override~
 		WRITE_ASCII DEATHVAR ~GATEWARD~ #32
 		
-	// Compile the area scripts
+	// Compile the bg1 specific scripts
 	ACTION_IF (GAME_IS ~eet bgee~) THEN BEGIN
-		EXTEND_TOP ~%Candlekeep%.BCS~ ~%mod_root%/scripts/bg1_good_reasons_bg2600.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
+		EXTEND_TOP ~%Candlekeep%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2600.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
+		EXTEND_BOTTOM ~actflam.bcs~ ~%mod_root%/scripts/bg1_good_reasons_actflam.baf~ EVALUATE_BUFFER USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 	END
+	
 END
