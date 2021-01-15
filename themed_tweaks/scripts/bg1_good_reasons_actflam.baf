@@ -4,6 +4,7 @@
 
 IF
 	AreaCheck("%FriendlyArmInn%")
+	Global("#L_GRJoia","Global",0) // Set to 1 when Joia is spoken to
 	Entered(Player1)
 	Name("REPTRAP1",MYSELF)
 	!ActuallyInCombat()

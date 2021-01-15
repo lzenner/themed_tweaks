@@ -1,0 +1,8 @@
+/////////////////////////////////////////////////////
+// Dialogue changes for BG1 Good Reasons component //
+/////////////////////////////////////////////////////
+
+ALTER_TRANS JOIA
+	BEGIN 0 END
+	BEGIN 0 1 2 END
+	BEGIN "ACTION" ~SetGlobal("#L_GRJoia","GLOBAL",1)~ END
