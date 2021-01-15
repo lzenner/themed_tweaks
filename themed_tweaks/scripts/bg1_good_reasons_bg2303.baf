@@ -1,0 +1,14 @@
+//////////////////////////////////////////
+// Changes to 3rd floor FAI area script //
+//////////////////////////////////////////
+
+IF
+	Contains("TITOME02","Container4")
+	Global("TICBOOK02_Spawn","BG2303",1)
+	Global("#L_GRxRETome2","BG2303",0)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_GRxRETome2","BG2303",1)
+		ActionOverride("Container4",DestroyItem("TITOME02")) // Moved to Bently
+		Continue()
+END
