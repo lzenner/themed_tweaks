@@ -1,0 +1,24 @@
+//////////////////
+// Joia's house //
+//////////////////
+
+
+IF
+	TriggerOverride("Door2306",RANGE(Player1,20))
+	Global("#L_GRJoia","Global",0) // Set to 1 when Joia is spoken to
+	OR(2)
+		Global("#L_GRDoor2306","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor2306","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor2306","MYAREA",THREE_ROUNDS)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door2306",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door2306",@2003)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END

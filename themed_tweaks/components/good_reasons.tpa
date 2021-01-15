@@ -19,9 +19,12 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 	// Compile bg1 specific files
 	ACTION_IF (GAME_IS ~eet bgee~) THEN BEGIN
 		EXTEND_TOP ~%Candlekeep%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2600.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
-		EXTEND_BOTTOM ~%FriendlyArmInn_House%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2305.baf~ EVALUATE_BUFFER USING ~%tra_loc%/%s/bg1_good_reasons.tra~
-		EXTEND_BOTTOM ~%FriendlyArmInn_L3%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2303.baf~ EVALUATE_BUFFER USING ~%tra_loc%/%s/bg1_good_reasons.tra~
-		EXTEND_BOTTOM ~actflam.bcs~ ~%mod_root%/scripts/bg1_good_reasons_actflam.baf~ EVALUATE_BUFFER USING ~%tra_loc%/%s/bg1_good_reasons.tra~	 // Rep trap used for 'Help Wanted' signs
+		EXTEND_TOP ~%FriendlyArmInn%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2300.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
+		
+		// Get rid of RE's books (Camryn) that are in places a good character would have to steal
+		// They're made available in other ways
+		EXTEND_BOTTOM ~%FriendlyArmInn_House%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2305.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
+		EXTEND_BOTTOM ~%FriendlyArmInn_L3%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2303.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		
 		COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/bg1_good_reasons.d~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 	END
