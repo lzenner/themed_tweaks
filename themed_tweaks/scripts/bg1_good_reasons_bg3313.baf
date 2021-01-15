@@ -1,0 +1,12 @@
+//////////////////////////////////////////
+// Changes to 3rd floor FAI area script //
+//////////////////////////////////////////
+
+IF
+	TriggerOverride("Door3300",LOS([PC],20))
+	Global("#L_GRMirianne","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_GRMirianne","GLOBAL",1)
+		Continue()
+END

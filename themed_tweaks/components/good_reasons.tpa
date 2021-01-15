@@ -20,6 +20,18 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 	ACTION_IF (GAME_IS ~eet bgee~) THEN BEGIN
 		EXTEND_TOP ~%Candlekeep%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2600.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%FriendlyArmInn%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2300.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
+		EXTEND_TOP ~%Beregost%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg3300.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
+		
+		// Mirianne's initial dialogue is edited (by BG1NPC) to the point where I can't have it set a global reliably
+		// I'll use the room script instead - which may be empty so can't use extend...
+		LAF UPDATE_BCS
+			INT_VAR
+				action_taken = 1		// 0 = APPEND_FILE TEXT, 1 = EXTEND_TOP, 2 = EXTEND_BOTTOM
+			STR_VAR
+				baf_location = EVAL ~%mod_root%/scripts/~				// like ~mymod/bafs/~
+				baf_name = ~bg1_good_reasons_bg3313~					// like my_new_BG0146
+				bcs_name = EVAL ~%Beregost_MiriannesHouse_L1%~			// like BG0146
+		END
 		
 		// Get rid of RE's books (Camryn) that are in places a good character would have to steal
 		// They're made available in other ways

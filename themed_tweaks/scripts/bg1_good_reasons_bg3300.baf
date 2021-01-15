@@ -1,0 +1,24 @@
+//////////////
+// Beregost //
+//////////////
+
+
+IF
+	TriggerOverride("Door3313",RANGE(Player1,40))
+	Global("#L_GRMirianne","Global",0) // Set to 1 when a member of the group enters Mirianne's house
+	OR(2)
+		Global("#L_GRDoor3313","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor3313","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor3313","MYAREA",THREE_ROUNDS)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door3313",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door3313",@2003)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
