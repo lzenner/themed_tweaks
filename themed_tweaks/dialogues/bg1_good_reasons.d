@@ -30,7 +30,7 @@ APPEND BENTLY
 	END
 	
 	IF WEIGHT #-97 ~PartyHasItem("RINGJOIA") Global("#L_GRBentlyJoia","MYAREA",0)~ THEN BEGIN JOIAS_RING
-		SAY @2007 // ~That looks like Joia's ring.  I know she'd really appreciate see it again.  She lives in the first house you come to, on the left, when you come in through the gates.~
+		SAY @2007 // ~That looks like Joia's ring.  I know she'd really appreciate seeing it again.  She lives in the first house you come to, on the left, when you come in through the gates.~
 		IF ~~ THEN DO ~SetGlobal("#L_GRBentlyJoia","MYAREA",1) StartDialogueNoSet(LastTalkedToBy(Myself))~ EXIT
 	END
 END
