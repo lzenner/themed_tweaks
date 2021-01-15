@@ -1,0 +1,14 @@
+///////////////////////////////////////
+// Changes to Candlekeep area script //
+///////////////////////////////////////
+
+IF
+	Contains("TITome01","Container2")
+	Global("TICBOOK01_Spawn","BG2305",1)
+	Global("#L_GRxRETome1","BG2305",0)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_GRxRETome1","BG2305",1)
+		ActionOverride("Container2",DestroyItem("TITome01")) // Moved to Joia
+		Continue()
+END
