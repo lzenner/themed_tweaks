@@ -25,6 +25,7 @@ ALWAYS
 		// Library functions I use frequently
 		INCLUDE ~%mod_root%/lib/alter_script.tpa~
 		INCLUDE ~%mod_root%/lib/update_bcs.tpa~
+		INCLUDE ~%mod_root%/lib/change_door_name.tpa~
 	END
 
 	// This needs to be run before every component for some reason

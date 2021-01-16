@@ -22,3 +22,28 @@ THEN
 		EndCutSceneMode()
 		Continue()
 END
+
+IF
+	Global("#L_GRxREBeregost","GLOBAL",1)
+	Global("#L_GRxRETravenhurst","GLOBAL",0)
+	Global("#L_GRxREManorUnlocked","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_GRxREManorUnlocked","MYAREA",1)
+		Unlock("Port3320")
+		Continue()
+END
+
+IF
+	Global("#L_GRxREBeregost","GLOBAL",1)
+	Global("#L_GRxRETravenhurst","GLOBAL",1)
+	Global("#L_GRxREManorUnlocked","MYAREA",1)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_GRxREManorUnlocked","MYAREA",0)
+		CloseDoor("Port3320")
+		SmallWait(1)
+		Lock("Port3320")
+		Continue()
+END
+		

@@ -12,12 +12,22 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 		OUTER_SPRINT SND_SHANK ~MALE6E~
 	END
 	
-	// Give the Gatewarden a DV so I can put a string over his head
-	COPY_EXISTING ~GATEWA.CRE~ ~override~
-		WRITE_ASCII DEATHVAR ~GATEWARD~ #32
-		
-	// Compile bg1 specific files
+	// BG1 specific changes
 	ACTION_IF (GAME_IS ~eet bgee~) THEN BEGIN
+		// Give the Gatewarden a DV so I can put a string over his head
+		COPY_EXISTING ~GATEWA.CRE~ ~override~
+			WRITE_ASCII DEATHVAR ~GATEWARD~ #32
+		
+		COPY_EXISTING ~%Beregost%.ARE~ ~override~
+			// Change the name of the door leading into BG3320
+			// or else we can't control it because it has the same name 
+			// as the travel trigger region
+			LPF CHANGE_DOOR_NAME
+				STR_VAR
+					old_name = ~Door3320~
+					new_name = ~Port3320~
+			END
+
 		EXTEND_TOP ~%Candlekeep%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2600.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%FriendlyArmInn%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2300.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%Beregost%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg3300.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
