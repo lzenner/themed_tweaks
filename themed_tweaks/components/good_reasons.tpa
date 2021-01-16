@@ -37,6 +37,7 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 		// They're made available in other ways
 		EXTEND_BOTTOM ~%FriendlyArmInn_House%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2305.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_BOTTOM ~%FriendlyArmInn_L3%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2303.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
+		EXTEND_BOTTOM ~%Beregost_FirebeadsHouse_L2%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg3334.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		
 		COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/bg1_good_reasons.d~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 	END
