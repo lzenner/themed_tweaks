@@ -37,7 +37,7 @@ END
 
 // Get the RE (Camryn) book from Firebead
 EXTEND_TOP FIREBE 4 5 6 #0
-	IF ~Global("#L_GRFirebead","MYAREA",0)~ THEN REPLY @2016 /* ~I've heard that you may have a book I'm looking for, actually.  A rather romantic book?~ */ GOTO THIS_OLD_BOOK
+	IF ~Global("#L_GRxREBeregost","GLOBAL",1) Global("#L_GRFirebead","MYAREA",0)~ THEN REPLY @2016 /* ~I've heard that you may have a book I'm looking for, actually.  A rather romantic book?~ */ GOTO THIS_OLD_BOOK
 END
 APPEND FIREBE
 	IF ~~ THEN BEGIN THIS_OLD_BOOK
