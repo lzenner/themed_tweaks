@@ -9,7 +9,6 @@
 @5		= ~This component requires BG2EE or EET~
 @6 		= ~This component requires SoD, BG2EE, or EET~
 @7		= ~Already installed via Transitions~
-@8		= ~This component requires BG1EE, BG2EE, or EET~ // we actually can't ever get to this error message, but putting it in for completelness
 
 @10		= ~BG1EE/BG2EE - Give good-aligned reasons to go into peoples' homes~
 @20		= ~BG1EE/SoD/BG2EE - Fix cut scenes that rearrange the group~

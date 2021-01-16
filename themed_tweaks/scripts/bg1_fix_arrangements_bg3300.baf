@@ -1,0 +1,27 @@
+////////////////////////////
+// Beregost - Neera fight //
+////////////////////////////
+
+IF
+	Global("RedWizards","BG3300",1)  // Beregost
+THEN
+	RESPONSE #100
+		SetGlobal("RedWizardS","BG3300",2)  // Beregost
+		ClearAllActions()
+		MoveViewObject("NEERA",BD_SLOW)  // Neera
+		GiveItemCreate("minhp1","NEERA",0,0,0)  // No such index
+		ActionOverride("NEERA",FillSlot(SLOT_AMULET))
+		StartCutSceneMode()
+		CreateCreatureObjectOffset("NEEKANDO","NEERA",[317.220])  // Ekandor
+		CreateCreatureObject("NETHAY01","NEEKANDO",0,0,0)  // Thayan Wizard
+		CreateCreatureObject("NETHGUA1","NEEKANDO",0,0,0)  // Thayan Bodyguard
+		CreateCreatureObject("NETHGUA2","NEEKANDO",0,0,0)  // Thayan Bodyguard
+		ActionOverride("NEEKANDO",MoveToObject("NEERA"))  // Neera
+		ActionOverride("NETHAY01",MoveToObjectFollow("NEEKANDO"))  // Ekandor
+		ActionOverride("NETHGUA1",MoveToObjectFollow("NEEKANDO"))  // Ekandor
+		ActionOverride("NETHGUA2",MoveToObjectFollow("NEEKANDO"))  // Ekandor
+		ActionOverride("NEERA",FaceObject("NEEKANDO"))  // Ekandor
+		Wait(2)
+		EndCutSceneMode()
+		ActionOverride("NEEKANDO",StartDialogNoSetInterrupt(Player1))
+END

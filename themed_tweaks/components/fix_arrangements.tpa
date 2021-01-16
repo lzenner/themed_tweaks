@@ -1,0 +1,15 @@
+////////////////////////////////////////////////
+// Stop cut scenes from rearranging the group //
+////////////////////////////////////////////////
+
+DEFINE_ACTION_FUNCTION fix_arrangements BEGIN
+	// Cut out the movement of the group from the cut scenes
+	LAF REPLACE_SCRIPT_BLOCK
+		INT_VAR
+			only_once=1
+		STR_VAR
+			script= EVAL "%Beregost%"
+			match= EVAL ~Global("RedWizards","%Beregost%",1)~
+			insert=EVAL ~%mod_root%/scripts/bg1_fix_arrangements_bg3300.baf~
+	END
+END

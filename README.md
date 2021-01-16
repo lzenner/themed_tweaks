@@ -22,11 +22,11 @@ COMPONENTS INCLUDE:
 COMPONENTS IN DEVELOPMENT:
 ----------------------
 * BG1EE           - Give good-aligned reasons to go into peoples' homes
+* BG1EE           - Fix cut scenes that rearrange the group
 
 
 COMPONENTS TO BE DONE:  
 ----------------------
-* BG1EE/SoD/BG2EE - Fix cut scenes that rearrange the group
 * BG1EE           - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending
 * BG1EE           - Allow Dorn to join good group for the purpose of completing his revenge quest
 * BG1EE           - Allow turning down airship thieves guild quest without aggroing the entire guild
@@ -35,6 +35,7 @@ COMPONENTS TO BE DONE:
 * SoD             - Add confrontation with Bence and Corwin over Bence bedding Skie
 * SoD             - Speed up the elevator in hell
 * SoD             - Speed up the prison/trial scenes
+* SoD/BG2EE       - Fix cut scenes that rearrange the group
 * BG2EE           - Distribute group's possessions from the beginning of BG2 to stores in Athkatla - might have to be EET only
 * BG2EE           - Remove cut scenes that the PC shouldn't be privy to 
 * BG2EE           - Add dreams about Irenicus that have been removed from SoD

@@ -75,7 +75,19 @@ BEGIN @10
 	DESIGNATED 10
 	LABEL "#L-BG1-GOOD_REASONS"
 	LABEL "#L-BG2-GOOD_REASONS"
-	REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet~) @8
 	INCLUDE ~themed_tweaks/components/good_reasons.tpa~
 	LAF good_reasons END
+
+/////////////////////////////////////////////
+// FIX CUT SCENES THAT REARRANGE THE GROUP //
+/////////////////////////////////////////////
+BEGIN @20
+	DESIGNATED 20
+	LABEL "#L-BG1-FIX_ARRANGEMENTS"
+	LABEL "#L-SOD-FIX_ARRANGEMENTS"
+	LABEL "#L-BG2-FIX_ARRANGEMENTS"
+	INCLUDE ~themed_tweaks/components/fix_arrangements.tpa~
+	LAF fix_arrangements END
+
+
 
