@@ -38,9 +38,10 @@ COMPONENTS TO BE DONE:
 * SoD/BG2EE       - Fix cut scenes that rearrange the group
 * BG2EE           - Distribute group's possessions from the beginning of BG2 to stores in Athkatla - might have to be EET only
 * BG2EE           - Remove cut scenes that the PC shouldn't be privy to 
+* BG2EE			  - Allow giving igi's postion of minor restoration to skinwalker's victim
 * BG2EE           - Add dreams about Irenicus that have been removed from SoD
 * BG2EE           - Give good-aligned reasons to go into peoples' homes
-* BG2EE           - Allow addition of heads to the Flail of Ages in any order
+* BG2EE/ToB       - Fix any outstanding issues with the Flail of Ages
 * ToB             - Give viable reasons as to why the PC should attack its siblings in their own enclaves
 * ToB             - Have Balthesar relent even if PC hasn't taken down any of the others yet
 * ToB             - Add a "continue the adventure" ending with Bhaalspawn powers intact

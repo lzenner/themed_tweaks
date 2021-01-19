@@ -41,7 +41,8 @@ PLANNED FUTURE ENHANCEMENTS
 * SoD             - Speed up the prison/trial scenes
 * BG2EE           - Distribute group's possessions from the beginning of BG2 to stores in Athkatla - might have to be EET only
 * BG2EE           - Add comments from the group about Imoen's new innate ability to cast Magic Missile 
-* BG2EE           - Allow addition of heads to the Flail of Ages in any order
+* BG2EE			  - Allow giving igi's postion of minor restoration to skinwalker's victim
+* BG2EE/ToB       - Fix any outstanding issues with the Flail of Ages
 * ToB             - Give viable reasons as to why the PC should attack its siblings in their own enclaves
 * ToB             - Have Balthesar relent even if PC hasn't taken down any of the others yet
 * ToB             - Add a "continue the adventure" ending with Bhaalspawn powers intact
