@@ -1,0 +1,51 @@
+/////////////
+// Nashkel //
+/////////////
+
+
+IF
+	Global("#L_GRNashkelWidow","GLOBAL",1)
+	Global("#L_GRxWidowHouseUnlocked","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_GRxWidowHouseUnlocked","MYAREA",1)
+		Unlock("Port4806")
+		Continue()
+END
+
+IF
+	Global("#L_GRNashkelWidow","GLOBAL",2)
+	Global("#L_GRxWidowHouseUnlocked","MYAREA",1)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_GRxWidowHouseUnlocked","MYAREA",0)
+		CloseDoor("Port4806")
+		SmallWait(1)
+		Lock("Port4806")
+		Continue()
+END
+		
+IF
+	Global("#L_GRxRENashkel","GLOBAL",1)
+	Global("#L_GRxRENashkelManor","GLOBAL",0)
+	Global("#L_GRxREManorUnlocked","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_GRxREManorUnlocked","MYAREA",1)
+		Unlock("Port4804")
+		Continue()
+END
+
+IF
+	Global("#L_GRxRENashkel","GLOBAL",1)
+	Global("#L_GRxRENashkelManor","GLOBAL",1)
+	Global("#L_GRxREManorUnlocked","MYAREA",1)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_GRxREManorUnlocked","MYAREA",0)
+		CloseDoor("Port4804")
+		SmallWait(1)
+		Lock("Port4804")
+		Continue()
+END
+		

@@ -7,9 +7,15 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 	ACTION_IF (GAME_IS ~eet~) THEN BEGIN
 		OUTER_SPRINT SND_CARBOS ~BGMAINME~
 		OUTER_SPRINT SND_SHANK ~BGMALE6E~
+		OUTER_SPRINT DLG_WIDOW ~FTOWN2_~
+		OUTER_SET SAY_RIFFRAFF = 203340
+		OUTER_SET SAY_7HEAVENS = 203341
 	END ELSE ACTION_IF (GAME_IS ~bgee~) THEN BEGIN
 		OUTER_SPRINT SND_CARBOS ~MAINM11~
 		OUTER_SPRINT SND_SHANK ~MALE6E~
+		OUTER_SPRINT DLG_WIDOW ~FTOWN2~
+		OUTER_SET SAY_RIFFRAFF = 3340 
+		OUTER_SET SAY_7HEAVENS = 3341
 	END
 	
 	// BG1 specific changes
@@ -28,10 +34,26 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 					new_name = ~Port3320~
 			END
 
+		COPY_EXISTING ~%Nashkel%.ARE~ ~override~
+			// Change the name of the doors leading into Joseph's house and the manor
+			// or else we can't control them because they has the same name 
+			// as the travel trigger regions
+			LPF CHANGE_DOOR_NAME
+				STR_VAR
+					old_name = ~Door4806~	// Joseph's house
+					new_name = ~Port4806~
+			END
+			LPF CHANGE_DOOR_NAME
+				STR_VAR
+					old_name = ~Door4804~	// Manor
+					new_name = ~Port4804~
+			END
+
 		EXTEND_TOP ~%Candlekeep%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2600.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%FriendlyArmInn%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2300.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%Beregost%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg3300.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
-		
+		EXTEND_TOP ~%Nashkel%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg4800.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
+
 		// Mirianne's initial dialogue is edited (by BG1NPC) to the point where I can't have it set a global reliably
 		// I'll use the room script instead - which may be empty so can't use extend...
 		LAF UPDATE_BCS

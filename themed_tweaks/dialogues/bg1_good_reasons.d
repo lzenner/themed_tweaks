@@ -172,3 +172,109 @@ APPEND NOBL10
 		IF ~~ THEN DO ~SetGlobal("#L_GRxRETravenhurst","GLOBAL",1) ActionOverride("Container7",DestroyItem("TITOME08")) GiveItemCreate("TIC8SCRL",Player1,0,0,0)~ EXIT
 	END
 END
+
+// Nashkel vendors prompting about Joseph's ring
+EXTEND_TOP INNKN2 0 #1 // Inn Keeper
+	IF ~GlobalGT("TICamryn","GLOBAL",0) Global("#L_GRxRENashkel","GLOBAL",0)~ THEN REPLY @2009 /* ~I am looking for books... */ GOTO FIND_BOOKS
+	IF ~PartyHasItem("RINGJOS")~ THEN REPLY @2031 /* ~Does this ring look familiar to you?  I'm trying to find its owner.~ */ GOTO FIND_WIDOW
+END
+APPEND INNKN2
+	IF ~~ THEN BEGIN FIND_BOOKS
+		SAY @2030 // ~The only place in town with a library of any size is the Manor...northeast end of town. Could ask over there.~
+		IF ~~ THEN DO ~SetGlobal("#L_GRxRENashkel","GLOBAL",1)~ EXIT
+	END
+	
+	IF ~~ THEN BEGIN FIND_WIDOW
+		SAY @2032 // ~Sure looks like Joseph's ring.  He and his wife have a place east side of town, just past the Belching Dragon.~
+		IF ~~ THEN DO ~SetGlobal("#L_GRNashkelWidow","GLOBAL",1)~ EXIT
+	END
+END
+EXTEND_TOP SHOPKN 0 #1 // Shop keeper
+	IF ~GlobalGT("TICamryn","GLOBAL",0) Global("#L_GRxRENashkel","GLOBAL",0)~ THEN REPLY @2009 /* ~I am looking for books... */ GOTO FIND_BOOKS
+	IF ~PartyHasItem("RINGJOS")~ THEN REPLY @2031 /* ~Does this ring look familiar to you?  I'm trying to find its owner.~ */ GOTO FIND_WIDOW
+END
+APPEND SHOPKN
+	IF ~~ THEN BEGIN FIND_BOOKS
+		SAY @2030 // ~The only place in town with a library of any size is the Manor...northeast end of town. Could ask over there.~
+		IF ~~ THEN DO ~SetGlobal("#L_GRxRENashkel","GLOBAL",1)~ EXIT
+	END
+	
+	IF ~~ THEN BEGIN FIND_WIDOW
+		SAY @2032 // ~Sure looks like Joseph's ring.  He and his wife have a place east side of town, just past the Belching Dragon.~
+		IF ~~ THEN DO ~SetGlobal("#L_GRNashkelWidow","GLOBAL",1)~ EXIT
+	END
+END
+EXTEND_TOP BART2 0 #1 // Belching Dragon Bartender
+	IF ~GlobalGT("TICamryn","GLOBAL",0) Global("#L_GRxRENashkel","GLOBAL",0)~ THEN REPLY @2009 /* ~I am looking for books... */ GOTO FIND_BOOKS
+	IF ~PartyHasItem("RINGJOS")~ THEN REPLY @2031 /* ~Does this ring look familiar to you?  I'm trying to find its owner.~ */ GOTO FIND_WIDOW
+END
+APPEND BART2
+	IF ~~ THEN BEGIN FIND_BOOKS
+		SAY @2030 // ~The only place in town with a library of any size is the Manor...northeast end of town. Could ask over there.~
+		IF ~~ THEN DO ~SetGlobal("#L_GRxRENashkel","GLOBAL",1)~ EXIT
+	END
+	
+	IF ~~ THEN BEGIN FIND_WIDOW
+		SAY @2032 // ~Sure looks like Joseph's ring.  He and his wife have a place east side of town, just past the Belching Dragon.~
+		IF ~~ THEN DO ~SetGlobal("#L_GRNashkelWidow","GLOBAL",1)~ EXIT
+	END
+END
+
+// Update to Joseph's wife to bypass the 'uh...what am I doing here' when they already have the ring and prompt to be there
+ALTER_TRANS %DLG_WIDOW% // Joseph's widow
+	BEGIN 0 END
+	BEGIN 2 END
+	BEGIN "TRIGGER" ~OR(2) !PartyHasItem("RINGJOS") Global("#L_GRNashkelWidow","GLOBAL",0)~ END
+EXTEND_TOP %DLG_WIDOW% 0 #2
+	IF ~PartyHasItem("RINGJOS") Global("#L_GRNashkelWidow","GLOBAL",1)~ THEN REPLY @2040 /* ~I found this ring in ... */ DO ~SetGlobal("#L_GRNashkelWidow","GLOBAL",2)~ GOTO 6
+END
+
+// Naskel Manor and the RE Camryn book
+APPEND NOBL2  // Manor nobleman
+	IF WEIGHT #-99 ~Global("#L_GRxRENashkel","GLOBAL",1) Global("#L_GRxRENashkelManor","GLOBAL",0)~ THEN BEGIN LOOKING_FOR_BOOK
+		SAY #%SAY_RIFFRAFF% /* ~My dear! Common riffraff ... */
+		IF ~~ THEN REPLY @2033 /* ~Excuse me.  I was told you may have a book on romance in your library.~ */ GOTO TALK_TO_THE_WIFE
+		IF ~~ THEN REPLY @2028 /* ~Ok, I'll be off then.~ */ EXIT
+	END
+	
+	IF ~~ THEN BEGIN TALK_TO_THE_WIFE
+		SAY @2034 /* ~Talk to the misses about books of that sort.~ */
+		IF ~Contains("TITOME09","Container7")~ THEN DO ~EscapeArea()~ EXTERN NOBW2 I_HAVE_BOOK
+		IF ~!Contains("TITOME09","Container7")~ THEN DO ~EscapeArea()~ EXTERN NOBW2 BOOK_STOLEN
+	END
+END
+APPEND NOBW2 // Manor noblewoman
+	IF WEIGHT #-99 ~Global("#L_GRxRENashkel","GLOBAL",1) Global("#L_GRxRENashkelManor","GLOBAL",0)~ THEN BEGIN LOOKING_FOR_BOOK
+		SAY #%SAY_7HEAVENS% // ~Who in the Seven Heavens are all of you?! ...
+		IF ~Contains("TITOME09","Container7")~ THEN REPLY @2033 /* ~Excuse me.  I was told you may have a book on romance in your library.~ */ GOTO I_HAVE_BOOK
+		IF ~!Contains("TITOME09","Container7")~ THEN REPLY @2033 /* ~Excuse me.  I was told you may have a book on romance in your library.~ */ GOTO BOOK_STOLEN
+		IF ~~ THEN REPLY @2028 /* ~Ok, I'll be off then.~ */ EXIT
+	END
+
+	IF ~~ THEN BEGIN I_HAVE_BOOK
+		SAY @2035 // ~Indeed, I do have one.  The illustrations are lovely.  Why?~
+		++ @2036 /* ~I might be in the market to buy it if the price is right.~ */ GOTO THE_PRICE_OF_THE_BOOK
+	END
+	
+	IF ~~ THEN BEGIN BOOK_STOLEN
+		SAY @2023 // ~I should have one, but it seems it's been stolen. You wouldn't know anything about that would you?!~
+		++ @2024 /* ~No, of course not.  I'd not come here to look for it if I already had it~ */ DO ~SetGlobal("#L_GRxRENashkelManor","GLOBAL",1)~ GOTO BE_OFF_WITH_YOU
+	END
+	
+	IF ~~ THEN BEGIN BE_OFF_WITH_YOU
+		SAY @2025 // ~Ok.  Well, be off with you!~
+		IF ~~ THEN EXIT
+	END
+	
+	IF ~~ THEN BEGIN THE_PRICE_OF_THE_BOOK
+		SAY @2037 // ~I'd be amenable to parting with it for, say, 150gp. It is, after all, one of my favorites and I've never seen the like again anywhere.~
+		++ @2021 EXIT // ~That's a little more than I had hoped to pay.  Perhaps I'll come back later.~
+		IF ~Global("TITamah","GLOBAL",1)~ THEN REPLY @2026 /* ~I just need the letter inside the binding.  It's for a woman who has been petrified by a basilisk for many years.~ */ GOTO HERE_YA_GO
+		++ @2038 /* ~Alright.  150gp it is.~ */ DO ~SetGlobal("#L_GRxRENashkelManor","GLOBAL",1) TakePartyGold(150) ActionOverride("Container7",DestroyItem("TITOME09")) GiveItemCreate("TITOME09",Player1,0,0,0)~ EXIT
+	END
+		
+	IF ~~ THEN BEGIN HERE_YA_GO
+		SAY @2027 // ~Letter...oh well, what do you know.  Sure, you can have the letter.  Here.~
+		IF ~~ THEN DO ~SetGlobal("#L_GRxRENashkelManor","GLOBAL",1) ActionOverride("Container7",DestroyItem("TITOME09")) GiveItemCreate("TIC9SCRL",Player1,0,0,0)~ EXIT
+	END
+END

@@ -23,8 +23,10 @@
 // Feldepost's bartender
 @2008	= ~If yer lookin' to make a bit of extra coin, ol' Firebead across the street is lookin' fer this book here on "The History of the Fateful Coin".~
 
-// All vendors in Beregost
+// All vendors
 @2009	= ~I am looking for books, actually, on a rather romantic vein.  Know of any in town?~
+
+// All vendors in Beregost
 @2010	= ~Firebead probably has one, if I know that old book worm.  Other than that, the only one with a library of any size is Travenhurst Manor...northeast end of town. Could ask over there.~
 @2011	= ~Do you know anyone by the name of Mirianne?  I found a message addressed to her I'd like to deliver.~
 @2012	= ~Yeah, I know Mirianne.  She has a house just north of the smithy, on the east side of town.~
@@ -48,3 +50,19 @@
 @2026	= ~I just need the letter inside the binding.  It's for a woman who has been petrified by a basilisk for many years.~
 @2027	= ~Letter...oh well, what do you know.  Sure, you can have the letter.  Here.~
 @2028	= ~Ok, I'll be off then.~
+
+// All vendors in Nashkel
+@2030	= ~The only place in town with a library of any size is the Manor...northeast end of town. Could ask over there.~
+@2031	= ~Does this ring look familiar to you?  I'm trying to find its owner.~
+@2032	= ~Sure looks like Joseph's ring.  He and his wife have a place east side of town, just past the Belching Dragon.~
+
+// Nashkel Manor
+@2033	= ~Excuse me.  I was told you may have a book on romance in your library.~
+@2034	= ~Talk to the misses about books of that sort.~
+@2035	= ~Indeed, I do have one.  The illustrations are lovely.  Why?~
+@2036	= ~I might be in the market to buy it if the price is right.~
+@2037	= ~I'd be amenable to parting with it for, say, 150gp. It is, after all, one of my favorites and I've never seen the like again anywhere.~
+@2038	= ~Alright.  150gp it is.~
+
+// Joseph's widow
+@2040	= ~I found this ring in the mines...next to a dead miner, I'm afraid.  I was told it might have belonged to your husband?~
