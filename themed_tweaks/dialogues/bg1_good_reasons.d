@@ -189,7 +189,7 @@ APPEND INNKN2
 		IF ~~ THEN DO ~SetGlobal("#L_GRNashkelWidow","GLOBAL",1)~ EXIT
 	END
 END
-EXTEND_TOP SHOPKN 0 #1 // Shop keeper
+EXTEND_TOP SHOPKN 0 1 #1 // Shop keeper
 	IF ~GlobalGT("TICamryn","GLOBAL",0) Global("#L_GRxRENashkel","GLOBAL",0)~ THEN REPLY @2009 /* ~I am looking for books... */ GOTO FIND_BOOKS
 	IF ~PartyHasItem("RINGJOS")~ THEN REPLY @2031 /* ~Does this ring look familiar to you?  I'm trying to find its owner.~ */ GOTO FIND_WIDOW
 END
