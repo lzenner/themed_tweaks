@@ -90,5 +90,13 @@ BEGIN @20
 	INCLUDE ~themed_tweaks/components/fix_arrangements.tpa~
 	LAF fix_arrangements END
 
+///////////////////////////////////////////////
+// CAELAR ARGENTS ATTEMPTS TO RECRUIT THE PC //
+///////////////////////////////////////////////
+BEGIN @30
+	DESIGNATED 30
+	LABEL "#L-BG1-CAELAR"
+	INCLUDE ~themed_tweaks/components/bg1_caelar.tpa~
+	LAF bg1_caelar END
 
 

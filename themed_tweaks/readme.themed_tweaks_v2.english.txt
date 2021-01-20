@@ -29,9 +29,13 @@ Some cut scenes take on too much license with the arrangement of the group, espe
 PROGRESS: BG1 in development, SoD and BG2 yet to do
 
 ------------------------------------------------------------------------
+BG1EE - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending
+------------------------------------------------------------------------
+PROGRESS: Post-Nashkel encounter in development, post ToSC yet to do
+
+------------------------------------------------------------------------
 PLANNED FUTURE ENHANCEMENTS
 ------------------------------------------------------------------------
-* BG1EE           - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending
 * BG1EE           - Allow Dorn to join good group for the purpose of completing his revenge quest
 * BG1EE           - Allow turning down airship thieves guild quest without aggroing the entire guild
 * BG1EE/SoD       - Remove errant references to PC being Bhaalspawn, like Entar

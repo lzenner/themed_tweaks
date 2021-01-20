@@ -1,0 +1,9 @@
+//////////////////////////////////////////////
+// Caelar Argent attempts to recruit the PC //
+// after Naskel Mines and ToSC demon        //
+//////////////////////////////////////////////
+
+DEFINE_ACTION_FUNCTION bg1_caelar BEGIN
+	// Set a timer for 3 in-game days after handed in Nashkel mines quest
+	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/bg1_caelar.d~ USING ~%tra_loc%/%s/bg1_caelar.tra~	
+END
