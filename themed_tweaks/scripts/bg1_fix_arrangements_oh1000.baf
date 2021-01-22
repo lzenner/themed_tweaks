@@ -1,0 +1,22 @@
+//////////////////////////
+// Senjack (Dorn fight) //
+//////////////////////////
+
+IF
+	Global("SenjackExists","GLOBAL",0)
+	HasDLC("DORN")
+	Global("DORNPLOT","GLOBAL",1)
+	!Dead("DORN")  // Dorn
+THEN
+	RESPONSE #100
+		StartRainNow()
+		SetGlobal("SenjackExists","GLOBAL",1)
+		SetEncounterProbability("BG4900","BG5400",20)  // Nashkel Carnival
+		SetEncounterProbability("BG5300","BG5400",20)  // Fire Leaf Forest
+		SetEncounterProbability("BG5500","BG5400",20)  // Gibberling Mountains
+		SetEncounterProbability("BG4800","BG5400",20)  // Nashkel
+		SetGlobalTimer("DNAMBUSH","MYAREA",FOUR_HOURS)
+		CreateCreature("SENJACK",[458.318],SE)  // Senjak
+END
+
+

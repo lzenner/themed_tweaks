@@ -1,0 +1,180 @@
+//////////////////////////
+// Senjack (Dorn fight) //
+//////////////////////////
+
+IF
+	Global("DORN_AMBUSH","GLOBAL",0)
+	See(NearestAllyOf(Myself))
+	Allegiance(LastSeenBy(Myself),PC)
+	General(LastSeenBy(Myself),HUMANOID)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		MoveGlobalObject("dorn",Player1)  // Dorn
+		ActionOverride("dorn",JumpToPoint([96.194]))
+		SetGlobal("DORN_AMBUSH","GLOBAL",1)
+		CreateCreature("DOROTEA",[386.338],SE)  // Dorotea
+		CreateCreatureImpassable("SJMUGG3",[168.271],SE)  // Archer
+		CreateCreatureImpassable("SJMUGG2",[239.183],SE)  // Archer
+		CreateCreatureImpassable("SJMUGG",[356.129],SE)  // Archer
+		CreateCreatureImpassable("DEADBAN",[612.147],SW)  // Bandit
+		CreateCreatureImpassable("DEADBAN",[672.206],SW)  // Bandit
+		MoveViewObject("SENJACK",VERY_FAST)  // Senjak
+		ActionOverride(LastSeenBy(Myself),MoveToPoint([533.402]))
+		Wait(3)
+		ActionOverride(Player1,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player2,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player3,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player4,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player5,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player6,FaceObject("SENJACK"))  // Senjak
+		MoveToPoint([509.368])
+		StartDialogNoSet([PC])
+END
+
+IF
+	Global("DORN_AMBUSH","GLOBAL",0)
+	General(SecondNearest([PC]),HUMANOID)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		MoveGlobalObject("dorn",Player1)  // Dorn
+		ActionOverride("dorn",JumpToPoint([96.194]))
+		SetGlobal("DORN_AMBUSH","GLOBAL",1)
+		CreateCreature("DOROTEA",[386.338],SE)  // Dorotea
+		CreateCreatureImpassable("SJMUGG3",[168.271],SE)  // Archer
+		CreateCreatureImpassable("SJMUGG2",[239.183],SE)  // Archer
+		CreateCreatureImpassable("SJMUGG",[356.129],SE)  // Archer
+		CreateCreatureImpassable("DEADBAN",[612.147],SW)  // Bandit
+		CreateCreatureImpassable("DEADBAN",[672.206],SW)  // Bandit
+		MoveViewObject("SENJACK",VERY_FAST)  // Senjak
+		ActionOverride(SecondNearest([PC]),MoveToPoint([533.402]))
+		Wait(3)
+		ActionOverride(Player1,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player2,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player3,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player4,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player5,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player6,FaceObject("SENJACK"))  // Senjak
+		MoveToPoint([509.368])
+		StartDialogNoSet([PC])
+END
+
+IF
+	Global("DORN_AMBUSH","GLOBAL",0)
+	General(ThirdNearest([PC]),HUMANOID)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		MoveGlobalObject("dorn",Player1)  // Dorn
+		ActionOverride("dorn",JumpToPoint([96.194]))
+		SetGlobal("DORN_AMBUSH","GLOBAL",1)
+		CreateCreature("DOROTEA",[386.338],SE)  // Dorotea
+		CreateCreatureImpassable("SJMUGG3",[168.271],SE)  // Archer
+		CreateCreatureImpassable("SJMUGG2",[239.183],SE)  // Archer
+		CreateCreatureImpassable("SJMUGG",[356.129],SE)  // Archer
+		CreateCreatureImpassable("DEADBAN",[612.147],SW)  // Bandit
+		CreateCreatureImpassable("DEADBAN",[672.206],SW)  // Bandit
+		MoveViewObject("SENJACK",VERY_FAST)  // Senjak
+		ActionOverride(ThirdNearest([PC]),MoveToPoint([533.402]))
+		Wait(3)
+		ActionOverride(Player1,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player2,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player3,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player4,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player5,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player6,FaceObject("SENJACK"))  // Senjak
+		MoveToPoint([509.368])
+		StartDialogNoSet([PC])
+END
+
+IF
+	Global("DORN_AMBUSH","GLOBAL",0)
+	General(FourthNearest([PC]),HUMANOID)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		MoveGlobalObject("dorn",Player1)  // Dorn
+		ActionOverride("dorn",JumpToPoint([96.194]))
+		SetGlobal("DORN_AMBUSH","GLOBAL",1)
+		CreateCreature("DOROTEA",[386.338],SE)  // Dorotea
+		CreateCreatureImpassable("SJMUGG3",[168.271],SE)  // Archer
+		CreateCreatureImpassable("SJMUGG2",[239.183],SE)  // Archer
+		CreateCreatureImpassable("SJMUGG",[356.129],SE)  // Archer
+		CreateCreatureImpassable("DEADBAN",[612.147],SW)  // Bandit
+		CreateCreatureImpassable("DEADBAN",[672.206],SW)  // Bandit
+		MoveViewObject("SENJACK",VERY_FAST)  // Senjak
+		ActionOverride(FourthNearest([PC]),MoveToPoint([533.402]))
+		Wait(3)
+		ActionOverride(Player1,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player2,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player3,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player4,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player5,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player6,FaceObject("SENJACK"))  // Senjak
+		MoveToPoint([509.368])
+		StartDialogNoSet([PC])
+END
+
+IF
+	Global("DORN_AMBUSH","GLOBAL",0)
+	General(FifthNearest([PC]),HUMANOID)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		MoveGlobalObject("dorn",Player1)  // Dorn
+		ActionOverride("dorn",JumpToPoint([96.194]))
+		SetGlobal("DORN_AMBUSH","GLOBAL",1)
+		CreateCreature("DOROTEA",[386.338],SE)  // Dorotea
+		CreateCreatureImpassable("SJMUGG3",[168.271],SE)  // Archer
+		CreateCreatureImpassable("SJMUGG2",[239.183],SE)  // Archer
+		CreateCreatureImpassable("SJMUGG",[356.129],SE)  // Archer
+		CreateCreatureImpassable("DEADBAN",[612.147],SW)  // Bandit
+		CreateCreatureImpassable("DEADBAN",[672.206],SW)  // Bandit
+		MoveViewObject("SENJACK",VERY_FAST)  // Senjak
+		ActionOverride(FifthNearest([PC]),MoveToPoint([533.402]))
+		Wait(3)
+		ActionOverride(Player1,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player2,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player3,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player4,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player5,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player6,FaceObject("SENJACK"))  // Senjak
+		MoveToPoint([509.368])
+		StartDialogNoSet([PC])
+END
+
+IF
+	Global("DORN_AMBUSH","GLOBAL",0)
+	General(SixthNearest([PC]),HUMANOID)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		MoveGlobalObject("dorn",Player1)  // Dorn
+		ActionOverride("dorn",JumpToPoint([96.194]))
+		SetGlobal("DORN_AMBUSH","GLOBAL",1)
+		CreateCreature("DOROTEA",[386.338],SE)  // Dorotea
+		CreateCreatureImpassable("SJMUGG3",[168.271],SE)  // Archer
+		CreateCreatureImpassable("SJMUGG2",[239.183],SE)  // Archer
+		CreateCreatureImpassable("SJMUGG",[356.129],SE)  // Archer
+		CreateCreatureImpassable("DEADBAN",[612.147],SW)  // Bandit
+		CreateCreatureImpassable("DEADBAN",[672.206],SW)  // Bandit
+		MoveViewObject("SENJACK",VERY_FAST)  // Senjak
+		ActionOverride(SixthNearest([PC]),MoveToPoint([533.402]))
+		Wait(3)
+		ActionOverride(Player1,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player2,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player3,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player4,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player5,FaceObject("SENJACK"))  // Senjak
+		ActionOverride(Player6,FaceObject("SENJACK"))  // Senjak
+		MoveToPoint([509.368])
+		StartDialogNoSet([PC])
+END
+
