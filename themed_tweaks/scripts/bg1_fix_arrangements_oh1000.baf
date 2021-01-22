@@ -16,7 +16,7 @@ THEN
 		SetEncounterProbability("BG5500","BG5400",20)  // Gibberling Mountains
 		SetEncounterProbability("BG4800","BG5400",20)  // Nashkel
 		SetGlobalTimer("DNAMBUSH","MYAREA",FOUR_HOURS)
-		CreateCreature("SENJACK",[458.318],SE)  // Senjak
+		CreateCreature("SENJACK",[458.318],SE)  // The rest is carried out in senjack.bcs
 END
 
 
