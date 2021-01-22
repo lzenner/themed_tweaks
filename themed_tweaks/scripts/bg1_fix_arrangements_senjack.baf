@@ -151,7 +151,6 @@ END
 
 IF
 	Global("DORN_AMBUSH","GLOBAL",0)
-	General(SixthNearest([PC]),HUMANOID)
 THEN
 	RESPONSE #100
 		ClearAllActions()
@@ -166,7 +165,7 @@ THEN
 		CreateCreatureImpassable("DEADBAN",[612.147],SW)  // Bandit
 		CreateCreatureImpassable("DEADBAN",[672.206],SW)  // Bandit
 		MoveViewObject("SENJACK",VERY_FAST)  // Senjak
-		ActionOverride(SixthNearest([PC]),MoveToPoint([533.402]))
+		ActionOverride(Player1,MoveToPoint([533.402]))
 		Wait(3)
 		ActionOverride(Player1,FaceObject("SENJACK"))  // Senjak
 		ActionOverride(Player2,FaceObject("SENJACK"))  // Senjak
@@ -175,6 +174,6 @@ THEN
 		ActionOverride(Player5,FaceObject("SENJACK"))  // Senjak
 		ActionOverride(Player6,FaceObject("SENJACK"))  // Senjak
 		MoveToPoint([509.368])
-		StartDialogNoSet([PC])
+		StartDialogNoSet(Player1)
 END
 
