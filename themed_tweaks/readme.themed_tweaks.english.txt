@@ -136,6 +136,7 @@ CREDITS
 * Bubb and CamDawg - LOVE YOU FOREVER!!!  I mean it.  Forevah!
 * jastey: for everything you've done and continue to do. :)
 * igi: for permission to use his refreshment potion as the basis of Irenicus's revitalization potion
+* lynx and argent77 for help with how to use (or not use) Nearest(...) AND SecondNearest(...) 
 * The folks at The Gibberlings Three forums: for never failing to answer my many many questions
 
 ------------------------------------------------------------------------
