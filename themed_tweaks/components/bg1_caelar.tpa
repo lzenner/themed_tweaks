@@ -4,6 +4,18 @@
 //////////////////////////////////////////////
 
 DEFINE_ACTION_FUNCTION bg1_caelar BEGIN
-	// Set a timer for 3 in-game days after handed in Nashkel mines quest
+	// Make sure her CRE exists
+	ACTION_IF (NOT GAME_INCLUDES ~sod~) BEGIN
+		COPY ~%mod_root%/objects/BDCAELAR.CRE~ ~override~
+		COPY ~%mod_root%/objects/CAELARL.BMP~ ~override~
+		COPY ~%mod_root%/objects/CAELARM.BMP~ ~override~
+	END
+
+	// Have her show up in towns (not Candlekeep or Baldur's Gate)
+	EXTEND_TOP ~%FriendlyArmInn%.bcs~ ~%mod_root%/scripts/bg1_caelar_cities.baf~
+	EXTEND_TOP ~%Beregost%.bcs~ ~%mod_root%/scripts/bg1_caelar_cities.baf~
+	EXTEND_TOP ~%Nashkel%.bcs~ ~%mod_root%/scripts/bg1_caelar_cities.baf~
+
+	// Compile dialogues
 	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/bg1_caelar.d~ USING ~%tra_loc%/%s/bg1_caelar.tra~	
 END

@@ -2,3 +2,17 @@
 // Dialogues Caelar Argents attempt to recuit the PC during BG1 //
 //////////////////////////////////////////////////////////////////
 
+@2000	= ~Excuse me, but are you the one who cleared the Nashkel mines of demons?~
+@2001	= ~Excuse me, but are you the party that cleared the Nashkel mines of demons?~
+@2002	= ~Don't believe everything you hear.  The mines were infested with kobolds, not demons.~
+@2003	= ~Why yes, I am. What can I do for you?~
+@2004	= ~Why yes, we are. What can we do for you?~
+@2005	= ~And if I am?~
+@2006	= ~And if we are?~
+@2007	= ~I am looking for seasoned warriors that would join me in the battle against demons in Avernus.~
+@2008	= ~I see.  I was hoping to find season warriors that would join me in the battle against demons in Avernus.~
+@2009	= ~Don't believe everything you hear, lady.  The mines were infested with kobolds, not demons.  We're not what you're looking for.~
+@2010	= ~Don't believe everything you hear, lady.  The mines were infested with kobolds, not demons.  I'm not what you're looking for.~
+@2011	= ~Ha! Best keep looking, lady.  We aren't seasoned enough or foolish enough to join in that venture!~
+@2012	= ~Ha! Best keep looking, lady.  I am neither seasoned enough nor foolish enough to join in that venture!~
+@2013	= ~I see. I shall bid you safe journeys, then.~

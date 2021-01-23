@@ -1,0 +1,13 @@
+/////////////////////////////////////
+// Caelar shows up in cities/towns //
+/////////////////////////////////////
+
+IF
+	GlobalTimerExpired("#L_BG1Caelar_Timer","GLOBAL")
+	GlobalGT("#L_BG1Caelar_Visit","GLOBAL",0)
+THEN
+	RESPONSE #100
+		CreateCreatureObjectOffset("BDCAELAR",Player1,[50.50])
+		Wait(2)
+		ActionOverride("BDCAELAR",StartDialogOverride("#LCaelar",Player1))
+END
