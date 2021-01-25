@@ -24,7 +24,7 @@ BEGIN "#LCaelar"
 	END
 	
 	IF ~Global("#L_BG1Caelar_Visit","GLOBAL",1) NumInPartyGT(1)~ THEN BEGIN FIRST_VISIT_PARTY
-		SAY @2000 // ~Excuse me, but are you the one who cleared the Nashkel mines of demons?~
+		SAY @2001 // ~Excuse me, but are you the party that cleared the Nashkel mines of demons?~
 		++ @2002 /* ~Don't believe everything you hear.  The mines were infested with kobolds, not demons.~ */ GOTO AH_KOBOLDS_PARTY
 		++ @2004 /* ~Why yes, we are. What can we do for you?~ */ GOTO LOOKING_FOR_WARRIORS_PARTY
 		++ @2006 /* ~And if we are?~ */ GOTO LOOKING_FOR_WARRIORS_PARTY
@@ -41,7 +41,7 @@ BEGIN "#LCaelar"
 	END
 
 	IF ~~ THEN BEGIN FAREWELL
-		SAY @2013 // ~I see. I shall bid you safe journeys, then.~
+		SAY @2013 // ~Very well. I shall bid you safe journeys, then.~
 		IF ~~ THEN DO ~SetGlobal("#L_BG1Caelar_Visit","GLOBAL",0) EscapeArea()~ EXIT
 	END
 // End of new #LCaelar dialogue file
