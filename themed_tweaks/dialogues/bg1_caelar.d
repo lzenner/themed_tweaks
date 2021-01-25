@@ -42,6 +42,6 @@ BEGIN "#LCaelar"
 
 	IF ~~ THEN BEGIN FAREWELL
 		SAY @2013 // ~I see. I shall bid you safe journeys, then.~
-		IF ~~ THEN EXIT
+		IF ~~ THEN DO ~SetGlobal("#L_BG1Caelar_Visit","GLOBAL",0) EscapeArea()~ EXIT
 	END
 // End of new #LCaelar dialogue file

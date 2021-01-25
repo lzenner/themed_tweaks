@@ -9,6 +9,7 @@ DEFINE_ACTION_FUNCTION bg1_caelar BEGIN
 		COPY ~%mod_root%/objects/BDCAELAR.CRE~ ~override~
 		COPY ~%mod_root%/objects/CAELARL.BMP~ ~override~
 		COPY ~%mod_root%/objects/CAELARM.BMP~ ~override~
+		COPY ~%mod_root%/objects/BD68312.WAV~ ~override~
 	END
 
 	// Have her show up in towns (not Candlekeep or Baldur's Gate)

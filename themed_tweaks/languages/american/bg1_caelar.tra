@@ -2,8 +2,8 @@
 // Dialogues Caelar Argents attempt to recuit the PC during BG1 //
 //////////////////////////////////////////////////////////////////
 
-@2000	= ~Excuse me, but are you the one who cleared the Nashkel mines of demons?~
-@2001	= ~Excuse me, but are you the party that cleared the Nashkel mines of demons?~
+@2000	= ~Excuse me, but are you the one who cleared the Nashkel mines of demons?~ [BD68312]
+@2001	= ~Excuse me, but are you the party that cleared the Nashkel mines of demons?~ [BD68312]
 @2002	= ~Don't believe everything you hear.  The mines were infested with kobolds, not demons.~
 @2003	= ~Why yes, I am. What can I do for you?~
 @2004	= ~Why yes, we are. What can we do for you?~

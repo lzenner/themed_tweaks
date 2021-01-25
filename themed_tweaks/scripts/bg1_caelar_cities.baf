@@ -8,6 +8,6 @@ IF
 THEN
 	RESPONSE #100
 		CreateCreatureObjectOffset("BDCAELAR",Player1,[50.50])
-		Wait(2)
+		SmallWait(10)
 		ActionOverride("BDCAELAR",StartDialogOverride("#LCaelar",Player1))
 END
