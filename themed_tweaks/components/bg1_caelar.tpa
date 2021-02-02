@@ -13,9 +13,9 @@ DEFINE_ACTION_FUNCTION bg1_caelar BEGIN
 	END
 
 	// Have her show up in towns (not Candlekeep or Baldur's Gate)
-	EXTEND_TOP ~%FriendlyArmInn%.bcs~ ~%mod_root%/scripts/bg1_caelar_cities.baf~
-	EXTEND_TOP ~%Beregost%.bcs~ ~%mod_root%/scripts/bg1_caelar_cities.baf~
-	EXTEND_TOP ~%Nashkel%.bcs~ ~%mod_root%/scripts/bg1_caelar_cities.baf~
+	EXTEND_TOP ~%FriendlyArmInn%.bcs~ ~%mod_root%/scripts/bg1_caelar_cities.baf~ EVAL
+	EXTEND_TOP ~%Beregost%.bcs~ ~%mod_root%/scripts/bg1_caelar_cities.baf~ EVAL
+	EXTEND_TOP ~%Nashkel%.bcs~ ~%mod_root%/scripts/bg1_caelar_cities.baf~ EVAL
 
 	// Compile dialogues
 	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/bg1_caelar.d~ USING ~%tra_loc%/%s/bg1_caelar.tra~	
