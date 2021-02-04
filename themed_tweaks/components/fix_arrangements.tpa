@@ -52,5 +52,12 @@ DEFINE_ACTION_FUNCTION fix_arrangements BEGIN
 				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player5,FollowObjectFormation(Player1,2,4))~ ~~
 				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player6,FollowObjectFormation(Player1,2,5))~ ~~
 			END
+			
+		// Stop BG1NPC Kivan quest from going after Player1
+		COPY_EXISTING ~P#IMANL2.BCS~ ~override~
+			DECOMPILE_AND_PATCH BEGIN
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~MoveToObject(Player1)~ ~MoveToObject([PC])~
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~StartDialogNoSet(Player1)~ ~StartDialogNoSet("KIVAN")~
+			END
 	END
 END
