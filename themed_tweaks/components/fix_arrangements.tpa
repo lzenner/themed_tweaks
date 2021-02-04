@@ -41,5 +41,16 @@ DEFINE_ACTION_FUNCTION fix_arrangements BEGIN
 				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~MoveToPoint([596.2766])~ ~~
 				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~StartDialogNoSet(Player1)~ ~StartDialogNoSet(Nearest([PC.HUMANOID]))~
 			END
+
+		// Stop Dorn's cut scene with Simmeon from rearranging the group
+		COPY_EXISTING ~CUTDN3A.bcs~ ~override~
+			DECOMPILE_AND_PATCH BEGIN
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player1,MoveToPoint([1096.400]))~ ~ActionOverride("DORN",MoveToPoint([1096.400]))~
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player2,FollowObjectFormation(Player1,2,1))~ ~~
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player3,FollowObjectFormation(Player1,2,2))~ ~~
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player4,FollowObjectFormation(Player1,2,3))~ ~~
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player5,FollowObjectFormation(Player1,2,4))~ ~~
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player6,FollowObjectFormation(Player1,2,5))~ ~~
+			END
 	END
 END
