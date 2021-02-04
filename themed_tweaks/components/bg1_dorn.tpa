@@ -1,0 +1,9 @@
+/////////////////////////////////////////////
+// Allow Dorn to join a heroic group so he //
+// can get his revenge on Simmeon          //
+/////////////////////////////////////////////
+
+DEFINE_ACTION_FUNCTION bg1_dorn BEGIN
+	// It's just one dialogue option
+	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/bg1_dorn.d~	
+END

@@ -99,4 +99,11 @@ BEGIN @30
 	INCLUDE ~themed_tweaks/components/bg1_caelar.tpa~
 	LAF bg1_caelar END
 
-
+/////////////////////////////////////////////////////
+// ALLOW DORN TO JOIN HEROIC GROUP FOR HIS REVENGE //
+/////////////////////////////////////////////////////
+BEGIN @35
+	DESIGNATED 35
+	LABEL "#L-BG1-DORNS_REVENGE"
+	INCLUDE ~themed_tweaks/components/bg1_dorn.tpa~
+	LAF bg1_dorn END
