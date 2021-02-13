@@ -71,6 +71,15 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 		EXTEND_BOTTOM ~%FriendlyArmInn_L3%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2303.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_BOTTOM ~%Beregost_FirebeadsHouse_L2%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg3334.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		
+		LAF UPDATE_BCS
+			INT_VAR
+				action_taken = 2		// 0 = APPEND_FILE TEXT, 1 = EXTEND_TOP, 2 = EXTEND_BOTTOM
+			STR_VAR
+				baf_location = EVAL ~%mod_root%/scripts/~		// like ~mymod/bafs/~
+				baf_name = "bg1_good_reasons_bg2215"			// like my_new_BG0146
+				bcs_name = EVAL "%CloakwoodLodgeHuntingLodge%"	// like BG0146
+		END
+		
 		COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/bg1_good_reasons.d~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 	END
 	

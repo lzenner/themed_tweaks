@@ -1,0 +1,14 @@
+////////////////////////////////////
+// Remove book if given by Aldeth //
+////////////////////////////////////
+
+IF
+	Contains("TITOME11","Container1")
+	Global("TICBOOK11_Spawn","MYAREA",1)
+	Global("#L_GRxRETome11","GLOBAL",1)	// Given by Aldeth
+THEN
+	RESPONSE #100
+		SetGlobal("#L_GRxRETome11","GLOBAL",2)
+		ActionOverride("Container1",DestroyItem("TITOME11"))
+		Continue()
+END

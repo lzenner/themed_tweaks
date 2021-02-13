@@ -26,12 +26,12 @@ APPEND BENTLY
 	
 	IF WEIGHT #-98 ~Global("#L_GRBently","MYAREA",0)~ THEN BEGIN BENTLY_GO_UPSTAIRS
 		SAY @2006 // ~You look like sturdy types that could help folks out.  There's a couple folk upstairs that need some work done, if you're interested.~
-		IF ~~ THEN DO ~SetGlobal("#L_GRBently","MYAREA",1) StartDialogueNoSet(LastTalkedToBy(Myself))~ EXIT
+		IF ~~ THEN DO ~SetGlobal("#L_GRBently","MYAREA",1)~ EXIT
 	END
 	
 	IF WEIGHT #-97 ~PartyHasItem("RINGJOIA") Global("#L_GRBentlyJoia","MYAREA",0)~ THEN BEGIN JOIAS_RING
 		SAY @2007 // ~That looks like Joia's ring.  I know she'd really appreciate seeing it again.  She lives in the first house you come to, on the left, when you come in through the gates.~
-		IF ~~ THEN DO ~SetGlobal("#L_GRBentlyJoia","MYAREA",1) StartDialogueNoSet(LastTalkedToBy(Myself))~ EXIT
+		IF ~~ THEN DO ~SetGlobal("#L_GRBentlyJoia","MYAREA",1)~ EXIT
 	END
 END
 
@@ -153,7 +153,7 @@ APPEND NOBL10
 	IF ~~ THEN BEGIN WE_HAVE_THE_BOOK
 		SAY @2020 // ~Yes, in fact we do have one.  If they can part with 100gp, they can have it.~
 		++ @2021 EXIT // ~That's a little more than I had hoped to pay.  Perhaps I'll come back later.~
-		IF ~Global("TITamah","GLOBAL",1)~ THEN REPLY @2026 /* ~I just need the letter inside the binding.  It's for a woman who has been petrified by a basilisk for many years.~ */ GOTO HERE_YA_GO
+		IF ~GlobalGT("TITamah","GLOBAL",0)~ THEN REPLY @2026 /* ~I just need the letter inside the binding.  It's for a woman who has been petrified by a basilisk for many years.~ */ GOTO HERE_YA_GO
 		++ @2022 /* ~Alright.  100gp it is.~ */ DO ~SetGlobal("#L_GRxRETravenhurst","GLOBAL",1) TakePartyGold(100) ActionOverride("Container7",DestroyItem("TITOME08")) GiveItemCreate("TITOME08",Player1,0,0,0)~ EXIT
 	END
 	
@@ -269,7 +269,7 @@ APPEND NOBW2 // Manor noblewoman
 	IF ~~ THEN BEGIN THE_PRICE_OF_THE_BOOK
 		SAY @2037 // ~I'd be amenable to parting with it for, say, 150gp. It is, after all, one of my favorites and I've never seen the like again anywhere.~
 		++ @2021 EXIT // ~That's a little more than I had hoped to pay.  Perhaps I'll come back later.~
-		IF ~Global("TITamah","GLOBAL",1)~ THEN REPLY @2026 /* ~I just need the letter inside the binding.  It's for a woman who has been petrified by a basilisk for many years.~ */ GOTO HERE_YA_GO
+		IF ~GlobalGT("TITamah","GLOBAL",0)~ THEN REPLY @2026 /* ~I just need the letter inside the binding.  It's for a woman who has been petrified by a basilisk for many years.~ */ GOTO HERE_YA_GO
 		++ @2038 /* ~Alright.  150gp it is.~ */ DO ~SetGlobal("#L_GRxRENashkelManor","GLOBAL",1) TakePartyGold(150) ActionOverride("Container7",DestroyItem("TITOME09")) GiveItemCreate("TITOME09",Player1,0,0,0)~ EXIT
 	END
 		
@@ -278,3 +278,7 @@ APPEND NOBW2 // Manor noblewoman
 		IF ~~ THEN DO ~SetGlobal("#L_GRxRENashkelManor","GLOBAL",1) ActionOverride("Container7",DestroyItem("TITOME09")) GiveItemCreate("TIC9SCRL",Player1,0,0,0)~ EXIT
 	END
 END
+
+// Cloakwood hunters
+REPLACE_ACTION_TEXT ALDETH ~SetGlobal("AldethMove","GLOBAL",1)~ ~SetGlobal("AldethMove","GLOBAL",1) GiveItemCreate("TITOME11",LastTalkedToBy,0,0,0) SetGlobal("#L_GRxRETome11","GLOBAL",1)~
+
