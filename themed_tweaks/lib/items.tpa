@@ -1,0 +1,116 @@
+////////////////////////////////////////////////////////////////////////////////////////
+// MODIFIED COPY OF BGFORGE'S IELIB COMPONENTS FOR STORES AND CREs DEALING WITH ITEMS //
+////////////////////////////////////////////////////////////////////////////////////////
+
+DEFINE_ACTION_FUNCTION REPLACE_STORE_ITEM_IF_EXISTS	// New by Lauriel
+	STR_VAR
+		store = ~~
+		match_item = ~~
+		new_item = ~~
+	RET present
+BEGIN
+    OUTER_SET present = 0
+	ACTION_IF FILE_EXISTS_IN_GAME ~%store%.sto~ BEGIN
+		COPY_EXISTING ~%store%.sto~ ~override~
+			GET_OFFSET_ARRAY item_offsets STO_V10_ITEMS_SOLD
+			PHP_EACH item_offsets AS int => i_offset BEGIN
+				READ_ASCII i_offset name (8) NULL
+				PATCH_IF ~%name%~ STR_EQ ~%match_item%~ BEGIN
+					WRITE_EVALUATED_ASCII i_offset ~%new_item%~ #8
+					present = 1
+				END
+			END
+		BUT_ONLY
+	END
+END
+
+DEFINE_PATCH_FUNCTION REPLACE_STORE_ITEM
+	STR_VAR 
+		match_item = ~~
+		new_item = ~~
+BEGIN
+	GET_OFFSET_ARRAY item_offsets STO_V10_ITEMS_SOLD
+	PHP_EACH item_offsets AS int => i_offset BEGIN
+		READ_ASCII i_offset name (8) NULL
+		PATCH_IF ~%name%~ STR_EQ ~%match_item%~ BEGIN
+			WRITE_EVALUATED_ASCII i_offset ~%new_item%~ #8
+		END
+	END
+END
+
+DEFINE_ACTION_FUNCTION IS_ITEM_IN_STORE // modified - took out the warning
+	STR_VAR
+		item = ~~
+		store = ~~
+	RET present
+BEGIN
+    OUTER_SET present = 0
+	ACTION_IF FILE_EXISTS_IN_GAME ~%store%.sto~ BEGIN
+		COPY_EXISTING ~%store%.sto~ ~override~
+			GET_OFFSET_ARRAY item_offsets STO_V10_ITEMS_SOLD
+			PHP_EACH item_offsets AS int => i_offset BEGIN
+				READ_ASCII i_offset name (8) NULL
+				PATCH_IF ~%item%~ STR_EQ ~%item_name%~ BEGIN
+					present = 1
+				END
+			END
+		BUT_ONLY
+	END
+END
+
+DEFINE_ACTION_FUNCTION REPLACE_CREATURE_ITEM_IF_EXISTS	// New by Lauriel
+	STR_VAR
+		creature = ~~
+		match_item = ~~
+		new_item = ~~
+	RET present
+BEGIN
+    OUTER_SET present = 0
+	ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ BEGIN
+		COPY_EXISTING ~%creature%.cre~ ~override~
+			GET_OFFSET_ARRAY item_offsets CRE_V10_ITEMS
+			PHP_EACH item_offsets AS int => i_offset BEGIN
+				READ_ASCII i_offset name (8) NULL
+				PATCH_IF ~%name%~ STR_EQ ~%match_item%~ BEGIN
+					WRITE_EVALUATED_ASCII i_offset ~%new_item%~ #8
+					present = 1
+				END
+			END
+		BUT_ONLY
+	END
+END
+
+DEFINE_PATCH_FUNCTION REPLACE_CREATURE_ITEM
+	STR_VAR 
+		match_item = ~~
+		new_item = ~~
+BEGIN
+	GET_OFFSET_ARRAY item_offsets CRE_V10_ITEMS
+	PHP_EACH item_offsets AS int => i_offset BEGIN
+		READ_ASCII i_offset name (8) NULL
+		PATCH_IF ~%name%~ STR_EQ ~%match_item%~ BEGIN
+			WRITE_EVALUATED_ASCII i_offset ~%new_item%~ #8
+		END
+	END
+END
+
+DEFINE_ACTION_FUNCTION IS_ITEM_ON_CREATURE // modified - took out the warning
+	STR_VAR
+		item = ~~
+		creature = ~~
+	RET present
+BEGIN
+    OUTER_SET present = 0
+	ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ BEGIN
+		COPY_EXISTING ~%creature%.cre~ ~override~
+			GET_OFFSET_ARRAY item_offsets CRE_V10_ITEMS
+			PHP_EACH item_offsets AS int => i_offset BEGIN
+				READ_ASCII i_offset name (8) NULL
+				PATCH_IF ~%item%~ STR_EQ ~%item_name%~ BEGIN
+					present = 1
+				END
+			END
+		BUT_ONLY
+	END
+END
+

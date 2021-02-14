@@ -1,14 +1,15 @@
 -------------------------------------------------
 ---               Themed Tweaks               ---
+---                 by Lauriel                ---
 ---        NEW COMPONENTS FOR VERSION 2       ---
----      for EET, BG1EE, SoD, BG2EE, ToB      ---
+---       for EET, BGEE, SoD, BG2EE, ToB      ---
 -------------------------------------------------
 
 
 ------------------------------------------------------------------------
 GENERAL
 ------------------------------------------------------------------------
-This mod requires BG1EE, SoD, BG2EE or EET.
+This mod requires BGEE, SoD, BG2EE or EET.
 
 This mod main purpose is to augment the role-playing environment throughout the game series.  To that end, it tweaks the storyline in various places.
 
@@ -17,41 +18,50 @@ DESCRIPTION
 ------------------------------------------------------------------------
 
 ------------------------------------------------------------------------
-BG1EE/BG2EE - Give good-aligned reasons to go into peoples' homes - by Lauriel
+BGEE/BG2EE - Give good-aligned reasons to go into peoples' homes
 ------------------------------------------------------------------------
 This isn't for every house in the game.  A good aligned PC has no business ransacking every house in the realm.  But with this component, the PC will at least be prompted to enter the important ones. Inn and shop keepers will be a font of information concerning where to hand in certain quest items, for example.  If BG1RE is installed, this component will also allow for the Camryn/Tamah book collection quest to be completed without having to steal or break into homes.
 PROGRESS: BG1 in development, BG2 yet to do
 
 ------------------------------------------------------------------------
-BG1EE/SoD/BG2EE - Fix cut scenes that rearrange the group - by Lauriel
+BGEE/SoD/BG2EE - Fix cut scenes that rearrange the group
 ------------------------------------------------------------------------
 Some cut scenes take on too much license with the arrangement of the group, especially before a fight.  This component will try to alleviate that.
 PROGRESS: BG1 in development, SoD and BG2 yet to do
 
 ------------------------------------------------------------------------
-BG1EE - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending
+BGEE/SoD/BG2EE - Make sure unique items stay unique
 ------------------------------------------------------------------------
-PROGRESS: Post-Nashkel encounter in development, post ToSC yet to do
+Items that are made unique by a specific history are kept unique.  For example, if you return the Heart of the Golem to the revenant, you'll not find another anywhere in the game. There will, however, be multiple +2 daggers with a more generic background to be found throughout the realms that are almost as good. 
+PROGRESS: BG1 in development, SoD and BG2 yet to do
+
+------------------------------------------------------------------------
+BGEE - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending
+------------------------------------------------------------------------
+PROGRESS: Post-Nashkel encounter finished, post ToSC yet to do
+
+------------------------------------------------------------------------
+BGEE - Allow Dorn to join good group for the purpose of completing his revenge quest
+------------------------------------------------------------------------
+If a heroic group wants to help Dorn get his revenge, they may now do so.  At the start of Chapter 5, Dorn will rejoin your group no matter how shiny you are.
 
 ------------------------------------------------------------------------
 PLANNED FUTURE ENHANCEMENTS
 ------------------------------------------------------------------------
-* BG1EE           - Allow Dorn to join good group for the purpose of completing his revenge quest
-* BG1EE           - Allow turning down airship thieves guild quest without aggroing the entire guild
-* BG1EE/SoD       - Remove errant references to PC being Bhaalspawn, like Entar
-* SoD             - Expanded Coast Way Crossing quest allowing Boareskyr Bridge area to be skipped
-* SoD             - Add confrontation with Bence and Corwin over Bence bedding Skie
-* SoD             - Speed up the elevator in hell
-* SoD             - Speed up the prison/trial scenes
-* BG2EE           - Distribute group's possessions from the beginning of BG2 to stores in Athkatla - might have to be EET only
-* BG2EE           - Add comments from the group about Imoen's new innate ability to cast Magic Missile 
-* BG2EE			  - Allow giving igi's potion of minor restoration to skinwalker's victim
-* BG2EE/ToB       - Fix any outstanding issues with the Flail of Ages
-* ToB             - Give viable reasons as to why the PC should attack its siblings in their own enclaves
-* ToB             - Have Balthesar relent even if PC hasn't taken down any of the others yet
-* ToB             - Add a "continue the adventure" ending with Bhaalspawn powers intact
-* EET             - Allow Imoen to transition to dual-class mage during her training with Duke Liia
-* EET             - Remove the recap of information the PC should know from the first BG2 dialogues
+* BGEE           - Allow turning down airship thieves guild quest without aggroing the entire guild
+* BGEE/SoD       - Remove errant references to PC being Bhaalspawn, like Entar
+* SoD            - Add confrontation with Bence and Corwin over Bence bedding Skie
+* SoD            - Speed up the elevator in hell
+* SoD            - Speed up the prison/trial scenes
+* BG2EE          - Distribute group's possessions from the beginning of BG2 to stores in Athkatla - might have to be EET only
+* BG2EE          - Add comments from the group about Imoen's new innate ability to cast Magic Missile 
+* BG2EE			 - Allow giving igi's potion of minor restoration to skinwalker's victim
+* BG2EE/ToB      - Fix any outstanding issues with the Flail of Ages
+* ToB            - Give viable reasons as to why the PC should attack its siblings in their own enclaves
+* ToB            - Have Balthesar relent even if PC hasn't taken down any of the others yet
+* ToB            - Add a "continue the adventure" ending with Bhaalspawn powers intact
+* EET            - Allow Imoen to transition to dual-class mage during her training with Duke Liia
+* EET            - Remove the recap of information the PC should know from the first BG2 dialogues
 
 ------------------------------------------------------------------------
 COMPATABIITY NOTES
@@ -95,9 +105,11 @@ CREDITS
 * K4thos: for EET - even though it's not required for this mod, I just really like EET
 * DavidW: for the lovely macros included in alter_script.tpa as well as guidance on encapsulation and immutability
 * Grammarsalad, subtledoctor, grodrigues, Mike1072, and jastey: for the ideas, guidance and help on the tool that provides proper and upper case player1 pronouns (cases.tpa)
+* BGForge: for their IElib which I used as a jump-off point for my items lib
 * Bubb and CamDawg - LOVE YOU FOREVER!!!  I mean it.  Forevah!
 * jastey: for everything you've done and continue to do. :)
-* igi: for permission to use his refreshment potion as the basis of Irenicus's revitalization potion
+* igi: for permission to use the refreshment potion from his iiItems mod as the basis of Irenicus's revitalization potion
+* igi: for permission to use the broken bottle
 * The folks at The Gibberlings Three forums: for never failing to answer my many many questions
 
 ------------------------------------------------------------------------

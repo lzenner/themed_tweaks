@@ -40,3 +40,60 @@ Special: Regain cast spells~
 // SCRYING POOL VERSION OF HEPHERNAAN FOR CUT SCENES COMPONENT //
 /////////////////////////////////////////////////////////////////
 @1007	= ~Agent of the Umbral Accord~
+
+///////////////////////////////////////////////////////////////////
+// UNIQUE ITEMS REDESCRIBING ITEMS THAT GET REUSED OVER AND OVER //
+///////////////////////////////////////////////////////////////////
+@1008	= ~Dagger +2~
+@1009	= ~This finely made dagger has few equals.  The enchantment placed on this excellent weapon makes it most dangerous in the right hands.
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d4+2 (piercing)
+Speed Factor: 1
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1~
+
+@1010	= ~Plate Mail +1~
+@1011	= ~The enchantment on this finely crafted plate mail makes it some of the finest in the land.
+
+STATISTICS:
+
+Armor Class: 2 (-1 vs. slashing)
+Requires:
+ 12 Strength
+
+Weight: 50~
+
+@1012	= ~Belt of Slashing +2~
+@1013	= ~The enchantment on this stylish belt helps the wearer to fend off slashing attacks.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2 vs. slashing attacks
+
+Weight: 2~
+
+@1014	= ~Bastard Sword of Poison Protection +1~
+@1015	= ~This finely crafted bastard sword protects its wearer from poison.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to poison
+
+THAC0: +1
+Damage: 2d4+3 (slashing)
+Speed Factor: 7
+Proficiency Type: Large Sword
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 8~

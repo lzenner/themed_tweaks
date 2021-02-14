@@ -1,0 +1,294 @@
+/////////////////////////////////////////////
+// Keep items with a unique history unique //
+/////////////////////////////////////////////
+
+DEFINE_ACTION_FUNCTION unique_items BEGIN
+	// For these unique items, it would be easier to make a copy of them to a unique name,
+	// use that for the unique item, and change the original to a more generic item
+	// However, it would also squash a lot of toes that ought not to be squashed
+	// I will use a newly made almost-as-good item to replace those instances where
+	// the devs used it erroneously and I'll cross-mod where I'm able.
+	
+	// Make a copy of Dagg03 / Heart of the Golem and rename it
+	// Use it instead of the real Dagg03 whereever it's not the actual Heart of the Golem
+	COPY_EXISTING ~dagg03.itm~ ~override/#LDagP2.itm~
+		SAY NAME2 @1008
+		SAY IDENTIFIED_DESC @1009
+		WRITE_BYTE 0x0084 1		// Speed - to make it not quite as good as the real Heart of the Golem
+		
+	// Make a copy of Plat02 // Fallorain's Plate +1 and rename it
+	// Use it instead of the real Plat02 whereever it's not actually Fallorain's Plate
+	COPY_EXISTING ~plat02.itm~ ~override/#LPltP1.itm~
+		SAY NAME2 @1010
+		SAY IDENTIFIED_DESC @1011
+		WRITE_SHORT 0x0026 12		// Strength - same as regular
+		WRITE_LONG 0x0034 2500		// Price - half the cost of Fallorain's because no weight bonus
+		WRITE_SHORT 0x0042 20		// Lore
+		WRITE_LONG 0x004c 50		// Weight - same as regular
+	
+	// Make a copy of Belt02 // Golden Girdle of Urnst and rename it
+	// Use it instead of the real Belt02 whereever it's not actually Urnst's Belt
+	COPY_EXISTING ~belt02.itm~ ~override/#LBltSls.itm~
+		SAY NAME2 @1012
+		SAY IDENTIFIED_DESC @1013
+		WRITE_LONG 0x0034 750		// Price
+		WRITE_SHORT 0x0042 20		// Lore
+		WRITE_LONG 0x0076 2			// Slashin AC bonus
+	
+	// Make a copy of sw1h34 // Albruin +1 and rename it
+	// Use it instead of the real sw1h34 whereever it's not the actual Albruin
+	COPY ~%mod_root%/objects/#L1HSPsn.itm~ ~override~
+		SAY NAME2 @1014
+		SAY IDENTIFIED_DESC @1015
+	
+	// Change CREs that erroneously include the unique item in their inventory and swap with new item
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~C6ARKAN3~
+			match_item = ~dagg03~
+			new_item = ~#LDagP2~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~C6ARKAN~
+			match_item = ~dagg03~
+			new_item = ~#LDagP2~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~MAREK1~
+			match_item = ~dagg03~
+			new_item = ~#LDagP2~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~MAREK~
+			match_item = ~dagg03~
+			new_item = ~#LDagP2~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~TERMER04~
+			match_item = ~dagg03~
+			new_item = ~#LDagP2~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~VAELASA~
+			match_item = ~dagg03~
+			new_item = ~#LDagP2~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~x#natan~
+			match_item = ~dagg03~
+			new_item = ~#LDagP2~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~BPTHBKGD~
+			match_item = ~plat02~
+			new_item = ~#LPltP1~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~BPTNAT~
+			match_item = ~plat02~
+			new_item = ~#LPltP1~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~E32~
+			match_item = ~plat02~
+			new_item = ~#LPltP1~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~KNIGHT2~
+			match_item = ~plat02~
+			new_item = ~#LPltP1~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~KNIGHT3~
+			match_item = ~plat02~
+			new_item = ~#LPltP1~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~SIMMEON~
+			match_item = ~plat02~
+			new_item = ~#LPltP1~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~TAZOK2~
+			match_item = ~plat02~
+			new_item = ~#LPltP1~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~TAZOK_~
+			match_item = ~plat02~
+			new_item = ~#LPltP1~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~TAZOK~
+			match_item = ~plat02~
+			new_item = ~#LPltP1~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~BPERWEN~
+			match_item = ~belt02~
+			new_item = ~#LBltSls~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~BPTHBKGD~
+			match_item = ~belt02~
+			new_item = ~#LBltSls~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~JOIA~
+			match_item = ~belt02~
+			new_item = ~#LBltSls~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~OHBBCLT3~
+			match_item = ~belt02~
+			new_item = ~#LBltSls~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~OHBBRVGR~
+			match_item = ~belt02~
+			new_item = ~#LBltSls~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~OHBSYM03~
+			match_item = ~belt02~
+			new_item = ~#LBltSls~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~OHBSYM04~
+			match_item = ~belt02~
+			new_item = ~#LBltSls~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~OHBSYM05~
+			match_item = ~belt02~
+			new_item = ~#LBltSls~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~OHBSYMM~
+			match_item = ~belt02~
+			new_item = ~#LBltSls~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~SIMMEON~
+			match_item = ~belt02~
+			new_item = ~#LBltSls~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~BPTHBKGD~
+			match_item = ~sw1h34~
+			new_item = ~#L1HSPsn~
+	END
+	
+	// Swap the items when given inside scripts
+	COPY_EXISTING ~bd0120.bcs~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~dagg03~ ~#LDagP2~
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~plat02~ ~#LPltP1~
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~belt02~ ~#LBltSls~
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~sw1h34~ ~#L1HSPsn~
+		END
+	COPY_EXISTING ~BDDROWCL.BCS~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~sw1h34~ ~#L1HSPsn~
+		END
+		
+	// Swap them in stores
+	LAF REPLACE_STORE_ITEM_IF_EXISTS
+		STR_VAR
+			store = ~bpthar03~
+			match_item = ~dagg03~
+			new_item = ~#LDagP2~
+	END
+	LAF REPLACE_STORE_ITEM_IF_EXISTS
+		STR_VAR
+			store = ~OHNGDUKE~
+			match_item = ~dagg03~
+			new_item = ~#LDagP2~
+	END
+	LAF REPLACE_STORE_ITEM_IF_EXISTS
+		STR_VAR
+			store = ~BPGORC02~
+			match_item = ~plat02~
+			new_item = ~#LPltP1~
+	END
+	LAF REPLACE_STORE_ITEM_IF_EXISTS
+		STR_VAR
+			store = ~BPGORC03~
+			match_item = ~plat02~
+			new_item = ~#LPltP1~
+	END
+	LAF REPLACE_STORE_ITEM_IF_EXISTS
+		STR_VAR
+			store = ~BPELAN01~
+			match_item = ~belt02~
+			new_item = ~#LBltSls~
+	END
+	LAF REPLACE_STORE_ITEM_IF_EXISTS
+		STR_VAR
+			store = ~BPELAN02~
+			match_item = ~belt02~
+			new_item = ~#LBltSls~
+	END
+	LAF REPLACE_STORE_ITEM_IF_EXISTS
+		STR_VAR
+			store = ~BPELAN03~
+			match_item = ~belt02~
+			new_item = ~#LBltSls~
+	END
+	LAF REPLACE_STORE_ITEM_IF_EXISTS
+		STR_VAR
+			store = ~OHBIMIM~
+			match_item = ~belt02~
+			new_item = ~#LBltSls~
+	END
+	LAF REPLACE_STORE_ITEM_IF_EXISTS
+		STR_VAR
+			store = ~OHNIMIM~
+			match_item = ~belt02~
+			new_item = ~#LBltSls~
+	END
+	LAF REPLACE_STORE_ITEM_IF_EXISTS
+		STR_VAR
+			store = ~OHBSDWM~
+			match_item = ~sw1h34~
+			new_item = ~#L1HSPsn~
+	END
+
+	// Change dialogues that erroneously deal with the unique items
+	// Easier to do with variables than separate files
+	OUTER_SPRINT DLG_KISHMAGE ~~
+	OUTER_SPRINT DLG_UDTRAP02 ~~
+	ACTION_IF FILE_EXISTS_IN_GAME ~KISHMAGE.DLG~ BEGIN
+		OUTER_SPRINT DLG_KISHMAGE ~~~~~REPLACE_ACTION_TEXT KISHMAGE ~"BELT02"~ ~"#LBltSls"~ ~~~~~
+	END
+	ACTION_IF FILE_EXISTS_IN_GAME ~UDTRAP02.DLG~ BEGIN
+		OUTER_SPRINT DLG_UDTRAP02 ~~~~~REPLACE_ACTION_TEXT UDTRAP02 ~"sw1h34"~ ~"#L1HSPsn"~ ~~~~~
+	END
+	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/unique_items.d~
+END

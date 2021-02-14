@@ -26,6 +26,7 @@ ALWAYS
 		INCLUDE ~%mod_root%/lib/alter_script.tpa~
 		INCLUDE ~%mod_root%/lib/update_bcs.tpa~
 		INCLUDE ~%mod_root%/lib/change_door_name.tpa~
+		INCLUDE ~%mod_root%/lib/items.tpa~
 	END
 
 	// This needs to be run before every component for some reason
@@ -89,6 +90,18 @@ BEGIN @20
 	LABEL "#L-BG2-FIX_ARRANGEMENTS"
 	INCLUDE ~themed_tweaks/components/fix_arrangements.tpa~
 	LAF fix_arrangements END
+	
+////////////////////////////////////////
+// MAKE SURE UNIQUE ITEMS STAY UNIQUE //
+////////////////////////////////////////
+BEGIN @25
+	DESIGNATED 25
+	LABEL "#L-BG1-UNIQUE_ITEMS"
+	LABEL "#L-SOD-UNIQUE_ITEMS"
+	LABEL "#L-BG2-UNIQUE_ITEMS"
+	LABEL "#L-EET-UNIQUE_ITEMS"
+	INCLUDE ~themed_tweaks/components/unique_items.tpa~
+ 	LAF unique_items END
 
 ///////////////////////////////////////////////
 // CAELAR ARGENTS ATTEMPTS TO RECRUIT THE PC //
