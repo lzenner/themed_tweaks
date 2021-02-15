@@ -66,3 +66,10 @@
 
 // Joseph's widow
 @2040	= ~I found this ring in the mines...next to a dead miner, I'm afraid.  I was told it might have belonged to your husband?~
+
+// Places in Baldur's Gate that have thieves or murders inside of them
+@2050	= ~You hear the noises of suspicious activity coming from inside this house.~
+
+// Warehouses in Baldur's Gate that have quests
+@2051	= ~You notice a 'Help Wanted' sign hung on the door of this building.~
+

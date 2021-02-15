@@ -282,3 +282,8 @@ END
 // Cloakwood hunters
 REPLACE_ACTION_TEXT ALDETH ~SetGlobal("AldethMove","GLOBAL",1)~ ~SetGlobal("AldethMove","GLOBAL",1) GiveItemCreate("TITOME11",LastTalkedToBy,0,0,0) SetGlobal("#L_GRxRETome11","GLOBAL",1)~
 
+// Thieves in SE Baldur's Gate
+ALTER_TRANS TAXEK
+	BEGIN 0 END
+	BEGIN 0 1 2 3 END
+	BEGIN "ACTION" ~SetGlobal("#L_GRTaxek","GLOBAL",1)~ END

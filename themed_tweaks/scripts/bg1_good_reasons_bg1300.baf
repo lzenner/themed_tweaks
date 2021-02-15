@@ -1,0 +1,66 @@
+/////////////////////////////
+// SouthEast Baldur's Gate //
+/////////////////////////////
+
+IF
+	TriggerOverride("Door0813",RANGE(Player1,40))
+	Global("HelpNemphre","GLOBAL",0)
+	!Dead("Nemphre")
+	OR(2)
+		Global("#L_GRDoor0813","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor0813","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor0813","MYAREA",ONE_DAY)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door0813",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door0813",@2003)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+
+IF
+	TriggerOverride("Door1303",RANGE(Player1,40))
+	Global("NADARIN","GLOBAL",0)
+	!Dead("NADARIN")
+	OR(2)
+		Global("#L_GRDoor1303","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor1303","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor1303","MYAREA",ONE_DAY)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door1303",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door1303",@2051)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+
+IF
+	TriggerOverride("Door1316",RANGE(Player1,40))
+	Global("L_GRTaxek","GLOBAL",0)
+	OR(2)
+		Global("#L_GRDoor1316","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor1316","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor1316","MYAREA",ONE_DAY)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door1316",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door1316",@2050)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+
