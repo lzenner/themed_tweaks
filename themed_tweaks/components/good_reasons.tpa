@@ -49,10 +49,19 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 					new_name = ~Port4804~
 			END
 
+		COPY_EXISTING ~%EBaldursGate%.ARE~ ~override~
+			// Unlock Arkion's door
+			// He'll be advertising for help - no sense in having the door locked
+			LPF UNLOCK_DOOR
+				STR_VAR
+					door_name = ~Door0805~	// Arkion's house
+			END
+
 		EXTEND_TOP ~%Candlekeep%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2600.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%FriendlyArmInn%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2300.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%Beregost%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg3300.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%Nashkel%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg4800.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
+		EXTEND_TOP ~%EBaldursGate%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg0800.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 
 		// Mirianne's initial dialogue is edited (by BG1NPC) to the point where I can't have it set a global reliably
 		// I'll use the room script instead - which may be empty so can't use extend...

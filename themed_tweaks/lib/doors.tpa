@@ -33,3 +33,32 @@ BEGIN
 	END
 END
 
+/////////////////
+// UNLOCK DOOR //
+/////////////////
+DEFINE_PATCH_FUNCTION UNLOCK_DOOR
+	INT_VAR
+		found_door = 0
+	STR_VAR	
+		door_name = ""		// required
+	RET
+		found_door
+BEGIN
+	PATCH_IF STRING_LENGTH ~%door_name%~ == 0 BEGIN
+    	PATCH_FAIL ~fun UNLOCK_DOOR called with arguments door_name:"%door_name%"~
+  	END
+  	GET_OFFSET_ARRAY array_off_doors ARE_V10_DOORS
+	PHP_EACH array_off_doors AS idx_door => offset_door BEGIN
+    	PATCH_IF found_door == 0 BEGIN
+    		READ_ASCII offset_door name_door (32) NULL
+      		PATCH_IF ~%name_door%~ STR_EQ ~%door_name%~ BEGIN
+        		SET found_door = offset_door
+				READ_BYTE (offset_door + 0x0028) door_flags1 // 1 of 4
+				PATCH_IF ((door_flags1 BAND 0b00000010) = 0b00000010) BEGIN // door is locked
+					WRITE_BYTE (offset_door + 0x0028) (door_flags1 BAND 0b11111101)
+				END
+      		END
+    	END
+	END
+END
+

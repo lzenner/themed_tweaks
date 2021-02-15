@@ -25,7 +25,7 @@ ALWAYS
 		// Library functions I use frequently
 		INCLUDE ~%mod_root%/lib/alter_script.tpa~
 		INCLUDE ~%mod_root%/lib/update_bcs.tpa~
-		INCLUDE ~%mod_root%/lib/change_door_name.tpa~
+		INCLUDE ~%mod_root%/lib/doors.tpa~
 		INCLUDE ~%mod_root%/lib/items.tpa~
 	END
 
@@ -60,8 +60,6 @@ ALWAYS
 	END
 END
 
-// Can't use variables here for some reason
-// Not sure why we use both folders, but that's what the example did
 LANGUAGE ~American English~ ~american~   
 	~themed_tweaks/languages/american/game.tra~
 	~weidu_external/workspace/themed_tweaks/languages/american/game.tra~

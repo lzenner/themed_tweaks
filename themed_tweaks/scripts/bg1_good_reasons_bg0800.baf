@@ -1,0 +1,25 @@
+////////////////////////
+// East Baldur's Gate //
+////////////////////////
+
+IF
+	TriggerOverride("Door0805",RANGE(Player1,40))
+	Global("HelpArkion","GLOBAL",0)
+	!Dead("Arkion")
+	OR(2)
+		Global("#L_GRDoor0805","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor0805","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor0805","MYAREA",ONE_DAY)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door0805",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door0805",@2003)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+
