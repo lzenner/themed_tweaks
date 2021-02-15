@@ -73,7 +73,16 @@ DEFINE_ACTION_FUNCTION fix_arrangements BEGIN
 				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player6,JumpToPoint([2760.2045]))~ ~~
 			END
 			
-		// Stop Rasaad's quest from moving the group
+		// Stop Rasaad's quests from moving the group
+		COPY_EXISTING ~BG1101.BCS~ ~override~
+			DECOMPILE_AND_PATCH BEGIN
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player1,MoveToPoint([534.493]))~ ~~
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player2,FollowObjectFormation(Player1,2,2))~ ~~
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player3,FollowObjectFormation(Player1,2,3))~ ~~
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player4,FollowObjectFormation(Player1,2,4))~ ~~
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player5,FollowObjectFormation(Player1,2,5))~ ~~
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player6,FollowObjectFormation(Player1,2,6))~ ~~
+			END
 		COPY_EXISTING ~OH3100.BCS~ ~override~
 			DECOMPILE_AND_PATCH BEGIN
 				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ActionOverride(Player1,MoveToPoint([710.452]))~ ~~
