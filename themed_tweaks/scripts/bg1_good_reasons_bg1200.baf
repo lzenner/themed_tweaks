@@ -24,14 +24,10 @@ END
 
 IF
 	TriggerOverride("Door1209",RANGE(Player1,40))
-	Global("#L_GRLarriaz","GLOBAL",0)
-	!Dead("LARRIA")
-	OR(2)
-		Global("#L_GRDoor1209","MYAREA",0)
-		GlobalTimerExpired("#L_GRDoor1209","MYAREA")
+	Global("#L_GRDoor1209","MYAREA",0)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("#L_GRDoor1209","MYAREA",ONE_DAY)
+		SetGlobal("#L_GRDoor1209","MYAREA",1)
 		StartCutSceneMode()
 		SmallWait(10)
 		MoveViewObject("Door1209",INSTANT)
@@ -66,14 +62,10 @@ END
 
 IF
 	TriggerOverride("Door1207",RANGE(Player1,30))
-	Global("#L_GRNivek","GLOBAL",0)
-	!Dead("Nivek")
-	OR(2)
-		Global("#L_GRDoor1207","MYAREA",0)
-		GlobalTimerExpired("#L_GRDoor1207","MYAREA")
+	Global("#L_GRDoor1207","MYAREA",0)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("#L_GRDoor1207","MYAREA",ONE_DAY)
+		SetGlobal("#L_GRDoor1207","MYAREA",1)
 		StartCutSceneMode()
 		SmallWait(10)
 		MoveViewObject("Door1207",INSTANT)

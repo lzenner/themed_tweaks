@@ -282,24 +282,6 @@ END
 // Cloakwood hunters
 REPLACE_ACTION_TEXT ALDETH ~SetGlobal("AldethMove","GLOBAL",1)~ ~SetGlobal("AldethMove","GLOBAL",1) GiveItemCreate("TITOME11",LastTalkedToBy,0,0,0) SetGlobal("#L_GRxRETome11","GLOBAL",1)~
 
-// Thieves in SE Baldur's Gate
-ALTER_TRANS TAXEK
-	BEGIN 0 END
-	BEGIN 0 1 2 3 END
-	BEGIN "ACTION" ~SetGlobal("#L_GRTaxek","GLOBAL",1)~ END
-	
-// Siren in S Baldur's Gate
-ALTER_TRANS LARRIA
-	BEGIN 0 END
-	BEGIN 0 1 END
-	BEGIN "ACTION" ~SetGlobal("#L_GRLarriaz","GLOBAL",1)~ END
-	
-// Nivek (Basilisk warehouse) in S Baldur's Gate
-ALTER_TRANS KEVIN
-	BEGIN 0 END
-	BEGIN 0 1 END
-	BEGIN "ACTION" ~SetGlobal("#L_GRNivek","GLOBAL",1)~ END
-	
 // Ogre mage in S Baldur's Gate
 ALTER_TRANS OGRELEAD
 	BEGIN 0 END

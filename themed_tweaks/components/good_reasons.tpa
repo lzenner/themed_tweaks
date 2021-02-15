@@ -80,6 +80,7 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 		EXTEND_TOP ~%EBaldursGate%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg0800.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%SEBaldursGate%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg1300.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%BaldursGateDocks%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg1200.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
+		EXTEND_TOP ~%SWBaldursGate%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg1100.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 
 		// Mirianne's initial dialogue is edited (by BG1NPC) to the point where I can't have it set a global reliably
 		// I'll use the room script instead - which may be empty so can't use extend...
