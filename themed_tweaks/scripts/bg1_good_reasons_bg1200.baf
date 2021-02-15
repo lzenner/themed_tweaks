@@ -1,0 +1,128 @@
+/////////////////////////
+// South Baldur's Gate //
+/////////////////////////
+
+IF
+	TriggerOverride("Door1211",RANGE(Player1,35))
+	Global("HelpGhorak","GLOBAL",0)
+	OR(2)
+		Global("#L_GRDoor1211","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor1211","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor1211","MYAREA",ONE_DAY)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door1211",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door1211",@2052)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+
+IF
+	TriggerOverride("Door1209",RANGE(Player1,40))
+	Global("#L_GRLarriaz","GLOBAL",0)
+	!Dead("LARRIA")
+	OR(2)
+		Global("#L_GRDoor1209","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor1209","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor1209","MYAREA",ONE_DAY)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door1209",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door1209",@2050)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+
+IF
+	TriggerOverride("Door1208",RANGE(Player1,30))
+	Global("HelpNoralee","GLOBAL",0)
+	!Dead("Noralee")
+	OR(2)
+		Global("#L_GRDoor1208","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor1208","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor1208","MYAREA",ONE_DAY)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door1208",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door1208",@2051)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+
+IF
+	TriggerOverride("Door1207",RANGE(Player1,30))
+	Global("#L_GRNivek","GLOBAL",0)
+	!Dead("Nivek")
+	OR(2)
+		Global("#L_GRDoor1207","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor1207","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor1207","MYAREA",ONE_DAY)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door1207",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door1207",@2053)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+
+IF
+	ReputationLT(Player1,15)
+	Global("HelpCordyr","GLOBAL",0)
+	TriggerOverride("Door1213",RANGE(Player1,30))
+	OR(2)
+		Global("#L_GRDoor1213","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor1213","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor1213","MYAREA",ONE_DAY)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door1213",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door1213",@2003)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+
+IF
+	Global("#L_GROgreMages","GLOBAL",0)
+	TriggerOverride("Door1201",RANGE(Player1,30))
+	OR(2)
+		Global("#L_GRDoor1201","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor1201","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor1201","MYAREA",ONE_DAY)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door1201",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door1201",@2054)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+

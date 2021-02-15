@@ -46,7 +46,7 @@ END
 
 IF
 	TriggerOverride("Door1316",RANGE(Player1,40))
-	Global("L_GRTaxek","GLOBAL",0)
+	Global("#L_GRTaxek","GLOBAL",0)
 	OR(2)
 		Global("#L_GRDoor1316","MYAREA",0)
 		GlobalTimerExpired("#L_GRDoor1316","MYAREA")

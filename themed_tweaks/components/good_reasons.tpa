@@ -56,10 +56,22 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 				STR_VAR
 					door_name = ~Door0805~	// Arkion's house
 			END
-			
+		
+		COPY_EXISTING ~%BaldursGateDocks%.ARE~ ~override~
+			// Unlock Ogre Mages' door
+			// They want to kill the PC - why would they lock the door?
+			LPF UNLOCK_DOOR
+				STR_VAR
+					door_name = ~Door01201~
+			END
+		
 		// Need a handle on Nadarin so if the party kills him/her, the help wanted sign comes down
 		COPY_EXISTING ~Nadari.cre~ ~override~
 			WRITE_ASCII DEATHVAR ~Nadarin~ #32
+
+		// Need a handle on Noralee so if the party kills her, the help wanted sign comes down
+		COPY_EXISTING ~Norale.cre~ ~override~
+			WRITE_ASCII DEATHVAR ~Noralee~ #32
 
 		EXTEND_TOP ~%Candlekeep%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2600.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%FriendlyArmInn%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2300.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
@@ -67,7 +79,7 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 		EXTEND_TOP ~%Nashkel%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg4800.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%EBaldursGate%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg0800.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%SEBaldursGate%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg1300.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
-//		EXTEND_TOP ~%BaldursGateDocks%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg0800.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
+		EXTEND_TOP ~%BaldursGateDocks%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg1200.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 
 		// Mirianne's initial dialogue is edited (by BG1NPC) to the point where I can't have it set a global reliably
 		// I'll use the room script instead - which may be empty so can't use extend...

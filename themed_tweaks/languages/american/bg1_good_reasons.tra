@@ -73,3 +73,13 @@
 // Warehouses in Baldur's Gate that have quests
 @2051	= ~You notice a 'Help Wanted' sign hung on the door of this building.~
 
+// For Ghorak
+@2052	= ~You hear the lament of someone suffering coming from inside this house.~
+
+// Buildings under attack
+@2053	= ~You hear terrified screams coming from inside this building.~
+
+// Ogre mages (S BG)
+@2054	= ~You hear a scuffle from inside this building, then a gruff voice saying 'Hey you! Yeah you! Come in here. I gots somethin for ya.', then someone sniggering.~ 
+
+
