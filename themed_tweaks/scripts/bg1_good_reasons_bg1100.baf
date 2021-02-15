@@ -6,9 +6,9 @@
 IF
 	TriggerOverride("Door1101",RANGE(Player1,40))
 	Global("#L_GRDoor1101","MYAREA",0)
-	!Global("SORREM_SEVEN_SUNS","GLOBAL",3)
-	!Global("SORREM_SEVEN_SUNS","GLOBAL",4)
-	!Global("SORREM_SEVEN_SUNS","GLOBAL",5)
+	OR(2)
+		GlobalLT("SORREM_SEVEN_SUNS","GLOBAL",3)
+		GlobalTimerExpired("wiventimer","GLOBAL")
 THEN
 	RESPONSE #100
 		SetGlobal("#L_GRDoor1101","MYAREA",1)

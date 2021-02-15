@@ -81,6 +81,12 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 		EXTEND_TOP ~%SEBaldursGate%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg1300.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%BaldursGateDocks%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg1200.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%SWBaldursGate%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg1100.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
+		
+		// Switch a timer inside the building where Wiven and Rasaad's quest happen to be global so I can see it outside the building
+		COPY_EXISTING ~%SWBaldursGate_WivensHouse_L1%.bcs~ ~override~
+			DECOMPILE_AND_PATCH BEGIN
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~"%SWBaldursGate_WivensHouse_L1%"~ ~"GLOBAL"~
+			END
 
 		// Mirianne's initial dialogue is edited (by BG1NPC) to the point where I can't have it set a global reliably
 		// I'll use the room script instead - which may be empty so can't use extend...
