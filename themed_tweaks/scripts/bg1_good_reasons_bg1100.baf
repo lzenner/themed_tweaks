@@ -1,0 +1,40 @@
+/////////////////////////
+// South Baldur's Gate //
+/////////////////////////
+
+// Decided that suspicious activity and violence will only be heard once
+IF
+	TriggerOverride("Door1101",RANGE(Player1,40))
+	Global("#L_GRDoor1101","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_GRDoor1101","MYAREA",1)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door1101",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door1101",@2050)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+
+// Only going to set off the slimes once
+IF
+	TriggerOverride("Door1113",RANGE(Player1,30))
+	Global("#L_GRDoor1113","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_GRDoor1113","MYAREA",1)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door1113",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door1113",@2053)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+
