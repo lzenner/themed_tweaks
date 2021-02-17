@@ -82,4 +82,6 @@
 // Ogre mages (S BG)
 @2054	= ~You hear a scuffle from inside this building, then a gruff voice saying 'Hey you! Yeah you! Come in here. I gots somethin for ya.', then someone sniggering.~ 
 
+// Rabid chickens (C BG)
+@2055	= ~You hear a ruccus coming from inside this store.~
 

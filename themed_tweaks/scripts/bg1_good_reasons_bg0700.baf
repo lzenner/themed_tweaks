@@ -1,0 +1,41 @@
+/////////////////////////
+// South Baldur's Gate //
+/////////////////////////
+
+IF
+	TriggerOverride("Door0715",RANGE(Player1,40))
+	Global("GivenEuricQuest","GLOBAL",0)
+	OR(2)
+		Global("#L_GRDoor10715","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor10715","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor10715","MYAREA",ONE_DAY)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door0715",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door0715",@2003)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+
+IF
+	TriggerOverride("Door0721",RANGE(Player1,40))
+	Global("#L_GRDoor0721","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_GRDoor0721","MYAREA",1)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door0721",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door0721",@2055)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+

@@ -65,6 +65,14 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 					door_name = ~Door01201~
 			END
 		
+		COPY_EXISTING ~%CentralBaldursGate%.ARE~ ~override~
+			// Nadine's door
+			// She'll be advertising for help - no sense in having the door locked
+			LPF UNLOCK_DOOR
+				STR_VAR
+					door_name = ~Door0715~
+			END
+		
 		// Need a handle on Nadarin so if the party kills him/her, the help wanted sign comes down
 		COPY_EXISTING ~Nadari.cre~ ~override~
 			WRITE_ASCII DEATHVAR ~Nadarin~ #32
@@ -81,6 +89,7 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 		EXTEND_TOP ~%SEBaldursGate%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg1300.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%BaldursGateDocks%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg1200.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%SWBaldursGate%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg1100.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
+		EXTEND_TOP ~%CentralBaldursGate%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg0700.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		
 		// Switch a timer inside the building where Wiven and Rasaad's quest happen to be global so I can see it outside the building
 		COPY_EXISTING ~%SWBaldursGate_WivensHouse_L1%.bcs~ ~override~
