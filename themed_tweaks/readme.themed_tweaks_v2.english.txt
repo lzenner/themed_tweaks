@@ -21,7 +21,7 @@ DESCRIPTION
 BGEE/BG2EE - Give good-aligned reasons to go into peoples' homes
 ------------------------------------------------------------------------
 This isn't for every house in the game.  A good aligned PC has no business ransacking every house in the realm.  But with this component, the PC will at least be prompted to enter the important ones. Inn and shop keepers will be a font of information concerning where to hand in certain quest items, for example.  If BG1RE is installed, this component will also allow for the Camryn/Tamah book collection quest to be completed without having to steal or break into homes.
-PROGRESS: BG1 in development, BG2 yet to do
+PROGRESS: BG1 finished, BG2 yet to do
 
 ------------------------------------------------------------------------
 BGEE/SoD/BG2EE - Fix cut scenes that rearrange the group

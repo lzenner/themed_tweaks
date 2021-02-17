@@ -1,0 +1,11 @@
+//////////////////////////////////////////
+// Changes to 3rd floor FAI area script //
+//////////////////////////////////////////
+
+IF
+	Global("#L_GRRinnie","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_GRRinnie","GLOBAL",1)
+		Continue()
+END

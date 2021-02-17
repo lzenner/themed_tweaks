@@ -1,0 +1,24 @@
+//////////////////////
+// NW Baldur's Gate //
+//////////////////////
+
+IF
+	TriggerOverride("Door0006",RANGE(Player1,35))
+	Global("#L_GRRinnie","GLOBAL",0)
+	OR(2)
+		Global("#L_GRDoor0006","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor0006","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor0006","MYAREA",ONE_DAY)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door0006",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door0006",@2003)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+

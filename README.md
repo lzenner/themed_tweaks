@@ -21,12 +21,12 @@ COMPONENTS INCLUDE V1:
 
 NEW COMPONENTS FOR V2 (not yet released):
 -------------------
+* BGEE           - Give good-aligned reasons to go into peoples' homes
 * BGEE           - Allow Dorn to join good group for the purpose of completing his revenge quest
 
 
 COMPONENTS IN DEVELOPMENT:
 ----------------------
-* BGEE           - Give good-aligned reasons to go into peoples' homes
 * BGEE           - Fix cut scenes that rearrange the group
 * BGEE           - Make sure unique items stay unique
 * BGEE           - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending

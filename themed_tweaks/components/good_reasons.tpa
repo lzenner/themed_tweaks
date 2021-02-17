@@ -91,6 +91,7 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 		EXTEND_TOP ~%SWBaldursGate%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg1100.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%CentralBaldursGate%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg0700.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%NWBaldursGate%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg0100.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
+		EXTEND_TOP ~%NBaldursGate%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg0200.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		
 		// Switch a timer inside the building where Wiven and Rasaad's quest happen to be global so I can see it outside the building
 		COPY_EXISTING ~%SWBaldursGate_WivensHouse_L1%.bcs~ ~override~
@@ -107,6 +108,17 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 				baf_location = EVAL ~%mod_root%/scripts/~				// like ~mymod/bafs/~
 				baf_name = ~bg1_good_reasons_bg3313~					// like my_new_BG0146
 				bcs_name = EVAL ~%Beregost_MiriannesHouse_L1%~			// like BG0146
+		END
+		
+		// Rinnie's initial dialogue is edited (by BG1NPC) to the point where I can't have it set a global reliably
+		// I'll use the room script instead - which may be empty so can't use extend...
+		LAF UPDATE_BCS
+			INT_VAR
+				action_taken = 1		// 0 = APPEND_FILE TEXT, 1 = EXTEND_TOP, 2 = EXTEND_BOTTOM
+			STR_VAR
+				baf_location = EVAL ~%mod_root%/scripts/~				// like ~mymod/bafs/~
+				baf_name = ~bg1_good_reasons_bg0006~					// like my_new_BG0146
+				bcs_name = EVAL ~%NBaldursGate_RinniesHouse_L1%~		// like BG0146
 		END
 		
 		// Get rid of RE's books (Camryn) that are in places a good character would have to steal
