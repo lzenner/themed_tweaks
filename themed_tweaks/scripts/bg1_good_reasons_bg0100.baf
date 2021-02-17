@@ -1,0 +1,65 @@
+//////////////////////
+// NW Baldur's Gate //
+//////////////////////
+
+IF
+	TriggerOverride("Door0157",RANGE(Player1,35))
+	Global("HelpQuinn","GLOBAL",0)
+	OR(2)
+		Global("#L_GRDoor0157","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor0157","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor0157","MYAREA",ONE_DAY)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door0157",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door0157",@2003)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+
+IF
+	TriggerOverride("Door0167",RANGE(Player1,35))
+	Global("StartedPheirkasQuest","GLOBAL",0)
+	IsValidForPartyDialogue([0.0.0.THIEF_ALL])
+	OR(2)
+		Global("#L_GRDoor0167","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor0167","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor0167","MYAREA",ONE_DAY)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door0167",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door0167",@2003)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+
+IF
+	TriggerOverride("Door0162",RANGE(Player1,35))
+	Global("TalkedToLaerta","GLOBAL",0)
+	OR(2)
+		Global("#L_GRDoor0162","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor0162","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor0162","MYAREA",ONE_DAY)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door0162",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door0162",@2056)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+

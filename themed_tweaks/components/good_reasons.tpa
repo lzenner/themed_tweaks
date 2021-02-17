@@ -90,6 +90,7 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 		EXTEND_TOP ~%BaldursGateDocks%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg1200.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%SWBaldursGate%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg1100.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%CentralBaldursGate%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg0700.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
+		EXTEND_TOP ~%NWBaldursGate%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg0100.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		
 		// Switch a timer inside the building where Wiven and Rasaad's quest happen to be global so I can see it outside the building
 		COPY_EXISTING ~%SWBaldursGate_WivensHouse_L1%.bcs~ ~override~
