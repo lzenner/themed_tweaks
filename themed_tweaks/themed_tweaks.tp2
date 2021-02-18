@@ -43,7 +43,7 @@ ALWAYS
 	END
 
 	ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN
-		FAIL @1 /* ~Modmerge or Argent's DLC Merger is required before mods can be installed on this game.~ */
+		FAIL @1 /* ~Argent's DLC Merger is required before mods can be installed on this game.~ */
 	END
 	ACTION_IF ((NOT GAME_IS ~bgee bg2ee eet~) AND (NOT GAME_INCLUDES ~sod~)) BEGIN
 		FAIL @2 /* ~This mod requires BG1EE, SoD, BG2EE or EET~ */

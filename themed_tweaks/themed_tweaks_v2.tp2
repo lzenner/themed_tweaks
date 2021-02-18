@@ -113,8 +113,18 @@ BEGIN @30
 /////////////////////////////////////////////////////
 // ALLOW DORN TO JOIN HEROIC GROUP FOR HIS REVENGE //
 /////////////////////////////////////////////////////
-BEGIN @35
-	DESIGNATED 35
+BEGIN @40
+	DESIGNATED 40
 	LABEL "#L-BG1-DORNS_REVENGE"
 	INCLUDE ~themed_tweaks/components/bg1_dorn.tpa~
 	LAF bg1_dorn END
+	
+///////////////////////////////////////////////////////
+// REMOVE ERRANT REFERENCES TO PC BEING A BHAALSPAWN //
+///////////////////////////////////////////////////////
+BEGIN @50
+	DESIGNATED 50
+	LABEL "#L-BG1-BHAALSPAWN_REF"
+	LABEL "#L-SOD-BHAALSPAWN_REF"
+	INCLUDE ~themed_tweaks/components/bhaalspawn_ref.tpa~
+	LAF bhaalspawn_ref END

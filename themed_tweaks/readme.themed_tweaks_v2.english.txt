@@ -27,7 +27,7 @@ PROGRESS: BG1 finished, BG2 yet to do
 BGEE/SoD/BG2EE - Fix cut scenes that rearrange the group
 ------------------------------------------------------------------------
 Some cut scenes take on too much license with the arrangement of the group, especially before a fight.  This component will try to alleviate that.
-PROGRESS: BG1 in development, SoD and BG2 yet to do
+PROGRESS: BG1 finished, SoD and BG2 yet to do
 
 ------------------------------------------------------------------------
 BGEE/SoD/BG2EE - Make sure unique items stay unique
@@ -46,10 +46,13 @@ BGEE - Allow Dorn to join good group for the purpose of completing his revenge q
 If a heroic group wants to help Dorn get his revenge, they may now do so.  At the start of Chapter 5, Dorn will rejoin your group no matter how shiny you are.
 
 ------------------------------------------------------------------------
+BGEE/SoD - Remove errant references to PC being Bhaalspawn, like Entar
+------------------------------------------------------------------------
+PROGRESS: BG1 in development, SoD yet to do
+
+------------------------------------------------------------------------
 PLANNED FUTURE ENHANCEMENTS
 ------------------------------------------------------------------------
-* BGEE           - Allow turning down airship thieves guild quest without aggroing the entire guild
-* BGEE/SoD       - Remove errant references to PC being Bhaalspawn, like Entar
 * SoD            - Add confrontation with Bence and Corwin over Bence bedding Skie
 * SoD            - Speed up the elevator in hell
 * SoD            - Speed up the prison/trial scenes

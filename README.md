@@ -30,12 +30,11 @@ COMPONENTS IN DEVELOPMENT:
 * BGEE           - Fix cut scenes that rearrange the group
 * BGEE           - Make sure unique items stay unique
 * BGEE           - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending
+* BGEE/SoD       - Remove errant references to PC being Bhaalspawn, like Entar
 
 
 COMPONENTS TO BE DONE:  
 ----------------------
-* BGEE           - Allow turning down airship thieves guild quest without aggroing the entire guild
-* BGEE/SoD       - Remove errant references to PC being Bhaalspawn, like Entar
 * SoD            - Add confrontation with Bence and Corwin over Bence bedding Skie
 * SoD            - Speed up the elevator in hell
 * SoD            - Speed up the prison/trial scenes

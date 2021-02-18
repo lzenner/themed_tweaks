@@ -2,7 +2,7 @@
 // INSTALLATION SETUP STRINGS //
 ////////////////////////////////
 @0 		= ~Themed Tweaks~
-@1		= ~Modmerge or Argent's DLC Merger is required before mods can be installed on this game.~
+@1		= ~Argent's DLC Merger is required before mods can be installed on this game.~
 @2		= ~This mod requires BG1EE, SoD, BG2EE or EET~
 @3		= ~This component requires BG1EE or EET~
 @4		= ~This component requires SoD or EET~
@@ -14,8 +14,7 @@
 @20		= ~BG1EE/SoD/BG2EE - Fix cut scenes that rearrange the group~
 @25		= ~BG1EE/SoD/BG2EE - Make sure unique items stay unique~
 @30		= ~BG1EE - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending~
-@35		= ~BG1EE - Allow Dorn to join good group for the purpose of completing his revenge quest~
-@40		= ~BG1EE - Allow turning down airship thieves guild quest without aggroing entire guild~
+@40		= ~BG1EE - Allow Dorn to join good group for the purpose of completing his revenge quest~
 @50		= ~BG1EE/SoD - Remove errant references to PC being Bhaalspawn~
 @60		= ~SoD - Give Imoen a special wand for palace attack scene~
 @70		= ~SoD - Allow PC to give aid to Imoen after attack in palace~
