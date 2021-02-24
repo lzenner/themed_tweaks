@@ -1,0 +1,44 @@
+////////////////////
+// Ulgoth's Beard //
+////////////////////
+
+IF
+	Global("TherTalk","GLOBAL",0)
+	Global("Therella","GLOBAL",0)
+	TriggerOverride("Door1005",RANGE(Player1,30))
+	OR(2)
+		Global("#L_GRDoor1005","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor1005","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor1005","MYAREA",ONE_DAY)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door1005",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door1005",@2003)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
+
+IF
+	Global("MetMendas","GLOBAL",0)
+	TriggerOverride("Door1004",RANGE(Player1,30))
+	OR(2)
+		Global("#L_GRDoor1004","MYAREA",0)
+		GlobalTimerExpired("#L_GRDoor1004","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("#L_GRDoor1004","MYAREA",ONE_DAY)
+		StartCutSceneMode()
+		SmallWait(10)
+		MoveViewObject("Door1004",INSTANT)
+		SmallWait(10)
+		DisplayStringNoName("Door1004",@2003)
+		Wait(2)
+		MoveViewObject(Player1,INSTANT)
+		EndCutSceneMode()
+		Continue()
+END
