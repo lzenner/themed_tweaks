@@ -73,6 +73,14 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 					door_name = ~Door0715~
 			END
 		
+		COPY_EXISTING ~%NWBaldursGate%.ARE~ ~override~
+			// Quinn's door
+			// He'll be advertising for help - no sense in having the door locked
+			LPF UNLOCK_DOOR
+				STR_VAR
+					door_name = ~Door0157~
+			END
+			
 		// Need a handle on Nadarin so if the party kills him/her, the help wanted sign comes down
 		COPY_EXISTING ~Nadari.cre~ ~override~
 			WRITE_ASCII DEATHVAR ~Nadarin~ #32
