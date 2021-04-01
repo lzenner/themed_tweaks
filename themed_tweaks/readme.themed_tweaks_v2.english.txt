@@ -49,6 +49,7 @@ If a heroic group wants to help Dorn get his revenge, they may now do so.  At th
 BGEE/SoD - Remove errant references to PC being Bhaalspawn, like Entar
 ------------------------------------------------------------------------
 PROGRESS: BG1 in development, SoD yet to do
+If BG1NPC is to be installed, please do so before this component
 
 ------------------------------------------------------------------------
 PLANNED FUTURE ENHANCEMENTS
@@ -74,7 +75,7 @@ There are no known compatibility issues at this time
 ------------------------------------------------------------------------
 INSTALLATION
 ------------------------------------------------------------------------
-If you're going to install Transitions or Endless BG1, do so before Themed Tweaks.
+If you're going to install Transitions, Endless BG1, or BG1NPC do so before Themed Tweaks.
 
 Installation using Project Infinity (https://forums.beamdog.com/discussion/comment/1145416/#Comment_1145416) will ensure this and other mods are installed in the correct order.
 
@@ -82,7 +83,7 @@ NOTE: If you've previously installed the mod, remove it before extracting a new 
 
 When installing or uninstalling, do not close the DOS window by clicking on the X button! Instead, press the Enter key when instructed to do so.
 
-IMPORTANT FOR EET INSTALLATIONS: EET_End will need to be reinstalled after installing this mod.
+IMPORTANT FOR EET INSTALLATIONS: EET_End will need to be (re)installed after installing this mod.
  
 General (Windows, Mac OS X, and Linux)
 

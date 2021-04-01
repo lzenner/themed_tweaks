@@ -3,4 +3,35 @@
 //////////////////////////////////////////////////////////////
 
 DEFINE_ACTION_FUNCTION bhaalspawn_ref BEGIN
+	// There are two times when group members as a whole may become aware of the PC heritage
+	// 1-when the note from Gorion is found
+	// 2-when the PC talks to Tamoko
+	
+	ACTION_IF (MOD_IS_INSTALLED ~bg1npc.tp2~ 0) BEGIN
+		// BG1NPC Fixes - when the note is found, a global is set
+		// so that no matter if the NPC was there or not, they automatically know
+		// I've changed that to a local
+		COPY_EXISTING ~%AJANTIS_BCS%.bcs~ ~override~
+					~AJANTD.bcs~ ~override~
+					~%BRANWEN_BCS%.bcs~ ~override~
+					~corand.bcs~ ~override~
+					~%DYNAHEIR_BCS%.bcs~ ~override~
+					~%JAHEIRA_BCS%.bcs~ ~override~
+					~%KIVAN_BCS%.bcs~ ~override~
+					~%TIAX_BCS%.bcs~ ~override~
+					~%XAN_BCS%.bcs~ ~override~
+					~xand.bcs~ ~override~
+			DECOMPILE_AND_PATCH BEGIN
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_BSRefKnows","LOCALS"~
+			END
+		BUT_ONLY
+	
+		// Load variables with BG1NPC dialogue states that need to be modified
+		OUTER_SET STATE_DYN_BMINSC = STATE_WHICH_SAYS 233 IN ~bg1npc\tra\english\x#dynah.tra~ FROM ~%DYNAHEIR_BANTER%~
+		OUTER_SET STATE_DYN_BXZAR = STATE_WHICH_SAYS 320 IN ~bg1npc\tra\english\x#dynah.tra~ FROM ~%DYNAHEIR_BANTER%~
+		OUTER_SET STATE_DYN_BXAN = STATE_WHICH_SAYS 1121 IN ~bg1npc\tra\english\x#xanlt.tra~ FROM ~%DYNAHEIR_BANTER%~
+		
+		// Compile dialogues
+		COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/bhaalspawn_ref.d~ USING ~%tra_loc%/%s/bhaalspawn_ref.tra~
+	END
 END
