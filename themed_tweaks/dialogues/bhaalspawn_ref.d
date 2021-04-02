@@ -4,6 +4,7 @@
 
 REPLACE_TRIGGER_TEXT %AJANTIS_JOINED% ~Global("P#KnowBhaal","GLOBAL",1)~ ~GlobalGT("P#KnowBhaal","GLOBAL",0)~
 REPLACE_TRIGGER_TEXT %CORAN_JOINED% ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_BSRefKnows","LOCALS"~
+REPLACE_TRIGGER_TEXT CYTHAN ~InParty("dynaheir")~ ~InParty("dynaheir") TriggerOverride("DYNAHEIR",Global("#L_BSRefKnows","LOCALS",1)) TriggerOverride("DYNAHEIR",Global("#L_BSRefSarvSib","LOCALS",1))~
 REPLACE_TRIGGER_TEXT %DYNAHEIR_BANTER% ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_BSRefKnows","LOCALS"~
 REPLACE_TRIGGER_TEXT %DYNAHEIR_JOINED% ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_BSRefKnows","LOCALS"~
 REPLACE_TRIGGER_TEXT %EDWIN_JOINED% ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_BSRefKnows","LOCALS"~
