@@ -10,13 +10,13 @@ REPLACE_TRIGGER_TEXT %EDWIN_JOINED% ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_
 REPLACE_TRIGGER_TEXT %ELDOTH_BANTER% ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_BSRefKnows","LOCALS"~
 REPLACE_TRIGGER_TEXT %SHARTEEL_BANTER% ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_BSRefKnows","LOCALS"~
 REPLACE_TRIGGER_TEXT %SHARTEEL_JOINED% ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_BSRefKnows","LOCALS"~
-REPLACE_TRIGGER_TEXT %XZAR_BANTER% ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_BSRefKnows","LOCALS"~
 REPLACE_TRIGGER_TEXT TETHTO2 ~Global("P#KnowBhaal","GLOBAL",1)~ ~GlobalGT("P#KnowBhaal","GLOBAL",0)~
 REPLACE_TRIGGER_TEXT X#AMELIA ~Global("P#KnowBhaal","GLOBAL",1)~ ~GlobalGT("P#KnowBhaal","GLOBAL",0)~
 REPLACE_TRIGGER_TEXT %XAN_JOINED% ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_BSRefKnows","LOCALS"~
+REPLACE_TRIGGER_TEXT %XZAR_BANTER% ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_BSRefKnows","LOCALS"~
 
-ADD_STATE_TRIGGER %DYNAHEIR_BANTER% %STATE_DYN_BXZAR% ~TriggerOverride("XZAR",Global("#L_BSRefKnows","LOCALS",1))~
-ADD_STATE_TRIGGER %DYNAHEIR_BANTER% %STATE_DYN_BXAN% ~TriggerOverride("XAN",Global("#L_BSRefKnows","LOCALS",1))~
+%DIALOG_DYN_BXAN%
+%DIALOG_DYN_BXZAR%
 
 REPLACE_ACTION_TEXT X#GORLET ~SetGlobal("P#KnowBhaal","GLOBAL",1)~ ~ActionOverride(Player1,SetGlobal("#L_BSRefKnows","LOCALS",1)) ActionOverride(Player2,SetGlobal("#L_BSRefKnows","LOCALS",1)) ActionOverride(Player3,SetGlobal("#L_BSRefKnows","LOCALS",1)) ActionOverride(Player4,SetGlobal("#L_BSRefKnows","LOCALS",1)) ActionOverride(Player5,SetGlobal("#L_BSRefKnows","LOCALS",1)) ActionOverride(Player6,SetGlobal("#L_BSRefKnows","LOCALS",1)) SetGlobal("P#KnowBhaal","GLOBAL",2)~
 
