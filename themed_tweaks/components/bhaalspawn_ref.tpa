@@ -4,13 +4,12 @@
 
 DEFINE_ACTION_FUNCTION bhaalspawn_ref BEGIN
 	// There are two times when group members as a whole may become aware of the PC heritage
-	// 1-when the note from Gorion is found
+	// 1-when the note from Gorion is found (BG1NPC reads it aloud for all to hear)
 	// 2-when the PC talks to Tamoko
 	
 	ACTION_IF (MOD_IS_INSTALLED ~bg1npc.tp2~ 0) OR (MOD_IS_INSTALLED ~Setup-AjantisBG1.tp2~ 0) BEGIN
-		// BG1NPC Fixes AND - when the note is found, a global is set
-		// so that no matter if the NPC was there or not, they automatically know
-		// I've changed that to a local
+		// When the note is found, a global is set so that no matter if the NPC was there or not, they automatically know
+		// I've changed that to a local so they have to be present to know
 		COPY_EXISTING ~%AJANTIS_BCS%.bcs~ ~override~
 					~%BRANWEN_BCS%.bcs~ ~override~
 					~%DYNAHEIR_BCS%.bcs~ ~override~
