@@ -12,22 +12,23 @@ DEFINE_ACTION_FUNCTION bhaalspawn_ref BEGIN
 		// so that no matter if the NPC was there or not, they automatically know
 		// I've changed that to a local
 		COPY_EXISTING ~%AJANTIS_BCS%.bcs~ ~override~
-					~AJANTD.bcs~ ~override~
 					~%BRANWEN_BCS%.bcs~ ~override~
-					~corand.bcs~ ~override~
 					~%DYNAHEIR_BCS%.bcs~ ~override~
 					~%JAHEIRA_BCS%.bcs~ ~override~
 					~%KIVAN_BCS%.bcs~ ~override~
 					~%TIAX_BCS%.bcs~ ~override~
+					~AJANTD.bcs~ ~override~
 					~%XAN_BCS%.bcs~ ~override~
+					~corand.bcs~ ~override~
 					~xand.bcs~ ~override~
 			DECOMPILE_AND_PATCH BEGIN
 				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_BSRefKnows","LOCALS"~
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Global("X#HalfBrotherRevealed","GLOBAL"~ ~Global("#L_BSRefSarvSib","LOCALS"~
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Global("X#AjTamokoKnowBhaal","GLOBAL",1)~ ~FALSE()~
 			END
 		BUT_ONLY
 	
 		// Load variables with BG1NPC dialogue states that need to be modified
-		OUTER_SET STATE_DYN_BMINSC = STATE_WHICH_SAYS 233 IN ~bg1npc\tra\english\x#dynah.tra~ FROM ~%DYNAHEIR_BANTER%~
 		OUTER_SET STATE_DYN_BXZAR = STATE_WHICH_SAYS 320 IN ~bg1npc\tra\english\x#dynah.tra~ FROM ~%DYNAHEIR_BANTER%~
 		OUTER_SET STATE_DYN_BXAN = STATE_WHICH_SAYS 1121 IN ~bg1npc\tra\english\x#xanlt.tra~ FROM ~%DYNAHEIR_BANTER%~
 		
