@@ -63,8 +63,18 @@ DEFINE_ACTION_FUNCTION bhaalspawn_ref BEGIN
 		ACTION_IF (STATE_DYN_BXZAR > ~-1~) BEGIN
 			OUTER_SPRINT DIALOG_DYN_BXZAR ~~~~~ADD_STATE_TRIGGER %DYNAHEIR_BANTER% %STATE_DYN_BXZAR% ~TriggerOverride("XZAR",Global("#L_BSRefKnows","LOCALS",1))~ ~~~~~
 		END
-		
-		// Compile dialogues
-		COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/bhaalspawn_ref.d~ USING ~%tra_loc%/%s/bhaalspawn_ref.tra~
+		OUTER_SPRINT DIAL_AMELIA ~~
+		ACTION_IF (FILE_EXISTS_IN_GAME ~X#AMELIA.DLG~) BEGIN
+			OUTER_SPRINT DIAL_AMELIA ~~~~~REPLACE_TRIGGER_TEXT X#AMELIA ~!Global("P#KnowBhaal","GLOBAL",1)~ ~TriggerOverride(Player1,Global("#L_BSRefKnows","LOCALS",0))~
+REPLACE_TRIGGER_TEXT X#AMELIA ~Global("P#KnowBhaal","GLOBAL",1)~ ~TriggerOverride(Player1,Global("#L_BSRefKnows","LOCALS",1))~
+ALTER_TRANS X#AMELIA BEGIN 2 END BEGIN 0 END BEGIN "ACTION" ~ActionOverride(Player1,SetGlobal("#L_BSRefKnows","LOCALS",1)) ActionOverride(Player2,SetGlobal("#L_BSRefKnows","LOCALS",1)) ActionOverride(Player3,SetGlobal("#L_BSRefKnows","LOCALS",1)) ActionOverride(Player4,SetGlobal("#L_BSRefKnows","LOCALS",1)) ActionOverride(Player5,SetGlobal("#L_BSRefKnows","LOCALS",1)) ActionOverride(Player6,SetGlobal("#L_BSRefKnows","LOCALS",1))~ END~~~~~
+		END
+		OUTER_SPRINT DIAL_GORLET ~~
+		ACTION_IF (FILE_EXISTS_IN_GAME ~X#GORLET~) BEGIN
+			OUTER_SPRINT DIAL_GORLET ~~~~~REPLACE_ACTION_TEXT X#GORLET ~SetGlobal("P#KnowBhaal","GLOBAL",1)~ ~ActionOverride(Player1,SetGlobal("#L_BSRefKnows","LOCALS",1)) ActionOverride(Player2,SetGlobal("#L_BSRefKnows","LOCALS",1)) ActionOverride(Player3,SetGlobal("#L_BSRefKnows","LOCALS",1)) ActionOverride(Player4,SetGlobal("#L_BSRefKnows","LOCALS",1)) ActionOverride(Player5,SetGlobal("#L_BSRefKnows","LOCALS",1)) ActionOverride(Player6,SetGlobal("#L_BSRefKnows","LOCALS",1))~ ~~~~~
+		END
 	END
+		
+	// Compile dialogues
+	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/bhaalspawn_ref.d~ USING ~%tra_loc%/%s/bhaalspawn_ref.tra~
 END
