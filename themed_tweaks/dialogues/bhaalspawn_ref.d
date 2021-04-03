@@ -12,8 +12,9 @@ REPLACE_TRIGGER_TEXT %EDWIN_JOINED% ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_
 REPLACE_TRIGGER_TEXT %ELDOTH_BANTER% ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_BSRefKnows","LOCALS"~
 REPLACE_TRIGGER_TEXT %SHARTEEL_BANTER% ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_BSRefKnows","LOCALS"~
 REPLACE_TRIGGER_TEXT %SHARTEEL_JOINED% ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_BSRefKnows","LOCALS"~
-REPLACE_TRIGGER_TEXT TETHTO2 ~Global("P#KnowBhaal","GLOBAL",1)~ ~TriggerOverride(Player1,Global("#L_BSRefKnows","LOCALS",1))~
-REPLACE_TRIGGER_TEXT TETHTO2 ~Global("P#KnowBhaal","GLOBAL",0)~ ~TriggerOverride(Player1,Global("#L_BSRefKnows","LOCALS",0))~
+REPLACE_TRIGGER_TEXT TETHTO2 ~Global("P#KnowBhaal","GLOBAL",1)~ ~NextTriggerObject(Player1) Global("#L_BSRefKnows","LOCALS",1)~
+REPLACE_TRIGGER_TEXT TETHTO2 ~Global("P#KnowBhaal","GLOBAL",0)~ ~NextTriggerObject(Player1) Global("#L_BSRefKnows","LOCALS",0)~
+REPLACE_ACTION_TEXT TETHTO2 ~SetGlobal("P#KnowBhaal","GLOBAL",1)~ ~~
 REPLACE_TRIGGER_TEXT %XAN_JOINED% ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_BSRefKnows","LOCALS"~
 REPLACE_TRIGGER_TEXT %XZAR_BANTER% ~Global("P#KnowBhaal","GLOBAL"~ ~Global("#L_BSRefKnows","LOCALS"~
 
