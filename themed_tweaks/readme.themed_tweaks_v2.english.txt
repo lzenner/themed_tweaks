@@ -113,7 +113,8 @@ CREDITS
 * Bubb and CamDawg - LOVE YOU FOREVER!!!  I mean it.  Forevah!
 * jastey: for everything you've done and continue to do. :)
 * igi: for permission to use the refreshment potion from his iiItems mod as the basis of Irenicus's revitalization potion
-* igi: for permission to use the broken bottle
+* igi: for permission to use the broken bottle from his IIitems mod
+* BG1NPC Project: for permission to use their method of reading Gorion's letter (X#GorLet.CRE,DLG,BCS)
 * The folks at The Gibberlings Three forums: for never failing to answer my many many questions
 
 ------------------------------------------------------------------------

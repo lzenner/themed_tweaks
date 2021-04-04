@@ -1,0 +1,24 @@
+/////////////////////////////////////////////////////////////
+// Gorion's letter self-reading creature's override script //
+/////////////////////////////////////////////////////////////
+
+IF
+	Global("X#GorionTalkingLetter","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("X#GorionTalkingLetter","GLOBAL",3)
+END
+
+IF
+	Global("X#GorionTalkingLetter","GLOBAL",3)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(Player1)
+END
+
+IF
+	Global("X#GorionTalkingLetter","GLOBAL",4)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
