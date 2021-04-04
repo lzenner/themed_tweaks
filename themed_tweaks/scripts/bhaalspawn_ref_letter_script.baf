@@ -20,5 +20,6 @@ IF
 	Global("X#GorionTalkingLetter","GLOBAL",4)
 THEN
 	RESPONSE #100
+		SetGlobal("#L_BSRefLetter","GLOBAL",3)
 		DestroySelf()
 END
