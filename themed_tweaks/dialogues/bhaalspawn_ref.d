@@ -68,4 +68,3 @@ BEGIN ~X#GORLET~
 
 	%DIALOG_JAH_LETTER%
 // End of new X#GORLET dialogue file
-

@@ -20,6 +20,6 @@ IF
 	Global("X#GorionTalkingLetter","GLOBAL",4)
 THEN
 	RESPONSE #100
-		SetGlobal("#L_BSRefLetter","GLOBAL",3)
+		SetGlobal("#L_BSRefLetter","GLOBAL",3)	// Contols a dialogue for Jaheira
 		DestroySelf()
 END

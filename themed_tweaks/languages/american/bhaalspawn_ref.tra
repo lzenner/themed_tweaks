@@ -2,6 +2,7 @@
 // Dialogues needed for limiting access to the fact that the PC is a bhaalspawn //
 //////////////////////////////////////////////////////////////////////////////////
 
+// Dialogue for the new CRE that acts as an auto-reading of the note from Gorion
 @2000	= ~*You read a note found among Gorion's belongings that is addressed to you*~
 @2001	= ~*You read a note that was among your possessions given to you by Tethtoril*~
 @2002	= ~*Read the note silently to yourself*~
@@ -10,5 +11,30 @@
 If you are reading this, it means I have met an untimely death. I would tell you not to grieve for me, but I feel much better thinking that you would. There are things I must tell you in this letter that I might have told you before. However, if my death came too soon then I would have never been given the chance. First off, I am not your biological father, for that distinction lies with an entity known as Bhaal. The Bhaal that I speak of is the one you know of as a divinity. In the crisis known as the Time of Troubles, when the Gods walked Faerun, Bhaal was also forced into a mortal shell. He was somehow forewarned of the death that awaited him during this time. For reasons unknown to me, he sought out women of every race and forced himself upon them. Your mother was one of those women, and as you know, she died in childbirth. I had been her friend and on occasion, lover. I felt obligated to raise you as my own. I have always thought of you as my child and I hope you still think of me as your father. You are a special child. The blood of the Gods runs through your veins. If you make use of our extensive library you will find that our founder, Alaundo, has many prophecies concerning the coming of the spawn of Bhaal. There are many who will want to use you for their own purposes. One, a man who calls himself Sarevok, is the worst danger. He has studied here at Candlekeep and thus knows a great deal about your history and who you are. 
 
 Gorion~
+
+// Reactions to the reading (aloud) if Jaheira is present - triggers Jaheira to start a dialogue with the protagonist
 @2005	= ~Jaheira, did you not know about this?~
 @2006	= ~You... you knew, didn't you? You knew about this and would not speak! You... you betrayer!~
+
+// New dialoge with Ajantis - if he doesn't know about PC being a bhaalspawn
+// Only for when romance is active
+@2020	= ~My lady, you appear to have a heavy weight on your mind.  Would you care to share it with me?~
+@2021	= ~My love, you appear to have a heavy weight on your mind.  Would you care to share it with me?~
+@2022	= ~It is very personal, Ajantis, and not something I care to discuss.~
+@2023	= ~As you wish, of course, my lady.~
+@2024	= ~As you wish, of course, my love.~
+@2025	= ~I should probably tell you.  You deserve to know.  I recently found out that I am a child of Bhaal.~
+@2030	= ~Lady <CHARNAME>, if I may have a moment of your time.~
+@2031	= ~My love, if I may have a moment of your time.~
+@2032	= ~Not now, Ajantis.~
+@2033	= ~It cannot wait, my lady.  Please, we must talk.~
+@2034	= ~It cannot wait, my love.  Please, we must talk.~
+@2035	= ~Fine, what is it?~
+@2036	= ~Of course, Ajantis.  What is it?~
+@2037	= ~The weight you carry on your mind has not lessened and I fear it will affect our ... mission. Please share it with me.~
+@2038	= ~I'm sorry Ajantis, I'm not eager to talk about it.~
+@2039	= ~I'm afraid I must insist, my lady.~
+@2040	= ~I'm afraid I must insist, my love.~
+@2041	= ~You're right.  It will affect our mission.  It affects everything.  There's no easy way to say this, but you deserve to know.  I recently found out that I am a child of Bhaal.~
+@2050	= ~You... you are an offspring of *Bhaal*, the God of Murder?!  How long would you have kept this from me?!~
+@2051	= ~And you wonder why I hesitated to tell you?!  It's my business, Ajantis.  Why is this even of interest to you?~

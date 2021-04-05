@@ -1,0 +1,96 @@
+////////////////////////////////////////////
+// Additions to Ajantis's override script //
+// Prompts him to ask PC about heritage   //
+// Before the romance proceeds            //
+////////////////////////////////////////////
+
+IF
+	Global("#L_BSRefKnows","LOCALS",1)
+	Global("#L_BSRefAjantisKnows","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_BSRefAjantisKnows","GLOBAL",1) // For use when it's not possible to check his locals
+END
+
+IF
+	GlobalLT("ENDOFBG1","GLOBAL",2)
+	Global("#L_BSRefKnows","LOCALS",0)
+	TriggerOverride(Player1,Global("#L_BSRefKnows","LOCALS",1))
+	GlobalGT("X#AjantisLoveTalk","GLOBAL",20)
+	OR(2)
+		Global("X#AjantisRomanceActive","GLOBAL",1)
+		Global("X#AjantisRomanceActive","GLOBAL",2)
+	Global("#L_BSRefTalk","LOCALS",0)
+	RealGlobalTimerExpired("X#AjantisRomance","GLOBAL")
+	OR(3)
+		!IsValidForPartyDialogue(Player1)
+		!IsValidForPartyDialogue(Myself)
+		!ActionListEmpty()
+THEN
+	RESPONSE #100
+		RealSetGlobalTimer("X#AjantisRomance","GLOBAL",ONE_MINUTE)
+END
+
+IF
+	GlobalLT("ENDOFBG1","GLOBAL",2)
+	Global("#L_BSRefKnows","LOCALS",0)
+	TriggerOverride(Player1,Global("#L_BSRefKnows","LOCALS",1))
+	GlobalGT("X#AjantisLoveTalk","GLOBAL",28)
+	OR(2)
+		Global("X#AjantisRomanceActive","GLOBAL",1)
+		Global("X#AjantisRomanceActive","GLOBAL",2)
+	OR(2)
+		Global("#L_BSRefTalk","LOCALS",0)
+		Global("#L_BSRefTalk","LOCALS",2)		
+	RealGlobalTimerExpired("X#AjantisRomance","GLOBAL")
+	OR(3)
+		!IsValidForPartyDialogue(Player1)
+		!IsValidForPartyDialogue(Myself)
+		!ActionListEmpty()
+THEN
+	RESPONSE #100
+		RealSetGlobalTimer("X#AjantisRomance","GLOBAL",ONE_MINUTE)
+END
+
+IF
+	GlobalLT("ENDOFBG1","GLOBAL",2)
+	Global("#L_BSRefKnows","LOCALS",0)
+	TriggerOverride(Player1,Global("#L_BSRefKnows","LOCALS",1))
+	GlobalGT("X#AjantisLoveTalk","GLOBAL",20)
+	OR(2)
+		Global("X#AjantisRomanceActive","GLOBAL",1)
+		Global("X#AjantisRomanceActive","GLOBAL",2)
+	Global("#L_BSRefTalk","LOCALS",0)
+	RealGlobalTimerExpired("X#AjantisRomance","GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobal("#L_BSRefTalk","LOCALS",1)
+END
+
+IF
+	GlobalLT("ENDOFBG1","GLOBAL",2)
+	Global("#L_BSRefKnows","LOCALS",0)
+	TriggerOverride(Player1,Global("#L_BSRefKnows","LOCALS",1))
+	GlobalGT("X#AjantisLoveTalk","GLOBAL",28)
+	OR(2)
+		Global("X#AjantisRomanceActive","GLOBAL",1)
+		Global("X#AjantisRomanceActive","GLOBAL",2)
+	Global("#L_BSRefTalk","LOCALS",2)
+	RealGlobalTimerExpired("X#AjantisRomance","GLOBAL")
+THEN
+	RESPONSE #100
+		SetGlobal("#L_BSRefTalk","LOCALS",3)
+END
+
+IF
+	GlobalLT("ENDOFBG1","GLOBAL",2)
+	Global("#L_BSRefKnows","LOCALS",0)
+	TriggerOverride(Player1,Global("#L_BSRefKnows","LOCALS",1))
+	OR(2)
+		Global("#L_BSRefTalk","LOCALS",1)
+		Global("#L_BSRefTalk","LOCALS",3)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+
