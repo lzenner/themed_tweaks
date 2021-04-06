@@ -3,5 +3,5 @@
 //////////////////////////////////////////////////////
 
 DEFINE_ACTION_FUNCTION bg2_restore_power BEGIN
-	EXTEND_TOP ~CUT59B.BCS~ ~%mod_root%/scripts/bg2_power_up.baf~
+	EXTEND_TOP ~CUT59B.BCS~ ~%mod_root%/scripts/bg2_restore_power.baf~
 END

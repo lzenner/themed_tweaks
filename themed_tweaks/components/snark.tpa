@@ -16,6 +16,7 @@ DEFINE_ACTION_FUNCTION snark BEGIN
 		// Transitions needed to have room discussion to make sure the PC has a room
 		// Snark will have to add to that dialogue
 		// Put code into variables first as if Transitions isn't loaded
+		OUTER_SPRINT GOTO_BELT_INSISTS_BLOCK ~~~~~IF ~~ THEN EXTERN ~BDBELT~ BELT_INSIST~~~~~
 		OUTER_SPRINT GOTO_LIIA_WONT_DISTURB_IMOEN ~~~~~++ @8013 EXTERN ~BDLIIA~ LIIA_IMOEN_ROOM_OK~~~~~
 		OUTER_SPRINT LIIA_WONT_DISTURB_IMOEN ~~~~~APPEND BDLIIA
 	IF ~~ THEN LIIA_IMOEN_ROOM_OK
@@ -23,7 +24,6 @@ DEFINE_ACTION_FUNCTION snark BEGIN
 		%GOTO_BELT_INSISTS_BLOCK%
 	END
 END~~~~~
-		OUTER_SPRINT GOTO_BELT_INSISTS_BLOCK ~~~~~IF ~~ THEN EXTERN ~BDBELT~ BELT_INSIST~~~~~
 		OUTER_SPRINT BELT_INSISTS_BLOCK ~~~~~IF ~~ THEN BELT_INSIST
 	SAY @8015 
 	++ @8016 + BELT_NO_SNARK
