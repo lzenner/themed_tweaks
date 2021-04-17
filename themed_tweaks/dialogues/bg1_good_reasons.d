@@ -14,7 +14,7 @@ END
 APPEND JOIA
 	IF ~~ THEN BEGIN JOIA_GIVE_BOOK
 		SAY @2004 // ~I have this old book you can have.  It's all I have to give you in thanks.~
-		IF ~~ THEN DO ~AddexperienceParty(400) ReputationInc(1) TakePartyItem("RINGJOIA") GiveItemCreate("TITOME01",Player1,0,0,0) EraseJournalEntry(227188) EscapeArea()~ SOLVED_JOURNAL #227189 EXIT
+		IF ~~ THEN DO ~AddexperienceParty(400) ReputationInc(1) TakePartyItem("RINGJOIA") GiveItemCreate("TITOME01",Player1,0,0,0) EraseJournalEntry(227188) EscapeArea()~ SOLVED_JOURNAL #%JOURNAL_JOIA% EXIT
 	END
 END
 
