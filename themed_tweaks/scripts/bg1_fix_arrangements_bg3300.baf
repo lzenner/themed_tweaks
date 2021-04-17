@@ -3,10 +3,10 @@
 ////////////////////////////
 
 IF
-	Global("RedWizards","BG3300",1)  // Beregost
+	Global("RedWizards","MYAREA",1)  // Beregost
 THEN
 	RESPONSE #100
-		SetGlobal("RedWizardS","BG3300",2)  // Beregost
+		SetGlobal("RedWizardS","MYAREA",2)  // Beregost
 		ClearAllActions()
 		MoveViewObject("NEERA",BD_SLOW)  // Neera
 		GiveItemCreate("minhp1","NEERA",0,0,0)  // No such index
