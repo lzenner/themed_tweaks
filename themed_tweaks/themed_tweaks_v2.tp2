@@ -101,6 +101,15 @@ BEGIN @25
 	INCLUDE ~themed_tweaks/components/unique_items.tpa~
  	LAF unique_items END
 
+///////////////////////////////////////////
+// ALLOW RASAAD'S QUEST BEFORE CHAPTER 5 //
+///////////////////////////////////////////
+BEGIN @27
+	DESIGNATED 27
+	LABEL "#L-BG1-RASAADS_QUEST"
+	INCLUDE ~themed_tweaks/components/bg1_rasaad.tpa~
+	LAF bg1_rasaad END
+
 ///////////////////////////////////////////////
 // CAELAR ARGENTS ATTEMPTS TO RECRUIT THE PC //
 ///////////////////////////////////////////////
