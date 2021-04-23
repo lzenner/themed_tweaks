@@ -36,6 +36,12 @@ Items that are made unique by a specific history are kept unique.  For example, 
 PROGRESS: BG1 in development, SoD and BG2 yet to do
 
 ------------------------------------------------------------------------
+BGEE - Allow Rasaad's companion quest to be completed before chapter 5
+------------------------------------------------------------------------
+The encounter that is necessary to begin Rasaad's companion quest will happen at FAI, Beregost, or Nashkel if the quest timer expires before chapter 5. If it expires in chapter 5, the quest will progress as usual.
+PROGRESS: in development
+
+------------------------------------------------------------------------
 BGEE - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending
 ------------------------------------------------------------------------
 PROGRESS: Post-Nashkel encounter finished, post ToSC yet to do
@@ -100,7 +106,7 @@ Linux
 Extract the contents of the mod to the folder of the game you wish to modify. Download the latest version of WeiDU for Linux from https://github.com/WeiDUorg/weidu/releases and copy WeiDU and WeInstall to /usr/bin. Following that, open a terminal and cd to your EET installation directory, run 'tolower' and answer Y to both queries. You can avoid running the second option (linux.ini) if you've already run it once in the same directory. If you're unsure, running tolower and choosing both options is the safest bet.
 Run WeInstall themed_tweaks in your game folder to install the mod. Then run wine BGMain.exe and start playing. 
 
-If you have installation problems or encounter any bugs, please post your bug report in the forum thread: https://www.gibberlings3.net/forums/topic/?????/.
+If you have installation problems or encounter any bugs, please post your bug report in the forum thread: https://www.gibberlings3.net/forums/topic/32346-themed-tweaks-for-bgee-sod-bg2ee-tob-eet.
 
 ------------------------------------------------------------------------
 CREDITS
