@@ -7,6 +7,8 @@ DEFINE_ACTION_FUNCTION bg1_caelar BEGIN
 	// Make sure her CRE exists
 	ACTION_IF (NOT GAME_INCLUDES ~sod~) BEGIN
 		COPY ~%mod_root%/objects/BDCAELAR.CRE~ ~override~
+			SAY NAME1 @1016
+			SAY NAME2 @1016
 		COPY ~%mod_root%/objects/CAELARL.BMP~ ~override~
 		COPY ~%mod_root%/objects/CAELARM.BMP~ ~override~
 		COPY ~%mod_root%/objects/BD68312.WAV~ ~override~
