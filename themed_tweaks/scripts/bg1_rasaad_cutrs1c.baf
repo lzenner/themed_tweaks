@@ -1,0 +1,28 @@
+/////////////////////////////////////////////////////
+// Sorrem unlocks the door and enters the building //
+/////////////////////////////////////////////////////
+
+IF
+	Global("#L_DarkMoonBeregost","GLOBAL",0)
+THEN
+	RESPONSE #100
+		CutSceneId("RSSORREM")  // Sorrem
+		MoveToPoint([2277.1827])
+		SmallWait(15)
+		Unlock("DOOR1101")
+		OpenDoor("DOOR1101")
+		EndCutSceneMode()
+		EscapeAreaMove("%SWBaldursGate_WivensHouse_L1%",448,455,SEE)
+END
+
+IF
+	Global("#L_DarkMoonBeregost","GLOBAL",1)
+THEN
+	RESPONSE #100
+		CutSceneId("RSSORREM")  // Sorrem
+		TriggerActivation("Door#LBG1101",TRUE)
+		SmallWait(15)
+		EndCutSceneMode()
+		EscapeAreaMove("#LBG1101",448,455,SEE)
+END
+

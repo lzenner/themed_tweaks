@@ -1,0 +1,82 @@
+//////////////////////////////////////////////
+// Kick off Rasaad's quest before Chapter 5 //
+//////////////////////////////////////////////
+
+IF
+	GlobalTimerExpired("DARK_MOON_AMBUSH","LOCALS")
+	GlobalLT("Chapter","GLOBAL",5)
+	Global("RASAAD_PLOT","GLOBAL",1)
+	IsValidForPartyDialogue(Myself)
+	AreaCheck("%Beregost%")
+THEN
+	RESPONSE #100
+		FadeToColor([10.0],0)
+		SetGlobal("RASAAD_PLOT","GLOBAL",2)
+		SmallWait(10)
+		DayNight(MIDNIGHT)
+		Weather(RAIN)
+		Continue()
+END
+
+IF
+	GlobalTimerExpired("DARK_MOON_AMBUSH","LOCALS")
+	GlobalLT("Chapter","GLOBAL",5)
+	Global("DARK_MOON_AMBUSH_START","LOCALS",0)
+	Global("RASAAD_PLOT","GLOBAL",2)
+	IsValidForPartyDialogue(Myself)
+	AreaCheck("%Beregost%")
+THEN
+	RESPONSE #100
+		SetGlobal("DARK_MOON_AMBUSH_START","LOCALS",1)
+		SetGlobal("#L_DarkMoonBeregost","GLOBAL",1)
+		CreateCreature("RSDMNK01",[230.2200],S)  // Dark Moon Monk
+		CreateCreature("RSDMNK02",[100.2200],S)  // Dark Moon Monk
+		CreateCreature("RSDMNK03",[350.2200],S)  // Dark Moon Monk
+		ClearAllActions()
+		ActionOverride(Player1,JumpToPoint([230.2350]))
+		ActionOverride(Player2,JumpToPoint([170.2420]))
+		ActionOverride(Player3,JumpToPoint([290.2420]))
+		ActionOverride(Player4,JumpToPoint([110.2490]))
+		ActionOverride(Player5,JumpToPoint([230.2490]))
+		ActionOverride(Player6,JumpToPoint([350.2490]))
+		MoveViewObject(Player1,INSTANT)
+		ActionOverride(Player1,Face(N))
+		ActionOverride(Player2,Face(N))
+		ActionOverride(Player3,Face(N))
+		ActionOverride(Player4,Face(N))
+		ActionOverride(Player5,Face(N))
+		ActionOverride(Player6,Face(N))
+		FadeFromColor([20.0],0)
+		ActionOverride("RSDMNK01",StartDialogNoSetInterrupt(Player1))
+END
+
+IF
+	IfValidForPartyDialog(Myself)
+	Global("#L_DarkMoonBeregost","GLOBAL",1)
+	Dead("RSSORREM")  // Sorrem
+	Global("ATTACKED_SORREM","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ATTACKED_SORREM","GLOBAL",2)
+		SetGlobal("RS_NOTE2","LOCALS",1)
+		AddJournalEntry(@3002,QUEST)
+		Wait(2)
+		RealSetGlobalTimer("RSNOTE2","LOCALS",TEN_ROUNDS)
+		StartDialogNoSet(Player1)
+END
+
+IF
+	!Global("HAS_NOTE","LOCALS",1)
+	Global("#L_DarkMoonBeregost","GLOBAL",1)
+	PartyHasItem("RSNOTE2")  // Sorrem's Note
+THEN
+	RESPONSE #100
+		RevealAreaOnMap("OH3000")  // Rasaad - Dark Moon temple, exterior
+		AddJournalEntry(@3000,QUEST)
+		SetGlobal("RASAAD_PLOT","GLOBAL",5)
+		SetGlobal("RS_NOTE2","LOCALS",1)
+		RealSetGlobalTimer("RSNOTE2","LOCALS",FOUR_MINUTES)
+		SetGlobal("HAS_NOTE","LOCALS",1)
+END
+
+

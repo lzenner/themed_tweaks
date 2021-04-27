@@ -1,0 +1,39 @@
+///////////////////////////////////
+// Spawn Sorrem before Chapter 5 //
+///////////////////////////////////
+
+IF
+	OnCreation()
+	Global("SORREM_SPAWN","MYAREA",1)
+	IsActive("RSSORREM")  // Sorrem
+	OR(2)
+		!IfValidForPartyDialog("RASAAD")  // Rasaad
+		Dead("RASAAD")  // Rasaad
+THEN
+	RESPONSE #100
+		Deactivate("RSSORREM")  // Sorrem
+		Continue()
+END
+
+IF
+	OnCreation()
+	Global("SORREM_SPAWN","MYAREA",1)
+	!IsActive("RSSORREM")  // Sorrem
+	IfValidForPartyDialog("RASAAD")  // Rasaad
+	!Dead("RASAAD")  // Rasaad
+THEN
+	RESPONSE #100
+		Activate("RSSORREM")  // Sorrem
+		Continue()
+END
+
+IF
+	Global("RASAAD_PLOT","GLOBAL",3)
+	Global("SORREM_SPAWN","MYAREA",0)
+	IfValidForPartyDialog("RASAAD")  // Rasaad
+	!Dead("RASAAD")  // Rasaad
+THEN
+	RESPONSE #100
+		CreateCreature("RSSORREM",[115.265],NNE)  // Sorrem
+		SetGlobal("SORREM_SPAWN","MYAREA",1)
+END

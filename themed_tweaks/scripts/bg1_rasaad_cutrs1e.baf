@@ -1,0 +1,26 @@
+/////////////////////////////////////////////////////
+// Transfer everyone outside of dark moon building //
+/////////////////////////////////////////////////////
+
+IF
+	Global("#L_DarkMoonBeregost","GLOBAL",1)
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		FadeToColor([20.0],0)
+		Wait(1)
+		ActionOverride("RSSORREM",MoveBetweenAreas("%Beregost%",[3885.2863],N))  // SW Baldur's Gate
+		LeaveAreaLUA("%Beregost%","",[3900.2805],S)  // SW Baldur's Gate
+		ActionOverride(Player2,LeaveAreaLUA("%Beregost%","",[3865.2755],S))  // SW Baldur's Gate
+		ActionOverride(Player3,LeaveAreaLUA("%Beregost%","",[3960.2765],S))  // SW Baldur's Gate
+		ActionOverride(Player4,LeaveAreaLUA("%Beregost%","",[3859.2690],S))  // SW Baldur's Gate
+		ActionOverride(Player5,LeaveAreaLUA("%Beregost%","",[3945.2700],S))  // SW Baldur's Gate
+		ActionOverride(Player6,LeaveAreaLUA("%Beregost%","",[4060.2745],S))  // SW Baldur's Gate
+		DayNight(MIDNIGHT)
+		Wait(1)
+		FadeFromColor([20.0],0)
+		SmallWait(20)
+		EndCutSceneMode()
+		ActionOverride("RSSORREM",StartDialogNoSetInterrupt(Player1))
+END
+

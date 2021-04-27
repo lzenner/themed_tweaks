@@ -1,0 +1,18 @@
+/////////////////////////////////////////////////
+// Sets a journal entry with different wording //
+/////////////////////////////////////////////////
+
+IF
+	!IfValidForPartyDialog("Rasaad")  // Rasaad
+	Global("#L_DarkMoonBeregost","GLOBAL",1)
+	!Global("HAS_NOTE","MYAREA",1)  // SW Baldur's Gate: Wiven's House L2
+	OR(2)
+		PartyHasItem("RSNOTE2")  // Sorrem's Note
+		PartyHasItem("RSNOTE3")  // The Promise
+THEN
+	RESPONSE #100
+		RevealAreaOnMap("OH3000")  // Cloud Peaks
+		AddJournalEntry(@3000,QUEST)
+		SetGlobal("RASAAD_PLOT","GLOBAL",5)
+		SetGlobal("HAS_NOTE","MYAREA",1)  // SW Baldur's Gate: Wiven's House L2
+END

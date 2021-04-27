@@ -3,4 +3,100 @@
 ////////////////////////////////////////////////////////////////
 
 DEFINE_ACTION_FUNCTION bg1_rasaad BEGIN
+	COPY_EXISTING ~%SWBaldursGate_WivensHouse_L1%.are~ ~override/#LBG1101.are~
+		WRITE_ASCII (AREA_SCRIPT) ~#LBG1101~
+		LPF REMOVE_ACTOR STR_VAR actor_name = ~Wiven~ END
+		LPF CHANGE_REGION_NAME STR_VAR old_name = ~Door1100~ new_name = ~Door3300~ END
+		LPF CHANGE_ENTRANCE_NAME STR_VAR old_name = ~Exit1100~ new_name = ~Exit3300~ END
+		LPF ALTER_AREA_REGION STR_VAR region_name = ~Door1102~ destination_area = ~#LBG1102~ END
+		LPF ALTER_AREA_REGION STR_VAR region_name = ~Door3300~ destination_area = EVAL ~%Beregost%~ entrance_name = ~from#LBG1101~ END
+	COPY_EXISTING ~%SWBaldursGate_WivensHouse_L2%.are~ ~override/#LBG1102.are~
+		LPF ALTER_AREA_REGION STR_VAR region_name = ~Door1101~ destination_area = ~#LBG1101~ END
+	
+	COPY_EXISTING ~%Beregost%.ARE~ ~override~
+		LPF ADD_AREA_REGION_TRIGGER
+			INT_VAR
+				ab_RT_Type = 2
+				ab_RT_Fbit = 256 
+				ab_RT_BbLX = 3740
+				ab_RT_BbLY = 2920
+				ab_RT_BbHX = 3905
+				ab_RT_BbHY = 3030
+				ab_RT_VxPr = 4
+				ab_RT_Vx_X_0 = 3760
+				ab_RT_Vx_Y_0 = 2920
+				ab_RT_Vx_X_1 = 3905
+				ab_RT_Vx_Y_1 = 2955
+				ab_RT_Vx_X_2 = 3890
+				ab_RT_Vx_Y_2 = 3030
+				ab_RT_Vx_X_3 = 3740
+				ab_RT_Vx_Y_3 = 2980
+				ab_RT_CuId = 30
+			STR_VAR
+				ab_RT_Name = "Door#LBG1101"
+				ab_RT_Dest = "#LBG1101"
+				ab_RT_EntN = "Exit3300"
+		END
+		LPF fj_are_structure
+			INT_VAR
+				fj_loc_x = 3930
+				fj_loc_y = 2765
+				fj_orientation = 8
+			STR_VAR
+				fj_structure_type = "entrance"
+				fj_name = "from#LBG1101"
+		END
+	
+	ADD_JOURNAL @3000 @3001 USING ~%tra_loc%/%s/bg1_rasaad.tra~
+	
+	COPY_EXISTING ~%RASAAD_BCS%.bcs~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Global("ATTACKED_SORREM","GLOBAL",1)~ ~Global("ATTACKED_SORREM","GLOBAL",1) Global("#L_DarkMoonBeregost","GLOBAL",0)~
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~PartyHasItem("RSNOTE2")~ ~PartyHasItem("RSNOTE2") Global("#L_DarkMoonBeregost","GLOBAL",0)~
+		END
+	EXTEND_TOP ~%RASAAD_BCS%.bcs~ ~%mod_root%/scripts/bg1_rasaad.baf~ EVAL USING ~%tra_loc%/%s/bg1_rasaad.tra~	
+	COPY_EXISTING ~CUTRS1E.BCS~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~True()~ ~Global("#L_DarkMoonBeregost","GLOBAL",0)~
+		END
+	EXTEND_TOP ~CUTRS1E.BCS~ ~%mod_root%/scripts/bg1_rasaad_cutrs1e.baf~ EVAL
+	LAF UPDATE_BCS
+		INT_VAR
+			action_taken = 1		// 0 = APPEND_FILE TEXT, 1 = EXTEND_TOP, 2 = EXTEND_BOTTOM
+		STR_VAR
+			baf_location = EVAL "%mod_root%/scripts/"		// like ~mymod/bafs/~
+		baf_name = "bg1_rasaad_wizard"			// like my_new_BG0146
+		bcs_name = EVAL "%Beregost_BurningWizard_L2%"			// like BG0146
+	END
+	LAF REPLACE_SCRIPT_BLOCK
+		INT_VAR 
+			only_once = 1
+			replace = 1
+		STR_VAR 
+			script = "CUTRS1C"
+			match = "CutSceneId("RSSORREM")"
+			insert = EVAL "%mod_root%/scripts/bg1_rasaad_cutrs1c.baf"
+	END
+	COMPILE EVALUATE_BUFFER ~%mod_root%/scripts/#LBG1101.baf~
+	COPY_EXISTING ~%SWBaldursGate_WivensHouse_L2%.BCS~ ~override~
+		DECOMPILE_AND_PATCH BEGIN
+			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~!IsValidForPartyDialogue("Rasaad")~ ~!IsValidForPartyDialogue("Rasaad") Global("#L_DarkMoonBeregost","GLOBAL",0)~
+		END
+	EXTEND_TOP ~%SWBaldursGate_WivensHouse_L2%.BCS~ ~%mod_root%/scripts/bg1_rasaad_bg1102.baf~ EVAL USING ~%tra_loc%/%s/bg1_rasaad.tra~	
+	
+	OUTER_SET REPLY_LETS_GO = 28687
+	OUTER_SET REPLY_LETS_NOT = 28688
+	OUTER_SET REPLY_WHAT_KNOW = 20068
+	OUTER_SET REPLY_WHY_NOT_NOW = 28999 
+	OUTER_SET REPLY_AT_NIGHT = 29000
+	OUTER_SET REPLY_SIMPLER = 29001
+	ACTION_IF GAME_IS ~eet~ BEGIN
+		OUTER_SET REPLY_LETS_GO = 228687
+		OUTER_SET REPLY_LETS_NOT = 228688
+		OUTER_SET REPLY_WHAT_KNOW = 220068
+		OUTER_SET REPLY_WHY_NOT_NOW = 228999 
+		OUTER_SET REPLY_AT_NIGHT = 229000
+		OUTER_SET REPLY_SIMPLER = 229001
+	END
+	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/bg1_rasaad.d~ USING ~%tra_loc%/%s/bg1_rasaad.tra~	
 END

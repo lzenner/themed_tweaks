@@ -1,0 +1,18 @@
+////////////////////////////////////////////////
+// Changes so Sorrem can be found in Beregost //
+////////////////////////////////////////////////
+
+@2000	= ~When I spent some time in Beregost, a man named Sorrem used to come to my demonstrations of martial skill. I sometimes saw him returning to the Burning Wizard.~
+
+// Replacemet lines for Sorrem to make them more generic
+@2001	= ~There is a cult that calls itself the Dark Moon. They've been in the area for less than a year, but they're always looking for new recruits.~
+@2002	= ~They're pretty rough characters, so yeah, when they asked me about your buddy Rasaad, I told them what I knew. A while back, I saw him in Nashkel, and then I spotted him again here in town.~
+@2003	= ~They have a safe house not far from here. I can show you the way if you meet me there tonight.~
+
+// Journal Entries
+@3000	= ~The Enemies of My Friend
+The Dark Moon monks in Beregost receive orders from someone stationed in the Cloud Peak mountains south of the Nashkel mines. This person wanted them to kill Rasaad and deliver his body to a new temple there. He must have intended it as some sort of message for whoever's in charge.~
+@3001	= ~The Enemies of My Friend
+I tracked Sorrem down at the Burning Wizard in Beregost. He's an untrustworthy little fink, but he turned on the Dark Moon cult once I applied a little pressure. Sorrem says I can find them in a near-by building after dark.~
+@3002	= ~The Enemies of My Friend
+I tracked Sorrem down at the Burning Wizard in Beregost. Things came to a head and I was forced to put him down. In his death, he revealed that the Dark Moon cult has taken up residence in the Cloud Peak Mountains.~

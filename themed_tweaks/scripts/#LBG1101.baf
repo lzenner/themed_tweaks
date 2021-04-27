@@ -1,0 +1,36 @@
+/////////////////////////////////////////////////////
+// New room script for 7 Suns replacement building //
+// that leaves out all mention of Wiven            //
+/////////////////////////////////////////////////////
+
+IF
+	Global("SORREM_SEVEN_SUNS","GLOBAL",4)
+THEN
+	RESPONSE #100
+		SetGlobal("SORREM_SEVEN_SUNS","GLOBAL",5)
+		CreateCreature("RSDMNK04",[437.471],SEE)  // Dark Moon Lieutenant
+		CreateCreature("RSDMNKA",[661.272],SSW)  // Dark Moon Monk
+		CreateCreature("RSDMNKB",[928.386],SSW)  // Dark Moon Monk
+		CreateCreature("RSDMNKC",[311.658],NNE)  // Dark Moon Monk
+		CreateCreature("RSDMNKD",[575.805],NNE)  // Dark Moon Monk
+		StartCutSceneMode()
+		Wait(3)
+		EndCutSceneMode()
+		Continue()
+END
+
+IF
+	Dead("RSSORREM")  // Sorrem
+	Global("SORREM_SEVEN_SUNS","GLOBAL",5)
+THEN
+	RESPONSE #100
+		ActionOverride("RSDMNK04",StartDialogNoSetInterrupt(Player1))
+END
+
+IF
+	Global("SORREM_SEVEN_SUNS","GLOBAL",5)
+THEN
+	RESPONSE #100
+		ActionOverride("RSSORREM",StartDialogNoSetInterrupt(Player1))
+END
+

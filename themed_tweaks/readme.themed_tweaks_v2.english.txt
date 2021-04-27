@@ -38,7 +38,7 @@ PROGRESS: BG1 in development, SoD and BG2 yet to do
 ------------------------------------------------------------------------
 BGEE - Allow Rasaad's companion quest to be completed before chapter 5
 ------------------------------------------------------------------------
-The encounter that is necessary to begin Rasaad's companion quest will happen at FAI, Beregost, or Nashkel if the quest timer expires before chapter 5. If it expires in chapter 5, the quest will progress as usual.
+The encounter that is necessary to begin Rasaad's companion quest will happen at Beregost if the quest timer expires before chapter 5. If it expires in chapter 5, the quest will progress as usual.
 PROGRESS: in development
 
 ------------------------------------------------------------------------

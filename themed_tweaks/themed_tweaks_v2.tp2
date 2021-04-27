@@ -25,7 +25,7 @@ ALWAYS
 		// Library functions I use frequently
 		INCLUDE ~%mod_root%/lib/alter_script.tpa~
 		INCLUDE ~%mod_root%/lib/update_bcs.tpa~
-		INCLUDE ~%mod_root%/lib/doors.tpa~
+		INCLUDE ~%mod_root%/lib/areas.tpa~
 		INCLUDE ~%mod_root%/lib/items.tpa~
 	END
 
