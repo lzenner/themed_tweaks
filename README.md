@@ -22,6 +22,7 @@ COMPONENTS INCLUDE V1:
 NEW COMPONENTS FOR V2 (not yet released):
 -------------------
 * BGEE           - Give good-aligned reasons to go into peoples' homes
+* BGEE           - Allow Rasaad's companion quest to be completed before chapter 5
 * BGEE           - Allow Dorn to join good group for the purpose of completing his revenge quest
 
 
