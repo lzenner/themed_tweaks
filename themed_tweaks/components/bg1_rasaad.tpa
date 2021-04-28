@@ -47,7 +47,11 @@ DEFINE_ACTION_FUNCTION bg1_rasaad BEGIN
 				fj_name = "from#LBG1101"
 		END
 	
-	ADD_JOURNAL @3000 @3001 USING ~%tra_loc%/%s/bg1_rasaad.tra~
+	ACTION_IF GAME_IS ~eet~ BEGIN
+		ADD_JOURNAL EXISTING TITLE (#228607) @3000 @3001 @3002 USING ~%tra_loc%/%s/bg1_rasaad.tra~
+	END ELSE BEGIN
+		ADD_JOURNAL EXISTING TITLE (#28607) @3000 @3001 @3002 USING ~%tra_loc%/%s/bg1_rasaad.tra~
+	END
 	
 	COPY_EXISTING ~%RASAAD_BCS%.bcs~ ~override~
 		DECOMPILE_AND_PATCH BEGIN
