@@ -3,6 +3,7 @@
 ////////////////////////////////////////////////
 
 ADD_TRANS_TRIGGER %RASAAD_JOINED% 8 ~Global("#L_DarkMoonBeregost","GLOBAL",0)~ DO 0
+ADD_TRANS_ACTION %RASAAD_JOINED% BEGIN 40 END BEGIN 0 END ~EraseJournalEntry(@3000) EraseJournalEntry(@3001) EraseJournalEntry(@3002)~ 
 EXTEND_BOTTOM %RASAAD_JOINED% 8
 	IF ~Global("#L_DarkMoonBeregost","GLOBAL",1)~ GOTO SORREM_WIZARD
 END
