@@ -7,13 +7,13 @@ DEFINE_ACTION_FUNCTION bhaalspawn_ref BEGIN
 	// 1-when the note from Gorion is found (BG1NPC reads it aloud for all to hear)
 	// 2-when the PC talks to Tamoko
 
-	// Dorn has his own stock bhaalspawn chatter that needs to be controlled
+	// Dorn's stock bhaalspawn chatter that needs to be controlled
 	COPY_EXISTING ~%DORN_BCS%.BCS~ ~override~
 		DECOMPILE_AND_PATCH BEGIN
 			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Global("SPAWN_REVEAL","GLOBAL",0)~ ~Global("SPAWN_REVEAL","GLOBAL",0) Global("#L_BSRefKnows","LOCALS",1)~
 		END
 	BUT_ONLY
-
+	
 	// Dialogue changes that can only be compiled depending upon which mods are installed
 	OUTER_SPRINT DIALOG_DYN_BXAN ~~
 	OUTER_SPRINT DIALOG_DYN_BXZAR ~~
@@ -53,6 +53,12 @@ DEFINE_ACTION_FUNCTION bhaalspawn_ref BEGIN
 			END
 		BUT_ONLY
 		
+		COPY_EXISTING ~%YESLICK_BCS%.bcs~ ~override~
+			DECOMPILE_AND_PATCH BEGIN
+				REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~Global("Chapter","GLOBAL",7)~ ~Global("Chapter","GLOBAL",7) Global("#L_BSRefKnows","LOCALS",1)~
+			END
+		BUT_ONLY
+				
 		ACTION_IF (FILE_EXISTS_IN_GAME ~AJANTD.bcs~) BEGIN
 			COPY_EXISTING ~AJANTD.bcs~ ~override~
 				DECOMPILE_AND_PATCH BEGIN
