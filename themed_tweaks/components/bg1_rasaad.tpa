@@ -46,6 +46,9 @@ DEFINE_ACTION_FUNCTION bg1_rasaad BEGIN
 				fj_structure_type = "entrance"
 				fj_name = "from#LBG1101"
 		END
+		
+	COPY_EXISTING ~RSNOTE1.ITM~ ~override~
+		SAY DESC @1017
 	
 	ACTION_IF GAME_IS ~eet~ BEGIN
 		ADD_JOURNAL EXISTING TITLE (#228607) @3000 @3001 @3002 USING ~%tra_loc%/%s/bg1_rasaad.tra~
