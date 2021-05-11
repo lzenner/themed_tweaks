@@ -31,18 +31,18 @@ THEN
 END
 
 IF
-	TriggerOverride("GATEWARD",LOS(Player1,20))
+	TriggerOverride("GATEWA",LOS(Player1,20))
 	HPPercentLT(Player1,100)
-	TriggerOverride("GATEWARD",NumTimesTalkedToGT(0))
+	TriggerOverride("GATEWA",NumTimesTalkedToGT(0))
 	Global("#L_GRClinic","MYAREA",0)
 THEN
 	RESPONSE #100
 		SetGlobal("#L_GRClinic","MYAREA",1)
 		StartCutSceneMode()
 		SmallWait(10)
-		MoveViewObject("GATEWARD",INSTANT)
+		MoveViewObject("GATEWA",INSTANT)
 		SmallWait(10)
-		DisplayStringHead("GATEWARD",@2002)
+		DisplayStringHead("GATEWA",@2002)
 		Wait(5)
 		EndCutSceneMode()
 		Continue()

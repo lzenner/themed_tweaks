@@ -42,7 +42,7 @@ END
 IF
 	TriggerOverride("Door1208",RANGE(Player1,30))
 	Global("HelpNoralee","GLOBAL",0)
-	!Dead("Noralee")
+	!Dead("Norale")
 	OR(2)
 		Global("#L_GRDoor1208","MYAREA",0)
 		GlobalTimerExpired("#L_GRDoor1208","MYAREA")

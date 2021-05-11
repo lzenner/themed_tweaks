@@ -6,6 +6,13 @@ IF
 	TriggerOverride("Door0805",RANGE(Player1,40))
 	Global("HelpArkion","GLOBAL",0)
 	!Dead("Arkion")
+	OR(6)
+		ReactionLT(Player1,FRIENDLY_LOWER)
+		ReactionLT(Player2,FRIENDLY_LOWER)
+		ReactionLT(Player3,FRIENDLY_LOWER)
+		ReactionLT(Player4,FRIENDLY_LOWER)
+		ReactionLT(Player5,FRIENDLY_LOWER)
+		ReactionLT(Player6,FRIENDLY_LOWER)
 	OR(2)
 		Global("#L_GRDoor0805","MYAREA",0)
 		GlobalTimerExpired("#L_GRDoor0805","MYAREA")
@@ -23,3 +30,35 @@ THEN
 		Continue()
 END
 
+IF
+	OR(6)
+		ReactionLT(Player1,FRIENDLY_LOWER)
+		ReactionLT(Player2,FRIENDLY_LOWER)
+		ReactionLT(Player3,FRIENDLY_LOWER)
+		ReactionLT(Player4,FRIENDLY_LOWER)
+		ReactionLT(Player5,FRIENDLY_LOWER)
+		ReactionLT(Player6,FRIENDLY_LOWER)
+	Global("#L_GRArkionUnlocked","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_GRArkionUnlocked","MYAREA",1)
+		Unlock("Port0805")
+		Continue()
+END
+
+IF
+	ReactionGT(Player1,NEUTRAL_UPPER)
+	ReactionGT(Player2,NEUTRAL_UPPER)
+	ReactionGT(Player3,NEUTRAL_UPPER)
+	ReactionGT(Player4,NEUTRAL_UPPER)
+	ReactionGT(Player5,NEUTRAL_UPPER)
+	ReactionGT(Player6,NEUTRAL_UPPER)
+	Global("#L_GRArkionUnlocked","MYAREA",1)
+THEN
+	RESPONSE #100
+		SetGlobal("#L_GRArkionUnlocked","MYAREA",0)
+		CloseDoor("Port0805")
+		SmallWait(1)
+		Lock("Port0805")
+		Continue()
+END

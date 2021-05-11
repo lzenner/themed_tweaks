@@ -3,28 +3,28 @@
 ///////////////////////////////////////////////
 
 DEFINE_ACTION_FUNCTION good_reasons BEGIN
-	// Variables based upon installed game
-	ACTION_IF (GAME_IS ~eet~) THEN BEGIN
-		OUTER_SPRINT SND_CARBOS ~BGMAINME~
-		OUTER_SPRINT SND_SHANK ~BGMALE6E~
-		OUTER_SPRINT DLG_WIDOW ~FTOWN2_~
-		OUTER_SET SAY_RIFFRAFF = 203340
-		OUTER_SET SAY_7HEAVENS = 203341
-		OUTER_SET JOURNAL_JOIA = 227189
-	END ELSE ACTION_IF (GAME_IS ~bgee~) THEN BEGIN
-		OUTER_SPRINT SND_CARBOS ~MAINM11~
-		OUTER_SPRINT SND_SHANK ~MALE6E~
-		OUTER_SPRINT DLG_WIDOW ~FTOWN2~
-		OUTER_SET SAY_RIFFRAFF = 3340 
-		OUTER_SET SAY_7HEAVENS = 3341
-		OUTER_SET JOURNAL_JOIA = 27189
-	END
-	
 	// BG1 specific changes
 	ACTION_IF (GAME_IS ~eet bgee~) THEN BEGIN
+		// Variables based upon installed game
+		ACTION_IF (GAME_IS ~eet~) THEN BEGIN
+			OUTER_SPRINT SND_CARBOS ~BGMAINME~
+			OUTER_SPRINT SND_SHANK ~BGMALE6E~
+			OUTER_SPRINT DLG_WIDOW ~FTOWN2_~
+			OUTER_SET SAY_RIFFRAFF = 203340
+			OUTER_SET SAY_7HEAVENS = 203341
+			OUTER_SET JOURNAL_JOIA = 227189
+		END ELSE BEGIN
+			OUTER_SPRINT SND_CARBOS ~MAINM11~
+			OUTER_SPRINT SND_SHANK ~MALE6E~
+			OUTER_SPRINT DLG_WIDOW ~FTOWN2~
+			OUTER_SET SAY_RIFFRAFF = 3340 
+			OUTER_SET SAY_7HEAVENS = 3341
+			OUTER_SET JOURNAL_JOIA = 27189
+		END
+	
 		// Give the Gatewarden a DV so I can put a string over his head
 		COPY_EXISTING ~GATEWA.CRE~ ~override~
-			WRITE_ASCII DEATHVAR ~GATEWARD~ #32
+			WRITE_ASCII DEATHVAR ~GATEWA~ #32
 		
 		COPY_EXISTING ~%Beregost%.ARE~ ~override~
 			// Change the name of the door leading into BG3320
@@ -38,7 +38,7 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 
 		COPY_EXISTING ~%Nashkel%.ARE~ ~override~
 			// Change the name of the doors leading into Joseph's house and the manor
-			// or else we can't control them because they has the same name 
+			// or else we can't control them because they have the same name 
 			// as the travel trigger regions
 			LPF CHANGE_DOOR_NAME
 				STR_VAR
@@ -52,11 +52,12 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 			END
 
 		COPY_EXISTING ~%EBaldursGate%.ARE~ ~override~
-			// Unlock Arkion's door
-			// He'll be advertising for help - no sense in having the door locked
-			LPF UNLOCK_DOOR
+			// Arkion's quest is now dependent upon charisma and rep (low is better)
+			// his house lock/unlock will need to be dynamic
+			LPF CHANGE_DOOR_NAME
 				STR_VAR
-					door_name = ~Door0805~	// Arkion's house
+					old_name = ~Door0805~	// Arkion's house
+					new_name = ~Port0805~
 			END
 		
 		COPY_EXISTING ~%BaldursGateDocks%.ARE~ ~override~
@@ -64,7 +65,7 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 			// They want to kill the PC - why would they lock the door?
 			LPF UNLOCK_DOOR
 				STR_VAR
-					door_name = ~Door01201~
+					door_name = ~Door1201~
 			END
 		
 		COPY_EXISTING ~%CentralBaldursGate%.ARE~ ~override~
@@ -85,11 +86,11 @@ DEFINE_ACTION_FUNCTION good_reasons BEGIN
 			
 		// Need a handle on Nadarin so if the party kills him/her, the help wanted sign comes down
 		COPY_EXISTING ~Nadari.cre~ ~override~
-			WRITE_ASCII DEATHVAR ~Nadarin~ #32
+			WRITE_ASCII DEATHVAR ~Nadari~ #32
 
 		// Need a handle on Noralee so if the party kills her, the help wanted sign comes down
 		COPY_EXISTING ~Norale.cre~ ~override~
-			WRITE_ASCII DEATHVAR ~Noralee~ #32
+			WRITE_ASCII DEATHVAR ~Norale~ #32
 
 		EXTEND_TOP ~%Candlekeep%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2600.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
 		EXTEND_TOP ~%FriendlyArmInn%.bcs~ ~%mod_root%/scripts/bg1_good_reasons_bg2300.baf~ USING ~%tra_loc%/%s/bg1_good_reasons.tra~
