@@ -4,11 +4,11 @@
 
 IF
 	Contains("TITOME04","Container2")
-	Global("TICBOOK04_Spawn","BG3334",1)
-	Global("#L_GRxRETome4","BG3334",0)
+	Global("TICBOOK04_Spawn","MYAEA",1)
+	Global("#L_GRxRETome4","MYAEA",0)
 THEN
 	RESPONSE #100
-		SetGlobal("#L_GRxRETOME4","BG3334",1)
+		SetGlobal("#L_GRxRETOME4","MYAEA",1)
 		ActionOverride("Container2",DestroyItem("TITome04")) // Moved to Firebead
 		Continue()
 END
