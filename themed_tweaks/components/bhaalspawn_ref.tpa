@@ -154,14 +154,20 @@ ALTER_TRANS X#AMELIA BEGIN 2 END BEGIN 0 END BEGIN "ACTION" ~ActionOverride(Play
 				bcs_name = ~X#GORLET~									// like BG0146
 		END
 		
-		// Until BG1NPC is fixed, we have to spawn the letter-reader in the secret library ourselves
-		LAF UPDATE_BCS
+		// Until BG1NPC is fixed, we have to spawn the letter-reader in multiple places ourselves
+		// Remove it from the 5th floor of the library
+		LAF DELETE_SCRIPT_BLOCK
 			INT_VAR
-				action_taken = 1		// 0 = APPEND_FILE TEXT, 1 = EXTEND_TOP, 2 = EXTEND_BOTTOM
+				only_once = 0
 			STR_VAR
-				baf_location = EVAL ~%mod_root%/scripts/~				// like ~mymod/bafs/~
-				baf_name = ~bhaalspawn_ref_letter_spawn~				// like my_new_BG0146
-				bcs_name = EVAL ~%Candlekeep_Catacombs_L1Antechamber%~	// like BG0146
+				script = EVAL ~%Candlekeep_Library_L5%~
+				match = ~X#GorionTalkingLetter~
+			RET old_ver = found
+		END
+
+		// Add it to Baldur.bcs if we're dealing with the old version
+		ACTION_IF old_ver = 1 BEGIN
+			EXTEND_TOP ~BALDUR.BCS~ ~%mod_root%/scripts/bhaalspawn_ref_letter_spawn.baf~
 		END
 	END ELSE BEGIN
 		// Make sure the letter-reading cre is in the game for us to use and set up its spawning
@@ -175,23 +181,8 @@ ALTER_TRANS X#AMELIA BEGIN 2 END BEGIN 0 END BEGIN "ACTION" ~ActionOverride(Play
 				baf_name = ~bhaalspawn_ref_letter_script~				// like my_new_BG0146
 				bcs_name = ~X#GORLET~									// like BG0146
 		END
-		// Spawn it in two different areas
-		LAF UPDATE_BCS
-			INT_VAR
-				action_taken = 1		// 0 = APPEND_FILE TEXT, 1 = EXTEND_TOP, 2 = EXTEND_BOTTOM
-			STR_VAR
-				baf_location = EVAL ~%mod_root%/scripts/~				// like ~mymod/bafs/~
-				baf_name = ~bhaalspawn_ref_letter_spawn~				// like my_new_BG0146
-				bcs_name = EVAL ~%Candlekeep_Library_L5%~				// like BG0146
-		END
-		LAF UPDATE_BCS
-			INT_VAR
-				action_taken = 1		// 0 = APPEND_FILE TEXT, 1 = EXTEND_TOP, 2 = EXTEND_BOTTOM
-			STR_VAR
-				baf_location = EVAL ~%mod_root%/scripts/~				// like ~mymod/bafs/~
-				baf_name = ~bhaalspawn_ref_letter_spawn~				// like my_new_BG0146
-				bcs_name = EVAL ~%Candlekeep_Catacombs_L1Antechamber%~	// like BG0146
-		END
+		// Spawn it whereever they first obtain Gorion's scroll
+		EXTEND_TOP ~BALDUR.BCS~ ~%mod_root%/scripts/bhaalspawn_ref_letter_spawn.baf~
 	END	
 	
 	// Compile dialogues

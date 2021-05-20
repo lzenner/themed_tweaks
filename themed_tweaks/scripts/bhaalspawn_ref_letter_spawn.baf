@@ -4,23 +4,13 @@
 ///////////////////////////////////////////////////////
 
 IF
-	AreaCheck("%Candlekeep_Catacombs_L1Antechamber%")
-	GlobalLT("ENDOFBG1","GLOBAL",2)
-	Global("X#GorionTalkingLetter","GLOBAL",0)
-	!PartyHasItem("scrl2J")
-THEN
-	RESPONSE #100
-		GiveItemCreate("scrl2J",Player1,0,0,0)
-END
-
-IF
 	GlobalLT("ENDOFBG1","GLOBAL",2)
 	Global("X#GorionTalkingLetter","GLOBAL",0)
 	PartyHasItem("scrl2J")  // Letter
 THEN
 	RESPONSE #100
 		SetGlobal("X#GorionTalkingLetter","GLOBAL",1)
-		RealSetGlobalTimer("X#GorionLetter","GLOBAL",ONE_MINUTE)
+		RealSetGlobalTimer("X#GorionLetter","GLOBAL",2)
 END
 
 IF
