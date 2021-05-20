@@ -1,3 +1,5 @@
+// Modified by Lauriel to return whether or not sought block was found
+
 DEFINE_ACTION_FUNCTION INSERT_SCRIPT_BLOCK
 INT_VAR insert_above=0
         only_once=0
@@ -43,6 +45,7 @@ STR_VAR script=""
         match4=""
         match5=""
         insert=""
+RET	    found
 BEGIN
    // sanity check
    COPY - "%insert%" override EVALUATE_BUFFER
@@ -57,7 +60,8 @@ BEGIN
      INT_VAR only_once insert_above replace
      STR_VAR internal_insert_data script match_function
            match match1 match2 match3 match4 match5
-           type=insert 
+           type=insert
+	 RET found = found_match
    END
 END
 
@@ -72,8 +76,9 @@ STR_VAR script=""
         match3=""
         match4=""
         match5=""
+RET		found
 BEGIN
-   LAF internal_script_block_master INT_VAR only_once STR_VAR script match_function match match1 match2 match3 match4 match5 type=delete END
+   LAF internal_script_block_master INT_VAR only_once STR_VAR script match_function match match1 match2 match3 match4 match5 type=delete RET found = found_match END
 END
 
 DEFINE_ACTION_FUNCTION CLONE_SCRIPT_BLOCK
@@ -114,6 +119,7 @@ STR_VAR script=""
         original_swap_in3=""
         original_swap_in4=""
         original_swap_in5=""
+RET		found
 BEGIN
    LAF internal_script_block_master
      INT_VAR only_once insert_above
@@ -124,6 +130,7 @@ BEGIN
            original_swap_out original_swap_out1 original_swap_out2 original_swap_out3 original_swap_out4 original_swap_out5
            original_swap_in original_swap_in1 original_swap_in2 original_swap_in3 original_swap_in4 original_swap_in5
            type=clone
+	 RET found = found_match
    END
 END
 
@@ -152,6 +159,7 @@ STR_VAR script=""
         swap_in3=""
         swap_in4=""
         swap_in5=""
+RET		found
 BEGIN
    LAF internal_script_block_master
      INT_VAR only_once recompile
@@ -160,6 +168,7 @@ BEGIN
            swap_out swap_out1 swap_out2 swap_out3 swap_out4 swap_out5
            swap_in swap_in1 swap_in2 swap_in3 swap_in4 swap_in5
            type=alter
+	 RET found = found_match
    END
 END
 
@@ -205,6 +214,7 @@ STR_VAR script=""
         original_swap_in3=""
         original_swap_in4=""
         original_swap_in5=""
+RET		found_match
 BEGIN
 COPY_EXISTING "%script%.bcs" "override"
      SET found_match=0
