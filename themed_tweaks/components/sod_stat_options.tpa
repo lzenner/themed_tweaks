@@ -11,6 +11,46 @@ DEFINE_ACTION_FUNCTION sod_stat_options BEGIN
 	// #L_SoDStat_DaustonTalk Global used to track if PC talked to Dauston, followed up on it, and received an answer 0 1 2 or 3
 	// #L_SoDStat_DaustonPrompt Area bd0102 variable used to track if PC has been prompted to ask Eltan about Dauston
 	// #L_SoDStat_TreatiseFound Global used to track if PC has found the book 'A Historical Treatise of Dragonspear Castle 1 = found, 2 = read
+	// #L_GenericDialogueOk LOCAL used on stock NPCs to allow or disallow participation in generic dialogues
+	
+	// Allow for modded NPCs to not participate in generic dialogue
+	ACTION_DEFINE_ARRAY npc_list BEGIN
+		Ajantis
+		Jaheira
+		Khalid
+		Dorn
+		Edwin
+		Neera
+		Baeloth
+		Garrick
+		Xan
+		Dynaheir
+		Minsc
+		Alora
+		Branwen
+		Coran
+		Eldoth
+		Montaron
+		Xzar
+		Faldorn
+		Kagain
+		Kivan
+		Quayle
+		Rasaad
+		Safana
+		Sharteel
+		Skie
+		Tiax
+		Viconia
+		Yeslick
+	END
+	OUTER_FOR (npc_num = 0; VARIABLE_IS_SET $npc_list(~%npc_num%~); ++npc_num) BEGIN
+		OUTER_SPRINT npc_name $npc_list("%npc_num%")
+		OUTER_SPRINT upper_name "%npc_name%"
+		ACTION_TO_UPPER upper_name
+		OUTER_SPRINT bcs_file EVAL EVAL ~%%upper_name%_BCS%~
+		EXTEND_BOTTOM %bcs_file%.BCS ~%mod_root%/scripts/sod_stat_options_generic_dlg.baf~
+	END
 	
 	EXTEND_TOP ~BD0120.BCS~ ~%mod_root%/scripts/sod_stat_options.baf~ // Set global to use stat-based options
 	EXTEND_TOP ~BD0103.BCS~ ~%mod_root%/scripts/sod_stat_options.baf~ // In case they skip Korlasz
