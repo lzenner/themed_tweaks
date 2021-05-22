@@ -49,7 +49,7 @@ DEFINE_ACTION_FUNCTION sod_stat_options BEGIN
 		OUTER_SPRINT upper_name "%npc_name%"
 		ACTION_TO_UPPER upper_name
 		OUTER_SPRINT bcs_file EVAL EVAL ~%%upper_name%_BCS%~
-		EXTEND_BOTTOM %bcs_file%.BCS ~%mod_root%/scripts/sod_stat_options_generic_dlg.baf~
+		EXTEND_BOTTOM "%bcs_file%.BCS" ~%mod_root%/scripts/sod_stat_options_generic_dlg.baf~
 	END
 	
 	EXTEND_TOP ~BD0120.BCS~ ~%mod_root%/scripts/sod_stat_options.baf~ // Set global to use stat-based options
