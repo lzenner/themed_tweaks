@@ -4,16 +4,11 @@
 //////////////////////////////////////////////
 
 DEFINE_ACTION_FUNCTION bg1_caelar BEGIN
-	// Make sure her CRE exists
+	// Separate cre with different name and no automatic sounds
+	COPY ~%mod_root%/objects/#LCAELAR.CRE~ ~override~
+		SAY NAME1 @1016
+		SAY NAME2 @1016
 	ACTION_IF (NOT GAME_INCLUDES ~sod~) BEGIN
-		COPY ~%mod_root%/objects/BDCAELAR.CRE~ ~override~
-			SAY NAME1 @1016
-			SAY NAME2 @1016
-			SET sound_offset = (0x00a4)
-			FOR (i=0;i<100;++i) BEGIN
-				WRITE_SHORT sound_offset ~-1~
-				SET sound_offset += 4
-			END
 		COPY ~%mod_root%/objects/CAELARL.BMP~ ~override~
 		COPY ~%mod_root%/objects/CAELARM.BMP~ ~override~
 		COPY ~%mod_root%/objects/BD68312.WAV~ ~override~
