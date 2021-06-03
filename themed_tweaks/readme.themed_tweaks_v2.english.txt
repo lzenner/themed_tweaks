@@ -82,7 +82,7 @@ INSTALLATION
 ------------------------------------------------------------------------
 If you're going to install Transitions, Endless BG1, or BG1NPC do so before Themed Tweaks.
 
-Installation using Project Infinity (https://forums.beamdog.com/discussion/comment/1145416/#Comment_1145416) will ensure this and other mods are installed in the correct order.
+Installation using Project Infinity (https://forums.beamdog.com/discussion/74335/project-infinity-mod-manager-for-baldurs-gate-icewind-dale-planescape-torment-and-eet) will ensure this and other mods are installed in the correct order.
 
 NOTE: If you've previously installed the mod, remove it before extracting a new version. To do this, uninstall all previously installed components and delete the mod folder and executables. 
 
