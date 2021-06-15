@@ -352,7 +352,7 @@ APPEND BDCORWIN
 	END
 	
 	IF WEIGHT #-87 ~Global("BD_PLOT","GLOBAL",170) Global("#L_CWBridgeWrap","MYAREA",2)~ THEN BEGIN CORPORAL_MOVE
-		SAY #235933 /* ~We need to get to Bridgefort. Corporal, spread the word to the troops to strike camp. Make sure to mark our new path on everyone's maps. We move out as soon as our friend is ready.~ [BD35933] */
+		SAY #%CORWIN_BRIDGEFORT% /* ~We need to get to Bridgefort. Corporal, spread the word to the troops to strike camp. Make sure to mark our new path on everyone's maps. We move out as soon as our friend is ready.~ [BD35933] */
 		IF ~~ THEN DO ~SetGlobal("BD_PLOT","GLOBAL",175)~ EXTERN ~BDBENCE~ 14
 	END
 END
