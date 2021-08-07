@@ -270,10 +270,12 @@ EXTEND_BOTTOM BDCAELAR 14
 	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1) Global("#L_Snark","GLOBAL",1)~ THEN REPLY @2037 /* ~Since your goal was to capture and not kill me we should the be best of friends? Seriously?~ */ GOTO 15
 END
 
+/* I think this question is still valid even if the PC assumes to know
 ALTER_TRANS BDCAELAR
 	BEGIN 16 21 END
 	BEGIN 1 END
 	BEGIN "TRIGGER" ~!Global("#L_SoDStat_TreatiseFound","GLOBAL",2)~ END
+*/
 
 EXTEND_BOTTOM BDCAELAR 26
 	IF ~Global("#L_SoDStat_DaustonTalk","GLOBAL",3)~ THEN REPLY @2031 DO ~IncrementGlobal("bd_mdd420_good","global",5)~ GOTO 33
