@@ -158,19 +158,26 @@ END
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Track if PC learned that Hephernaan is Caelar's advisor (1=knows name, 2=knows both name and face) //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
 ALTER_TRANS BDEDWIN
 	BEGIN 48 END
 	BEGIN 0 END
 	BEGIN
 		"ACTION" ~SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",1)~
 	END
+*/
+ADD_TRANS_ACTION BDEDWIN BEGIN 48 END BEGIN END ~SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",1)~
 
+/*
 ALTER_TRANS BDEDWINJ
 	BEGIN 5 6 END
 	BEGIN 0 END
 	BEGIN
 		"ACTION" ~SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",1)~
 	END
+*/
+ADD_TRANS_ACTION BDEDWINJ BEGIN 5 6 END BEGIN END ~SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",1)~
+
 	
 APPEND BDEDWINJ
 	IF ~Global("#L_SoDStat_HephUmbral","LOCALS",1)~	THEN BEGIN I_KNEW_IT
