@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////////
+﻿//////////////////////////////////////////////////////////////
 // Dialogue changes for stat based options                  //
 // other than the poison used by Caelar's elites            //
 // That's handled in a separate file because of it's volume //
@@ -12,7 +12,7 @@ REPLACE_ACTION_TEXT BDDAUSTO ~SetGlobal("BD_PASSOUT_DAUSTON","BD0030",1)~ ~SetGl
 //////////////////////////////////////////////////////
 // Ask Eltan to interview Dauston when he sobers up //
 //////////////////////////////////////////////////////
-EXTEND_TOP BDELTAN 10 #0
+EXTEND_BOTTOM BDELTAN 10 
 	IF ~Global("#L_SoDStat_DaustonTalk","GLOBAL",1) Global("#L_SoDStat_DaustonPrompt","MYAREA",2)~ THEN REPLY @2020 /* ~Well enough, sir. But I have a favor to ask of you concerning the fallen paladin named Dauston that is currently sleeping it off in your cells.~ */ GOTO ELTAN_ASK_ABOUT_DAUSTON
 END
 
@@ -158,19 +158,26 @@ END
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Track if PC learned that Hephernaan is Caelar's advisor (1=knows name, 2=knows both name and face) //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
 ALTER_TRANS BDEDWIN
 	BEGIN 48 END
 	BEGIN 0 END
 	BEGIN
 		"ACTION" ~SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",1)~
 	END
+*/
+ADD_TRANS_ACTION BDEDWIN BEGIN 48 END BEGIN END ~SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",1)~
 
+/*
 ALTER_TRANS BDEDWINJ
 	BEGIN 5 6 END
 	BEGIN 0 END
 	BEGIN
 		"ACTION" ~SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",1)~
 	END
+*/
+ADD_TRANS_ACTION BDEDWINJ BEGIN 5 6 END BEGIN END ~SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",1)~
+
 	
 APPEND BDEDWINJ
 	IF ~Global("#L_SoDStat_HephUmbral","LOCALS",1)~	THEN BEGIN I_KNEW_IT
@@ -235,7 +242,7 @@ BEGIN ~#LS0Temp~
 ////////////////////////////////////////////////////
 // Dialogue with Caelar at the Coast Way Crossing //
 ////////////////////////////////////////////////////
-EXTEND_TOP BDCAELAR 10
+EXTEND_BOTTOM BDCAELAR 10
 	IF ~Global("#L_SoDStat_TreatiseFound","GLOBAL",2) Global("#L_SoDStat_DaustonTalk","GLOBAL",3)~ THEN REPLY @2030 DO ~SetGlobal("bd_plot","global",170) ChangeAIScript("bdcutsce",OVERRIDE)~ GOTO 23
 	IF ~Global("#L_SoDStat_TreatiseFound","GLOBAL",2) !Global("#L_SoDStat_DaustonTalk","GLOBAL",3)~ THEN REPLY @2035 DO ~SetGlobal("bd_plot","global",170) ChangeAIScript("bdcutsce",OVERRIDE)~ GOTO 11
 END
@@ -244,7 +251,7 @@ ALTER_TRANS BDCAELAR
 	BEGIN 12 END
 	BEGIN 0 1 END
 	BEGIN "TRIGGER" ~Global("#L_SoDStat_WeakPoison","GLOBAL",0)~ END
-EXTEND_TOP BDCAELAR 12
+EXTEND_BOTTOM BDCAELAR 12
 	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN REPLY @2040 /* ~You were what brought me here—...~ */ DO ~IncrementGlobal("bd_mdd420_good","global",3)~ GOTO 14
 	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN REPLY @2041 /* ~Destiny, and the poison dripping ....*/ GOTO 14
 END
@@ -253,7 +260,7 @@ ALTER_TRANS BDCAELAR
 	BEGIN 13 END
 	BEGIN 1 END
 	BEGIN "TRIGGER" ~Global("#L_SoDStat_WeakPoison","GLOBAL",0)~ END
-EXTEND_TOP BDCAELAR 13 #1
+EXTEND_BOTTOM BDCAELAR 13
 	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN REPLY @2042 /* ~In fairness, you did attack me first.~ */ GOTO 14
 END
 
@@ -265,17 +272,19 @@ ALTER_TRANS BDCAELAR
 	BEGIN 14 END
 	BEGIN 1 END
 	BEGIN "TRIGGER" ~!CheckStatGT(Player1,14,INT) !Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ END
-EXTEND_TOP BDCAELAR 14
+EXTEND_BOTTOM BDCAELAR 14
 	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN REPLY @2036 /*	~How is the fact you tried to kidnap me instead of kill me make you any less an enemy?~ */ GOTO 15
 	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1) Global("#L_Snark","GLOBAL",1)~ THEN REPLY @2037 /* ~Since your goal was to capture and not kill me we should the be best of friends? Seriously?~ */ GOTO 15
 END
 
+/* I think this question is still valid even if the PC assumes to know
 ALTER_TRANS BDCAELAR
 	BEGIN 16 21 END
 	BEGIN 1 END
 	BEGIN "TRIGGER" ~!Global("#L_SoDStat_TreatiseFound","GLOBAL",2)~ END
+*/
 
-EXTEND_TOP BDCAELAR 26
+EXTEND_BOTTOM BDCAELAR 26
 	IF ~Global("#L_SoDStat_DaustonTalk","GLOBAL",3)~ THEN REPLY @2031 DO ~IncrementGlobal("bd_mdd420_good","global",5)~ GOTO 33
 END
 
