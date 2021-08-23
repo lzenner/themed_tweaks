@@ -4,12 +4,12 @@
 ////////////////////////////////////////////////////////////
 
 // Response to a dumb question from Corwin
-EXTEND_TOP BDSCHAEL 13  
+EXTEND_BOTTOM BDSCHAEL 13  
 	++ @8000 /*	= ~How the hells should I know?~ */ GOTO 14
 END
 
 // Response to Liia when she asks the pc to join the coalition
-EXTEND_TOP BDLIIA 11 #1
+EXTEND_BOTTOM BDLIIA 11 #1
 	++ @8001 /* ~You want me to join the army?~ */ EXTERN ~BDELTAN~ ACCOMPANY_NOT_JOIN
 END
 
@@ -134,6 +134,6 @@ ALTER_TRANS BDCAELAR
 	BEGIN 0 END
 	BEGIN "REPLY" ~@8051~ END // ~You presume to know what my goals are?  You really are delusional!~
 
-EXTEND_TOP BDCAELAR 16 #1
+EXTEND_BOTTOM BDCAELAR 16 #1
 	IF ~~ THEN REPLY @8052 /* ~You're mad if you think they'd listen to me even if I had the slightest inclination of doing so.~ */ GOTO 18
 END

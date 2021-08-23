@@ -2,10 +2,10 @@
 // Dialogue changes for BG1 Good Reasons component //
 /////////////////////////////////////////////////////
 
-ALTER_TRANS JOIA
+ADD_TRANS_ACTION JOIA
 	BEGIN 0 END
 	BEGIN 0 1 2 END
-	BEGIN "ACTION" ~SetGlobal("#L_GRJoia","GLOBAL",1)~ END
+	~SetGlobal("#L_GRJoia","GLOBAL",1)~
 
 EXTEND_BOTTOM JOIA 7
 	IF ~GlobalGT("TICamryn","GLOBAL",0)~ THEN GOTO JOIA_GIVE_BOOK
@@ -36,7 +36,7 @@ APPEND BENTLY
 END
 
 // Get the RE (Camryn) book from Firebead
-EXTEND_TOP FIREBE 4 5 6 #0
+EXTEND_BOTTOM FIREBE 4 5 6 #0
 	IF ~Global("#L_GRxREBeregost","GLOBAL",1) Global("#L_GRFirebead","MYAREA",0)~ THEN REPLY @2016 /* ~I've heard that you may have a book I'm looking for, actually.  A rather romantic book?~ */ GOTO THIS_OLD_BOOK
 END
 APPEND FIREBE
@@ -47,7 +47,7 @@ APPEND FIREBE
 END
 
 // Additions to all vendors in Beregost so they'll give directions to Mirianne and Colquetle for quest hand-ins
-EXTEND_TOP BART5 0 #1	// Feldepost bartender
+EXTEND_BOTTOM BART5 0 #1	// Feldepost bartender
 	IF ~GlobalGT("TICamryn","GLOBAL",0) Global("#L_GRxREBeregost","GLOBAL",0)~ THEN REPLY @2009 /* ~I am looking for books... */ GOTO FIND_BOOKS
 	IF ~PartyHasItem("SCRL3I")~ THEN REPLY @2011 /* ~Do you know anyone by the name of Mirianne? */ GOTO FIND_MIRIANNE
 	IF ~PartyHasItem("AMUL13CO")~ THEN REPLY @2013 /* ~Does this amulet look familiar to you?  I'm trying to find its owner.~ */ GOTO ITS_COLQUETLE
@@ -73,7 +73,7 @@ APPEND BART5
 		IF ~~ THEN EXIT
 	END
 END
-EXTEND_TOP BART3 0 #1 // Red Sheaf bartender
+EXTEND_BOTTOM BART3 0 #1 // Red Sheaf bartender
 	IF ~GlobalGT("TICamryn","GLOBAL",0) Global("#L_GRxREBeregost","GLOBAL",0)~ THEN REPLY @2009 /* ~I am looking for books... */ GOTO FIND_BOOKS
 	IF ~PartyHasItem("SCRL3I")~ THEN REPLY @2011 /* ~Do you know anyone by the name of Mirianne? */ GOTO FIND_MIRIANNE
 	IF ~PartyHasItem("AMUL13CO")~ THEN REPLY @2013 /* ~Does this amulet look familiar to you?  I'm trying to find its owner.~ */ GOTO ITS_COLQUETLE
@@ -94,7 +94,7 @@ APPEND BART3
 		IF ~~ THEN EXIT
 	END
 END
-EXTEND_TOP BART4 0 1 #1 // Jovial Juggler bartender
+EXTEND_BOTTOM BART4 0 1 #1 // Jovial Juggler bartender
 	IF ~GlobalGT("TICamryn","GLOBAL",0) Global("#L_GRxREBeregost","GLOBAL",0)~ THEN REPLY @2009 /* ~I am looking for books... */ GOTO FIND_BOOKS
 	IF ~PartyHasItem("SCRL3I")~ THEN REPLY @2011 /* ~Do you know anyone by the name of Mirianne? */ GOTO FIND_MIRIANNE
 	IF ~PartyHasItem("AMUL13CO")~ THEN REPLY @2013 /* ~Does this amulet look familiar to you?  I'm trying to find its owner.~ */ GOTO ITS_COLQUETLE
@@ -115,7 +115,7 @@ APPEND BART4
 		IF ~~ THEN EXIT
 	END
 END
-EXTEND_TOP BART13 0 #1 // Burning Wizard bartender
+EXTEND_BOTTOM BART13 0 #1 // Burning Wizard bartender
 	IF ~GlobalGT("TICamryn","GLOBAL",0) Global("#L_GRxREBeregost","GLOBAL",0)~ THEN REPLY @2009 /* ~I am looking for books... */ GOTO FIND_BOOKS
 	IF ~PartyHasItem("SCRL3I")~ THEN REPLY @2011 /* ~Do you know anyone by the name of Mirianne? */ GOTO FIND_MIRIANNE
 	IF ~PartyHasItem("AMUL13CO")~ THEN REPLY @2013 /* ~Does this amulet look familiar to you?  I'm trying to find its owner.~ */ GOTO ITS_COLQUETLE
@@ -138,7 +138,7 @@ APPEND BART13
 END
 
 // Travenhurst Manor and the RE Camryn book
-EXTEND_TOP HOUSG2 0 1 2 #0 // Guard 2
+EXTEND_BOTTOM HOUSG2 0 1 2 #0 // Guard 2
 	IF ~Global("#L_GRxREBeregost","GLOBAL",1) Global("#L_GRxRETravenhurst","GLOBAL",0)~ THEN REPLY @2018	/* ~I heard that the library here may have a book... */ GOTO HAVE_BOOK
 	IF ~~ THEN REPLY @2028 /* ~Ok, I'll be off then.~ */ EXIT
 END
@@ -174,7 +174,7 @@ APPEND NOBL10
 END
 
 // Nashkel vendors prompting about Joseph's ring
-EXTEND_TOP INNKN2 0 #1 // Inn Keeper
+EXTEND_BOTTOM INNKN2 0 #1 // Inn Keeper
 	IF ~GlobalGT("TICamryn","GLOBAL",0) Global("#L_GRxRENashkel","GLOBAL",0)~ THEN REPLY @2009 /* ~I am looking for books... */ GOTO FIND_BOOKS
 	IF ~PartyHasItem("RINGJOS")~ THEN REPLY @2031 /* ~Does this ring look familiar to you?  I'm trying to find its owner.~ */ GOTO FIND_WIDOW
 END
@@ -189,7 +189,7 @@ APPEND INNKN2
 		IF ~~ THEN DO ~SetGlobal("#L_GRNashkelWidow","GLOBAL",1)~ EXIT
 	END
 END
-EXTEND_TOP SHOPKN 0 1 #1 // Shop keeper
+EXTEND_BOTTOM SHOPKN 0 1 #1 // Shop keeper
 	IF ~GlobalGT("TICamryn","GLOBAL",0) Global("#L_GRxRENashkel","GLOBAL",0)~ THEN REPLY @2009 /* ~I am looking for books... */ GOTO FIND_BOOKS
 	IF ~PartyHasItem("RINGJOS")~ THEN REPLY @2031 /* ~Does this ring look familiar to you?  I'm trying to find its owner.~ */ GOTO FIND_WIDOW
 END
@@ -204,7 +204,7 @@ APPEND SHOPKN
 		IF ~~ THEN DO ~SetGlobal("#L_GRNashkelWidow","GLOBAL",1)~ EXIT
 	END
 END
-EXTEND_TOP BART2 0 #1 // Belching Dragon Bartender
+EXTEND_BOTTOM BART2 0 #1 // Belching Dragon Bartender
 	IF ~GlobalGT("TICamryn","GLOBAL",0) Global("#L_GRxRENashkel","GLOBAL",0)~ THEN REPLY @2009 /* ~I am looking for books... */ GOTO FIND_BOOKS
 	IF ~PartyHasItem("RINGJOS")~ THEN REPLY @2031 /* ~Does this ring look familiar to you?  I'm trying to find its owner.~ */ GOTO FIND_WIDOW
 END
@@ -221,11 +221,11 @@ APPEND BART2
 END
 
 // Update to Joseph's wife to bypass the 'uh...what am I doing here' when they already have the ring and prompt to be there
-ALTER_TRANS %DLG_WIDOW% // Joseph's widow
+ADD_TRANS_TRIGGER %DLG_WIDOW% // Joseph's widow
 	BEGIN 0 END
 	BEGIN 2 END
-	BEGIN "TRIGGER" ~OR(2) !PartyHasItem("RINGJOS") Global("#L_GRNashkelWidow","GLOBAL",0)~ END
-EXTEND_TOP %DLG_WIDOW% 0 #2
+	~OR(2) !PartyHasItem("RINGJOS") Global("#L_GRNashkelWidow","GLOBAL",0)~
+EXTEND_BOTTOM %DLG_WIDOW% 0 #2
 	IF ~PartyHasItem("RINGJOS") Global("#L_GRNashkelWidow","GLOBAL",1)~ THEN REPLY @2040 /* ~I found this ring in ... */ DO ~SetGlobal("#L_GRNashkelWidow","GLOBAL",2)~ GOTO 6
 END
 
@@ -283,7 +283,4 @@ END
 REPLACE_ACTION_TEXT ALDETH ~SetGlobal("AldethMove","GLOBAL",1)~ ~SetGlobal("AldethMove","GLOBAL",1) GiveItemCreate("TITOME11",LastTalkedToBy,0,0,0) SetGlobal("#L_GRxRETome11","GLOBAL",1)~
 
 // Ogre mage in S Baldur's Gate
-ALTER_TRANS OGRELEAD
-	BEGIN 0 END
-	BEGIN 0 END
-	BEGIN "ACTION" ~SetGlobal("#L_GROgreMages","GLOBAL",1) Enemy()~ END
+REPLACE_ACTION_TEXT OGRELEAD ~Enemy()~ ~SetGlobal("#L_GROgreMages","GLOBAL",1) Enemy()~ END

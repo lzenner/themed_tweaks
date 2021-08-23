@@ -39,7 +39,7 @@ ADD_TRANS_ACTION TAMOKO
 
 ALTER_TRANS TAMOKO
 	BEGIN 14 END
-	BEGIN 0 END
+	BEGIN 0 1 END
 	BEGIN "ACTION" ~ActionOverride(Player1,SetGlobal("#L_BSRefSarvSib","LOCALS",1)) ActionOverride(Player2,SetGlobal("#L_BSRefSarvSib","LOCALS",1)) ActionOverride(Player3,SetGlobal("#L_BSRefSarvSib","LOCALS",1)) ActionOverride(Player4,SetGlobal("#L_BSRefSarvSib","LOCALS",1)) ActionOverride(Player5,SetGlobal("#L_BSRefSarvSib","LOCALS",1)) ActionOverride(Player6,SetGlobal("#L_BSRefSarvSib","LOCALS",1))~ END
 
 BEGIN ~X#GORLET~
