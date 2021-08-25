@@ -221,10 +221,8 @@ APPEND BART2
 END
 
 // Update to Joseph's wife to bypass the 'uh...what am I doing here' when they already have the ring and prompt to be there
-ADD_TRANS_TRIGGER %DLG_WIDOW% // Joseph's widow
-	BEGIN 0 END
-	BEGIN 2 END
-	~OR(2) !PartyHasItem("RINGJOS") Global("#L_GRNashkelWidow","GLOBAL",0)~
+ADD_TRANS_TRIGGER %DLG_WIDOW% 0 ~OR(2) !PartyHasItem("RINGJOS") Global("#L_GRNashkelWidow","GLOBAL",0)~ DO 2
+	
 EXTEND_BOTTOM %DLG_WIDOW% 0 #2
 	IF ~PartyHasItem("RINGJOS") Global("#L_GRNashkelWidow","GLOBAL",1)~ THEN REPLY @2040 /* ~I found this ring in ... */ DO ~SetGlobal("#L_GRNashkelWidow","GLOBAL",2)~ GOTO 6
 END
@@ -283,4 +281,4 @@ END
 REPLACE_ACTION_TEXT ALDETH ~SetGlobal("AldethMove","GLOBAL",1)~ ~SetGlobal("AldethMove","GLOBAL",1) GiveItemCreate("TITOME11",LastTalkedToBy,0,0,0) SetGlobal("#L_GRxRETome11","GLOBAL",1)~
 
 // Ogre mage in S Baldur's Gate
-REPLACE_ACTION_TEXT OGRELEAD ~Enemy()~ ~SetGlobal("#L_GROgreMages","GLOBAL",1) Enemy()~ END
+REPLACE_ACTION_TEXT OGRELEAD ~Enemy()~ ~SetGlobal("#L_GROgreMages","GLOBAL",1) Enemy()~
