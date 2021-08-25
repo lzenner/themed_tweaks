@@ -47,12 +47,12 @@ THEN
 END
 
 IF
-	ReactionGT(Player1,NEUTRAL_UPPER)
-	ReactionGT(Player2,NEUTRAL_UPPER)
-	ReactionGT(Player3,NEUTRAL_UPPER)
-	ReactionGT(Player4,NEUTRAL_UPPER)
-	ReactionGT(Player5,NEUTRAL_UPPER)
-	ReactionGT(Player6,NEUTRAL_UPPER)
+	!ReactionLT(Player1,FRIENDLY_LOWER)
+	!ReactionLT(Player2,FRIENDLY_LOWER)
+	!ReactionLT(Player3,FRIENDLY_LOWER)
+	!ReactionLT(Player4,FRIENDLY_LOWER)
+	!ReactionLT(Player5,FRIENDLY_LOWER)
+	!ReactionLT(Player6,FRIENDLY_LOWER)
 	Global("#L_GRArkionUnlocked","MYAREA",1)
 THEN
 	RESPONSE #100
