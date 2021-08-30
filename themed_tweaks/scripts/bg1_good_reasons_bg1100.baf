@@ -6,7 +6,8 @@
 IF
 	TriggerOverride("Door1101",RANGE(Player1,40))
 	Global("#L_GRDoor1101","MYAREA",0)
-	OR(2)
+	OR(3)
+		Global("#L_DarkMoonBeregost","GLOBAL",1)
 		GlobalLT("SORREM_SEVEN_SUNS","GLOBAL",3)
 		GlobalTimerExpired("wiventimer","GLOBAL")
 THEN
