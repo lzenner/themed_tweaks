@@ -111,3 +111,20 @@ Weight: 8~
 A~
 
 
+////////////////////////////////////////////////////////////////////////
+// MORE UNIQUE ITEMS REDESCRIBING ITEMS THAT GET REUSED OVER AND OVER //
+////////////////////////////////////////////////////////////////////////
+@1018 = ~Scimitar +2~
+@1019 = ~The scimitar, or "shamshir" as it was originally called, has a single-edged blade with a significant curve and is tapered to an elongated, sharp point. It is perhaps slower than other weapons of the same type, though it compensates by the amount of damage it is capable of. This particular weapon has been enhanced magically to complement the skill of the wielder.
+
+STATISTICS:
+
+THAC0: +2
+Damage: 1d8+2 (slashing)
+Speed Factor: 4
+Proficiency Type: Large Sword
+Type: One-handed
+Requires:
+ 10 Strength
+
+Weight: 4~

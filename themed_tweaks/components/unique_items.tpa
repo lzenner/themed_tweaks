@@ -41,6 +41,21 @@ DEFINE_ACTION_FUNCTION unique_items BEGIN
 		SAY NAME2 @1014
 		SAY IDENTIFIED_DESC @1015
 	
+	// Make a copy of sw1h23 // Rashad's Talon and rename it
+	// Use it instead of the real sw1h23 whereever it's not the actual sword
+	COPY_EXISTING ~sw1h23.itm~ ~override/#L1HPls2.itm~
+		SAY NAME2 @1018
+		SAY IDENTIFIED_DESC @1019
+		WRITE_BYTE 0x0084 4		// Speed - to make it not quite as good as the real Rashad's Talon
+		
+	// Change AREs that include duplicates of the items
+	COPY_EXISTING ~%DurlagsTower%.ARE~ ~override~
+		LPF REPLACE_AREA_ITEM
+			STR_VAR
+				old_item = ~sw1h23~
+				new_item = ~#L1HPls2~
+		END
+	
 	// Change CREs that erroneously include the unique item in their inventory and swap with new item
 	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
 		STR_VAR
@@ -204,6 +219,24 @@ DEFINE_ACTION_FUNCTION unique_items BEGIN
 			match_item = ~sw1h34~
 			new_item = ~#L1HSPsn~
 	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~OHHDJINN~
+			match_item = ~sw1h23~
+			new_item = ~#L1HPls2~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~OHNLEA~
+			match_item = ~sw1h23~
+			new_item = ~#L1HPls2~
+	END
+	LAF REPLACE_CREATURE_ITEM_IF_EXISTS
+		STR_VAR
+			creature = ~TRGENI01~
+			match_item = ~sw1h23~
+			new_item = ~#L1HPls2~
+	END
 	
 	// Swap the items when given inside scripts
 	ACTION_IF GAME_INCLUDES ~sod~ BEGIN
@@ -283,14 +316,18 @@ DEFINE_ACTION_FUNCTION unique_items BEGIN
 	END
 
 	// Change dialogues that erroneously deal with the unique items
-	// Easier to do with variables than separate files
+	// Easier to do with variables...
 	OUTER_SPRINT DLG_KISHMAGE ~~
 	OUTER_SPRINT DLG_UDTRAP02 ~~
+	OUTER_SPRINT DLG_TRGENI01 ~~
 	ACTION_IF FILE_EXISTS_IN_GAME ~KISHMAGE.DLG~ BEGIN
 		OUTER_SPRINT DLG_KISHMAGE ~~~~~REPLACE_ACTION_TEXT KISHMAGE ~"BELT02"~ ~"#LBltSls"~ ~~~~~
 	END
 	ACTION_IF FILE_EXISTS_IN_GAME ~UDTRAP02.DLG~ BEGIN
 		OUTER_SPRINT DLG_UDTRAP02 ~~~~~REPLACE_ACTION_TEXT UDTRAP02 ~"sw1h34"~ ~"#L1HSPsn"~ ~~~~~
+	END
+	ACTION_IF FILE_EXISTS_IN_GAME ~TRGENI01.DLG~ BEGIN
+		OUTER_SPRINT DLG_UDTRAP02 ~~~~~REPLACE_ACTION_TEXT TRGENI01 ~"sw1h23"~ ~"#L1HPls2"~ ~~~~~
 	END
 	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/unique_items.d~
 END
