@@ -24,18 +24,15 @@ NEW COMPONENTS FOR V2 (not yet released):
 * BGEE           - Give good-aligned reasons to go into peoples' homes
 * BGEE           - Allow Rasaad's companion quest to be completed before chapter 5
 * BGEE           - Allow Dorn to join good group for the purpose of completing his revenge quest
-
-
-COMPONENTS IN DEVELOPMENT:
-----------------------
 * BGEE           - Fix cut scenes that rearrange the group
 * BGEE           - Make sure unique items stay unique
-* BGEE           - Add Caelar recruitment attempts of PC after Nashkel mines and ToSC ending
-* BGEE/SoD       - Remove errant references to PC being Bhaalspawn, like Entar
+* BGEE           - Add Caelar recruitment attempts of PC after Nashkel mines
+* BGEE           - Remove errant references to PC being Bhaalspawn
 
 
 COMPONENTS TO BE DONE:  
 ----------------------
+* SoD            - Remove errant references to PC being Bhaalspawn, like Entar
 * SoD            - Add confrontation with Bence and Corwin over Bence bedding Skie
 * SoD            - Speed up the elevator in hell
 * SoD            - Speed up the prison/trial scenes
