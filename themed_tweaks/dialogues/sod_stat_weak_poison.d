@@ -29,22 +29,28 @@ APPEND BDLIIA
 
 	IF ~~ THEN LIIA_YES_WEAK_POISON
 		SAY @103 /* ~Yes, the poison they used was far too weak to accomplish that.~ */
-		++ @104 /* ~Their purpose was to capture me.  I have no idea why.~ */ EXTERN ~BDBELT~ BELT_WEAK_POISON
+		+ ~Global("#L_PCMetIreniInRoom","GLOBAL",1)~ + @104 /* ~Their purpose was to capture me.  I have no idea why.~ */ EXTERN ~BDBELT~ BELT_WEAK_POISON1
+		+ ~!Global("#L_PCMetIreniInRoom","GLOBAL",1)~ + @104 /* ~Their purpose was to capture me.  I have no idea why.~ */ EXTERN ~BDBELT~ BELT_WEAK_POISON2
 	END
 END
 
 // Final palace conversation
 EXTEND_BOTTOM BDENTAR 41 
 	IF ~!Global("#L_WeakPoison","GLOBAL",0)~ THEN REPLY @102 /* ~Before I leave, I need to point out that Caelar's minions weren't here to kill me.~ */ EXTERN ~BDLIIA~ LIIA_YES_WEAK_POISON
-	IF ~Global("#L_WeakPoison","GLOBAL",0) Global("#L_Snark","GLOBAL",0)~ THEN REPLY @107 /* ~Before I leave, I have some disturbing news.  I received a visitor here in the palace. It seems a mysterious hooded man is stalking me.~ */ EXTERN ~BDBELT~ BELT_SORRY
-	IF ~Global("#L_WeakPoison","GLOBAL",0) !Global("#L_Snark","GLOBAL",0)~ THEN REPLY @107 /* ~Before I leave, I have some disturbing news.  I received a visitor here in the palace. It seems a mysterious hooded man is stalking me.~ */ EXTERN ~BDBELT~ BELT_SAME_HOODED_MAN
+	IF ~Global("#L_PCMetIreniInRoom","GLOBAL",1) Global("#L_WeakPoison","GLOBAL",0) Global("#L_Snark","GLOBAL",0)~ THEN REPLY @107 /* ~Before I leave, I have some disturbing news.  I received a visitor here in the palace. It seems a mysterious hooded man is stalking me.~ */ EXTERN ~BDBELT~ BELT_SORRY
+	IF ~Global("#L_PCMetIreniInRoom","GLOBAL",1) Global("#L_WeakPoison","GLOBAL",0) !Global("#L_Snark","GLOBAL",0)~ THEN REPLY @107 /* ~Before I leave, I have some disturbing news.  I received a visitor here in the palace. It seems a mysterious hooded man is stalking me.~ */ EXTERN ~BDBELT~ BELT_SAME_HOODED_MAN
 END
 
 APPEND BDBELT
-	IF ~~ THEN BELT_WEAK_POISON
+	IF ~~ THEN BELT_WEAK_POISON1
 		SAY @105 /* ~That is disturbing news.~ */
 		IF ~Global("#L_Snark","GLOBAL",0)~ THEN REPLY @106 /* ~Even more disturbing was the visitor I had.  It seems a mysterious hooded man is stalking me.~ */ + BELT_SORRY
 		IF ~!Global("#L_Snark","GLOBAL",0)~ THEN REPLY @106 /* ~Even more disturbing was the visitor I had.  It seems a mysterious hooded man is stalking me.~ */ + BELT_SAME_HOODED_MAN
+	END
+
+	IF ~~ THEN BELT_WEAK_POISON2
+		SAY @105 /* ~That is disturbing news.~ */
+		IF ~~ EXTERN ~BDENTAR~ 42
 	END
 
 	IF ~~ THEN BELT_SAME_HOODED_MAN
