@@ -3,7 +3,7 @@
 // Compiled via coastway_bridge.tpa                                 //
 //////////////////////////////////////////////////////////////////////
 
-EXTEND_BOTTOM BDCORWIN 5 #0
+EXTEND_BOTTOM BDCORWIN 5
 	IF ~Global("#L_SoDStatOptions","GLOBAL",1) OR(2) CheckStatGT(Player1,15,WIS) CheckStatGT(Player1,15,INT)~ THEN REPLY @2000 /* ~You should send out scouts.  Caelar will be expecting us to cross here.~ */ DO ~SetGlobal("bd_plot","global",101) SetGlobal("#L_CWBridgeQuest","GLOBAL",1)~ + CORWIN_BRIDGE_QUEST_1.1
 END
 
@@ -500,7 +500,7 @@ APPEND BDREFG4
 	END
 END
 
-EXTEND_BOTTOM BDSCRY 0 #0
+EXTEND_BOTTOM BDSCRY 0
 	IF ~Global("bd_sddd12_bridge","LOCALS",0) GlobalLT("BD_Plot","GLOBAL",156)~ THEN REPLY @2030 /* ~The Coast Way Crossing...~ */ GOTO SCRY_POOL_CWBridge
 END
 
