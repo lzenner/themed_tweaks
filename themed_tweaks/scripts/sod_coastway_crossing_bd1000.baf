@@ -25,6 +25,71 @@ THEN
 END
 
 IF
+	GlobalLT("#L_CWBridgeQuest","GLOBAL",3)
+	OR(2)
+		TriggerOverride(Player2,See("BDCRUS10"))
+		TriggerOverride(Player2,See("BDCRUS11"))		
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("#L_CWBridgeQuest","GLOBAL",3)
+		AddJournalEntry(@3002,QUEST)
+	    SetInterrupt(TRUE)
+END
+
+IF
+	GlobalLT("#L_CWBridgeQuest","GLOBAL",3)
+	OR(2)
+		TriggerOverride(Player3,See("BDCRUS10"))
+		TriggerOverride(Player3,See("BDCRUS11"))		
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("#L_CWBridgeQuest","GLOBAL",3)
+		AddJournalEntry(@3002,QUEST)
+	    SetInterrupt(TRUE)
+END
+
+IF
+	GlobalLT("#L_CWBridgeQuest","GLOBAL",3)
+	OR(2)
+		TriggerOverride(Player4,See("BDCRUS10"))
+		TriggerOverride(Player4,See("BDCRUS11"))		
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("#L_CWBridgeQuest","GLOBAL",3)
+		AddJournalEntry(@3002,QUEST)
+	    SetInterrupt(TRUE)
+END
+
+IF
+	GlobalLT("#L_CWBridgeQuest","GLOBAL",3)
+	OR(2)
+		TriggerOverride(Player5,See("BDCRUS10"))
+		TriggerOverride(Player5,See("BDCRUS11"))		
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("#L_CWBridgeQuest","GLOBAL",3)
+		AddJournalEntry(@3002,QUEST)
+	    SetInterrupt(TRUE)
+END
+
+IF
+	GlobalLT("#L_CWBridgeQuest","GLOBAL",3)
+	OR(2)
+		TriggerOverride(Player6,See("BDCRUS10"))
+		TriggerOverride(Player6,See("BDCRUS11"))		
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("#L_CWBridgeQuest","GLOBAL",3)
+		AddJournalEntry(@3002,QUEST)
+	    SetInterrupt(TRUE)
+END
+
+IF
 	Global("BD_Plot","GLOBAL",156)
 	GlobalLT("#L_CWBridgeQuest","GLOBAL",5)
 THEN
