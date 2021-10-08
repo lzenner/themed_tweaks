@@ -3,12 +3,6 @@
 ////////////////////////////////////////////////////
 
 DEFINE_ACTION_FUNCTION sod_coastway_crossing BEGIN
-	// TODO: Informant is a dwarf female (BDCrus11)- Bence does something (unspecified) to break the charm - the FF mage will not be happy with him
-	//       There are a lot of changes to be made to the dialogue with Caelar
-	//       Additions to wrap-up dialogues with Corwin and Bence
-	//			If Corwin not in the group, bring Bence to her position
-	//			  If no password - bring him there right away
-	//			  If password - have him be there after bridge go boom
 	// FUTURE: Allow for successfully saving the bridge (this may need its own mod)
 	//		This would allow for Boareskyr Bridge to be skipped
 	//		Will have Jaheira and wassisname approach PC after success to request aid for Bridgefort
@@ -152,6 +146,7 @@ IF
 THEN
 	RESPONSE #100
 		CutSceneId(Player1)~
+		
 		END
 	COPY_EXISTING ~CUTSKIP.BCS~ ~Override~
 		DECOMPILE_AND_PATCH BEGIN
