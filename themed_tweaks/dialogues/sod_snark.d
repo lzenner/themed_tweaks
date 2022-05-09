@@ -115,14 +115,21 @@ ALTER_TRANS BDCORWIN
 		"REPLY" ~@8026~ // ~I'm your best chance?  Don't be absurd.~
 	END
 EXTEND_BOTTOM BDCORWIN 7
-	IF ~BeenInParty("Xan")~ THEN REPLY @8027 /* ~I'm your best chance?  Xan was right.  We're doomed!~ */ GOTO 8
+	IF ~BeenInParty("Xan")~ THEN REPLY @8027 /* ~I'm your best chance?  Xan was right.  We're doomed!~ */ GOTO 7_intermediate
 	IF ~IsValidForPartyDialogue("Minsc")~ THEN REPLY @8028 /* ~I appreciate the fact that you'd take an arrow for me, Corwin, but it's hardly necessary.  That's what Minsc is for.~ */ EXTERN BDMINSCJ BUTT_KICKING_1
 END
 
 APPEND BDMINSCJ
 	IF ~~ THEN BEGIN BUTT_KICKING_1
 		SAY #%minsc_kick_butt%
-		IF ~~ THEN EXTERN BDCORWIN 8
+		IF ~~ THEN EXTERN BDCORWIN 7_intermediate
+	END
+END
+
+APPEND BDCORWIN
+	IF ~~ THEN BEGIN 7_intermediate
+		SAY #%eet_2%64654 /* ~They call you the hero of Baldur's Gate. Try to act the part.~ */
+		COPY_TRANS BDCORWIN 7
 	END
 END
 
