@@ -294,7 +294,7 @@ END
 
 APPEND BDCAELAR
 	IF ~~ THEN BEGIN ONLY_I_CAN_CHALLENGE_FIENDS
-		SAY #256585 /* ~Only I can challenge the fiends of the Nine Hells. I must carry my mission out to its end.~ [BD56585] */
+		SAY #%eet_2%56585 /* ~Only I can challenge the fiends of the Nine Hells. I must carry my mission out to its end.~ [BD56585] */
 		IF ~~ THEN REPLY @2032 /* ~If you plan on fighting these fiends, then why is one of their servants standing right behind you?~ */ EXTERN ~BDHEPHER~ HEPH_COUGH 
 	END
 	
