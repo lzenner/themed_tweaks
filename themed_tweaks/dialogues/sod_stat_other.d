@@ -260,7 +260,8 @@ ADD_TRANS_ACTION BDEDWINJ BEGIN 5 6 END BEGIN END ~SetGlobal("#L_SodStat_HephAdv
 
 	
 APPEND BDEDWINJ
-	IF ~Global("#L_SoDStat_HephUmbral","LOCALS",1)~	THEN BEGIN I_KNEW_IT
+	IF WEIGHT #-1
+	~Global("#L_SoDStat_HephUmbral","LOCALS",1)~	THEN BEGIN I_KNEW_IT
 		SAY @2060 /* ~I knew something was off with that hedge wizard! (I always know.)~ */
 		++ @2061 /* ~Which hedge wizard, Edwin?~ */ GOTO KNEW_WHO
 		++ @2062 /* ~You know him, Edwin?~ */ GOTO YOU_KNOW_HIM
