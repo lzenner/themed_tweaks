@@ -47,7 +47,13 @@ ALTER_TRANS BDENTAR
 		"TRIGGER" ~Global("#L_Snark","GLOBAL",0)~
 	END
 EXTEND_BOTTOM BDENTAR 18
-	IF ~!Global("#L_Snark","GLOBAL",0)~ THEN REPLY @8025 /* ~With all due respect sir, I'm not a babysitter.  Neither is the Fist.  But if you insist upon this folly, her fate is upon your head, not mine.~ */ DO ~AddJournalEntry(256390,QUEST)~ GOTO 44
+	IF ~!Global("#L_Snark","GLOBAL",0)~ THEN REPLY @8025 /* ~With all due respect sir, I'm not a babysitter.  Neither is the Fist.  But if you insist upon this folly, her fate is upon your head, not mine.~ */ GOTO 44_intermediate
+END
+APPEND BDENTAR
+	IF ~~ THEN BEGIN 44_intermediate
+	SAY #%eet_2%64909 /* ~You'd better get moving. Unless there was something else?~ [BD64909] */
+	COPY_TRANS BDENTAR 18
+	END
 END
 
 // Snark about the sword and hooded man take place in reference to staying in room
