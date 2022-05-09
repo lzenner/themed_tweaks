@@ -1,6 +1,6 @@
 BACKUP ~weidu_external/backup/themed_tweaks~
-SUPPORT ~~
-VERSION ~v0.1~
+SUPPORT ~https://www.gibberlings3.net/forums/topic/32346-themed-tweaks-for-bgee-sod-bg2ee-tob-eet/~
+VERSION ~v0.2~
 
 README ~themed_tweaks/readme.themed_tweaks.%LANGUAGE%.txt~ ~themed_tweaks/readme.themed_tweaks.english.txt~
 
