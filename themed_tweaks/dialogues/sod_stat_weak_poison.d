@@ -3,6 +3,21 @@
 // with regard to the poison used by Caelar's elites //
 ///////////////////////////////////////////////////////
 
+
+/* this needs to be compiled first so the COPY_TRANS grabs the yet unchanged transactions from state 14 */
+APPEND BDLIIA
+	IF ~~ THEN LIIA_WEAK_POISON
+		SAY @101 /* ~Hmm, you may be right.~ */
+		COPY_TRANS BDLIIA 14
+	END
+
+	IF ~~ THEN LIIA_YES_WEAK_POISON
+		SAY @103 /* ~Yes, the poison they used was far too weak to accomplish that.~ */
+		+ ~Global("#L_PCMetIreniInRoom","GLOBAL",1)~ + @104 /* ~Their purpose was to capture me.  I have no idea why.~ */ EXTERN ~BDBELT~ BELT_WEAK_POISON1
+		+ ~!Global("#L_PCMetIreniInRoom","GLOBAL",1)~ + @104 /* ~Their purpose was to capture me.  I have no idea why.~ */ EXTERN ~BDBELT~ BELT_WEAK_POISON2
+	END
+END
+
 // Have the PC realize the poison was too weak to act as a means of assassination
 ALTER_TRANS BDLIIA
 	BEGIN 14 END 
@@ -20,19 +35,6 @@ ALTER_TRANS BDLIIA
 	BEGIN
 		"TRIGGER" ~CheckStatLT(Player1,16,WIS) CheckStatLT(Player1,16,INT)~ 
 	END
-
-APPEND BDLIIA
-	IF ~~ THEN LIIA_WEAK_POISON
-		SAY @101 /* ~Hmm, you may be right.~ */
-		IF ~~ THEN GOTO 15
-	END
-
-	IF ~~ THEN LIIA_YES_WEAK_POISON
-		SAY @103 /* ~Yes, the poison they used was far too weak to accomplish that.~ */
-		+ ~Global("#L_PCMetIreniInRoom","GLOBAL",1)~ + @104 /* ~Their purpose was to capture me.  I have no idea why.~ */ EXTERN ~BDBELT~ BELT_WEAK_POISON1
-		+ ~!Global("#L_PCMetIreniInRoom","GLOBAL",1)~ + @104 /* ~Their purpose was to capture me.  I have no idea why.~ */ EXTERN ~BDBELT~ BELT_WEAK_POISON2
-	END
-END
 
 // Final palace conversation
 EXTEND_BOTTOM BDENTAR 41 
