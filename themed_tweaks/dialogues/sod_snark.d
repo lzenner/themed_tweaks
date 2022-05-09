@@ -139,8 +139,9 @@ ALTER_TRANS BDCAELAR
 	BEGIN 0 END
 	BEGIN 
 		"REPLY" ~@8050~  // ~Are you seriously comparing my averting war to your starting one as being in way similar? Mind boggling!~
-		"ACTION" ~IncrementGlobal("bd_mdd420_good","global",1)~
+//		"ACTION" ~IncrementGlobal("bd_mdd420_good","global",1)~
 	END
+ADD_TRANS_ACTION BDCAELAR BEGIN 11 END BEGIN 0 END ~IncrementGlobal("bd_mdd420_good","global",1)~
 
 ALTER_TRANS BDCAELAR
 	BEGIN 15 END
