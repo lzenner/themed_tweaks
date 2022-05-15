@@ -1,4 +1,4 @@
--------------------------------------------------
+﻿-------------------------------------------------
 ---               Themed Tweaks               ---
 ---      for EET, BG1EE, SoD, BG2EE, ToB      ---
 -------------------------------------------------
@@ -50,6 +50,7 @@ Just adds some fun snarky comments to the otherwise stuffy or inane dialogue
 SoD/BG2 - Remove cut scenes that the PC shouldn't be privy to - by Lauriel
 ------------------------------------------------------------------------
 Unless there's a reason for the PC to view a scene, like a scrying pool, scenes about what is happening to other NPCs outside of the PC's line-of-sight are skipped.
+Note: this also removes cutscenes added by other mods, for example I4E's component "Play cutscene with Imoen and Duke Jannath".
 ** PROGRESS: SoD through the 1st camp is finished.  Remainder of SoD and BG2 yet to do
 
 ------------------------------------------------------------------------

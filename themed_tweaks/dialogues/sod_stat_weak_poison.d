@@ -3,6 +3,21 @@
 // with regard to the poison used by Caelar's elites //
 ///////////////////////////////////////////////////////
 
+
+/* this needs to be compiled first so the COPY_TRANS grabs the yet unchanged transactions from state 14 */
+APPEND BDLIIA
+	IF ~~ THEN LIIA_WEAK_POISON
+		SAY @101 /* ~Hmm, you may be right.~ */
+		COPY_TRANS BDLIIA 14
+	END
+
+	IF ~~ THEN LIIA_YES_WEAK_POISON
+		SAY @103 /* ~Yes, the poison they used was far too weak to accomplish that.~ */
+		+ ~Global("#L_PCMetIreniInRoom","GLOBAL",1)~ + @104 /* ~Their purpose was to capture me.  I have no idea why.~ */ EXTERN ~BDBELT~ BELT_WEAK_POISON1
+		+ ~!Global("#L_PCMetIreniInRoom","GLOBAL",1)~ + @104 /* ~Their purpose was to capture me.  I have no idea why.~ */ EXTERN ~BDBELT~ BELT_WEAK_POISON2
+	END
+END
+
 // Have the PC realize the poison was too weak to act as a means of assassination
 ALTER_TRANS BDLIIA
 	BEGIN 14 END 
@@ -20,19 +35,6 @@ ALTER_TRANS BDLIIA
 	BEGIN
 		"TRIGGER" ~CheckStatLT(Player1,16,WIS) CheckStatLT(Player1,16,INT)~ 
 	END
-
-APPEND BDLIIA
-	IF ~~ THEN LIIA_WEAK_POISON
-		SAY @101 /* ~Hmm, you may be right.~ */
-		IF ~~ THEN GOTO 15
-	END
-
-	IF ~~ THEN LIIA_YES_WEAK_POISON
-		SAY @103 /* ~Yes, the poison they used was far too weak to accomplish that.~ */
-		+ ~Global("#L_PCMetIreniInRoom","GLOBAL",1)~ + @104 /* ~Their purpose was to capture me.  I have no idea why.~ */ EXTERN ~BDBELT~ BELT_WEAK_POISON1
-		+ ~!Global("#L_PCMetIreniInRoom","GLOBAL",1)~ + @104 /* ~Their purpose was to capture me.  I have no idea why.~ */ EXTERN ~BDBELT~ BELT_WEAK_POISON2
-	END
-END
 
 // Final palace conversation
 EXTEND_BOTTOM BDENTAR 41 
@@ -192,14 +194,12 @@ END
 APPEND BDRASAAD
 	IF ~~ THEN BEGIN POISON_FOR_BREAKFAST
 		SAY @127 /* ~The day's first meal is important. It sets the tone for what is to come— Wait. Are you saying someone tried to poison you?~ */
-		IF ~~ THEN GOTO 38
+		COPY_TRANS BDRASAAD 35
 	END
 
 	IF ~~ THEN BEGIN RASAAD_ATTACK
   		SAY @132 /* ~You say Caelar Argent attacked you? But why?~ */
-  		IF ~~ THEN REPLY #234649 /* ~I was hoping you'd help me find out.~ */ GOTO 24
-  		IF ~~ THEN REPLY #234650 /* ~I'm less concerned with her reasons than ensuring this doesn't happen again.~ */ GOTO 23
-  		IF ~~ THEN REPLY #234651 /* ~Why doesn't matter. All that matters is that she pay for her folly.~ */ GOTO 41
+		COPY_TRANS BDRASAAD 40
 	END
 END
 

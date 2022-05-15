@@ -13,6 +13,8 @@ DEFINE_ACTION_FUNCTION sod_aid_imoen BEGIN
 			// Keep the original spell in there so Imoen's Magic Wand component can find it
 			REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH ~ReallyForceSpellRES("bdgassa1","IMOEN2")~ ~ReallyForceSpellRES("bdgassa1","IMOEN2") ApplySpellRES("#LSLEEP","IMOEN2") ActionOverride("IMOEN2",SetSequence(SEQ_SLEEP))~
 		END
+	
+	APPEND ~spell.ids~ ~3102 INNATE_SLOW_POISON~ UNLESS ~INNATE_SLOW_POISON~ // dupe of INNATE_SLOW_POISON needed for BG:SoD
 
 	EXTEND_TOP ~BDIMOEN.BCS~ ~%mod_root%/scripts/sod_aid_imoen.baf~
 	COMPILE EVALUATE_BUFFER ~%mod_root%/dialogues/sod_aid_imoen.d~ USING ~%tra_loc%/%s/sod_aid_imoen.tra~

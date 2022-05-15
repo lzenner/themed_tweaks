@@ -47,7 +47,13 @@ ALTER_TRANS BDENTAR
 		"TRIGGER" ~Global("#L_Snark","GLOBAL",0)~
 	END
 EXTEND_BOTTOM BDENTAR 18
-	IF ~!Global("#L_Snark","GLOBAL",0)~ THEN REPLY @8025 /* ~With all due respect sir, I'm not a babysitter.  Neither is the Fist.  But if you insist upon this folly, her fate is upon your head, not mine.~ */ DO ~AddJournalEntry(256390,QUEST)~ GOTO 44
+	IF ~!Global("#L_Snark","GLOBAL",0)~ THEN REPLY @8025 /* ~With all due respect sir, I'm not a babysitter.  Neither is the Fist.  But if you insist upon this folly, her fate is upon your head, not mine.~ */ GOTO 44_intermediate
+END
+APPEND BDENTAR
+	IF ~~ THEN BEGIN 44_intermediate
+	SAY #%eet_2%64909 /* ~You'd better get moving. Unless there was something else?~ [BD64909] */
+	COPY_TRANS BDENTAR 18
+	END
 END
 
 // Snark about the sword and hooded man take place in reference to staying in room
@@ -109,14 +115,21 @@ ALTER_TRANS BDCORWIN
 		"REPLY" ~@8026~ // ~I'm your best chance?  Don't be absurd.~
 	END
 EXTEND_BOTTOM BDCORWIN 7
-	IF ~BeenInParty("Xan")~ THEN REPLY @8027 /* ~I'm your best chance?  Xan was right.  We're doomed!~ */ GOTO 8
+	IF ~BeenInParty("Xan")~ THEN REPLY @8027 /* ~I'm your best chance?  Xan was right.  We're doomed!~ */ GOTO 7_intermediate
 	IF ~IsValidForPartyDialogue("Minsc")~ THEN REPLY @8028 /* ~I appreciate the fact that you'd take an arrow for me, Corwin, but it's hardly necessary.  That's what Minsc is for.~ */ EXTERN BDMINSCJ BUTT_KICKING_1
 END
 
 APPEND BDMINSCJ
 	IF ~~ THEN BEGIN BUTT_KICKING_1
 		SAY #%minsc_kick_butt%
-		IF ~~ THEN EXTERN BDCORWIN 8
+		IF ~~ THEN EXTERN BDCORWIN 7_intermediate
+	END
+END
+
+APPEND BDCORWIN
+	IF ~~ THEN BEGIN 7_intermediate
+		SAY #%eet_2%64654 /* ~They call you the hero of Baldur's Gate. Try to act the part.~ */
+		COPY_TRANS BDCORWIN 7
 	END
 END
 
@@ -126,8 +139,9 @@ ALTER_TRANS BDCAELAR
 	BEGIN 0 END
 	BEGIN 
 		"REPLY" ~@8050~  // ~Are you seriously comparing my averting war to your starting one as being in way similar? Mind boggling!~
-		"ACTION" ~IncrementGlobal("bd_mdd420_good","global",1)~
+//		"ACTION" ~IncrementGlobal("bd_mdd420_good","global",1)~
 	END
+ADD_TRANS_ACTION BDCAELAR BEGIN 11 END BEGIN 0 END ~IncrementGlobal("bd_mdd420_good","global",1)~
 
 ALTER_TRANS BDCAELAR
 	BEGIN 15 END
