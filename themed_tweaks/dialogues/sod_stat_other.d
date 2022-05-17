@@ -333,7 +333,7 @@ ALTER_TRANS BDCAELAR
 	BEGIN 0 1 END
 	BEGIN "TRIGGER" ~Global("#L_SoDStat_WeakPoison","GLOBAL",0)~ END
 EXTEND_BOTTOM BDCAELAR 12
-	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN REPLY @2040 /* ~You were what brought me here—...~ */ DO ~IncrementGlobal("bd_mdd420_good","global",3)~ GOTO 14
+	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN REPLY @2040 /* ~You were what brought me here-...~ */ DO ~IncrementGlobal("bd_mdd420_good","global",3)~ GOTO 14
 	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN REPLY @2041 /* ~Destiny, and the poison dripping ....*/ GOTO 14
 END
 
