@@ -1,6 +1,6 @@
 BACKUP ~weidu_external/backup/themed_tweaks~
 SUPPORT ~~
-VERSION ~v0.1~
+VERSION ~v2 pre~
 
 README ~themed_tweaks/readme.themed_tweaks_v2.%LANGUAGE%.txt~ ~themed_tweaks/readme.themed_tweaks_v2.english.txt~
 
