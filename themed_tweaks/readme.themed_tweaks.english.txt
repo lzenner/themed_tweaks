@@ -156,7 +156,18 @@ The Gibberlings Three	http://gibberlings3.net
 ------------------------------------------------------------------------
 HISTORY
 ------------------------------------------------------------------------
-still in development
+Version 0.2:
+- Fixed compatibility problem with The Boareskyr Bridge Scene mod.
+- Fixed install error of component "Allow PC to give aid to Imoen after palace attack" on BG:SoD.
+- Revised general scripting to increase general compatibility.
+- "Add stat-based observations and options": Wrong variable references fixed; Reply option about Hooded Man inside the palace will only show if the Hooded Man was inide the palace; Added WEIGHT #-1 to Edwin's dialogue so it won't get blocked; cutscene changed to make texts better readable; setting of variable for generic NPC dialogues will not loop; Corrected string reference error for BG:SoD.
+- "Allow PC to give aid to Imoen after palace attack": Added prefix to variable (for Liia's extra line).
+- Added link to mod thread at G3 to tp2 and ini.
+- Updated install order syntax in themed_tweaks.ini and added globally unique LABELs for PI.
+- Typo correction.
+
+Version 0.1:
+- first public release
 
 ------------------------------------------------------------------------
 LEGAL INFORMATION
