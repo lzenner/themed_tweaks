@@ -1,0 +1,147 @@
+///////////////////////////////////////////
+// IMOEN'S CUSTOM WAND OF MAGIC MISSILES //
+///////////////////////////////////////////
+@1000	= ~La Baguette d'Imoen~
+@1001	= ~Cette baguette ressemble à toutes les autres baguettes de projectiles magiques, mais elle possède une particularité supplémentaire. Lorsqu'elle est utilisée, celle-ci propulse jusqu'à trois projectiles magiques qui fusent en direction de leur cible et la frappe inexorablement, qu'elle ce trouve à bonne distance ou à proximité immédiate. Cependant la créature choisie doit être visible, ou au moins détectable. La protection offerte par un abri imposant ou une meurtrière, peut rendre le sort inefficace. Chaque missile inflige 1d4 points de dégâts, ainsi que 1 point de dégâts magiques supplémentaires.
+
+PARAMÈTRES :
+
+Capacités de charge : 
+- jusqu'à trois projectiles magiques peuvent frapper la cible
+  Dégâts : 1d4
+  Portée : 30 mètres
+  Zone d'effet : 1 créature
+
+Capacités de combat :
+- Inflige 1 point de dégâts magiques supplémentaires
+
+Nécessite : 9 en Intelligence
+
+Poids : 1~
+
+////////////////////////////////////////////////////////////////////////////////////////////
+// FOR BG2 IMOEN'S MAGIC MISSILE COMPONENT                                                //
+// POTION FOUND IN CHATEAU IRENICUS SO IMOEN CAN REFRESH HER MAGIC MISSILE BEFORE EXITING //
+////////////////////////////////////////////////////////////////////////////////////////////
+@1002	= ~Potion de repos~
+@1003	= ~Cette alléchante potion soulage le corps et l'esprit de toute fatigue.
+
+PARAMÈTRES :
+
+Spécial : Élimination de la fatigue
+Spécial : Récupération des sorts~
+
+/////////////////////////////////////////////////////
+// COAST WAY CROSSING QUEST DISGUISED FLAMING FIST //
+/////////////////////////////////////////////////////
+@1004	= ~Veteran du Poing Enflammé déguisé~
+@1005	= ~Mage de bataille du Poing Enflammé déguisé~ 
+@1006	= ~Guérisseur du Poing Enflammé déguisé~
+
+/////////////////////////////////////////////////////////////////
+// SCRYING POOL VERSION OF HEPHERNAAN FOR CUT SCENES COMPONENT //
+/////////////////////////////////////////////////////////////////
+@1007	= ~Agent de l'Accord de l'Ombre~
+
+///////////////////////////////////////////////////////////////////
+// UNIQUE ITEMS REDESCRIBING ITEMS THAT GET REUSED OVER AND OVER //
+///////////////////////////////////////////////////////////////////
+@1008	= ~Dague +2~
+@1009	= ~Cette dague soigneusement confectionnée n'a pas son pareil. L'enchantement apporté à cette arme déjà remarquable la rend très dangereuse entre des mains compétentes.
+
+PARAMÈTRES :
+
+Enchantement : +2
+TAC0 : +2
+Dégâts : 1d4 +2
+Type de dégâts : Perforant
+Facteur de vitesse : 1
+Type de compétence : Dague
+Type : Arme à 1 main
+
+Poids : 1
+
+Nécessite : 
+- Force : 3~
+
+@1010	= ~Armure de plates +1~
+@1011	= ~L'enchantement contenu dans cette armure de plates élégamment conçue en fait l'une des plus réputées du pays.
+
+PARAMÈTRES : 
+
+Capacités d'équipement : 
+- Classe d'armure de base : 2
+- Classe d'armure : +1 contre les armes tranchantes
+- Empêche le porteur de lancer des sorts profanes
+- Empêche l'utilisation des compétences de voleur
+- Empêche l'utilisation du camouflage dans l'ombre
+
+Poids : 50
+
+Nécessite : 
+- Force : 12~
+
+@1012	= ~Ceinturon inflexible~
+@1013	= ~L'enchantement dont bénéficie cette élégante ceinture contribue à dévier les attaques tranchantes.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+- Classe d'armure : +2 contre les armes tranchantes
+
+Weight: 2~
+
+@1014	= ~l'Antidote~
+@1015	= ~Cette épée bâtarde soigneusement façonnée protège son porteur du poison.
+
+PARAMÈTRES :
+
+Capacités d'équipement : 
+- Immunité aux poisons
+
+Enchantement : +1
+TAC0 : +1
+Dégâts : 2d4+3
+Type de dégâts : Tranchant
+Facteur de vitesse : 7
+Type de compétence : Épée bâtarde
+Type : Arme à 1 main
+
+Poids : 8
+
+Nécessite : 
+- Force : 11~
+
+//////////////////////////
+// Caelar Argent in BG1 //
+//////////////////////////
+@1016	= ~Femme étincelante~
+
+//////////////////////////////////////////////////
+// A note to replace one used in Rasaad's quest //
+//////////////////////////////////////////////////
+@1017 = ~Un serviteur de la plus méprisable des déesses a été aperçu dans la région. Il semble qu'il soit seul et isolé, se débarrasser de lui sera facile. Parlez à l'acolyte Sorrem, un aspirant des plus prometteur. Il vous fournira une description de votre objectif. Traquez et éliminez cet envoyé de Sélune et rapportez son corps au sanctuaire. La Maîtresse de la nuit et moi-même ne tolérerons aucun échec.
+
+A~
+
+
+////////////////////////////////////////////////////////////////////////
+// MORE UNIQUE ITEMS REDESCRIBING ITEMS THAT GET REUSED OVER AND OVER //
+////////////////////////////////////////////////////////////////////////
+@1018 = ~Shamshir~
+@1019 = ~Le cimeterre, ou « shamshir », comme il était appelé initialement, se caractérise par une lame large à simple tranchant et incurvée, et se termine par une longue pointe effilée. Certes plus lent que d'autres armes du même type, il compense par des dégâts plus importants. Ce cimeterre a été renforcé par magie afin d'améliorer les compétences de celui ou celle qui le manie.
+
+PARAMÈTRES :
+
+Enchantement : +2
+TAC0 : +2
+Dégâts : 1d8+2
+Type de dégâts : Tranchant
+Facteur de vitesse : 4
+Type de compétence : Sabre
+Type : Arme à 1 main
+
+Poids : 4
+
+Nécessite : 
+- Force : 10~

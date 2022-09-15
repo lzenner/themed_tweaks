@@ -1,0 +1,40 @@
+//////////////////////////////////////////////////////////////////////////////////
+// Dialogues needed for limiting access to the fact that the PC is a bhaalspawn //
+//////////////////////////////////////////////////////////////////////////////////
+
+// Dialogue for the new CRE that acts as an auto-reading of the note from Gorion
+@2000	= ~*Vous lisez une note découverte dans les affaires de Gorion, celle-ci vous est adressé*~
+@2001	= ~*Vous lisez une note, Tethtoril vous l'a donné en même temps que vos autres possessions*~
+@2002	= ~*Lisez la note seul et en silence*~ ~*Lisez la note seule et en silence*~
+@2003	= ~*Lisez la note à voix haute, devant tout le groupe*~
+@2004	= ~Bonjour <CHARNAME>,
+Si tu lis ceci, c'est que j'ai connu une fin tragique. Je te dirais bien de ne pas être triste, mais cela me rassure de penser que tu le seras. Il y a certaines choses que je dois t'avouer dans cette lettre, certaines choses que je t'ai peut-être déjà raconter. Cependant, s'il s'avère que ma disparition soit prématurée, alors je n'en ai peut-être jamais eu l'occasion. Pour commencer, je ne suis pas ton père biologique, ce privilège revient à une entité connue sous le nom de Bhaal. Tu le connais déjà en tant que divinité. Lors de la crise surnommée le Temps des Troubles, une époque ou les Dieux foulaient le sol de Féérune, Bhaal a lui aussi été amené à revêtir une enveloppe mortelle. D'une manière ou d'une autre, il apprit que sa fin était proche et pour des raisons inexpliquées, il s'est mis en quête de femmes issue de toutes les races et les a contraintes à porter sa progéniture. Ta mère en faisait partie, et comme tu le sais, elle est morte en te donnant la vie. Nous étions proche et même très proche pendant un certain temps. J'ai donc ressenti le devoir de t'élever comme mon propre enfant. Je t'ai toujours considéré ainsi et j'espère que tu continueras à me considérer comme un père. Tu es un enfant à part. Le sang des Dieux coule dans tes veines. Si tu consultes notre vaste bibliothèque, tu découvriras qu'Alaundo, le fondateur de Château-Suif, a formulé de nombreuses prophéties concernant l’émergence des rejetons de Bhaal. Nombreux sont ceux qui voudront t'utiliser pour servir leurs propres intérêts. Parmi ces personnes, le dénommé Sarevok, représente une grande menace. Il a étudié ici même dans notre foyer et en sait donc beaucoup sur ton histoire et tes origines.  
+
+Gorion~
+
+// Reactions to the reading (aloud) if Jaheira is present - triggers Jaheira to start a dialogue with the protagonist
+@2005	= ~Jaheira, comment aurais-tu pu l'ignorer ?~
+@2006	= ~Tu... tu le savais, n'est-ce pas ? Tu étais au courant de tout et tu n'as rien dit ! Toi... Traîtresse !~
+
+// New dialog with Ajantis - if he doesn't know about PC being a bhaalspawn
+// Only for when romance is active
+@2020	= ~Ma douce dame, vous semblez porter un lourd secret. Accepteriez-vous le partager avec moi ?~
+@2021	= ~Mon amour, tu sembles porter un lourd secret. Aimerais-tu que nous le portions ensemble ?~
+@2022	= ~C'est un sujet très personnel, Ajantis, et je n'ai vraiment pas envie d'en discuter.~
+@2023	= ~Très bien ma chère, comme il vous plaira.~
+@2024	= ~Très bien mon amour, comme il te plaira.~
+@2025	= ~Je devrais sans doute tout te dire. Tu mérites de savoir avec qui tu t'aventures. Je viens de découvrir que je suis une enfant de Bhaal.~
+@2030	= ~Dame <CHARNAME>, je souhaiterais vous parler quelques instants.~
+@2031	= ~Mon amour, je souhaiterais te parler quelques instants.~
+@2032	= ~Non Ajantis, pas maintenant.~
+@2033	= ~Cela ne peut plus attendre, ma douce. Je vous en prie, nous devons parler.~
+@2034	= ~Cela ne peut plus attendre, mon amour. Je t'en prie, nous devons parler.~
+@2035	= ~Bon, alors qu'y a-t-il ?~
+@2036	= ~Bien sûr, Ajantis. Que se passe-t-il ?~
+@2037	= ~Le poids que tu portes ne semble pas s'apaiser avec le temps et je crains qu'il n'affecte ta... notre mission. Je voudrais que tu te confies à moi.~
+@2038	= ~Désolé Ajantis, mais je ne souhaite pas aborder ce sujet.~
+@2039	= ~Je crains de devoir insister, ma douce dame~
+@2040	= ~Je crains de devoir insister, mon amour~
+@2041	= ~Tu as raison. Cela va affecter notre mission...  Cela va tout affecter. Ce n'est pas facile à avouer, mais tu mérites de savoir. J'ai récemment découvert que je suis une enfant de Bhaal.~
+@2050	= ~Tu... tu es une descendante de *Bhaal*, le Dieu du meurtre ?!  Depuis combien de temps me caches-tu un tel secret ?!~
+@2051	= ~Et tu te demandes pourquoi j'ai tant hésité à te le dire ?! C'est mon histoire, Ajantis. Pourquoi cela te concernerait-il ?~

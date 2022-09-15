@@ -1,0 +1,22 @@
+//////////////////////////////////////////////////////////////////
+// Dialogues Caelar Argents attempt to recuit the PC during BG1 //
+//////////////////////////////////////////////////////////////////
+
+@2000	= ~Excusez-moi, est-ce vous qui avez purifié les mines de Nashkel de ses démons ?~ [BD68312]
+@2001	= ~Excusez-moi, êtes-vous le groupe qui a purgé les mines de Nashkel des ses démons ?~ [BD68312]
+@2002	= ~N'allez pas croire tout ce que l'on raconte à propos de ces soi-disant démons. Les mines étaient infestées par de simples kobolds.~
+@2003	= ~C'est bien moi, en effet. Que puis-je faire pour vous ?~
+@2004	= ~C'est bien nous, en effet. De quoi avez-vous besoin ?~
+@2005	= ~Et si c'était le cas, que se passerait-il ?~
+@2006	= ~Et qu'adviendrait-il si c'était le cas ?~
+@2007	= ~Je suis à la recherche de combattants chevronnés qui accepteraient de braver avec moi de nombreux périls, dans une quête de justice contre des démons semblables à ceux que vous venez de terrasser.~
+@2008	= ~J'avais l'espoir de rencontrer un combattant chevronné qui accepterait de braver avec moi de nombreux périls, dans une quête de justice contre des démons.~ ~J'avais l'espoir de rencontrer un combattante chevronnée qui accepterait de braver avec moi de nombreux périls, dans une quête de justice contre des démons.~
+@2009	= ~N'allez pas croire tout ce que l'on raconte, Madame. Les mines étaient infestées par de simples kobolds, pas des démons. Nous ne sommes pas les guerriers que vous recherchez.~
+@2010	= ~Madame, n'allez pas croire tout ce que l'on raconte. Les mines étaient infestées par de simples kobolds, pas des démons. Je ne suis pas celui que vous espérez.~ ~Madame, n'allez pas croire tout ce que l'on raconte. Les mines étaient infestées par de simples kobolds, pas des démons. Je ne suis pas celle que vous espérez.~
+@2011	= ~Ha ! Et bien vous pouvez continuer à chercher, ma petite dame. Nous n'avons ni assez d'expérience, ni assez d'inconscience pour vous suivre dans une aventure pareille !~
+@2012	= ~Ha ! Et bien vous pouvez continuer à chercher, ma petite dame. Je n'ai ni assez d'expérience, ni assez d'inconscience pour vous suivre dans une aventure pareille !~
+@2013	= ~Fort bien. Alors il ne me reste qu'à vous souhaiter bon voyage.~
+@2014	= ~Contre de véritables démons ? Avez-vous perdu l'esprit ?!~
+@2015	= ~Vous voulez dire contre des kobolds ? Parce que c'est tout ce que nous venons de vaincre.~
+@2016	= ~Vous voulez dire contre des kobolds ? Parce que c'est tout ce que je viens de vaincre.~
+@2017	= ~De simples kobolds ? Il n'y avait aucun démon ? J'ai été bien mal renseignée.~
