@@ -1,0 +1,18 @@
+////////////////////////////////////////////////
+// Changes so Sorrem can be found in Beregost //
+////////////////////////////////////////////////
+
+@2000	= ~Lorsque j'étais de passage à Beregost, un homme nommé Sorrem venait assister à mes démonstrations martiale. Je l'ai quelquefois aperçu en train de se rendre au Magicien Ardent.~
+
+// Replacemet lines for Sorrem to make them more generic
+@2001	= ~Il y a une sorte de culte qui se fait appeler la Lune Noire. Ils sont dans le coin depuis moins d'un an, mais ils recherchent toujours de nouvelles recrues.~
+@2002	= ~Ils sont assez brutal, alors oui, quand ils m'ont interrogé sur ton pote Rasaad, je leur ai dit tout ce que je savais. Que je l'avais rencontré à Nashkel quelques temps auparavant et retrouvé ici même, dans cette ville.~
+@2003	= ~Ils ont une maison bien gardée pas très loin d'ici. Je pourrais te montrer le chemin si tu me retrouves ici à la nuit tombée.~
+
+// Journal Entries
+@3000	= ~Les Ennemis de mon Ami
+Les moines de la Lune noire de Beregost reçoivent leurs ordres d'une personne qui semble être établie dans les montagnes des Pics Brumeux, au sud des mines de Nashkel. Cette personne souhaitait que Rasaad soit assassiné et que son corps soit envoyé au nouveau sanctuaire dans ces mêmes montagnes. Il devait vouloir se faire remarquer par ce mystérieux patron.~
+@3001	= ~Les Ennemis de mon Ami
+J'ai localisé Sorrem au Magicien Ardent à Beregost. Il n'est pas vraiment digne de confiance, mais après l'avoir poussé un peu, il a tout révélé au sujet du culte de la Lune Noire. Sorrem affirme que je peux les trouver dans un bâtiment proche à la nuit tombée.~
+@3002	= ~Les Ennemis de mon Ami
+J'ai localisé Sorrem au Magicien Ardent à Beregost. Les choses ont dégénéré et j'ai été obligé de lui régler son compte. En rendant son dernier souffle, il m'a révélé que le culte de la Lune noire s'était installé dans les montagnes des Pics Brumeux~

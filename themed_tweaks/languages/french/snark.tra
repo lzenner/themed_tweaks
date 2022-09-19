@@ -1,0 +1,56 @@
+/////////////////////////////////////////////////////
+// Dialogue lines for the optional snark component //
+// Used for snark.d                                //
+/////////////////////////////////////////////////////
+
+// BG2
+@3000	= ~Juste un peu... Vous êtes sûr ?~
+
+// Response to Corwin's stupid question...
+@8000	= ~Et comment pourrais-je le savoir ?~
+
+// Response to Liia's request for PC to join the coalition
+@8001	= ~Êtes-vous vraiment en train de me servir la rengaine « Engagez-vous » ?~
+
+// Eltan's response and dialogue with PC
+@8002	= ~Il serait plus juste de parler d'une alliance de circonstance.~
+@8003	= ~Et que voulez-vous que je fasse ? Divertir les troupes ? Je ne suis qu'un barde après tout !~
+@8004	= ~Que pourrais-je bien faire de plus que vos soldats expérimentés ne sauraient déjà accomplir par eux même ? Et d'ailleurs...~
+@8005	= ~Un barde dont les talents dépassent de très loin la simple sérénade, un barde capble de resoudre la crise qui a secoué la Côte des Épées et de démasqué Sarevok... Un barde qui m'a sauvé la vie !~
+@8006	= ~Vous voulez dire, de plus que révéler l'imposture de Sarevok et résoudre la crise qui a secoué la Côte des Épées ? Ou bien parlons-nous du fait que vous m'avez sauvé la vie ?~
+@8007	= ~Et bien ! En dehors de vos talents de stratège et de votre aptitude à démêler les problèmes les plus insolubles, vous êtes aussi un symbole d'espoir pour toute la Côte des Épées.~
+@8008	= ~Je sais que ce fardeau n'est pas simple à porter pour une personne si jeune, mais nous ne pouvons malheureusement pas toujours décider de notre destin.~
+@8009	= ~Que les choses soient bien claires, je ne deviendrais jamais votre petit soldat et ne fais aucune promesse. Mais je vais vous accompagner et apporterai mon soutien quand ce sera possible.~
+@8010	= ~Ainsi, ma rétribution pour avoir mené à bien une mission des plus risqués s'avère être une tâche plus périlleuse encore... J'imagine que mes décisions m'ont conduit sur cette voie, il ne me reste plus qu'à la suivre.~ ~Ainsi, ma rétribution pour avoir mené à bien une mission des plus risqués s'avère être une tâche plus périlleuse encore... J'imagine que mes décisions m'ont conduite sur cette voie, il ne me reste plus qu'à la suivre.~
+@8011	= ~Bien au contraire, même au bord de l'abime je choisis ma propre destinée et c'est mon choix d'aller jusqu'au bout.~
+
+// Belt/Liia conversation about the accommodations on the third floor
+// Includes snarky lines
+// If Transitions is loaded, some of these are already in
+// We'll use those blocks instead of making new ones
+@8012	= ~<CHARNAME>, ce soir après avoir terminé vos préparatifs, je mets un point d'honneur à ce que vous restiez ici pour prendre une bonne nuit de repos.~
+@8013	= ~Imoen et Fenster sont à l'étage, je ne voudrais pas les déranger.~
+@8014	= ~Imoen sera bientôt installée dans ses propres quartiers. Vous ne la perturberez pas le moins du monde.~
+@8015	= ~Je me dois d'insister sur ce point, <CHARNAME>. C'est votre sécurité qui est en jeu.~
+@8016	= ~Ma sécurité ? C'est une blague n'est-ce pas ?.~
+@8017	= ~Vous parlez sans doute de la même protection que celle que vous avez offerte à Imoen ? Ou alors de votre réussite en ce qui concerne l'épée de Sarevok ?~
+@8018	= ~Hum... J'allais bien évidement vous mentionner sa disparition...~
+@8019	= ~Avez-vous la moindre idée de l'endroit où elle se trouve ? Et bien je vais vous le dire, après avoir été dérobé à votre insu, il semblerait qu'elle soit en route pour Athkatla, à la demande d'un « Homme encapuchonné » des plus mystérieux.~
+@8020	= ~Je l'ignorais.~
+@8021	= ~Vous devriez certainement envoyer quelqu'un pour tirer tout ça au clair. Cela pourrait s'avérer d'une importance capitale.~
+@8022	= ~Malgré tout, si cette attaque avait eu lieu en dehors du palais, le Poing Enflammé n'aurait pas été la pour vous soutenir et vous aider à repousser les assaillants.~
+@8023	= ~Vous n'auriez jamais pu les affronter seul.~ ~Vous n'auriez jamais pu les affronter seule.~
+@8024	= ~Vous marquez un point. C'est vrai que je suis sous bonne garde ici.~
+
+// Entar/Skie
+@8025	= ~Avec tout le respect que je vous dois, monseigneur, je ne suis pas une nourrice et le Poing Enflammé n'a rien d'une garderie. Mais si vous insistez avec cette requête absurde, son sort sera sur votre conscience, pas la mienne.~
+
+// Corwin
+@8026	= ~C'est vraiment moi votre meilleure option ? Les centaines de soldats du Poing Enflammé sous votre commandement n'ont donc aucune utilité ? Ne soyez pas ridicule.~
+@8027	= ~Je suis votre meilleure option ? Alors Xan avait raison. Nous courons tous à la ruine !~
+@8028	= ~J'apprécie que vous soyez prête à prendre une flèche pour moi, Corwin, mais ce ne sera pas nécessaire. Il faut bien que Minsc serve à quelque chose.~
+
+// Caelar after Coastway Crossing goes boom
+@8050	= ~Êtes-vous réellement en train de comparer mes efforts pour éviter une guerre avec votre croisade pour en fomenter une, comme si nous avions quoi que ce soit en commun ? Sérieusement, c'est hallucinant !~
+@8051	= ~Vous prétendez connaître mes intentions ? Vous êtes en plein délire !~
+@8052	= ~Vous avez perdu la tête si vous croyez que mon opinion serait prise en compte, d'autant que je n'ai pas la moindre intention de m'associer à votre vaste fumisterie.~

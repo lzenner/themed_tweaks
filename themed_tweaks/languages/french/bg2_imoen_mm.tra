@@ -1,0 +1,7 @@
+////////////////////////////////////////////////////////
+// Dialogues related to Imoen's Magic Missile ability //
+////////////////////////////////////////////////////////
+
+@2000	= ~Attends, <CHARNAME>, envoie-moi cette potion.~ [IMOEN09]
+@2001	= ~Un instant. Où ai-je bien pu la mettre ? Ahh, voilà !~ [IMOEN09]
+@2002	= ~Oups, c'était la dernière. C'est bon, je suis prête.~ [IMOEN07]

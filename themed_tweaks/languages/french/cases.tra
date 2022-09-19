@@ -1,0 +1,20 @@
+////////////////////////////////////////////////////////////
+// Strings used for the cases.tpa component               //
+// I'm starting with such a high number in the hopes that //
+// most modders can use this unmodified                   //
+////////////////////////////////////////////////////////////
+@900000	= ~Il         Elle~
+@900001 = ~Lui        Elle~
+@900002 = ~Son        Sa~
+@900003 = ~Ses        Ses~
+@900004 = ~Garçon     Fille~
+@900005 = ~Homme      Femme~
+@900006 = ~Lord       Lady~
+@900007 = ~Monsieur   Madame~
+@900008 = ~Maître     Maîtresse~
+@900009 = ~Frère      Sœur~ 
+@900010 = ~Fils       Fille~
+@900011 = ~Père       Mère~
+@900012 = ~Papa       Maman~
+@900013 = ~Papa       Mama~
+@900014 = ~Mâle       Femelle~

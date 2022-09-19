@@ -1,0 +1,90 @@
+////////////////////////////////////////////////////////////////////
+// Dialogues related to good reasons for PC to enter homes in BG1 //
+////////////////////////////////////////////////////////////////////
+
+// Candlekeep
+@2000	= ~Hé toi ! Ouais toi ! Viens me donner un coup de main, j'ai besoin de ton aide.~ [%SND_CARBOS%]
+@2001	= ~Hé vous ! Vite ! Venez par ici !~ [%SND_SHANK%]
+@2002	= ~Tu m'as l'air exténué, <CHARNAME>. Va à la clinique et demande une potion ou autre chose pour te requinquer. C'est la porte à côté.~
+
+// Used for many different houses
+@2003	= ~Vous remarquez une affiche « Recherche assistance » sur la fenêtre de cette habitation.~
+
+// Joia gives PC RE1 book so stealing it isn't necessary
+@2004	= ~Je n'ai rien d'autre à te donner que ce vieux livre pour te remercier.~
+
+// Bently gives PC RE1 book so stealing it isn't necessary
+@2005	= ~Une attaque devant ma porte, c'est une honte ! Jamais je... un instant... voilà, ce n'est pas grand-chose, mais j'espère que cela allégera votre fardeau.~
+
+// Bently additions
+@2006	= ~Vous paraissez plutôt robuste et capable de donner un coup de main. Il y a deux personnes à l'étage qui ont besoin d'aide, si vous êtes intéressé.~
+@2007	= ~Ça m'a tout l'air d'être la bague de Joia, je sais qu'elle y tiens beaucoup. Sa maison se trouve à l'entrée, sur la gauche quand vous passez le portail.~
+
+// Feldepost's bartender
+@2008	= ~Si vous cherchez à gagner un peu d'argent, Perleflamme Cheveux d'Elfe qui habite de l'autre côté de la rue est à la recherche de ce livre « Histoire de la Pièce Fatidique ».~
+
+// All vendors
+@2009	= ~Je suis à la recherche de livres et plus précisément de livres romantiques. Pensez-vous que je pourrais en trouver dans cette ville ?~
+
+// All vendors in Beregost
+@2010	= ~Perleflamme en a probablement un dans sa bibliothèque, tel que je connais ce vieux fou féru de littérature. Sinon, la seule bibliothèque digne de ce nom est au manoir des Travenhurst... Si vous voulez tenter votre chance, il se trouve au nord-est de la ville.~
+@2011	= ~Le nom de Mirianne vous dit-il quelque chose ? J'ai trouvé cette missive à son intention et je souhaiterais lui remettre.~
+@2012	= ~Oui, je connais Mirianne. Elle a une maison à l'est de la ville, un peu plus au nord que la forge.~
+@2013	= ~Reconnaissez-vous cette amulette ? J'essaie de localiser son propriétaire.~
+@2014	= ~Un peu que je la reconnais ! Elle appartient à la famille Colquetle. Ils habitent de l'autre côté de la rue, au nord de celle de ce bon vieux Perleflamme.~
+@2015	= ~Je la reconnais très bien ! Elle appartient à la famille Colquetle. Ils ont une maison en face de l'auberge de Feldepost, juste au-dessus de la maison du vieux Perleflamme Cheveux d'Elfe.~
+
+// Firebead
+@2016	= ~On m'a signalé que vous pourriez posséder un ouvrage que je recherche. Un roman d'amour ?~
+@2017	= ~Vous le voulez ? Volontiers. L'histoire me passionne bien plus que la poésie.~
+
+// Travenhurst Estate (RE1 book)
+@2018	= ~J'ai entendu dire que ce manoir disposait d'une bibliothèque susceptible de contenir le livre que je cherche. Un livre plutôt romantique ?~
+@2019	= ~Ohé Monsieur Travenhurst, possédez-vous un livre romantique ? Cette personne souhaiterait l'acquérir.~
+@2020	= ~Oui, en effet, nous en avons un exemplaire. S'ils veulent bien m'en donner 100 pièces d'or, il est à eux.~
+@2021	= ~J'espérais un prix plus abordable. Je reviendrai peut-être plus tard.~
+@2022	= ~Entendu ! Je le prends pour 100 pièces d'or.~
+@2023	= ~J'en avais un, avant qu'on me le dérobe. Vous ne savez rien à ce sujet, j'imagine ?!~
+@2024	= ~Non, évidemment. Je ne serais pas venu demander si je l'avais déjà.~
+@2025	= ~Bon. Alors cette conversation est terminée !~
+@2026	= ~Je suis simplement à la recherche d'une lettre dissimulée dans la reliure. Afin de la remettre à une femme pétrifiée par un basilic il y a des années.~
+@2027	= ~Une lettre... oh et bien, c'est assez inattendu. D'accord, vous pouvez la prendre. Tenez.~
+@2028	= ~Comme vous voulez.~
+
+// All vendors in Nashkel
+@2030	= ~le Manoir, le seul et unique endroit où l'on trouve une bibliothèque dans les parages... Vous devriez demander là-bas, c'est au nord-est de la ville.~
+@2031	= ~Cette anneau vous paraît-il familier ? J'essaie de retrouver son propriétaire.~
+@2032	= ~On dirait bien la bague de Joseph. Il habite avec sa femme à l'est de la ville, leur maison est juste après la taverne du Dragon Qui Rote.~
+
+// Nashkel Manor
+@2033	= ~Excusez-moi. On m'a rapporté que parmi les livres de votre bibliothèque, je pourrais trouver une histoire d'amour.~
+@2034	= ~Pour ce genre de livres, voyez avec la maîtresse de maison.~
+@2035	= ~En effet. Ses illustrations sont d'ailleurs très réussies. Pourquoi cette question ?~
+@2036	= ~Je pourrais bien être intéressé par cette article si le prix est correct.~
+@2037	= ~Je serais prête à m'en séparer pour... disons 150 pièces d'or. C'est l'un de mes livres préférés et je n'ai jamais eu l'occasion de contempler une œuvre aussi remarquable.~
+@2038	= ~C'est d'accord pour 150 pièces d'or.~
+
+// Joseph's widow
+@2040	= ~J'ai trouvé cet anneau dans les mines... à proximité du corps sans vie d'un des mineurs. Je suis navré, mais il semblerait qu'il ait appartenu à votre mari ?~ ~J'ai trouvé cet anneau dans les mines... à proximité du corps sans vie d'un des mineurs. Je suis navrée, mais il semblerait qu'il ait appartenu à votre mari ?~
+
+// Places in Baldur's Gate that have thieves or murders inside of them
+@2050	= ~Vous percevez des bruits très inhabituels en provenance cette demeure.~
+
+// Warehouses in Baldur's Gate that have quests
+@2051	= ~Une pancarte « Offre d'emploi » est accrochée à la porte de cette entrepôt.~
+
+// For Ghorak
+@2052	= ~Vous êtes attiré par les lamentations d'une personne en grande souffrance de l'autre côté de cette porte.~
+
+// Buildings under attack
+@2053	= ~Vous entendez des hurlements de terreur émanant de cet édifice.~
+
+// Ogre mages (S BG)
+@2054	= ~Vous entendez des bruits de lutte provenant de ce bâtiment, puis une voix rauque vous interpelle « Hé toi ! Ouais c'est à toi que je parle ! Viens par ici. J'ai quelque chose à te montrer », un ricanement résonne à l’intérieur.~ 
+
+// Rabid chickens (C BG)
+@2055	= ~Le vacarme à l'intérieur de ce magasin attire votre attention.~
+
+// The twins in NW BG
+@2056	= ~Vous apercevez une enfant effrayée à travers la fenêtre de cette maison, son visage semble prononcer les mots « Aidez-nous ».~
+

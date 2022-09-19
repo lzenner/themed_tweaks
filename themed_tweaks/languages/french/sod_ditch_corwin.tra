@@ -1,0 +1,28 @@
+// Let Eltan know you're reserving the option to not take Corwin with you into town
+@800	= ~Bien sûr.~
+@801	= ~Je vais y réfléchir.~
+@802	= ~Je n'ai pas besoin de chaperon et me débrouillerais très bien tout seul.~ ~Je n'ai pas besoin de chaperon et me débrouillerais très bien toute seule.~
+
+// During initial duke meeting turn down offer of escort
+@803	= ~Ce ne sera pas nécessaire. Dites-moi simplement où les trouver... J'imagine que les tavernes de la ville sont un bon endroit pour commencer.~
+
+// Tell Corwin to come or go
+@804	= ~Montrez-moi le chemin.~
+@805	= ~Vous pouvez attendre ici. Je vais continuer seul.~ ~Vous pouvez attendre ici. Je vais continuer seule.~
+@806	= ~Je ne pense pas que cela soit la meilleure marche à suivre.~
+@807	= ~Vos inquiétudes sont prises en compte, mais vous attendrez ici malgré tout.~
+@808	= ~Honnêtement, Capitaine Corwin, votre avis n'a pas vraiment d'importance.~
+
+// Ask Corwin out for a drink
+@809	= ~Corwin, aimeriez-vous m'accompagner boire un dernier verre de vin avant de rentrer chez vous pour la nuit ?~
+@810	= ~Quelles sont vos intentions ?~
+@811	= ~Je me suis dit que ce serait une bonne idée si vous et moi faisions plus ample connaissance.~
+@812	= ~C'est d'accord. Je vous retrouve aux Trois Vieilles Chopes.~
+
+// Just so happen to run into Corwin when she's needed - how handy
+@813	= ~<CHARNAME>, quelle heureuse rencontre.~
+@814	= ~Capitaine Corwin, vous tombez à point nommé !~
+@815	= ~Que voulez-vous dire ?~
+@816	= ~Merci, Capitaine Corwin.~
+@817	= ~Pas de problème, Corwin. Prenez votre temps et retrouvez-moi en bas pour partager un verre.~
+@818	= ~Très bien, je vous rejoins tout à l'heure.~

@@ -1,0 +1,143 @@
+////////////////////////////////
+// INSTALLATION SETUP STRINGS //
+////////////////////////////////
+@0 		= ~Themed Tweaks~
+@1		= ~DLC Merger d'Argent77 est requis avant que des mods puissent etre installes sur ce jeu.~
+@2		= ~Ce mod necessite BGEE, SoD, BG2EE ou EET~
+@3		= ~Ce composant necessite BGEE ou EET~
+@4		= ~Ce composant necessite SoD ou EET~
+@5		= ~Ce composant necessite BG2EE ou EET~
+@6 		= ~Ce composant necessite SoD, BG2EE, ou EET~
+@7		= ~Deja installe via le mod Transitions~
+
+@10		= ~BG1EE/BG2EE - Donner des raisons valables aux joueurs d'alignement bon de rentrer dans les maisons.~
+@20		= ~BG1EE/SoD/BG2EE - Corriger les scenes coupees qui reorganisent le groupe~
+@25		= ~BG1EE/SoD/BG2EE - Veiller a ce que les articles uniques restent uniques~
+@27		= ~BG1EE - Permettre a la quete de Rasaad d'etre completee avant le chapitre 5~
+@30		= ~BG1EE - Ajouter Caelar essaye de recruter le PC apres les mines de Nashkel et la fin de ToSC.~
+@40		= ~BG1EE - Permettre a Dorn de rejoindre un groupe de personnage bon afin d'accomplir sa quete de vengeance.~
+@50		= ~BG1EE/SoD - Suppression de references erratiques se rapportant a la condition d'enfant de Bhaal du PC.~
+@60		= ~SoD - Donner a Imoen une baguette speciale lors de l'attaque du palais~
+@70		= ~SoD - Permettre au PC de porter secours a Imoen apres l'attaque du palais~
+@80		= ~SoD - Observations basees sur les statistiques et options de quete~
+@90		= ~SoD - Eviter le tour de la ville avec Corwin Schael~
+@100	= ~SoD - Quete : Peripeties au Pont de la Voie Cotiere~
+@110	= ~SoD - Ajouter une confrontation avec Bence et Corwin sur les rapport entre Bence et Skie.~
+@120	= ~SoD - Accelerer l'ascenseur qui mene aux enfers~
+@130	= ~SoD - Accelerer les scenes de prison / proces~
+@140	= ~SoD/BG2EE - Ajoutez un peu de mordant aux dialogues~
+@150	= ~SoD/BG2EE - Supprimer les scenes coupees auxquelles le PC ne devrait pas avoir acces~
+@160	= ~SoD/BG2EE - Deplacer les reves avec Irenicus de SoD a BG2EE~
+@170	= ~BG2EE - Distribuer les possessions du groupe au debut de BG2 dans les magasins d'Athkatla.~
+@180	= ~BG2EE - Donner a Imoen la capacite innee, projectiles magiques, pour la scene de la Promenade de Waukyne.~
+@190	= ~BG2EE - Permettre a la victime du derviche peleur de boire la potion de restauration mineure d'igi (si elle se trouve dans votre inventaire) au lieu du sort de restauration.~
+@200	= ~BG2EE - Utiliser la cinematique d'Irenicus en enfer comme un reve qui restaure vos pouvoirs d'enfant de Bhaal.~
+@210	= ~BG2EE/ToB - Resoudre certains problemes lies au Fleau des ages.~
+@220	= ~ToB - Donner de solides raisons justifiant que le PC attaque ses freres et sœurs dans leurs propres enclaves.~
+@230	= ~ToB - Balthazar peut se rendre, meme si le PC n'a pas encore elimine les autres enfants de Bhaal.~
+@240 	= ~ToB - Ajouter une fin "l'aventure continue" avec vos pouvoirs d'enfant de Bhaal intacts.~
+@250	= ~EET - Permettre a Imoen de se jumeler en mage pendant son entrainement avec le Duc Liia.~
+@260	= ~EET - Supprimer le recapitulatif d'informations des premiers dialogues de BG2, le PC devrait les connaitre.~
+
+
+/* =============== *
+ *  WeiDU prompts  *
+ * =============== */
+@-1000= "Le mod %TP2_FILE_NAME% contient"
+@-1001= "composants optionnels distincts.
+Pour gagner du temps, vous pouvez choisir ce que vous souhaitez faire d'eux
+au niveau general plutot que de repondre aux questions pour chacun.
+"
+@-1002= "Que faut-il faire de tous les composants qui NE sont PAS ENCORE installes ?
+Les [I]nstaller, les [S]auter, dem[A]nder pour chacun ? "
+@-1003= "Que faut-il faire de tous les composants qui sont DEJA installes ?
+Les [R]einstaller, les s[U]pprimer, les [S]auter, dem[A]nder pour chacun ? "
+
+@-1004= "S'IL VOUS PLAIT, envoyez par e-mail le fichier"
+@-1005= "a"
+
+@-1006= "Installer le composant ["
+@-1007= "] ?
+[R]einstaller, co[N]server, s[U]pprimer ou [Q]uitter ? "
+@-1008= "] ?
+[I]nstaller, [N]e pas installer ou [Q]uitter ? "
+
+@-1009= "Entrez une partie du nom du module : "
+
+@-1010= "Reinstallation du composant ["
+@-1011= "] "
+@-1012= "Reinstallation dans la langue"
+
+@-1013= "Suppression de l'ancienne installation de ["
+@-1014= "] au prealable..."
+@-1015= "SUPPRESSION REUSSIE DE L'ANCIEN"
+
+@-1016= "Installation en cours"
+@-1017= "ERREUR pendant l'installation de ["
+@-1018= "], retour a l'etat anterieur"
+@-1019= "INSTALLATION REUSSIE"
+@-1020= "Saute"
+@-1021= "Suppression de ["
+@-1022= "] (composant #"
+@-1023= ")"
+@-1024= "SUPPRESSION REUSSIE DE ["
+
+@-1025= "] ?
+[R]einstaller, co[N]server, s[U]pprimer, [Q]uitter ou choisir un parmi :"
+@-1026= "] ?
+[N]e pas installer, [Q]uitter ou choisir un parmi :"
+@-1027= " (installe actuellement)"
+
+@-1028= "Souhaitez-vous afficher les composants de ["
+@-1029= "] ?
+[Y]Oui, [N]on ? "
+
+@-1030= "] ?
+choisir un parmi :"
+@-1031= "] ?
+[R]einstaller, co[N]server, [Q]uitter ou choisir un parmi :"
+@-1032= "INSTALLATION ECHOUEE A CAUSE D'ERREURS"
+@-1033= "INSTALLATION AVEC DES ALERTES"
+@-1034= "Souhaitez-vous afficher les instructions (ReadMe) ? [Y]Oui [N]on"
+@-1035= "Dans la langue"
+
+@-1036= "Saute le GROUPE ["
+@-1037= "] pour cause d'absence des pre-requis."
+
+@-1038= "dem[A]nder pour chaque composant, tout [S]auter, ou choisir une selection pre-definie :"
+@-1039= "dem[A]nder pour chaque composant, [R]einstaller la configuration courante, tout s[U]pprimer, tout [S]auter, ou choisir une selection pre-definie :"
+
+@-1040= "
+Veuillez choisir la langue dans laquelle vous souhaitez jouer au jeu.
+Si par la suite vous desirez jouer au jeu dans une langue differente, il vous
+faudra editer le fichier weidu.conf et reinstaller vos mods.
+"
+@-1041= "Tcheque"
+@-1042= "Allemand"
+@-1043= "Anglais"
+@-1044= "Espagnol"
+@-1045= "Francais"
+@-1046= "Italien"
+@-1047= "Polonais"
+@-1048= "Portugais"
+@-1049= "Turc"
+@-1050= "Japonais"
+@-1051= "Coreen"
+@-1052= "Chinois simplifie"
+@-1053= "Russe"
+@-1054= "Ukrainien"
+
+@-1060= "
+Ce jeu est disponible en plusieurs langues mais WeiDU ne sait pas laquelle a ete choisie quand ce mod a ete installe.
+
+Veuillez indiquer quelle langue du jeu a ete utilisee quand vous avez installe ce mod. Votre choix servira jusqu'a ce que WeiDU s'arrete mais ne sera pas memorise.
+"
+@-1061= "
+Utilisation de"
+@-1062= " et "
+
+@-1063= "INSTALLATION ABANDONNEE"
+@-1064= "Abandon de l'installation de ["
+@-1065= "], retour a l'etat anterieur"
+
+

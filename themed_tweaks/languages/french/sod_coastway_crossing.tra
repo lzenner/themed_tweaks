@@ -1,0 +1,189 @@
+///////////////////////////////////////////////////////////////
+// Dialogue lines for the Coast Way Crossing quest component //
+///////////////////////////////////////////////////////////////
+
+//////////////////////////
+// Initialize the quest //
+//////////////////////////
+@2000	= ~Vous devriez envoyer des éclaireurs en direction du pont. Caelar doit s'attendre à ce que nous traversions à cet endroit.~
+@2001	= ~Ce n'est pas une mauvaise idée. Je vais dire à Bence de s'en occuper.~
+@2002	= ~Pendant ce temps, je pars en reconnaissance de mon côté. Je ne veux pas de mauvaises surprises quand nous franchirons le Fleuve Sinueux.~
+@2003	= ~Gardez un œil sur les forces de Caelar. Elles pourraient être postées dans les parages.~
+@2004	= ~Vous savez quoi, gardez un œil sur Caelar. Je vais explorer les environs.~
+@2005	= ~Nous devrions garder un œil sur les forces de Caelar. Elles pourraient être postées dans les parages.~
+
+/////////////////////////////////////////////////////
+// Bridge discovered to be held by Caelar's forces //
+/////////////////////////////////////////////////////
+@2010	= ~Alors les forces de Caelar contrôlent le pont. Formidable ! Des idées sur la marche à suivre, <CHARNAME> ?~
+@2011   = ~<CHARNAME>, enfin ! Vous voilà de retour. Les éclaireurs sont revenus et les nouvelles ne sont pas bonnes. Les forces de Caelar ont le contrôle du pont. Nous devrions discuter de la stratégie à suivre.~
+@2012	= ~<CHARNAME>, bon retour parmi nous. Je suis heureuse de vous revoir en un seul morceau. Avez-vous quelque chose à signaler ?~
+@2013	= ~Malheureusement les nouvelles ne sont pas bonnes. Les forces de Caelar contrôle le pont.~
+@2014	= ~Pas vraiment ce que j'espérais entendre, mais c'était à prévoir. Des idées sur la marche à suivre ?~
+@2015	= ~Eh bien, Caelar n'avait pas l'intention de me tuer en attaquant le palais. Donc, je suppose que si le pont n'est pas encore détruit c'est qu'ils attendent le retour de leurs agents et d'un certain prisonnier.~ ~Eh bien, Caelar n'avait pas l'intention de me tuer en attaquant le palais. Donc, je suppose que si le pont n'est pas encore détruit c'est qu'ils attendent le retour de leurs agents et d'une certaine prisonnière.~
+@2016	= ~Eh bien, ils attendent forcément quelque chose, sinon le pont serait déjà détruit. Peut-être les agents qui ont attaqué le palais ?~
+@2017	= ~Peu importe leurs raisons, nous devons traverser sans attendre. Je vais commencer les préparatifs pour lancer un assaut.~
+@2018	= ~Vous ne pensez pas qu'un peu plus d'informations sur l'ampleur des effectifs postés de l'autre côté du pont seraient les bienvenues ?~
+@2019	= ~Oui, cela fait partie des dispositions à prendre. Retrouvez-moi ici dans quelques heures, le temps d'en savoir plus.~
+@2020	= ~L'affrontement est inévitable, quoi qu'il arrive nous devons franchir ce pont et le plus tôt sera le mieux... je propose que nous attaquions dès maintenant.~
+@2021	= ~Je vais commencer les préparatifs et demander à mes hommes de rassembler autant d'informations que possible. Retrouvez-moi ici dans quelques heures, le temps d'en savoir plus.~
+@2022	= ~Oui, cela fait partie des précautions à prendre. Retrouvez-moi au camp dans quelques heures, le temps d'en savoir plus.~
+@2023	= ~Je vais commencer les préparatifs et demander à mes hommes de rassembler autant d'informations que possible. Retrouvez-moi au camp dans quelques heures, le temps d'en savoir plus.~
+@2024	= ~Mon unité rassemble plus de détails en ce moment même. Avez-vous besoin de moi ?~
+
+//////////////////////////
+// Scrying Pool Options //
+//////////////////////////
+@2030	= ~Le Pont de la Voie Côtière...~
+@2031	= ~Plutôt qu'une personne, c'est le pont que vous devez franchir qui occupe votre esprit, alors que vous y songez, l'eau du bassin devient lisse et une image apparaît à la surface... d'abord trouble celle-ci se précise rapidement, vous contemplez alors le monde vu d'en haut, tel un dieu surveillant les mortels.~ ~Plutôt qu'une personne, c'est le pont que vous devez franchir qui occupe votre esprit, alors que vous y songez, l'eau du bassin devient lisse et une image apparaît à la surface... d'abord trouble celle-ci se précise rapidement, vous contemplez alors le monde vu d'en haut, telle une déesse surveillant les mortels.~
+@2032	= ~Il y a assez d'explosifs pour détruire le pont.~
+
+////////////////////////////////////////////////////
+// Bridge discovered to be rigged with explosives //
+////////////////////////////////////////////////////
+@2040	= ~Les choses se compliquent. Nous devons nous débarrasser de ces barils avant de donner l'assaut.~
+@2041	= ~Vous arrivez à point nommé, <CHARNAME>. Nous avons pu déterminer que le pont est très vraisemblablement piégé avec des barils d'explosifs. Avant de pouvoir lancer notre offensive, nous devons nous en débarrasser.~
+@2042	= ~Ahh, <CHARNAME> votre retour était attendu. Avez-vous obtenu de nouvelles informations sur les défenses mises en place par Caelar ?~
+@2043	= ~Je crains que les nouvelles ne fassent qu'empirer. Le pont est garni de barils de poudre, une simple flèche enflammée et c'est le pont tout entier qui s'effondre.~
+@2044	= ~Avez-vous des suggestions sur la façon de procéder ?~
+@2045	= ~J'ai une idée un peu dingue. Ils doivent s'attendre à ce que les agents d'élites que Caelar a envoyés au palais reviennent en me traînant au bout d'une corde. Nous pourrions leur jouer la comédie et à mi-chemin de la passerelle, on jette les barils dans la rivière avant qu'ils n'aient le temps de réagir.~
+@2046	= ~J'ai une idée un peu dingue. Ils s'attendent probablement à ce que les agents d'élites de Caelar qui ont attaqué le palais reviennent au bercail. Nous pourrions usurper leurs identités et une fois sur la passerelle, on jette les barils dans la rivière avant qu'ils n'aient le temps de décocher la moindre flèche.~
+@2047	= ~Si un petit groupe grimé en soldats de la croisade, arrive à passer les gardes à l'entrée du pont, on pourrait bien être capable de jeter ces barils par-dessus la passerelle avant qu'ils n'aient le temps de les faire exploser.~
+@2048	= ~Cela pourrait bien réussir. C'est risqué, mais je ne vois pas de meilleure approche possible. Si nous essayons de passer en force, ils feront sauter le pont à coup sûr. ~
+@2049	= ~Dès que nous serons de retour à la surface, je rejoindrais mes hommes afin de les préparer pour cette mission.~
+@2050	= ~Je dois rejoindre mes troupes afin de mettre notre plan en action. Retrouvez-moi au camp dès que vous le pouvez ou directement à proximité du pont. Nous nous tiendrons prêts à agir et je réintégrerais votre groupe à ce moment-là.~
+@2051	= ~Que faisons-nous si un mot de passe est en vigueur ?~
+@2052	= ~Hmm... Je vais demander à un de nos mages d'envoûter un garde. Si un mot de passe est requis, nous le saurons bien assez tôt.~
+@2053	= ~Nos soldats déguisés vous retrouveront près du pont quand vous serez prêt.~ ~Nos soldats déguisés vous retrouveront près du pont quand vous serez prête.~
+@2054	= ~Vous ne pensez pas qu'ils vont me reconnaître ? Ma tête est plutôt célèbre et ils ont déjà essayé de me tuer, rappelez-vous.~
+@2055	= ~Nous camouflerons vos traits autant que possible. Certains membres du Poing vous tiennent en très haute estime, votre présence renforcera leur confiance.~
+@2056	= ~Si vous le dites.~
+@2057	= ~Si vous êtes certaine que c'est une bonne solution. Alors c'est d'accord. ~
+@2058	= ~Entendu. Je m'y rendrai sous peu.~
+
+/////////////////////////////////////////////////////////////////////////////
+// PC talks to Corwin in camp before meeting at the bridge for the assault //
+/////////////////////////////////////////////////////////////////////////////
+@2070	= ~Le Poing Enflammé est déjà en place et je suis sur le point de les rejoindre. Vous venez ?~
+@2071	= ~Accompagnez-moi. J'ai encore une tâche à accomplir avant de me rendre sur le pont et je vous veux à mes côtés.~
+@2072	= ~Oui, je suis prêt. Reprenez votre place dans le groupe et allons-y.~ ~Oui, je suis prête. Reprenez votre place dans le groupe et allons-y.~
+@2073	= ~Je vous retrouverai là-bas dès que possible.~
+@2074	= ~Je m'y rends sur-le-champ, mais je n'aurai pas besoin de vous à mes côtés.~
+@2075	= ~Soit, mais ne faisons pas attendre nos hommes trop longtemps.~
+@2076	= ~Excellent. En avant !~
+@2077	= ~Soit, mais ne nous faites pas attendre trop longtemps.~
+@2078	= ~Très bien, si vous êtes sûr. Je vous attendrai près du pont quoi qu'il arrive.~
+
+////////////////////////////////////////////////////////////////////
+// PC meets the disguised Flaming Fist and Corwin near the bridge //
+////////////////////////////////////////////////////////////////////
+@2090	= ~Le voilà.~ ~La voilà.~
+@2091	= ~<CHARNAME>, venez vite vous préparer, par ici.~
+@2092	= ~Et pour mes compagnons ?~
+@2093	= ~Nous vous suivrons de près.~
+@2094	= ~Je te suivrai de près.~
+@2095	= ~Tout est en place. Êtes-vous prêt à prendre ce risque, <CHARNAME> ?~ ~Tout est en place. Êtes-vous prête à prendre ce risque, <CHARNAME> ?~
+@2096	= ~On en sait plus sur cette histoire de mot de passe ?~
+@2097	= ~Je suis prêt. Ne perdons pas de temps.~ ~Je suis prête. Ne perdons pas de temps.~
+@2098	= ~Je suis prêt. Corwin, voulez-vous vous m'accompagner ?~ ~Je suis prête. Corwin, voulez-vous vous m'accompagner ?~ 
+@2099	= ~Oui, un de nos mages a réussi à charmer l'un des gardes. Le mot de passe est 'nikto'.~
+@2100	= ~Très bien, allons-y.~
+@2101	= ~Très bien. Corwin, voulez-vous vous m'accompagner ?~
+@2102	= ~Oui, je ne serai pas loin derrière. Le reste de nos troupes attendra mon signal.~
+@2103	= ~Souhaitez-vous que je me joigne à votre groupe, <CHARNAME> ?~
+@2104	= ~Non, ce n'est pas nécessaire. Vous coordonnez les opérations de votre côté.~
+@2105	= ~Je pense que ce serait préférable, en effet. Venez avec nous !~
+@2106	= ~Vous avez entendu <CHARNAME>. On bouge !~
+@2107	= ~Le groupe d’assaut attendra mon signal. En avant !~
+@2108	= ~Je ne serai pas loin derrière vous, <CHARNAME>. Vous autres, attendez mon signal. On y va !~
+@2109	= ~Argh... enfin. C'est bon !~
+@2110	= ~Et où est cet informateur ?~
+@2111	= ~Au camp. Bence fait attention à ne pas la quitter des yeux.~ 
+
+/////////////////////////////////////////////
+// The futile attempt to disarm the bridge //
+/////////////////////////////////////////////
+@2120	= ~Nous sommes les agents de Caelar de retour de la Porte de Baldur.~
+@2121	= ~Nous sommes les agents de Caelar de retour de la Porte de Baldur et nous avons un prisonnier.~ ~Nous sommes les agents de Caelar de retour de la Porte de Baldur et nous avons une prisonnière.~
+@2122	= ~Votre tête ne me dit rien du tout. Quel est le mot de passe ?~
+@2123	= ~De quoi... un mot de passe ? Hé, on n'en a pas besoin de ton foutu mot de passe !~
+@2124	= ~nikto !~
+@2125	= ~C'est bon, c'est tout bon.~
+@2126	= ~ATTENDEZ ! ARRÊTEZ-LES ! C'est les gars du Poing Enflammé et le Héros est avec eux !~ ~ATTENDEZ ! ARRÊTEZ-LES ! C'est les gars du Poing Enflammé et l'Héroïne est avec eux !~
+@2127	= ~ATTENDEZ ! ARRÊTEZ-LES ! Ces gars qui accompagnent le Héros sont du Poing Enflammé !~ ~ATTENDEZ ! ARRÊTEZ-LES ! Ces gars qui accompagnent l'Héroïne sont du Poing Enflammé !~
+@2128	= ~Fantastique... comment a-t-elle pu s'échapper ?~
+@2129	= ~Ça tourne mal ! J'y vais !~
+@2130	= ~Ça a mal tourné ! On fonce !~
+@2131	= ~POINGS ENFLAMMÉS ! PROTÉGEZ LE HÉROS !~ ~POINGS ENFLAMMÉS ! PROTÉGEZ L'HÉROÏNE !~
+@2132	= ~Oh que si ! Hé ! C'est le Héros !! Et ces types ne sont foutrement pas des nôtres !~ ~Oh que si ! Hé ! C'est l'Héroïne !! Et ces types ne sont foutrement pas des nôtres !~
+@2133	= ~Poings Enflammés ! Protégez le Héros !~ ~Poings Enflammés ! Protégez l'Héroïne !~
+@2134	= ~Je suis avec vous, Protecteur.~ ~Je suis avec vous, Protectrice.~
+@2135	= ~Ce fut un honneur de me battre à vos côtés. Votre titre de Protecteur de la Porte de Baldur n'est pas usurpé.~ ~Ce fut un honneur de me battre à vos côtés. Votre titre de Protectrice de la Porte de Baldur n'est pas usurpé.~
+@2136	= ~Je suis content que le Protecteur soit de notre côté.~ ~Je suis content que la Protectrice soit de notre côté.~
+@2137	= ~Hé ! Il est pas trop mal... enfin je suppose.~ ~Hé ! Elle est pas trop mal... enfin je suppose.~
+@2138	= ~Poing Enflammé !  En arrière !~
+
+//////////////////////////////////////////////////////////////////
+// Conversation with Corwin and Bence after the bridge explodes //
+//////////////////////////////////////////////////////////////////
+@2150	= ~J'ai vu ce qui est arrivé. C'est très fâcheux.~
+@2151	= ~En effet, je n'avais pas du tout pensé à l'existence d'un mot de passe.~
+@2152	= ~Ce n'est pas de votre faute. Aucun d'entre nous n'y a pensé.~
+@2153	= ~Fâcheux ?! C'est plutôt de l'incompétence !~
+@2154	= ~Il ne nous reste plus qu'à trouver un autre moyen de traverser la rivière.~
+@2155	= ~Retournons au campement. Je dois informer Bence de la nécessité de nous rendre au pont de Boarskyr le plus tôt possible.~
+
+/////////////////////
+// Journal entries //
+/////////////////////
+@3000	= ~Péripéties au Pont de la Voie Côtière
+Caelar pourrait s'attendre à ce que nos troupes empruntent le pont de la Voie Côtière. Nous devons rester sur nos gardes.~
+@3001	= ~Péripéties au Pont de la Voie Côtière
+Les habitants du coin affirment que le pont est tenu par la croisade.~
+@3002	= ~Péripéties au Pont de la Voie Côtière
+Pendant mon exploration, je me suis approché du pont. Il est contrôlé par les forces de Caelar.~
+@3003	= ~Péripéties au Pont de la Voie Côtière
+J'ai fait mon rapport au camp. Corwin va rassembler plus d'informations sur nos adversaires. Je dois la retrouver au camp dans quelques heures.~
+@3004	= ~Péripéties au Pont de la Voie Côtière
+Les éclaireurs ont signalé que le pont qui nous permettrait de traverser la rivière est contrôlé par les forces de Caelar. Corwin va rassembler plus d'informations sur nos adversaires. Je dois la retrouver au camp dans quelques heures.~
+@3005	= ~Péripéties au Pont de la Voie Côtière
+Corwin a quitté le groupe pour commencer les préparatifs et rassembler plus d'informations sur nos adversaires. Je dois la retrouver au camp dans quelques heures.~
+@3006	= ~Péripéties au Pont de la Voie Côtière
+En plongeant mon regard dans un bassin de divination découvert au fond d'une mine creusée par les nains, j'ai pu observer le pont de la Voie Côtière. Si cette vision se vérifie, alors celui-ci est truffé d'explosifs, assez pour faire tomber toute la structure.~
+@3007	= ~Péripéties au Pont de la Voie Côtière
+Les éclaireurs du Poing Enflammé ont pu déterminer que le pont est garni d'explosifs, assez pour le détruire entièrement.~
+@3008	= ~Péripéties au Pont de la Voie Côtière
+Nous avons décidé de tenter notre chance, les soldats du Poing Enflammé se feront passer pour des agents de Caelar et essayeront de jeter les barils d'explosifs par-dessus le pont. Je dois les retrouver sur place.~
+@3009	= ~Péripéties au Pont de la Voie Côtière
+Nous avons décidé de tenter notre chance, les soldats du Poing Enflammé se feront passer pour des agents de Caelar et je jouerais le rôle du prisonnier. Notre objectif est de jeter les barils d'explosifs par-dessus le pont. Je dois les retrouver sur place.~ ~Péripéties au Pont de la Voie Côtière
+Nous avons décidé de tenter notre chance, les soldats du Poing Enflammé se feront passer pour des agents de Caelar et je jouerais le rôle de la prisonnière. Notre objectif est de jeter les barils d'explosifs par-dessus le pont. Je dois les retrouver sur place.~
+@3010	= ~Péripéties au Pont de la Voie Côtière
+Avec le mot de passe à notre disposition, nous avons décidé de tenter notre chance, les soldats du Poing Enflammé se feront passer pour des agents de Caelar et essayeront de jeter les barils d'explosifs par-dessus le pont. Je dois les retrouver sur place.~
+@3011	= ~Péripéties au Pont de la Voie Côtière
+Avec le mot de passe à notre disposition, nous avons décidé de tenter notre chance, les soldats du Poing Enflammé se feront passer pour des agents de Caelar et je jouerais le rôle du prisonnier. Notre objectif est de jeter les barils d'explosifs par-dessus le pont. Je dois les retrouver sur place.~ ~Péripéties au Pont de la Voie Côtière
+Avec le mot de passe à notre disposition, nous avons décidé de tenter notre chance, les soldats du Poing Enflammé se feront passer pour des agents de Caelar et je jouerais le rôle de la prisonnière. Notre objectif est de jeter les barils d'explosifs par-dessus le pont. Je dois les retrouver sur place.~
+@3012	= ~Péripéties au Pont de la Voie Côtière
+J'ai essayé d'affronter les forces de Caelar par moi-même. Les retombées ont été spectaculaires, si l'on peut dire.~
+@3013	= ~Péripéties au Pont de la Voie Côtière
+Un mot de passe était en vigueur. La duperie du Poing Enflammé pour passer en douce a donné des résultats spectaculaires, si l'on peut dire.~
+@3014	= ~Péripéties au Pont de la Voie Côtière
+L'évasion inopinée de notre infortunée informatrice nous a littéralement implosé à la figure.~
+@3015	= ~Le pauvre et malheureux Dauston
+
+Nous avons appris que le mentor de Dauston, l'oncle de la Dame Étincelante, a choisi de prendre la place de sa nièce en Avernus.~
+
+/////////////////////////////////////////
+// Corwin relays Eltan's message to PC //
+/////////////////////////////////////////
+// THESE ARE ALSO IN SOD_STAT_OPTIONS.TRA
+// IF CHANGED HERE, NEED TO CHANGE THERE AS WELL
+@4030	= ~À propos, j'ai un message pour vous de la part du Duc Eltan, <CHARNAME>.~
+@4031	= ~Excellent ! Qu'a-t-il découvert ?~
+@4032	= ~Mieux vaut tard que jamais, je présume. Qu'a-t-il découvert ?~
+@4033	= ~Si vous aviez maintenu le contact avec le camp, vous l'auriez reçu bien plus tôt. Un messager nous l'a apporté il y a un moment déjà.~
+@4034	= ~Il a découvert que Caelar, dans son arrogance, s'est retrouvée piégée en Avernus.~
+@4035	= ~Son oncle a réussi à obtenir sa libération, il s'est sacrifié en prenant sa place en Avernus...~
+@4036	= ~C'est horrible. Mais ça explique beaucoup de choses.~
+
+
+
