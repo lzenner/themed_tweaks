@@ -140,6 +140,7 @@ CREDITS
 * igi: for permission to use his refreshment potion as the basis of Irenicus's revitalization potion
 * lynx and argent77 for help with how to use (or not use) Nearest(...) AND SecondNearest(...) 
 * The folks at The Gibberlings Three forums: for never failing to answer my many many questions
+* JohnBob: French translation
 
 ------------------------------------------------------------------------
 USED TOOLS AND RESSOURCES
@@ -156,6 +157,10 @@ The Gibberlings Three	http://gibberlings3.net
 ------------------------------------------------------------------------
 HISTORY
 ------------------------------------------------------------------------
+Version 0.3:
+- French version added, by JohnBob!
+- "Add stat-based observations and options": Info about fallen paladin Dauston should be available if Corwin joins the party at first camp, too.
+
 Version 0.2:
 - Fixed compatibility problem with The Boareskyr Bridge Scene mod.
 - Fixed install error of component "Allow PC to give aid to Imoen after palace attack" on BG:SoD.
