@@ -157,6 +157,9 @@ The Gibberlings Three	http://gibberlings3.net
 ------------------------------------------------------------------------
 HISTORY
 ------------------------------------------------------------------------
+Version 0.4:
+- Edwin's dialogue about scrying pool scene should close propely.
+
 Version 0.3:
 - French version added, by JohnBob!
 - "Add stat-based observations and options": Info about fallen paladin Dauston should be available if Corwin joins the party at first camp, too.
