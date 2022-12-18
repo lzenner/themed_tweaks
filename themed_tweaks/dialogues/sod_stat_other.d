@@ -247,6 +247,8 @@ END
 // Track if PC knows about Hephernaan being an agent of the Umbral Accord (1=knows face, 2=knows face and name) //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 REPLACE_ACTION_TEXT BDSCRY ~SetGlobal("bd_sddd12_hood","LOCALS",1)~ ~SetGlobal("#L_SoDStat_HephUmbral","GLOBAL",1) SetGlobal("bd_sddd12_hood","LOCALS",1)~
+
+/* - deprecated - will be checked via Edwin's script.
 ALTER_TRANS BDSCRY
 	BEGIN 3 END
 	BEGIN 0 END
@@ -254,6 +256,9 @@ ALTER_TRANS BDSCRY
 EXTEND_BOTTOM BDSCRY 3
 	IF ~IsValidForPartyDialogue("EDWIN")~ THEN DO ~SetGlobal("BD_SDDD12_CLOUDY","MYAREA",1) SetGlobal("bd_sddd12_hood","LOCALS",1) SetGlobal("#L_SoDStat_HephUmbral","GLOBAL",1) ActionOverride("EDWIN",SetGlobal("#L_SoDStat_HephUmbral","LOCALS",1)) StartCutSceneMode() StartCutSceneEx("bdscry05",FALSE)~ EXIT
 END
+*/
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Track if PC learned that Hephernaan is Caelar's advisor (1=knows name, 2=knows both name and face) //
@@ -301,12 +306,16 @@ APPEND BDEDWINJ
 	
 	IF ~~ THEN BEGIN OF_COURSE_1
 		SAY @2066 /* ~Of course I have.  I always am.~ */
-		IF ~~ THEN DO ~SetGlobal("#L_SoDStat_HephUmbral","GLOBAL",2) SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",2)~ EXIT
+		IF ~~ THEN DO ~SetGlobal("#L_SoDStat_HephUmbral","GLOBAL",2) 
+SetGlobal("#L_SoDStat_HephUmbral","LOCALS",2)
+SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",2)~ EXIT
 	END
 	
 	IF ~~ THEN BEGIN OF_COURSE_2
 		SAY @2068 /* ~Of course.  You expected anything less from me? (I should hope not!)~ */
-		IF ~~ THEN DO ~SetGlobal("#L_SoDStat_HephUmbral","GLOBAL",2) SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",2)~ EXIT
+		IF ~~ THEN DO ~SetGlobal("#L_SoDStat_HephUmbral","GLOBAL",2)
+SetGlobal("#L_SoDStat_HephUmbral","LOCALS",2)
+ SetGlobal("#L_SodStat_HephAdvisor","GLOBAL",2)~ EXIT
 	END
 END
 
