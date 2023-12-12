@@ -234,19 +234,19 @@ APPEND BDCORWIN
 	
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_HEAD_OUT
 		SAY @2106 /* ~You heard <PRO_HIMHER>.  Head out!~ */
-		IF ~!Global("#L_SoDStat_DaustonTalk","GLOBAL",2)~ THEN DO ~StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ EXIT
+		IF ~!Global("#L_SoDStat_DaustonTalk","GLOBAL",2)~ THEN DO ~StartCutSceneMode() StartCutSceneEx("#LCWBQ03",TRUE)~ EXIT
 		IF ~Global("#L_SoDStat_DaustonTalk","GLOBAL",2)~ THEN GOTO MESSAGE_FOR_YOU_SIR_THEN_CUT
 	END
 	
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_ME_TOO
 		SAY @2102 /* ~Yes, I'll be right behind you.  The rest of the troops will be watching for my signal~ */
-		IF ~~ THEN DO ~JoinParty() StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ EXIT
+		IF ~~ THEN DO ~JoinParty() StartCutSceneMode() StartCutSceneEx("#LCWBQ03",TRUE)~ EXIT
 		IF ~Global("#L_SoDStat_DaustonTalk","GLOBAL",2)~ THEN GOTO MESSAGE_FOR_YOU_SIR_THEN_JOIN_CUT
 	END
 	
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_REST_OF_YOU
 		SAY @2107 /* ~The rest of you, watch for my signal.  Let's go!~ */
-		IF ~~ THEN DO ~JoinParty() StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ EXIT
+		IF ~~ THEN DO ~JoinParty() StartCutSceneMode() StartCutSceneEx("#LCWBQ03",TRUE)~ EXIT
 		IF ~Global("#L_SoDStat_DaustonTalk","GLOBAL",2)~ THEN GOTO MESSAGE_FOR_YOU_SIR_THEN_JOIN_CUT
 	END
 
@@ -310,7 +310,7 @@ APPEND BDCORWIN
 	
 	IF ~~ THEN BEGIN DAUSTON_MESSAGE_3C
 		SAY @4035 /* ~Her uncle managed to get her out by sacrificing himself.  He is now a prisoner in Avernus...in her place.~ */
-		IF ~~ THEN REPLY @4036 /* ~How awful.  But that does explain a lot.~ */ DO ~SetGlobal("#L_SoDStat_DaustonTalk","GLOBAL",3) StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ SOLVED_JOURNAL @3015 EXIT
+		IF ~~ THEN REPLY @4036 /* ~How awful.  But that does explain a lot.~ */ DO ~SetGlobal("#L_SoDStat_DaustonTalk","GLOBAL",3) StartCutSceneMode() StartCutSceneEx("#LCWBQ03",TRUE)~ SOLVED_JOURNAL @3015 EXIT
 	END
 
 	IF ~~ THEN BEGIN MESSAGE_FOR_YOU_SIR_THEN_JOIN_CUT
@@ -331,7 +331,7 @@ APPEND BDCORWIN
 	
 	IF ~~ THEN BEGIN DAUSTON_MESSAGE_3JC
 		SAY @4035 /* ~Her uncle managed to get her out by sacrificing himself.  He is now a prisoner in Avernus...in her place.~ */
-		IF ~~ THEN REPLY @4036 /* ~How awful.  But that does explain a lot.~ */ DO ~SetGlobal("#L_SoDStat_DaustonTalk","GLOBAL",3) JoinParty() StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ SOLVED_JOURNAL @3015 EXIT
+		IF ~~ THEN REPLY @4036 /* ~How awful.  But that does explain a lot.~ */ DO ~SetGlobal("#L_SoDStat_DaustonTalk","GLOBAL",3) JoinParty() StartCutSceneMode() StartCutSceneEx("#LCWBQ03",TRUE)~ SOLVED_JOURNAL @3015 EXIT
 	END
 	
 	IF WEIGHT #-88 ~Global("#L_CWBridgeWrap","MYAREA",1)~ THEN BEGIN THAT_WAS_UNFORTUNATE
@@ -436,7 +436,7 @@ APPEND BDCORWIJ
 
 	IF ~~ THEN BEGIN CORWIN_BRIDGE_QUEST_REST_OF_YOU
 		SAY @2108 /* ~I'll be just a little ways behind you, <CHARNAME>. The rest of you, watch for my signal.  Let's head out!~ */
-		IF ~~ THEN DO ~StartCutSceneMode() StartCutSceneEx("#LCWBQ030",TRUE)~ EXIT
+		IF ~~ THEN DO ~StartCutSceneMode() StartCutSceneEx("#LCWBQ03",TRUE)~ EXIT
 	END
 END
 
