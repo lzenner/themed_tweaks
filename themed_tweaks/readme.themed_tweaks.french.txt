@@ -18,37 +18,44 @@ DESCRIPTION
 ------------------------------------------------------------------------
 SoD - Donner a Imoen une baguette spéciale lors de l'attaque du palais - par Lauriel
 ------------------------------------------------------------------------
+
 Imoen disposera d'une baguette de projectiles magiques qui tirera jusqu'à trois projectiles à la fois pour lui permettre d'être mono-classée tout en lui permettant de participer au combat comme prévu.  Pour limiter son efficacité, la baguette ne sera utilisable que par Imoen.
 
 ------------------------------------------------------------------------
 SoD - Permettre au PC de porter secours a Imoen après l'attaque du palais - par Lauriel
 ------------------------------------------------------------------------
+
 Permet au PC d'apporter son aide à Imoen après que les agents de Caelar ait été vaincue.
 
 ------------------------------------------------------------------------
 SoD - Observations basées sur les statistiques et options de quête - par Lauriel
 ------------------------------------------------------------------------
-Ajoute des commentaires sur le déroulement de la situation et des options de quête en fonction de diverses statistiques.
+
+Ajoute de commentaires sur le déroulement de la situation et des options de quête en fonction de diverses statistiques. (Ce composant es similaire à celui du mod Road to Discovery)
 
 ------------------------------------------------------------------------
 SoD - Éviter le tour de la ville avec Corwin Schael - par Lauriel
 ------------------------------------------------------------------------
+
 Permet au PC de se promener à la Porte de Baldur avec ou sans Corwin.
 
 ------------------------------------------------------------------------
 SoD - Quête : Péripéties au Pont de la Voie Côtière - par Lauriel
 ------------------------------------------------------------------------
-Ajoute une nouvelle quête d'exploration en rapport au Pont de la Voie Côtière.
+
+Ajoute une nouvelle quête d'exploration dans la zone du Pont de la Voie Côtière.
 
 ------------------------------------------------------------------------
 SoD/BG2EE - Ajoutez un peu de mordant aux dialogues - par Lauriel
 ------------------------------------------------------------------------
+
 Ajoute juste quelques commentaires amusants et sarcastiques à des dialogues autrement étouffants ou insipides.
 ** PROGRES : Au palais dans SoD et des remarques désobligeantes au premier Camp sont terminés. Un seul petit commentaire dans BG2 pour l'instant.
 
 ------------------------------------------------------------------------
 SoD/BG2EE - Supprimer les scenes coupees auxquelles le PC ne devrait pas avoir accès - par Lauriel
 ------------------------------------------------------------------------
+
 À moins qu'il n'y ait une raison pour le PC de voir une cinématique, comme dans bassin de scrutation, les cinématiques concernant les autres PNJ et non directement dans la ligne de vue du PC sont ignorées.
 Note : ceci supprime également les cinématiques ajoutées par d'autres mods, par exemple le composant de I4E (Imoen Forever) "Play cutscene with Imoen and Duke Jannath".
 ** PROGRESS : SoD jusqu'au 1er camp est terminé.  Le reste de SoD et BG2 reste à faire.
@@ -56,17 +63,20 @@ Note : ceci supprime également les cinématiques ajoutées par d'autres mods, p
 ------------------------------------------------------------------------
 SoD/BG2EE - Déplacer les rêves avec Irenicus de SoD a BG2EE - par Lauriel
 ------------------------------------------------------------------------
+
 Irenicus ne devrait pas avoir assez d'influence sur le PC pour pouvoir envahir ses rêves dans SoD.  Ces rêves sont déplacés vers BG2 où ils seront disponibles pour que d'autres mods puissent les utiliser.
 ** PROGRES : Les rêves de SoD sont supprimés.  Il faut encore trouver des endroits appropriés pour les placer dans BG2.
 
 ------------------------------------------------------------------------
 BG2EE - Donner a Imoen la capacité innée, projectiles magiques, pour la scene de la Promenade de Waukyne. - par Lauriel
 ------------------------------------------------------------------------
-Au cas où Imoen n'aurait pas été jumelée en mage, elle reçoit une capacité innée lui permettant de lancée projectiles magiques deux fois au début de BG2.  Une potion sera fournie dans la donjon d'Irenicus pour s'assurer qu'elle en est bien capable lorsque de votre arrivés à la promenade.
+
+Au cas où Imoen n'aurait pas été jumelée en mage, elle reçoit une capacité innée lui permettant de lancer projectiles magiques deux fois au début de BG2.  Une potion sera fournie dans la donjon d'Irenicus pour s'assurer qu'elle en est bien capable lorsque de votre arrivés à la promenade.
 
 ------------------------------------------------------------------------
 BG2EE - Utiliser la cinématique d'Irenicus en enfer comme un rêve qui restaure vos pouvoirs d'enfant de Bhaal. - par Lauriel
 ------------------------------------------------------------------------
+
 Ce composant est également dans le mod Transitions.  Il sera ignoré s'il est déjà installé.
 
 ------------------------------------------------------------------------
