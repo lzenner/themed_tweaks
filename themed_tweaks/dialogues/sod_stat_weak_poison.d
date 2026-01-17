@@ -210,7 +210,7 @@ ALTER_TRANS BDRASAAD
 	  "TRIGGER" ~Global("#L_SoDStat_WeakPoison","GLOBAL",0)~
 	END
 EXTEND_BOTTOM BDRASAAD 38
-	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN REPLY #234637 /* ~The Shining Lady Caelar happened. Or assassins who bore her mark did, at any rate.~ */ GOTO RASAAD_ATTACK
+	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN REPLY #%eet_2%34637 /* ~The Shining Lady Caelar happened. Or assassins who bore her mark did, at any rate.~ */ GOTO RASAAD_ATTACK
 	IF ~Global("#L_SoDStat_WeakPoison","GLOBAL",1)~ THEN REPLY @128 /* ~Assassins in service to Caelar Argent penetrated the Ducal Palace and attempted to poison me.~ */ GOTO 25
 END
 

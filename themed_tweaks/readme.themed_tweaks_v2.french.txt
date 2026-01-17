@@ -20,39 +20,46 @@ DESCRIPTION
 ------------------------------------------------------------------------
 BG1EE/BG2EE - Donner des raisons valables aux joueurs d'alignement bon de rentrer dans les maisons.
 ------------------------------------------------------------------------
+
 This isn't for every house in the game.  A good aligned PC has no business ransacking every house in the realm.  But with this component, the PC will at least be prompted to enter the important ones. Inn and shop keepers will be a font of information concerning where to hand in certain quest items, for example.  If BG1RE is installed, this component will also allow for the Camryn/Tamah book collection quest to be completed without having to steal or break into homes.
 PROGRESS: BG1 finished, BG2 yet to do
 
 ------------------------------------------------------------------------
 BG1EE/SoD/BG2EE - Corriger les scenes coupées qui réorganisent le groupe
 ------------------------------------------------------------------------
+
 Some cut scenes take on too much license with the arrangement of the group, especially before a fight.  This component will try to alleviate that.
 PROGRESS: BG1 finished, SoD and BG2 yet to do
 
 ------------------------------------------------------------------------
 BGEE/SoD/BG2EE - Make sure unique items stay unique
 ------------------------------------------------------------------------
+
 Items that are made unique by a specific history are kept unique.  For example, if you return the Heart of the Golem to the revenant, you'll not find another anywhere in the game. There will, however, be multiple +2 daggers with a more generic background to be found throughout the realms that are almost as good. 
 PROGRESS: BG1 in development, SoD and BG2 yet to do
 
 ------------------------------------------------------------------------
-BG1EE - Permettre a la quete de Rasaad d'etre completee avant le chapitre 5
+BG1EE - Permettre a la quete de Rasaad d'etre completée avant le chapitre 5
 ------------------------------------------------------------------------
+
 The encounter that is necessary to begin Rasaad's companion quest will happen at Beregost if the quest timer expires before chapter 5. If it expires in chapter 5, the quest will progress as usual.
 
 ------------------------------------------------------------------------
 BG1EE - Ajouter Caelar essaye de recruter le PC après les mines de Nashkel et la fin de ToSC.
 ------------------------------------------------------------------------
+
 PROGRESS: Post-Nashkel encounter finished, post ToSC yet to do
 
 ------------------------------------------------------------------------
 BG1EE - Permettre a Dorn de rejoindre un groupe de personnage bon afin d'accomplir sa quête de vengeance.
 ------------------------------------------------------------------------
+
 If a heroic group wants to help Dorn get his revenge, they may now do so.  At the start of Chapter 5, Dorn will rejoin your group no matter how shiny you are.
 
 ------------------------------------------------------------------------
 BG1EE/SoD - Suppression de references erratiques se rapportant a la condition d'enfant de Bhaal du PC.
 ------------------------------------------------------------------------
+
 PROGRESS: BG1 in development, SoD yet to do
 If BG1NPC is to be installed, please do so before this component
 
