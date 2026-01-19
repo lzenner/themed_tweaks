@@ -1,6 +1,6 @@
 BACKUP ~weidu_external/backup/themed_tweaks~
 SUPPORT ~https://www.gibberlings3.net/forums/topic/32346-themed-tweaks-for-bgee-sod-bg2ee-tob-eet/~
-VERSION ~v0.4~
+VERSION ~v0.5~
 
 README ~themed_tweaks/readme.themed_tweaks.%LANGUAGE%.txt~ ~themed_tweaks/readme.themed_tweaks.english.txt~
 
@@ -27,19 +27,23 @@ ALWAYS
 		INCLUDE ~%mod_root%/lib/update_bcs.tpa~
 	END
 
-	// This needs to be run before every component for some reason
-	// It has something to do with languages that use a different character set
-	ACTION_DEFINE_ARRAY thismod_noconvert BEGIN setup END
-	ACTION_DEFINE_ARRAY thismod_reload BEGIN game cases END
+	ACTION_IF NOT VARIABLE_IS_SET themed_tweaks_always THEN BEGIN // check to make this happen only once per install
+    OUTER_SET themed_tweaks_always = 1
 
-	LAF HANDLE_CHARSETS 
-		INT_VAR 
-			infer_charsets = 1 
-		STR_VAR 
-			iconv_path = EVAL "%mod_root%/%tra_base%/iconv"
-			tra_path = EVAL "%tra_loc%"
-			noconvert_array = thismod_noconvert
-			reload_array = thismod_reload
+		// This needs to be run before every component for some reason
+		// It has something to do with languages that use a different character set
+		ACTION_DEFINE_ARRAY thismod_noconvert BEGIN setup END
+		ACTION_DEFINE_ARRAY thismod_reload BEGIN game cases END
+
+		LAF HANDLE_CHARSETS
+			INT_VAR
+				infer_charsets = 1
+			STR_VAR
+				tra_path = EVAL "%mod_root%/%tra_base%"
+				out_path = EVAL "%tra_loc%"
+				noconvert_array = thismod_noconvert
+				reload_array = thismod_reload
+		END
 	END
 
 	ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN
