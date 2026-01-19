@@ -171,6 +171,7 @@ HISTORY
 Version 0.5:
 - Fixed wrong string encryption in case mod is not installed in one go.
 - EET should use correct string reference.
+- Fixed cutscene reference.
 - Moved translations files of "sod_stat_other.tra" and "sod_stat_weak_poison.tra" from Road to Discovery here so they aren't lost. German by Shai Hulud; Italian by improb@bile; Russian by Arkie; Simplified Chinese by yoshimo0417; Spanish by ElGamerViejuno.
 
 Version 0.4:
